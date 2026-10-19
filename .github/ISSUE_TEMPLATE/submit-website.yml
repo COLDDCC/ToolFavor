@@ -1,0 +1,58 @@
+name: Submit a website or tool
+description: Suggest a useful tool or inspiring website for ToolFavor
+title: "Submission: "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for submitting! Listings are free and reviewed before publication. This issue will be public; do not include personal or confidential information."
+  - type: input
+    id: name
+    attributes:
+      label: Website name
+      placeholder: Example Tool
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Public URL
+      placeholder: https://example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Listing type
+      options:
+        - Online tool
+        - Software application
+        - Inspiring website
+        - Developer resource
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What does it do?
+      description: Explain the primary use case in one or two sentences.
+    validations:
+      required: true
+  - type: dropdown
+    id: pricing
+    attributes:
+      label: Pricing
+      options:
+        - Free
+        - Freemium
+        - Paid
+        - Unknown
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I understand this is a public submission and publication is not guaranteed.
+          required: true
