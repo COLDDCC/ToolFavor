@@ -1,0 +1,7 @@
+name = "toolfavor"
+compatibility_date = "2026-10-19"
+pages_build_output_dir = "."
+[[d1_databases]]
+binding = "DB"
+database_name = "toolfavor-db"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
