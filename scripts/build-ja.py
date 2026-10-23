@@ -180,4 +180,8 @@ def build():
     sitemap.write_text(xml)
     print(f'Generated {len(PAGES)} Japanese pages and {len(catalog)} translated catalog entries.')
 
-if __name__=='__main__': build()
+if __name__=='__main__':
+    build()
+    if (ROOT/'zh-cn/index.html').exists():
+        import runpy
+        runpy.run_path(str(Path(__file__).with_name('build-zh.py')))['refresh_navigation']()
