@@ -301,14 +301,14 @@
       <tr><th>CGPA /10</th><th>Linear</th><th>WES-style ≈/th><th>UGC % (×9.5)</th><th>What it's read as</th></tr>
     </thead>
     <tbody>
-      <tr><td>9.5</td><td>3.8</td><td>3.9 —4.0</td><td>90.3</td><td class="deg">Exceptional</td></tr>
-      <tr><td>9.0</td><td>3.6</td><td>3.8 —3.9</td><td>85.5</td><td class="deg">Top tier</td></tr>
-      <tr><td>8.5</td><td>3.4</td><td>3.7 —3.9</td><td>80.8</td><td class="deg">Strong; competitive everywhere</td></tr>
-      <tr><td>8.0</td><td>3.2</td><td>3.4 —3.6</td><td>76.0</td><td class="deg">Grad-school-competitive at many programmes</td></tr>
-      <tr><td>7.5</td><td>3.0</td><td>3.3 —3.5</td><td>71.3</td><td class="deg">First-division; clears the 3.0 floor</td></tr>
-      <tr><td>7.0</td><td>2.8</td><td>3.0 —3.2</td><td>66.5</td><td class="deg">Below the 3.0 floor on linear</td></tr>
-      <tr><td>6.5</td><td>2.6</td><td>2.8 —3.0</td><td>61.8</td><td class="deg">Needs strong compensating signals</td></tr>
-      <tr><td>6.0</td><td>2.4</td><td>2.6 —2.8</td><td>57.0</td><td class="deg">Below most graduate floors</td></tr>
+      <tr><td>9.5</td><td>3.8</td><td>3.9–4.0</td><td>90.3</td><td class="deg">Exceptional</td></tr>
+      <tr><td>9.0</td><td>3.6</td><td>3.8–3.9</td><td>85.5</td><td class="deg">Top tier</td></tr>
+      <tr><td>8.5</td><td>3.4</td><td>3.7–3.9</td><td>80.8</td><td class="deg">Strong; competitive everywhere</td></tr>
+      <tr><td>8.0</td><td>3.2</td><td>3.4–3.6</td><td>76.0</td><td class="deg">Grad-school-competitive at many programmes</td></tr>
+      <tr><td>7.5</td><td>3.0</td><td>3.3–3.5</td><td>71.3</td><td class="deg">First-division; clears the 3.0 floor</td></tr>
+      <tr><td>7.0</td><td>2.8</td><td>3.0–3.2</td><td>66.5</td><td class="deg">Below the 3.0 floor on linear</td></tr>
+      <tr><td>6.5</td><td>2.6</td><td>2.8–3.0</td><td>61.8</td><td class="deg">Needs strong compensating signals</td></tr>
+      <tr><td>6.0</td><td>2.4</td><td>2.6–2.8</td><td>57.0</td><td class="deg">Below most graduate floors</td></tr>
     </tbody>
   </table>
   <p style="margin-top:16px;font-size:14.5px;color:var(--muted)">WES-style figures are typical-value ranges across recognised Indian institutions; exact results vary by institution tier and course mix.</p>
@@ -405,10 +405,10 @@
     if(g >= 3.7) return 'A';
     if(g >= 3.3) return 'B+';
     if(g >= 3.0) return 'B';
-    if(g >= 2.7) return 'B−;
+    if(g >= 2.7) return 'B−';
     if(g >= 2.3) return 'C+';
     if(g >= 2.0) return 'C';
-    if(g >= 1.7) return 'C−;
+    if(g >= 1.7) return 'C−';
     if(g >= 1.0) return 'D';
     return 'F';
   }
@@ -477,7 +477,7 @@
     var method = currentMethod();
     var c = parseFloat(cgpa.value) || 0;
     var m = maxOf();
-    var g, name, sumTxt, pctStr = '—;
+    var g, name, sumTxt, pctStr = '—';
 
     if(method === 'linear'){
       g = (m > 0) ? c/m*4 : 0;

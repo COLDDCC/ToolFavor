@@ -70,7 +70,7 @@
           "name": "How do I convert a Chinese grade to a US GPA?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The quick rule is percentage ± 25 (85% →3.4), but it flattens the top of the scale. Chinese universities commonly use band tables —90—00 →4.0, 85—9 →3.7, 80—4 →3.3 —and the 北京大学 4.0 algorithm is another widely documented option. Use your own university's published conversion when it exists, because the method changes the answer."
+            "text": "The quick rule is percentage ± 25 (85% →3.4), but it flattens the top of the scale. Chinese universities commonly use band tables —90–00 →4.0, 85–9 →3.7, 80–4 →3.3 —and the 北京大学 4.0 algorithm is another widely documented option. Use your own university's published conversion when it exists, because the method changes the answer."
           }
         },
         {
@@ -153,7 +153,7 @@
   <div class="pane pane-in">
     <div class="pane-tag">Your system</div>
 
-    <label for="grade">Chinese percentage grade (0 —100)</label>
+    <label for="grade">Chinese percentage grade (0–100)</label>
     <input type="number" id="grade" value="85" min="0" max="100" step="0.5" inputmode="decimal">
 
     <div class="methods" role="radiogroup" aria-label="Conversion method">
@@ -243,11 +243,11 @@
     <div>
       <div class="sys-name">90/85/80 bands</div>
       <div class="unit">85 →3.7</div>
-      <p>Steps through common Chinese thresholds: 90+ →4.0, 85—9 →3.7, 80—4 →3.3. This is the table many Chinese universities publish for applications abroad.</p>
+      <p>Steps through common Chinese thresholds: 90+ →4.0, 85–9 →3.7, 80–4 →3.3. This is the table many Chinese universities publish for applications abroad.</p>
     </div>
   </div>
 
-  <p style="margin-top:20px">And the <b>北京大学 4.0 算法</b> sits between them: it interpolates within ranges (90—00 →4.0; 85—9 →3.7 plus a fractional bonus) rather than stepping or drawing a straight line. Three methods, three answers —which is exactly why you should use your own university's published table when one exists, and expect WES to apply its own course-by-course evaluation.</p>
+  <p style="margin-top:20px">And the <b>北京大学 4.0 算法</b> sits between them: it interpolates within ranges (90–00 →4.0; 85–9 →3.7 plus a fractional bonus) rather than stepping or drawing a straight line. Three methods, three answers —which is exactly why you should use your own university's published table when one exists, and expect WES to apply its own course-by-course evaluation.</p>
 
   <p style="margin-top:16px">Grading culture matters here too: Chinese marks cluster higher than US marks for equivalent work, and a 90 in China is typically strong work, not a 'B'. That's why the band tables give Chinese students a fairer read than a naive percentage-to-letter mapping.</p>
 </section>
@@ -259,12 +259,12 @@
     <div class="card">
             <h3>北京大学 4.0 算法</h3>
       <p>The Peking University algorithm, widely used for applications abroad. It interpolates within ranges, giving mid-range scores a slightly different (usually fairer) number than a plain ratio.</p>
-      <div class="formula">90—00 →4.0 · 85—9 →3.7<br>80—4 →3.3 · 75—9 →3.0</div>
+      <div class="formula">90–00 →4.0 · 85–9 →3.7<br>80–4 →3.3 · 75–9 →3.0</div>
     </div>
     <div class="card">
             <h3>90 / 85 / 80 bands</h3>
       <p>The common Chinese threshold table, matching what many Chinese universities print on their own application conversions.</p>
-      <div class="formula">90+ →4.0 · 85—9 →3.7<br>80—4 →3.3 · 75—9 →3.0</div>
+      <div class="formula">90+ →4.0 · 85–9 →3.7<br>80–4 →3.3 · 75–9 →3.0</div>
     </div>
     <div class="card">
             <h3>±25 shortcut</h3>
@@ -287,13 +287,13 @@
       <tr><th>Chinese %</th><th>Reading</th><th>±25</th><th>90/85/80 bands</th><th>北大 4.0 算法</th></tr>
     </thead>
     <tbody>
-      <tr><td>95 —100</td><td class="deg">Exceptional —top band, rare</td><td>3.8 —4.0</td><td>4.0</td><td>4.0</td></tr>
-      <tr><td>90 —94</td><td class="deg">Excellent —strong, competitive</td><td>3.6 —3.8</td><td>4.0</td><td>4.0</td></tr>
-      <tr><td>85 —89</td><td class="deg">Very good —clears most selective floors</td><td>3.4 —3.6</td><td>3.7</td><td>3.7 —3.9</td></tr>
-      <tr><td>80 —84</td><td class="deg">Good —above average</td><td>3.2 —3.4</td><td>3.3</td><td>3.3</td></tr>
-      <tr><td>75 —79</td><td class="deg">Satisfactory</td><td>3.0 —3.2</td><td>3.0</td><td>3.0</td></tr>
-      <tr><td>70 —74</td><td class="deg">Pass with margin</td><td>2.8 —3.0</td><td>2.7 —3.0</td><td>2.7</td></tr>
-      <tr><td>60 —69</td><td class="deg">Pass —near the 60 line</td><td>2.4 —2.8</td><td>2.0 —2.7</td><td>2.0 —2.7</td></tr>
+      <tr><td>95–100</td><td class="deg">Exceptional —top band, rare</td><td>3.8–4.0</td><td>4.0</td><td>4.0</td></tr>
+      <tr><td>90–94</td><td class="deg">Excellent —strong, competitive</td><td>3.6–3.8</td><td>4.0</td><td>4.0</td></tr>
+      <tr><td>85–89</td><td class="deg">Very good —clears most selective floors</td><td>3.4–3.6</td><td>3.7</td><td>3.7–3.9</td></tr>
+      <tr><td>80–84</td><td class="deg">Good —above average</td><td>3.2–3.4</td><td>3.3</td><td>3.3</td></tr>
+      <tr><td>75–79</td><td class="deg">Satisfactory</td><td>3.0–3.2</td><td>3.0</td><td>3.0</td></tr>
+      <tr><td>70–74</td><td class="deg">Pass with margin</td><td>2.8–3.0</td><td>2.7–3.0</td><td>2.7</td></tr>
+      <tr><td>60–69</td><td class="deg">Pass —near the 60 line</td><td>2.4–2.8</td><td>2.0–2.7</td><td>2.0–2.7</td></tr>
       <tr><td>&lt; 60</td><td class="deg">Fail —resit required</td><td>&lt; 2.4</td><td>&lt; 2.0</td><td>&lt; 2.0</td></tr>
     </tbody>
   </table>
@@ -307,7 +307,7 @@
   <dl class="faq">
     <div>
       <dt>How do I convert a Chinese grade to a US GPA?</dt>
-      <dd>The quick rule is percentage ± 25 (85% →3.4), but it flattens the top of the scale. Chinese universities commonly use band tables —90—00 →4.0, 85—9 →3.7, 80—4 →3.3 —and the 北京大学 4.0 algorithm is another documented option. Use your own university's published conversion when it exists.</dd>
+      <dd>The quick rule is percentage ± 25 (85% →3.4), but it flattens the top of the scale. Chinese universities commonly use band tables —90–00 →4.0, 85–9 →3.7, 80–4 →3.3 —and the 北京大学 4.0 algorithm is another documented option. Use your own university's published conversion when it exists.</dd>
     </div>
     <div>
       <dt>What percentage is a good Chinese grade?</dt>
