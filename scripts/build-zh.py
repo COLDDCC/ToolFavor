@@ -67,6 +67,10 @@ def build():
     assert len(catalog)==len(descriptions),(len(catalog),len(descriptions))
     ja.UI=UI
     for path in ja.PAGES:
+        # Photopea zh-CN has an independently edited, sourced product guide.
+        # Keep it when rebuilding translated catalog pages.
+        if path == 'tools/photopea.html' and (ROOT/'zh-cn'/path).exists():
+            continue
         h=(ROOT/path).read_text()
         h=re.sub(r'<style>(?:\.locale-switch|:is\().*?</style>','',h,flags=re.S)
         h=ja.translate_markup(h)
