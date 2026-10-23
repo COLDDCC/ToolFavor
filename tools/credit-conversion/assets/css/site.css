@@ -8,21 +8,21 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --paper:#E4E8EB;
-  --card:#FFFFFF;
-  --ink:#141D29;
-  --muted:#5C6875;
-  --rule:#C3CCD3;
-  --rule-soft:#DCE2E7;
-  --eu:#26386B;
-  --eu-soft:#E6EAF4;
-  --us:#8F6113;
-  --us-soft:#F6EEDC;
-  --flag:#8C2B1E;
+  --paper:#EEF0EC;
+  --card:#F8F9F6;
+  --ink:#18211E;
+  --muted:#56625D;
+  --rule:#C5CCC6;
+  --rule-soft:#DCE1DC;
+  --eu:#1D5E59;
+  --eu-soft:#DDEBE8;
+  --us:#5C3D7A;
+  --us-soft:#E9E1F0;
+  --flag:#9A3B1F;
 
-  --display:'Archivo',system-ui,sans-serif;
-  --body:'Source Serif 4',Georgia,serif;
-  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --display:'Newsreader',Georgia,serif;
+  --body:'Public Sans',system-ui,sans-serif;
+  --mono:'Public Sans',system-ui,sans-serif;
 }
 
 html{-webkit-text-size-adjust:100%}
@@ -51,7 +51,7 @@ a{color:var(--eu);text-decoration:none}
 }
 .brand small{
   display:block;font-family:var(--mono);font-size:9.5px;font-weight:600;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px;
+  letter-spacing:.01em;text-transform:none;color:var(--muted);margin-top:2px;
 }
 .site-nav nav{display:flex;gap:6px 24px;flex-wrap:wrap}
 .site-nav nav a{
@@ -68,8 +68,8 @@ a{color:var(--eu);text-decoration:none}
 }
 .site-foot .foot-col{min-width:170px;display:flex;flex-direction:column;gap:7px}
 .site-foot .foot-col strong{
-  font-family:var(--display);font-size:11.5px;font-weight:600;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:2px;
+  font-family:var(--display);font-size:11.5px;font-weight:600;letter-spacing:.01em;
+  text-transform:none;color:var(--muted);margin-bottom:2px;
 }
 .site-foot a{color:var(--eu);text-decoration:none;border-bottom:1px solid var(--eu-soft)}
 .site-foot a:hover{border-bottom-color:var(--eu)}
@@ -77,7 +77,7 @@ a{color:var(--eu);text-decoration:none}
 
 /* ---------- breadcrumb ---------- */
 .crumbs{
-  font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  font-family:var(--mono);font-size:11px;letter-spacing:.01em;text-transform:none;
   padding:0 0 18px;color:var(--muted);
 }
 .crumbs ol{list-style:none;display:flex;flex-wrap:wrap;gap:0 8px}
@@ -91,7 +91,7 @@ a{color:var(--eu);text-decoration:none}
 .mast{padding:0 0 30px;border-bottom:2px solid var(--ink)}
 .eyebrow{
   font-family:var(--mono);font-size:11px;font-weight:500;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  letter-spacing:.01em;text-transform:none;color:var(--muted);
   display:flex;flex-wrap:wrap;gap:6px 14px;margin-bottom:20px;
 }
 .eyebrow b{color:var(--eu);font-weight:600}
@@ -128,8 +128,8 @@ p:last-child{margin-bottom:0}
   font-family:var(--mono);font-size:1.55rem;font-weight:600;letter-spacing:-.02em;margin-bottom:2px;
 }
 .split .sys-name{
-  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;margin-bottom:14px;
+  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.01em;
+  text-transform:none;margin-bottom:14px;
 }
 .split>div:first-child .sys-name,.split>div:first-child .unit{color:var(--eu)}
 .split>div:last-child .sys-name,.split>div:last-child .unit{color:var(--us)}
@@ -140,7 +140,7 @@ p:last-child{margin-bottom:0}
 .card{background:var(--card);border:1.5px solid var(--rule);padding:20px}
 .card .num{
   font-family:var(--mono);font-size:11px;font-weight:600;color:var(--us);
-  letter-spacing:.16em;margin-bottom:10px;
+  letter-spacing:.01em;margin-bottom:10px;
 }
 .card p{font-size:14.5px;color:var(--muted);margin-bottom:10px}
 .card .formula{
@@ -154,7 +154,7 @@ table{width:100%;border-collapse:collapse;background:var(--card);border:1.5px so
 th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--rule-soft);font-size:14.5px}
 th{
   font-family:var(--display);font-size:11.5px;font-weight:600;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--muted);background:#F1F4F6;
+  text-transform:none;color:var(--muted);background:#F1F4F6;
 }
 td{font-family:var(--mono);font-size:13.5px;font-variant-numeric:tabular-nums}
 td.deg{font-family:var(--body);font-size:14.5px}
@@ -195,8 +195,8 @@ dd{color:var(--muted);font-size:15px;max-width:70ch}
   padding:18px 26px;display:flex;flex-wrap:wrap;gap:8px 26px;align-items:baseline;
 }
 .related .rel-tag{
-  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--muted);
+  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.01em;
+  text-transform:none;color:var(--muted);
 }
 .related a{
   font-family:var(--display);font-size:14px;font-weight:600;color:var(--eu);
@@ -226,11 +226,11 @@ dd{color:var(--muted);font-size:15px;max-width:70ch}
   display:grid;grid-template-columns:1fr 1fr;
 }
 .pane{padding:26px 26px 28px}
-.pane-in{border-right:1.5px solid var(--rule);background:linear-gradient(180deg,var(--eu-soft),transparent 120px)}
-.pane-out{background:linear-gradient(180deg,var(--us-soft),transparent 120px)}
+.pane-in{border-right:1.5px solid var(--rule);background:var(--eu-soft)}
+.pane-out{background:var(--us-soft)}
 .pane-tag{
   font-family:var(--mono);font-size:10.5px;font-weight:600;
-  letter-spacing:.16em;text-transform:uppercase;
+  letter-spacing:.01em;text-transform:none;
   display:flex;align-items:center;gap:8px;margin-bottom:18px;
 }
 .pane-in .pane-tag{color:var(--eu)}
@@ -296,8 +296,8 @@ dd{color:var(--muted);font-size:15px;max-width:70ch}
   padding:30px 26px 28px;
 }
 .verdictbox-tag{
-  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:#8FA3B8;margin-bottom:6px;
+  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.01em;
+  text-transform:none;color:#8FA3B8;margin-bottom:6px;
 }
 .gverdict{
   font-family:var(--display);font-weight:700;
@@ -365,7 +365,7 @@ dd{color:var(--muted);font-size:15px;max-width:70ch}
   }
   #print-report .pr-brand small{
     display:block;font-family:Arial,sans-serif;font-size:8.5px;font-weight:600;
-    letter-spacing:.18em;text-transform:uppercase;color:#666;margin-top:2px;
+    letter-spacing:.01em;text-transform:none;color:#666;margin-top:2px;
   }
   #print-report .pr-title{
     font-family:Arial,sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;
@@ -380,21 +380,21 @@ dd{color:var(--muted);font-size:15px;max-width:70ch}
   }
   #print-report table.pr-table th{
     font-family:Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.04em;
-    text-transform:uppercase;background:#f2f2f2;width:180px;
+    text-transform:none;background:#f2f2f2;width:180px;
   }
   #print-report table.pr-table td{font-family:'Courier New',monospace;font-size:13.5px}
   #print-report .pr-verdict{
     border:2px solid #111;padding:14px 18px;margin:0 0 20px;
   }
   #print-report .pr-verdict-tag{
-    font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;
-    text-transform:uppercase;color:#666;margin-bottom:6px;
+    font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:.01em;
+    text-transform:none;color:#666;margin-bottom:6px;
   }
   #print-report .pr-verdict-main{font-size:16px;font-weight:bold;margin-bottom:6px}
   #print-report .pr-verdict-note{font-size:12.5px;color:#333}
   #print-report .pr-h2{
     font-family:Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;
-    text-transform:uppercase;border-bottom:1px solid #999;padding-bottom:4px;margin:22px 0 10px;
+    text-transform:none;border-bottom:1px solid #999;padding-bottom:4px;margin:22px 0 10px;
   }
   #print-report ul.pr-sources{list-style:none;margin:0;padding:0;font-size:11.5px}
   #print-report ul.pr-sources li{padding:5px 0;border-bottom:1px dotted #bbb}
@@ -405,3 +405,7 @@ dd{color:var(--muted);font-size:15px;max-width:70ch}
   }
   #print-report .pr-url{font-size:10px;color:#888;margin-top:4px}
 }
+
+/* ---------- ruled columns (replaces boxed card kit) ---------- */
+.card{background:none;border:0;border-top:1.5px solid var(--ink);padding:16px 0 0}
+.card h3{font-family:var(--display);font-weight:500;font-size:1.25rem;letter-spacing:-.01em;line-height:1.25}

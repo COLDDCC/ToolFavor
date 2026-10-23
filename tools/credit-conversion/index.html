@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CreditLab 鈥?Transcripts, translated</title>
+<title>CreditLab —Transcripts, translated</title>
 <meta name="description" content="Convert ECTS to US credits (and back), see how your total compares to US degree requirements, and understand what the number actually means for your application.">
 <link rel="canonical" href="https://toolfavor.com/tools/credit-conversion/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://toolfavor.com/tools/credit-conversion/">
-<meta property="og:title" content="CreditLab 鈥?Transcripts, translated">
-<meta property="og:description" content="ECTS 鈫?US credit converters that tell you where your total lands against US degree requirements 鈥?not just a number.">
+<meta property="og:title" content="CreditLab —Transcripts, translated">
+<meta property="og:description" content="ECTS →US credit converters that tell you where your total lands against US degree requirements —not just a number.">
 <meta name="twitter:card" content="summary">
 <meta property="og:image" content="https://toolfavor.com/tools/credit-conversion/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -18,7 +18,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -28,8 +28,8 @@
 .hero{position:relative}
 .hero h1{max-width:15ch}
 .hero .kicker{
-  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:18px;
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.01em;
+  text-transform:none;color:var(--muted);margin-bottom:18px;
 }
 .hero .standfirst{max-width:58ch}
 
@@ -40,8 +40,8 @@
 }
 .hub a:hover{border-color:var(--eu)}
 .hub .dir{
-  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--us);display:block;margin-bottom:10px;
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.01em;
+  text-transform:none;color:var(--us);display:block;margin-bottom:10px;
 }
 .hub h3{color:var(--eu);margin-bottom:6px}
 .hub p{font-size:14.5px;color:var(--muted);margin-bottom:0}
@@ -49,7 +49,7 @@
   font-family:var(--display);font-size:12.5px;font-weight:700;color:var(--eu);
   display:block;margin-top:14px;
 }
-.hub .go::after{content:" 鈫?}
+.hub .go::after{content:none}
 
 .hub .coming{
   background:transparent;border:1.5px dashed var(--rule);color:var(--muted);
@@ -59,7 +59,7 @@
 .hub .coming h3{color:var(--muted)}
 .hub .coming .tag{
   display:inline-block;font-family:var(--mono);font-size:10px;font-weight:600;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  letter-spacing:.01em;text-transform:none;color:var(--muted);
   border:1px solid var(--rule);border-radius:99px;padding:3px 9px;margin-bottom:10px;
 }
 .hub .coming p{margin-bottom:0}
@@ -73,6 +73,17 @@
   .hub{grid-template-columns:1fr}
   .why{grid-template-columns:1fr}
 }
+
+/* ---------- homepage: ruled index instead of card grid ---------- */
+.hub{grid-template-columns:1fr;gap:0;margin-top:28px;border-top:0}
+.hub a{background:none;border:0;border-bottom:1px solid var(--rule);padding:24px 0;border-radius:0}
+.hub a:hover{background:none;border-bottom-color:var(--eu)}
+.hub a:hover h3{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
+.hub h3{font-family:var(--display);font-size:1.6rem;font-weight:500;letter-spacing:-.01em;line-height:1.2;margin-bottom:6px}
+.hub p{max-width:62ch}
+.hub .go{margin-top:10px;font-weight:600}
+.hub .go::after{content:none}
+.hub .coming{background:none;border:0;border-bottom:1px dashed var(--rule)}
 </style>
 </head>
 <body>
@@ -84,8 +95,8 @@
     <a href="index.html" aria-current="page">Home</a>
     <a href="grade-conversion.html">Grades</a>
     <a href="credit-conversion.html">Credit conversion</a>
-    <a href="ects-to-us-credits.html">ECTS 鈫?US</a>
-    <a href="american-credit-hours-to-ects.html">US 鈫?ECTS</a>
+    <a href="ects-to-us-credits.html">ECTS →US</a>
+    <a href="american-credit-hours-to-ects.html">US →ECTS</a>
     <a href="ielts-to-toefl.html">Languages</a>
     <a href="country-guides.html">Countries</a>
   </nav>
@@ -94,58 +105,58 @@
 <header class="mast hero">
   <p class="kicker">International credit &amp; grade converters</p>
   <h1>Transcripts, <span class="sys-eu">translated</span>.</h1>
-  <p class="standfirst">Help admissions officers understand your transcript 鈥?and help yourself understand the one number that actually worries you: whether your degree counts. Every tool here converts in the way evaluators actually work, cites its sources, and then goes one step further and tells you <em>what the total means</em>.</p>
+  <p class="standfirst">Help admissions officers understand your transcript —and help yourself understand the one number that actually worries you: whether your degree counts. Every tool here converts in the way evaluators actually work, cites its sources, and then goes one step further and tells you <em>what the total means</em>.</p>
 </header>
 
 <section>
   <h2>Converters</h2>
   <div class="hub">
     <a href="ects-to-us-credits.html">
-      <span class="dir">European 鈫?US</span>
+      <span class="dir">European →US</span>
       <h3>ECTS to US credits</h3>
-      <p>Convert ECTS to semester and quarter credit hours, then see where your total lands against US bachelor's requirements 鈥?the part most converters leave out.</p>
+      <p>Convert ECTS to semester and quarter credit hours, then see where your total lands against US bachelor's requirements —the part most converters leave out.</p>
       <span class="go">Open the converter</span>
     </a>
 
     <a href="american-credit-hours-to-ects.html">
-      <span class="dir">US 鈫?European</span>
+      <span class="dir">US →European</span>
       <h3>US credit hours to ECTS</h3>
       <p>Turn US semester or quarter hours into ECTS, and find out which European qualification level your total matches.</p>
       <span class="go">Open the converter</span>
     </a>
 
     <a href="percentage-to-gpa.html">
-      <span class="dir">Percentage 鈫?US</span>
+      <span class="dir">Percentage →US</span>
       <h3>Percentage to GPA</h3>
-      <p>Simple 梅25, WES-style bands for China and India, and university algorithms 鈥?side by side, because the method changes the answer.</p>
+      <p>Simple ±25, WES-style bands for China and India, and university algorithms —side by side, because the method changes the answer.</p>
       <span class="go">Open the converter</span>
     </a>
 
     <a href="cgpa-to-gpa.html">
-      <span class="dir">CGPA 鈫?US</span>
+      <span class="dir">CGPA →US</span>
       <h3>CGPA to GPA</h3>
       <p>Linear, WES-style and the UGC percentage route for 10-point CGPAs, with the institution caveats included.</p>
       <span class="go">Open the converter</span>
     </a>
 
     <a href="gpa-to-percentage.html">
-      <span class="dir">US 鈫?Percentage</span>
+      <span class="dir">US →Percentage</span>
       <h3>GPA to percentage</h3>
-      <p>The reverse is a looser fit 鈥?linear 脳25, the letter-band range, and your university factor, with the caveat built in.</p>
+      <p>The reverse is a looser fit —linear ×25, the letter-band range, and your university factor, with the caveat built in.</p>
       <span class="go">Open the converter</span>
     </a>
 
     <a href="ielts-to-toefl.html">
-      <span class="dir">IELTS 鈫?TOEFL</span>
+      <span class="dir">IELTS →TOEFL</span>
       <h3>Language score converters</h3>
-      <p>Built on ETS's 2025 concordance and the new 1鈥? TOEFL scale 鈥?both the new scale and the old 0鈥?20, side by side.</p>
+      <p>Built on ETS's 2025 concordance and the new 1— TOEFL scale —both the new scale and the old 0—20, side by side.</p>
       <span class="go">Open the converter</span>
     </a>
 
     <a href="country-guides.html">
       <span class="dir">Country by country</span>
       <h3>Country grading guides</h3>
-      <p>Germany, Netherlands, France, India and China 鈥?each scale, its grading culture, and the honest conversion range for planning.</p>
+      <p>Germany, Netherlands, France, India and China —each scale, its grading culture, and the honest conversion range for planning.</p>
       <span class="go">Browse the guides</span>
     </a>
   </div>
@@ -155,41 +166,38 @@
   <h2>Why the numbers here are different</h2>
   <div class="why">
     <div class="card">
-      <div class="num">WHY 01</div>
-      <h3>It answers "is it enough?"</h3>
-      <p>After the conversion, every tool reads your total against real degree requirements 鈥?120鈥?30 semester credits for a US bachelor's, 180 ECTS for a three-year European bachelor's 鈥?and tells you the gap, plainly.</p>
+            <h3>It answers "is it enough?"</h3>
+      <p>After the conversion, every tool reads your total against real degree requirements —120—30 semester credits for a US bachelor's, 180 ECTS for a three-year European bachelor's —and tells you the gap, plainly.</p>
     </div>
     <div class="card">
-      <div class="num">WHY 02</div>
-      <h3>Three methods, not one</h3>
-      <p>Standard ratio, workload hours, or your institution's exact figure. When your registrar gives you a different ratio, theirs is the number that counts 鈥?so the tool lets you use it.</p>
+            <h3>Three methods, not one</h3>
+      <p>Standard ratio, workload hours, or your institution's exact figure. When your registrar gives you a different ratio, theirs is the number that counts —so the tool lets you use it.</p>
     </div>
     <div class="card">
-      <div class="num">WHY 03</div>
-      <h3>Every figure cited</h3>
+            <h3>Every figure cited</h3>
       <p>Sources at the bottom of each page, with the dates they were verified. Nothing handed to you as a bare number from nowhere.</p>
     </div>
   </div>
-  <p class="tools-note">Results are estimates for planning. Formal credit recognition is decided by the receiving institution 鈥?through a Learning Agreement for exchange study, or a credential evaluation for degree admission.</p>
+  <p class="tools-note">Results are estimates for planning. Formal credit recognition is decided by the receiving institution —through a Learning Agreement for exchange study, or a credential evaluation for degree admission.</p>
 </section>
 
 <footer class="site-foot">
   <div class="foot-col">
     <strong>Grade converters</strong>
     <a href="grade-conversion.html">Grade conversion hub</a>
-    <a href="percentage-to-gpa.html">Percentage 鈫?GPA</a>
-    <a href="gpa-to-percentage.html">GPA 鈫?percentage</a>
-    <a href="cgpa-to-gpa.html">CGPA 鈫?GPA</a>
+    <a href="percentage-to-gpa.html">Percentage →GPA</a>
+    <a href="gpa-to-percentage.html">GPA →percentage</a>
+    <a href="cgpa-to-gpa.html">CGPA →GPA</a>
   </div>
   <div class="foot-col">
     <strong>Credit converters</strong>
-    <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
-    <a href="american-credit-hours-to-ects.html">US credits 鈫?ECTS</a>
+    <a href="ects-to-us-credits.html">ECTS →US credits</a>
+    <a href="american-credit-hours-to-ects.html">US credits →ECTS</a>
     <a href="credit-conversion.html">Credit conversion hub</a>
   </div>
   <div class="foot-col">
     <strong>Language scores</strong>
-    <a href="ielts-to-toefl.html">IELTS 鈫?TOEFL</a>
+    <a href="ielts-to-toefl.html">IELTS →TOEFL</a>
   </div>
   <div class="foot-col">
     <strong>Country guides</strong>
@@ -200,7 +208,7 @@
     <a href="india-to-gpa.html">India</a>
     <a href="china-to-gpa.html">China</a>
   </div>
-  <p class="foot-note">Estimates only 鈥?formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
+  <p class="foot-note">Estimates only —formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
 </footer>
 
 </div>

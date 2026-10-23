@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ECTS to US Credits Converter 鈥?European Credits to Semester &amp; Quarter Hours</title>
+<title>ECTS to US Credits Converter —European Credits to Semester &amp; Quarter Hours</title>
 <meta name="description" content="Convert ECTS credits to US semester and quarter credit hours using three methods, and see how your total compares to US degree requirements. Sources cited.">
 <link rel="canonical" href="https://toolfavor.com/tools/credit-conversion/ects-to-us-credits.html">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://toolfavor.com/tools/credit-conversion/ects-to-us-credits.html">
-<meta property="og:title" content="ECTS to US Credits Converter 鈥?European Credits to Semester &amp; Quarter Hours">
+<meta property="og:title" content="ECTS to US Credits Converter —European Credits to Semester &amp; Quarter Hours">
 <meta property="og:description" content="Convert ECTS credits to US semester and quarter credit hours using three methods, and see how your total compares to US degree requirements.">
 <meta name="twitter:card" content="summary">
 <meta property="og:image" content="https://toolfavor.com/tools/credit-conversion/assets/og.png">
@@ -20,7 +20,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -78,7 +78,7 @@
           "name": "Why isn't the conversion one to one?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The two systems count different things. One ECTS credit represents 25 to 30 hours of total student workload, independent study included. One US semester credit is built from classroom contact time 鈥?one hour of instruction plus at least two hours of outside work per week across roughly fifteen weeks, or about 45 hours in total. Because the units measure different activity, any conversion is an approximation rather than an exact equivalence."
+            "text": "The two systems count different things. One ECTS credit represents 25 to 30 hours of total student workload, independent study included. One US semester credit is built from classroom contact time —one hour of instruction plus at least two hours of outside work per week across roughly fifteen weeks, or about 45 hours in total. Because the units measure different activity, any conversion is an approximation rather than an exact equivalence."
           }
         },
         {
@@ -94,7 +94,7 @@
           "name": "Will a 180 ECTS bachelor's be accepted for a US master's?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Often yes, but not automatically. The degree converts to about 90 semester credits against a US bachelor's requirement of 120鈥?30. Some graduate programmes accept Bologna-compliant three-year degrees as equivalent; others require a credential evaluation, and a few ask for additional coursework. The admissions page of the specific programme is the only reliable answer."
+            "text": "Often yes, but not automatically. The degree converts to about 90 semester credits against a US bachelor's requirement of 120—30. Some graduate programmes accept Bologna-compliant three-year degrees as equivalent; others require a credential evaluation, and a few ask for additional coursework. The admissions page of the specific programme is the only reliable answer."
           }
         },
         {
@@ -126,7 +126,7 @@
           "name": "Which countries use ECTS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "All members of the European Higher Education Area 鈥?the EU states plus Iceland, Norway, Turkey and others. A number of universities outside Europe have adopted it as well."
+            "text": "All members of the European Higher Education Area —the EU states plus Iceland, Norway, Turkey and others. A number of universities outside Europe have adopted it as well."
           }
         }
       ]
@@ -143,12 +143,12 @@
   display:grid;grid-template-columns:1fr 1fr;
 }
 .side{padding:26px 26px 28px}
-.side-in{border-right:1.5px solid var(--rule);background:linear-gradient(180deg,var(--eu-soft),transparent 120px)}
-.side-out{background:linear-gradient(180deg,var(--us-soft),transparent 120px)}
+.side-in{border-right:1.5px solid var(--rule);background:var(--eu-soft)}
+.side-out{background:var(--us-soft)}
 
 .side-tag{
   font-family:var(--mono);font-size:10.5px;font-weight:600;
-  letter-spacing:.16em;text-transform:uppercase;
+  letter-spacing:.01em;text-transform:none;
   display:flex;align-items:center;gap:8px;margin-bottom:18px;
 }
 .side-in .side-tag{color:var(--eu)}
@@ -217,8 +217,8 @@ input[type=number]{-moz-appearance:textfield}
   padding:32px 26px 30px;
 }
 .ladder-tag{
-  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:#8FA3B8;margin-bottom:6px;
+  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.01em;
+  text-transform:none;color:#8FA3B8;margin-bottom:6px;
 }
 .verdict{
   font-family:var(--display);font-weight:700;
@@ -261,7 +261,7 @@ button.copy:hover{background:#F0C468}
 
 .derived{
   display:none;font-family:var(--mono);font-size:11px;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--us);margin-top:7px;
+  text-transform:none;color:var(--us);margin-top:7px;
 }
 .derived.show{display:block}
 
@@ -281,8 +281,8 @@ button.copy:hover{background:#F0C468}
   <nav aria-label="Converters">
     <a href="index.html">Home</a>
     <a href="credit-conversion.html">Credit conversion</a>
-    <a href="ects-to-us-credits.html" aria-current="page">ECTS 鈫?US</a>
-    <a href="american-credit-hours-to-ects.html">US 鈫?ECTS</a>
+    <a href="ects-to-us-credits.html" aria-current="page">ECTS →US</a>
+    <a href="american-credit-hours-to-ects.html">US →ECTS</a>
   </nav>
 </header>
 
@@ -297,11 +297,10 @@ button.copy:hover{background:#F0C468}
 <header class="mast">
   <div class="eyebrow">
     <span>Credit conversion</span>
-    <span>路</span>
     <span><b>Verified against the ECTS Users' Guide</b></span>
   </div>
   <h1><span class="sys-eu">ECTS</span> to <span class="sys-us">US credits</span></h1>
-  <p class="standfirst">Convert European credits to US semester or quarter hours, then see where your total lands against US degree requirements 鈥?the part most converters leave out.</p>
+  <p class="standfirst">Convert European credits to US semester or quarter hours, then see where your total lands against US degree requirements —the part most converters leave out.</p>
 </header>
 
 <!-- ============ CONVERTER ============ -->
@@ -311,13 +310,13 @@ button.copy:hover{background:#F0C468}
 
     <label for="ects">ECTS credits earned</label>
     <input type="number" id="ects" value="180" min="0" max="1000" step="1" inputmode="decimal">
-    <p class="derived" id="derived">鈫?calculated from the hours below</p>
+    <p class="derived" id="derived">→calculated from the hours below</p>
 
     <div class="methods" role="radiogroup" aria-label="Conversion method">
       <label class="m on" for="m1">
         <input type="radio" name="method" id="m1" value="ratio" checked>
         <span>
-          <span class="m-name">Standard ratio 鈥?2 ECTS to 1 credit</span>
+          <span class="m-name">Standard ratio —2 ECTS to 1 credit</span>
           <span class="m-note">The baseline used by credential evaluators and most admissions offices.</span>
         </span>
       </label>
@@ -350,11 +349,11 @@ button.copy:hover{background:#F0C468}
           <input type="number" id="wk" value="14" min="1" step="1" inputmode="numeric">
         </div>
         <div>
-          <label for="mult">Self-study 脳</label>
+          <label for="mult">Self-study ×</label>
           <input type="number" id="mult" value="3" min="1" max="5" step="0.5" inputmode="decimal">
         </div>
       </div>
-      <p class="hint">Total workload = contact hours 脳 weeks 脳 self-study multiplier. The multiplier accounts for reading, assignments and exam prep done outside class.</p>
+      <p class="hint">Total workload = contact hours × weeks × self-study multiplier. The multiplier accounts for reading, assignments and exam prep done outside class.</p>
     </div>
 
     <div class="sub-fields" id="f-custom">
@@ -378,14 +377,14 @@ button.copy:hover{background:#F0C468}
     </div>
 
     <div class="workload">
-      <div>European workload &nbsp;<b id="w-eu">4,500 鈥?5,400 h</b></div>
+      <div>European workload &nbsp;<b id="w-eu">4,500 —5,400 h</b></div>
       <div>US equivalent &nbsp;<b id="w-us">4,050 h</b></div>
       <div>Full-time years &nbsp;<b id="w-yr">3.0</b></div>
     </div>
   </div>
 </div>
 
-<!-- ============ LADDER 鈥?signature ============ -->
+<!-- ============ LADDER —signature ============ -->
 <div class="ladder">
   <div class="ladder-tag" id="ladder-tag">Degree equivalence</div>
   <div aria-live="polite">
@@ -401,7 +400,7 @@ button.copy:hover{background:#F0C468}
 
     <div class="you" id="you" style="left:0%">
       <div class="you-dot"></div>
-      <div class="you-lab" id="you-lab">you 路 90</div>
+      <div class="you-lab" id="you-lab">you · 90</div>
     </div>
   </div>
 
@@ -413,7 +412,7 @@ button.copy:hover{background:#F0C468}
 
 <div class="related">
   <span class="rel-tag">Converting the other way</span>
-  <a href="american-credit-hours-to-ects.html">US credit hours 鈫?ECTS converter</a>
+  <a href="american-credit-hours-to-ects.html">US credit hours →ECTS converter</a>
 </div>
 
 <!-- ============ WHY NOT 1:1 ============ -->
@@ -424,17 +423,17 @@ button.copy:hover{background:#F0C468}
   <div class="split">
     <div>
       <div class="sys-name">ECTS</div>
-      <div class="unit">25 鈥?30 h</div>
-      <p>per credit, measuring <strong>total student workload</strong> 鈥?lectures, labs, assignments, independent study and exam preparation. A full-time year is 60 ECTS, or roughly 1,500鈥?,800 hours.</p>
+      <div class="unit">25 —30 h</div>
+      <p>per credit, measuring <strong>total student workload</strong> —lectures, labs, assignments, independent study and exam preparation. A full-time year is 60 ECTS, or roughly 1,500—,800 hours.</p>
     </div>
     <div>
       <div class="sys-name">US semester credit</div>
-      <div class="unit">鈮?45 h</div>
-      <p>per credit, built from <strong>classroom contact time</strong> 鈥?about 15 contact hours plus an expected 30 hours of outside work. A full-time year is about 30 semester credits.</p>
+      <div class="unit">≈45 h</div>
+      <p>per credit, built from <strong>classroom contact time</strong> —about 15 contact hours plus an expected 30 hours of outside work. A full-time year is about 30 semester credits.</p>
     </div>
   </div>
 
-  <p style="margin-top:20px">Divide the two full-time years into each other and you get the familiar 2:1 ratio: 60 ECTS a year against 30 semester credits a year. Compare raw workload hours instead and the ratio lands somewhere between 1.5:1 and 1.8:1, depending on whether your institution counts an ECTS credit as 30 hours or 25. All three figures are defensible, which is exactly why a conversion cannot be exact 鈥?but 2:1 is the one evaluators and admissions offices actually apply, so it is the default here.</p>
+  <p style="margin-top:20px">Divide the two full-time years into each other and you get the familiar 2:1 ratio: 60 ECTS a year against 30 semester credits a year. Compare raw workload hours instead and the ratio lands somewhere between 1.5:1 and 1.8:1, depending on whether your institution counts an ECTS credit as 30 hours or 25. All three figures are defensible, which is exactly why a conversion cannot be exact —but 2:1 is the one evaluators and admissions offices actually apply, so it is the default here.</p>
 </section>
 
 <!-- ============ METHODS ============ -->
@@ -442,28 +441,25 @@ button.copy:hover{background:#F0C468}
   <h2>Three ways to run the conversion</h2>
   <div class="cards">
     <div class="card">
-      <div class="num">METHOD 01</div>
-      <h3>Standard ratio</h3>
-      <p>Halve your ECTS total. Use this unless you have been told otherwise 鈥?it is the baseline applied by credential evaluators and most admissions offices.</p>
-      <div class="formula">US semester credits = ECTS 梅 2</div>
+            <h3>Standard ratio</h3>
+      <p>Halve your ECTS total. Use this unless you have been told otherwise —it is the baseline applied by credential evaluators and most admissions offices.</p>
+      <div class="formula">US semester credits = ECTS ± 2</div>
     </div>
     <div class="card">
-      <div class="num">METHOD 02</div>
-      <h3>Workload hours</h3>
+            <h3>Workload hours</h3>
       <p>Build up from weekly teaching time. Use this when a transcript lists contact hours rather than credits, or when your institution's ratio differs from 2:1.</p>
-      <div class="formula">hours = contact/wk 脳 weeks 脳 multiplier<br>ECTS = hours 梅 25<br>US credits = hours 梅 45</div>
+      <div class="formula">hours = contact/wk × weeks × multiplier<br>ECTS = hours ± 25<br>US credits = hours ± 45</div>
     </div>
     <div class="card">
-      <div class="num">METHOD 03</div>
-      <h3>Institution's ratio</h3>
+            <h3>Institution's ratio</h3>
       <p>Enter the exact figure your registrar or partner university published. Some programmes use 1.5 or 3 rather than 2, and their figure is the one that counts.</p>
-      <div class="formula">US semester credits = ECTS 梅 your ratio</div>
+      <div class="formula">US semester credits = ECTS ± your ratio</div>
     </div>
   </div>
 
   <div class="warn">
     <h3>A converted figure is not an official conversion</h3>
-    <p>Formal credit recognition is decided by the receiving institution 鈥?through a Learning Agreement for exchange study, or a credential evaluation for degree admission. Use the number here to plan and to ask better questions. Do not submit a calculator printout as documentation.</p>
+    <p>Formal credit recognition is decided by the receiving institution —through a Learning Agreement for exchange study, or a credential evaluation for degree admission. Use the number here to plan and to ask better questions. Do not submit a calculator printout as documentation.</p>
   </div>
 </section>
 
@@ -481,7 +477,7 @@ button.copy:hover{background:#F0C468}
       <tr><td class="deg">European bachelor's, 4 years</td><td>240</td><td>120</td><td>180</td><td>4.0</td></tr>
       <tr><td class="deg">European master's, 1 year</td><td>60</td><td>30</td><td>45</td><td>1.0</td></tr>
       <tr><td class="deg">European master's, 2 years</td><td>120</td><td>60</td><td>90</td><td>2.0</td></tr>
-      <tr><td class="deg">US bachelor's requirement</td><td>240 鈥?260</td><td>120 鈥?130</td><td>180 鈥?195</td><td>4.0</td></tr>
+      <tr><td class="deg">US bachelor's requirement</td><td>240 —260</td><td>120 —130</td><td>180 —195</td><td>4.0</td></tr>
     </tbody>
   </table>
   <p style="margin-top:16px;font-size:14.5px;color:var(--muted)">Quarter credits are derived by converting to semester credits first, then multiplying by 1.5. One semester credit equals 1.5 quarter credits.</p>
@@ -497,7 +493,7 @@ button.copy:hover{background:#F0C468}
     </div>
     <div>
       <dt>Why isn't the conversion one to one?</dt>
-      <dd>The two systems count different things. One ECTS credit represents 25 to 30 hours of total student workload, independent study included. One US semester credit is built from classroom contact time 鈥?one hour of instruction plus at least two hours of outside work per week across roughly fifteen weeks, or about 45 hours in total. Because the units measure different activity, any conversion is an approximation rather than an exact equivalence.</dd>
+      <dd>The two systems count different things. One ECTS credit represents 25 to 30 hours of total student workload, independent study included. One US semester credit is built from classroom contact time —one hour of instruction plus at least two hours of outside work per week across roughly fifteen weeks, or about 45 hours in total. Because the units measure different activity, any conversion is an approximation rather than an exact equivalence.</dd>
     </div>
     <div>
       <dt>How do I convert ECTS to US quarter credits?</dt>
@@ -505,7 +501,7 @@ button.copy:hover{background:#F0C468}
     </div>
     <div>
       <dt>Will a 180 ECTS bachelor's be accepted for a US master's?</dt>
-      <dd>Often yes, but not automatically. The degree converts to about 90 semester credits against a US bachelor's requirement of 120鈥?30. Some graduate programmes accept Bologna-compliant three-year degrees as equivalent; others require a credential evaluation, and a few ask for additional coursework. The admissions page of the specific programme is the only reliable answer.</dd>
+      <dd>Often yes, but not automatically. The degree converts to about 90 semester credits against a US bachelor's requirement of 120—30. Some graduate programmes accept Bologna-compliant three-year degrees as equivalent; others require a credential evaluation, and a few ask for additional coursework. The admissions page of the specific programme is the only reliable answer.</dd>
     </div>
     <div>
       <dt>What if my university uses a different ratio?</dt>
@@ -521,7 +517,7 @@ button.copy:hover{background:#F0C468}
     </div>
     <div>
       <dt>Which countries use ECTS?</dt>
-      <dd>All members of the European Higher Education Area 鈥?the EU states plus Iceland, Norway, Turkey and others. A number of universities outside Europe have adopted it as well.</dd>
+      <dd>All members of the European Higher Education Area —the EU states plus Iceland, Norway, Turkey and others. A number of universities outside Europe have adopted it as well.</dd>
     </div>
   </dl>
 </section>
@@ -531,12 +527,12 @@ button.copy:hover{background:#F0C468}
   <h2>Where these figures come from</h2>
   <div class="sources">
     <ul>
-      <li><span class="what">ECTS definition, annual load, workload hours</span><span class="who"><a href="https://education.ec.europa.eu/node/1240" rel="nofollow noopener" target="_blank">European Commission 鈥?ECTS Users' Guide 2015</a></span></li>
-      <li><span class="what">Degree cycle structure and recognition</span><span class="who"><a href="https://www.enic-naric.net/ects---european-credit-transfer-and-accumulation-system.aspx" rel="nofollow noopener" target="_blank">ENIC-NARIC networks 鈥?ECTS and qualification recognition</a></span></li>
-      <li><span class="what">US semester credit hour definition</span><span class="who"><a href="https://www.ecfr.gov/current/title-34/subtitle-B/chapter-VI/part-600/subpart-A/section-600.2" rel="nofollow noopener" target="_blank">34 CFR 搂 600.2 鈥?federal definition of a credit hour</a></span></li>
+      <li><span class="what">ECTS definition, annual load, workload hours</span><span class="who"><a href="https://education.ec.europa.eu/node/1240" rel="nofollow noopener" target="_blank">European Commission —ECTS Users' Guide 2015</a></span></li>
+      <li><span class="what">Degree cycle structure and recognition</span><span class="who"><a href="https://www.enic-naric.net/ects---european-credit-transfer-and-accumulation-system.aspx" rel="nofollow noopener" target="_blank">ENIC-NARIC networks —ECTS and qualification recognition</a></span></li>
+      <li><span class="what">US semester credit hour definition</span><span class="who"><a href="https://www.ecfr.gov/current/title-34/subtitle-B/chapter-VI/part-600/subpart-A/section-600.2" rel="nofollow noopener" target="_blank">34 CFR § 600.2 —federal definition of a credit hour</a></span></li>
       <li><span class="what">Applied conversion practice</span><span class="who">Published policies of US credential evaluators and university registrars</span></li>
     </ul>
-    <p class="verified">Figures last verified July 2026 路 Conversion ratios are approximations, not official standards</p>
+    <p class="verified">Figures last verified July 2026 · Conversion ratios are approximations, not official standards</p>
   </div>
 </section>
 
@@ -545,11 +541,11 @@ button.copy:hover{background:#F0C468}
 <footer class="site-foot">
   <div class="foot-col">
     <strong>Converters</strong>
-    <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
-    <a href="american-credit-hours-to-ects.html">US credits 鈫?ECTS</a>
+    <a href="ects-to-us-credits.html">ECTS →US credits</a>
+    <a href="american-credit-hours-to-ects.html">US credits →ECTS</a>
     <a href="credit-conversion.html">Credit conversion hub</a>
   </div>
-  <p class="foot-note">Estimates only 鈥?formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
+  <p class="foot-note">Estimates only —formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
 </footer>
 
 <script>
@@ -615,7 +611,7 @@ button.copy:hover{background:#F0C468}
     qtr.innerHTML = fmt(qtrCr) + '<span class="r-unit">cr</span>';
     wEu.textContent = (hoursLo === hoursHi)
       ? fmt(hoursLo) + ' h'
-      : fmt(hoursLo) + ' 鈥?' + fmt(hoursHi) + ' h';
+      : fmt(hoursLo) + ' —' + fmt(hoursHi) + ' h';
     wUs.textContent = fmt(semCr * HOURS_PER_US_CREDIT) + ' h';
     wYr.textContent = fmt(semCr / 30);
 
@@ -645,7 +641,7 @@ button.copy:hover{background:#F0C468}
     fill.style.width = pct + '%';
     you.style.left = pct + '%';
     you.style.visibility = semCr > 0 ? 'visible' : 'hidden';
-    youLab.textContent = 'you 路 ' + fmt(semCr);
+    youLab.textContent = 'you · ' + fmt(semCr);
   }
 
   function writeVerdict(e, semCr){
@@ -656,7 +652,7 @@ button.copy:hover{background:#F0C468}
       n = 'The scale below runs to 140 US semester credits, marked with the milestones admissions offices actually check.';
 
     } else if(semCr < YEAR_CREDITS){
-      // Coursework, not a degree 鈥?degree equivalence would be nonsense here.
+      // Coursework, not a degree —degree equivalence would be nonsense here.
       v = 'That is <em>' + fmt(semCr) + ' US semester credits</em>, roughly ' +
           Math.round(semCr / YEAR_CREDITS * 100) + '% of a full-time US academic year.';
       n = 'A full-time US year runs about 30 semester credits and a single course is typically 3, so a total this size is coursework rather than a qualification \u2014 degree equivalence does not apply yet. For exchange study, what matters is whether your home institution credits these back, and that is what the Learning Agreement settles in advance.';
