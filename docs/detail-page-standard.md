@@ -14,6 +14,19 @@ python3 scripts/build-tool-pages.py --check  # 只做校验，不写文件（提
 
 模块是否出现由数据决定：没有资料就不显示该模块，绝不为了显得丰富而硬凑内容。
 
+## 样板页
+
+**以后所有详情页都对照 Slidebox 来写**：`data/tools/slidebox.json` → `/tools/slidebox`、`/ja/tools/slidebox`、`/zh-cn/tools/slidebox`。
+
+它示范了一个重点深度页该有的“原创价值”：
+- **讲清楚实际怎么运作**，而不是复述宣传语。例如上滑只是放进回收站，清空后才真正删除；iPhone 上照片会在「最近删除」保留 30 天，Android 上则是永久删除
+- **诚实写出不适合的情况**：已停止提供备份、免费版有广告，以及系统自带的免费功能什么时候就够用
+- **对比表和替代方案都附官方出处**，包括其他产品的官方帮助页
+- **第三方评分只以文字呈现**，写明来源、地区和核对日期，绝不写进 `aggregateRating` 结构化数据
+- **三种语言分别针对当地搜索词**：英文 "Slidebox guide / pricing"，日文「使い方・料金」，中文「怎么用」
+
+Photopea 是网页工具类的样板，Slidebox 是手机应用类的样板。
+
 ## 2. 三档页面
 
 | 档位 | `tier` 值 | 必须具备 | 适用 |
@@ -40,7 +53,7 @@ python3 scripts/build-tool-pages.py --check  # 只做校验，不写文件（提
 
 ## 4. 信息来源规则
 
-每条事实都要能追溯到出处，`sources` 里每一项标明类型：
+每条事实都要能追溯到出处，`sources` 里每一项标明类型（以被介绍的工具为准：介绍 Slidebox 时，Apple 和 Google 的帮助页算 `third_party`）：
 
 - `official`：官方网站、帮助文档、官方博客
 - `third_party`：可信的第三方资料（需写明来源名称）
@@ -51,6 +64,8 @@ python3 scripts/build-tool-pages.py --check  # 只做校验，不写文件（提
 - 不编造评分、评论、用户数量
 - 官方没有公开的价格不写具体数字，改为链接到官方价格页
 - 截图来源必须标注
+- 第三方评分（如 App Store 星级）只能以文字形式展示，并注明核对日期，不得写入结构化数据
+- 官方资料互相矛盾时，以更新日期最新的为准（例如 FAQ 仍介绍云备份，但更新说明显示该服务已停止）
 
 ## 5. 多语言
 
@@ -68,7 +83,7 @@ python3 scripts/build-tool-pages.py --check  # 只做校验，不写文件（提
 | 真实信息 | 20 | 每条功能、价格、格式说明都有出处；显示最后核对日期 |
 | 原创价值 | 25 | 有适合/不适合判断、对比表或带理由的替代推荐，而非复述官网 |
 | 交互体验 | 15 | FAQ 折叠可用；对比表移动端可横向滚动；锚点跳转正常；图片加载失败有兜底 |
-| SEO 技术质量 | 15 | 唯一 title/description；canonical、hreflang 正确；SoftwareApplication + BreadcrumbList + FAQPage 结构化数据有效；进入 sitemap 且带 lastmod |
+| SEO 技术质量 | 15 | 唯一 title/description；canonical、hreflang、sitemap 都使用不带 `.html` 的最终地址；SoftwareApplication + BreadcrumbList + FAQPage 结构化数据有效；进入 sitemap 且带 lastmod |
 | 移动端与性能 | 5 | 375px 宽无横向滚动；无外部字体和大型脚本；图片有宽高和 alt |
 
 ## 7. 扩展顺序
