@@ -1,0 +1,86 @@
+{
+  "slug": "hourly-income-calculator",
+  "name": "Hourly Income Calculator",
+  "tier": "basic",
+  "url": "https://hourlyincomecalculator.com/",
+  "domain": "hourlyincomecalculator.com",
+  "category": "Productivity",
+  "type": "web",
+  "pricing": "free",
+  "schema": {"applicationCategory": "FinanceApplication", "operatingSystem": "Web browser"},
+  "last_verified": "2026-10-24",
+  "mark": "$",
+  "related_by_founder": true,
+  "sources": {
+    "home": {"url": "https://hourlyincomecalculator.com/", "kind": "official"},
+    "salary": {"url": "https://hourlyincomecalculator.com/salary-to-hourly-calculator/", "kind": "official"}
+  },
+  "i18n": {
+    "en": {
+      "title": "Hourly Income Calculator — Hourly Wage to Annual Salary | ToolFavor",
+      "description": "Turn an hourly wage into annual, monthly, biweekly, weekly and daily gross pay. Eight currency units, six languages, free and private in your browser.",
+      "kicker": "Productivity · Web tool",
+      "lead": "See what an hourly wage adds up to over a year.",
+      "sublead": "Enter your rate, hours per week and paid weeks. Get annual, monthly, every-two-weeks, weekly and daily figures before tax.",
+      "tags": ["Annual · monthly · weekly", "8 currency units", "Numbers stay in your browser"],
+      "pricing_label": "Free",
+      "snapshot": "Summary based on the official website · ToolFavor's founder built this tool",
+      "capabilities": [
+        {"icon": "⇄", "title": "Hourly to salary", "text": "Rate × hours per week × paid weeks, broken down to annual, monthly, biweekly, weekly and daily pay.", "source": "home"},
+        {"icon": "¥", "title": "Your currency unit", "text": "USD, EUR, GBP, JPY, CNY, AUD, CAD or CHF — units only, no exchange-rate conversion.", "source": "home"},
+        {"icon": "↺", "title": "Works the other way too", "text": "A separate salary-to-hourly calculator converts an annual salary back into an hourly rate.", "source": "salary"}
+      ],
+      "facts": [
+        {"label": "Result", "value": "Gross estimate — taxes and deductions are not included", "source": "home"},
+        {"label": "Languages", "value": "English, Chinese, Japanese, German, French, Spanish", "source": "home"},
+        {"label": "Pricing", "value": "Free, no sign-up", "source": "home"}
+      ],
+      "source_labels": {"home": "Hourly Income Calculator official website", "salary": "Official page — salary to hourly calculator"},
+      "cta": {"title": "Comparing job offers?", "text": "Run the numbers in a few seconds."}
+    },
+    "ja": {
+      "title": "時給から年収を計算 — Hourly Income Calculator | ToolFavor",
+      "description": "時給を年収・月収・隔週・週給・日給（税引前）に換算できる無料ツール。8種類の通貨単位、6言語に対応。入力した数字はブラウザー内だけで処理されます。",
+      "kicker": "仕事効率化 · Webツール",
+      "lead": "時給が1年でいくらになるか、すぐにわかる。",
+      "sublead": "時給、週の労働時間、年間の勤務週数を入力するだけ。年収・月収・2週間ごと・週給・日給を税引前で表示します。",
+      "tags": ["年収・月収・週給", "8種類の通貨単位", "ブラウザー内で計算"],
+      "pricing_label": "無料",
+      "snapshot": "公式サイトの情報をもとに整理 · ToolFavor創設者が制作したツールです",
+      "capabilities": [
+        {"icon": "⇄", "title": "時給を年収に換算", "text": "時給 × 週の時間 × 勤務週数で計算し、年・月・隔週・週・日ごとに表示します。", "source": "home"},
+        {"icon": "¥", "title": "通貨単位を選べる", "text": "円、ドル、ユーロ、ポンド、人民元など8種類。単位の切り替えのみで、為替換算はしません。", "source": "home"},
+        {"icon": "↺", "title": "年収から時給も", "text": "別ページの計算ツールで、年収から時給を逆算できます。", "source": "salary"}
+      ],
+      "facts": [
+        {"label": "計算結果", "value": "税引前の概算（税金・控除は含みません）", "source": "home"},
+        {"label": "対応言語", "value": "英語、中国語、日本語、ドイツ語、フランス語、スペイン語", "source": "home"},
+        {"label": "料金", "value": "無料・登録不要", "source": "home"}
+      ],
+      "source_labels": {"home": "Hourly Income Calculator公式サイト", "salary": "公式ページ — 年収から時給を計算"},
+      "cta": {"title": "求人を比べるなら", "text": "数秒で手取り前の金額を確認できます。"}
+    },
+    "zh-cn": {
+      "title": "时薪换算年薪计算器 — Hourly Income Calculator | ToolFavor",
+      "description": "把时薪换算成年薪、月薪、双周薪、周薪和日薪（税前）。支持 8 种货币单位和 6 种语言，免费使用，数字只在浏览器中计算。",
+      "kicker": "效率工具 · 在线工具",
+      "lead": "一眼看清时薪一年能挣多少。",
+      "sublead": "输入时薪、每周工作小时数和一年的带薪周数，即可得到税前的年薪、月薪、双周薪、周薪和日薪。",
+      "tags": ["年薪 · 月薪 · 周薪", "8 种货币单位", "数字只在浏览器中计算"],
+      "pricing_label": "免费",
+      "snapshot": "根据官网信息整理 · 本工具由 ToolFavor 创始人开发",
+      "capabilities": [
+        {"icon": "⇄", "title": "时薪换算年薪", "text": "按 时薪 × 每周小时 × 带薪周数 计算，并拆分为年、月、双周、周、日。", "source": "home"},
+        {"icon": "¥", "title": "选择货币单位", "text": "人民币、美元、欧元、英镑、日元等 8 种，只切换单位，不做汇率换算。", "source": "home"},
+        {"icon": "↺", "title": "也能反向计算", "text": "另有年薪换算时薪的计算器。", "source": "salary"}
+      ],
+      "facts": [
+        {"label": "计算结果", "value": "税前估算，不含税费和扣除项", "source": "home"},
+        {"label": "支持语言", "value": "英语、中文、日语、德语、法语、西班牙语", "source": "home"},
+        {"label": "价格", "value": "免费、无需注册", "source": "home"}
+      ],
+      "source_labels": {"home": "Hourly Income Calculator 官方网站", "salary": "官方页面 — 年薪换算时薪"},
+      "cta": {"title": "正在比较工作机会？", "text": "几秒钟就能算清楚。"}
+    }
+  }
+}
