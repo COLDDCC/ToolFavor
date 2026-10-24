@@ -164,7 +164,12 @@ def validate(t):
 
 
 def page_url(slug, code):
-    return f"{LOCALES[code][0]}/tools/{slug}.html"
+    # Public URL is extensionless: Cloudflare Pages redirects /x.html -> /x.
+    return f"{LOCALES[code][0]}/tools/{slug}"
+
+
+def page_file(slug, code):
+    return f"{LOCALES[code][0]}/tools/{slug}.html".lstrip('/')
 
 
 def home_url(code):
@@ -267,7 +272,7 @@ def render(t, code, tools_by_slug):
     langs = ''.join(f'<a href="{page_url(slug, k)}" lang="{LOCALES[k][1]}"' + (' aria-current="page"' if k == code else '') + f'>{LANG_LABEL[k]}</a>' for k in LOCALES)
     header = (f'<nav aria-label="Language" class="locale-switch">{langs}</nav>'
               f'<header><div class="wrap nav"><a class="brand" href="{home_url(code)}"><img src="/assets/toolfavor-mark.svg" alt="" width="28" height="28">ToolFavor<span>.</span></a>'
-              f'<nav class="navlinks" aria-label="Main"><a href="{home_url(code)}">{escape(u["explore"])}</a><a href="{prefix}/developers.html">{escape(u["developers"])}</a></nav></div></header>')
+              f'<nav class="navlinks" aria-label="Main"><a href="{home_url(code)}">{escape(u["explore"])}</a><a href="{prefix}/developers">{escape(u["developers"])}</a></nav></div></header>')
 
     cat = u['cat'].get(t['category'], t['category'])
     crumb = (f'<nav class="crumb" aria-label="Breadcrumb"><a href="{home_url(code)}">{escape(u["explore"])}</a><span>/</span>'
@@ -344,7 +349,7 @@ def render(t, code, tools_by_slug):
     policy = f'<p>{escape(u["policy"])}</p>'
     if t.get('related_by_founder'):
         policy += f'<p>{escape(u["founder"])} <a href="{prefix}/creators/1/">{escape(u["founder_link"])}</a></p>'
-    policy += f'<p><a href="{prefix}/contact.html">{escape(u["report"])}</a></p>'
+    policy += f'<p><a href="{prefix}/contact">{escape(u["report"])}</a></p>'
     body.append(section('sources', u['src_eyebrow'], u['src_title'], f'<div class="references">{refs}</div><div class="policy">{policy}</div>'))
 
     others = [o for o in tools_by_slug.values() if o['slug'] != slug and o['slug'] not in {a['key'] for a in t.get('alternatives', [])}]
@@ -401,7 +406,7 @@ def main():
     by_slug = {t['slug']: t for t in tools}
     for t in tools:
         for code in LOCALES:
-            dest = ROOT / page_url(t['slug'], code).lstrip('/')
+            dest = ROOT / page_file(t['slug'], code)
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_text(render(t, code, by_slug))
     update_sitemap(tools)

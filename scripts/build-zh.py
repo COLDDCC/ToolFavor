@@ -78,7 +78,7 @@ def build():
             h=h[:start]+json.dumps(data,ensure_ascii=False,separators=(',',':'))+h[start+length:]
             h=h.replace('const cats=','const labels='+json.dumps(CATS,ensure_ascii=False)+';const cats=').replace('b.textContent=c;','b.textContent=labels[c]||c;')
             h=h.replace('[x[0],x[1],x[2],x[3]]','[x[0],x[1],x[2],x[3],x[7],labels[x[3]]]')
-            h=h.replace("'/tools/'+detail+'.html'","'/zh-cn/tools/'+detail+'.html'")
+            h=h.replace("'/tools/'+detail","'/zh-cn/tools/'+detail")
             h=h.replace("[x[3],x[5]==='freemium'?'Freemium':x[5]==='free'?'Free':'Paid']","[labels[x[3]]||x[3],x[5]==='freemium'?'有免费方案':x[5]==='free'?'免费':'付费']")
             h=h.replace("detail?'Details →':'Visit ↗'","detail?'查看详情 →':'访问网站 ↗'")
             h=h.replace("detail?'View details for '+x[0]:'Visit '+x[0]+' (opens in new tab)'","detail?'查看'+x[0]+'详情':'访问'+x[0]+'（新标签页）'")
