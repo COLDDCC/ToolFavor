@@ -78,11 +78,16 @@ UI = {
 }
 CATS = {'All':'すべて','AI':'AI','AI Images':'AI画像生成','AI Video':'AI動画生成','Design':'デザイン','Developer':'開発','Productivity':'作業効率化','Inspiration':'アイデア・参考','Learning':'学習','Video & Audio':'動画・音声','Marketing':'マーケティング','Discovery':'サービスを探す'}
 
+def clean_path(path):
+    # Cloudflare Pages 308-redirects *.html to the extensionless URL; always publish that one.
+    path = path.replace('index.html', '')
+    return path[:-5] if path.endswith('.html') else path
+
 def local_url(path):
-    return '/ja/' if path == 'index.html' else '/ja/' + path.replace('index.html','')
+    return '/ja/' + clean_path(path)
 
 def english_url(path):
-    return '/' if path == 'index.html' else '/' + path.replace('index.html','')
+    return '/' + clean_path(path)
 
 def seo(h, path, ja):
     h = re.sub(r'<!-- locale-links -->.*?<!-- /locale-links -->','',h,flags=re.S)
@@ -136,7 +141,7 @@ def build():
             h=h.replace("b.textContent=c;","b.textContent=labels[c]||c;")
             h=h.replace("const cats=","const labels="+json.dumps(CATS,ensure_ascii=False)+";const cats=")
             h=h.replace("[x[0],x[1],x[2],x[3]]","[x[0],x[1],x[2],x[3],x[7],labels[x[3]]]")
-            h=h.replace("'/tools/'+detail+'.html'","'/ja/tools/'+detail+'.html'")
+            h=h.replace("'/tools/'+detail","'/ja/tools/'+detail")
             h=h.replace("[x[3],x[5]==='freemium'?'Freemium':x[5]==='free'?'Free':'Paid']","[labels[x[3]]||x[3],x[5]==='freemium'?'無料プランあり':x[5]==='free'?'無料':'有料']")
             h=h.replace("detail?'Details →':'Visit ↗'","detail?'詳細 →':'サイトへ ↗'")
             h=h.replace("detail?'View details for '+x[0]:'Visit '+x[0]+' (opens in new tab)'","detail?x[0]+'の詳細':x[0]+'を開く（新しいタブ）'")
