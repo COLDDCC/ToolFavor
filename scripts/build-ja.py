@@ -3,8 +3,11 @@ from pathlib import Path
 import html, json, re
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ['index.html', 'developers.html', 'contact.html', 'creators/1/index.html',
-         'tools/photopea.html', 'tools/printgridpaper.html', 'tools/hourly-income-calculator.html']
+PAGES = ['index.html', 'developers.html', 'contact.html', 'creators/1/index.html']
+# Tool detail pages are generated per locale by build-tool-pages.py from data/tools/*.json.
+# They are listed here only so links to them get localized.
+TOOL_PAGES = sorted('tools/'+p.stem+'.html' for p in (ROOT/'data'/'tools').glob('*.json'))
+LINK_TARGETS = PAGES + TOOL_PAGES
 UI = {
  'Explore':'ツールを探す','For Developers':'開発者の方へ','For developers':'開発者の方へ',
  'Contact / Feedback':'お問い合わせ','Creator portfolio · EN / 中文 / 日本語':'制作者のポートフォリオ',
@@ -160,7 +163,7 @@ def build():
             h=re.sub(r'<title>(.*?)</title>',lambda m:'<title>'+({'developers.html':'開発者向け：サイト掲載とポートフォリオ','contact.html':'お問い合わせ・修正のご連絡'}.get(path,Path(path).stem+'の機能・料金'))+' | ToolFavor</title>',h)
             h=re.sub(r'(<meta name="description" content=")[^"]*',lambda m:m[1]+('ToolFavorへのお問い合わせ、掲載情報の修正、お仕事や共同制作のご相談。' if path=='contact.html' else '便利なツールとWebサイトを日本語で紹介。機能や料金、公式リンクを確認できます。'),h)
         # Only rewrite routes that actually have a Japanese equivalent.
-        for target in PAGES:
+        for target in LINK_TARGETS:
             if target=='index.html':
                 h=h.replace('href="/"','href="/ja/"')
             else:

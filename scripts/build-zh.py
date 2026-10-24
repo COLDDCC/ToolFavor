@@ -67,10 +67,6 @@ def build():
     assert len(catalog)==len(descriptions),(len(catalog),len(descriptions))
     ja.UI=UI
     for path in ja.PAGES:
-        # Photopea zh-CN has an independently edited, sourced product guide.
-        # Keep it when rebuilding translated catalog pages.
-        if path == 'tools/photopea.html' and (ROOT/'zh-cn'/path).exists():
-            continue
         h=(ROOT/path).read_text()
         h=re.sub(r'<style>(?:\.locale-switch|:is\().*?</style>','',h,flags=re.S)
         h=ja.translate_markup(h)
@@ -103,7 +99,7 @@ def build():
         h=re.sub(r'<title>.*?</title>','<title>'+title+'</title>',h)
         description='发现AI生图、AI视频、设计、开发与效率工具，按用途和价格筛选，快速找到需要的网站。' if path=='index.html' else '了解ToolFavor收录的实用工具与独立创作项目，查看功能介绍、官网链接和创作者信息。'
         h=re.sub(r'(<meta name="description" content=")[^"]*',lambda m:m[1]+description,h)
-        for target in ja.PAGES:
+        for target in ja.LINK_TARGETS:
             en=ja.english_url(target);h=h.replace('href="'+en+'"','href="/zh-cn'+en+'"')
         h=h.replace('href="/creators/colddcc.html"','href="/zh-cn/creators/1/"')
         h=h.replace('<html lang="en">','<html lang="zh-CN">')

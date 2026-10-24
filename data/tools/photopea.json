@@ -1,0 +1,255 @@
+{
+  "slug": "photopea",
+  "name": "Photopea",
+  "tier": "flagship",
+  "url": "https://www.photopea.com/",
+  "domain": "www.photopea.com",
+  "category": "Design",
+  "type": "web",
+  "pricing": "freemium",
+  "schema": {"applicationCategory": "GraphicsApplication", "operatingSystem": "Web browser"},
+  "last_verified": "2026-10-24",
+  "mark": "P",
+  "related_by_founder": false,
+  "media": [
+    {
+      "src": "https://www.photopea.com/promo/screens/scr5.png",
+      "origin": "official",
+      "fallback": "editor-mock"
+    }
+  ],
+  "sources": {
+    "home": {"url": "https://www.photopea.com/", "kind": "official"},
+    "privacy": {"url": "https://www.photopea.com/privacy.html", "kind": "official"},
+    "opensave": {"url": "https://www.photopea.com/learn/opening-saving", "kind": "official"},
+    "learn": {"url": "https://www.photopea.com/learn/", "kind": "official"},
+    "ads": {"url": "https://www.photopea.com/tuts/how-photopea-displays-ads/", "kind": "official"},
+    "ai": {"url": "https://www.photopea.com/tuts/get-unlimited-ai-inside-photopea/", "kind": "official"},
+    "install": {"url": "https://www.photopea.com/tuts/install-photopea-to-your-device/", "kind": "official"},
+    "accounts": {"url": "https://www.photopea.com/api/accounts", "kind": "official"}
+  },
+  "compare_links": {
+    "Adobe Photoshop": "https://www.adobe.com/products/photoshop.html",
+    "GIMP": "https://www.gimp.org/",
+    "Canva": "https://www.canva.com/"
+  },
+  "alternatives": [
+    {"key": "gimp", "name": "GIMP", "url": "https://www.gimp.org/", "pricing": "free"},
+    {"key": "canva", "name": "Canva", "url": "https://www.canva.com/", "pricing": "freemium"},
+    {"key": "photoroom", "name": "Photoroom", "url": "https://www.photoroom.com/", "pricing": "freemium"},
+    {"key": "inkscape", "name": "Inkscape", "url": "https://inkscape.org/", "pricing": "free"},
+    {"key": "squoosh", "name": "Squoosh", "url": "https://squoosh.app/", "pricing": "free"}
+  ],
+  "i18n": {
+    "en": {
+      "title": "Photopea Guide: Free Online PSD Editor — Formats, Pricing & Alternatives | ToolFavor",
+      "description": "Photopea edits PSD files in your browser for free. See supported formats, what Premium adds, who it suits, and how it compares with Photoshop, GIMP and Canva.",
+      "kicker": "Design · Web app · Product guide",
+      "lead": "A free Photoshop-style editor that runs in your browser.",
+      "sublead": "Open, edit and save layered PSD files, then export PNG, JPG, SVG or PDF — without installing desktop software. Files are processed on your own device.",
+      "tags": ["Runs in the browser", "Opens & saves PSD", "Layers, masks & smart objects"],
+      "pricing_label": "Free with ads · Premium",
+      "snapshot": "Editorial summary based on Photopea's official documentation · not a hands-on rating",
+      "media_alt": "Photopea editor interface with layers panel and toolbar",
+      "media_caption": "Official screenshot from photopea.com",
+      "mock_caption": "Illustration only · see photopea.com for the real interface",
+      "capabilities": [
+        {"icon": "▧", "title": "Open and save PSD", "text": "PSD is Photopea's main format. Files you open are converted to PSD, so layers stay editable.", "source": "opensave"},
+        {"icon": "◈", "title": "Layers, masks and more", "text": "Documented features include masks, layer styles, smart objects, vector shapes, text, actions and scripts.", "source": "learn"},
+        {"icon": "⇩", "title": "Export common formats", "text": "Use File → Export As for PNG, JPG, SVG and PDF; Save for Web lets you pick format and resolution.", "source": "opensave"}
+      ],
+      "facts": [
+        {"label": "Runs on", "value": "Any modern web browser; can also be installed as a browser app", "source": "install"},
+        {"label": "Opens", "value": "PSD, PNG, JPG, GIF, WEBP, SVG, PDF, camera RAW and about 40 other formats", "source": "home"},
+        {"label": "Exports", "value": "PSD, PNG, JPG, SVG, PDF and more", "source": "opensave"},
+        {"label": "Pricing", "value": "Free with ads; paid Premium (check the official account page for current price)", "source": "accounts"},
+        {"label": "Account", "value": "Not needed to edit; optional login syncs your preferences", "source": "privacy"},
+        {"label": "Your files", "value": "Processed on your device, not uploaded to Photopea's servers", "source": "privacy"}
+      ],
+      "fit": {
+        "good": ["You need to open or tweak a PSD without owning Photoshop", "You're on a shared, school or work computer where you can't install software", "You want layers and masks, not just one-tap filters", "You'd rather your images stay on your own device"],
+        "consider": ["You rely on Photoshop-only plugins or a full Adobe workflow", "You need team collaboration and shared asset libraries", "You only want quick template graphics — a template tool is faster", "Ads take up 5–15% of the screen on the free version"]
+      },
+      "steps": [
+        {"label": "01 / Open", "title": "Go to photopea.com", "text": "The editor loads in your browser. No sign-up form."},
+        {"label": "02 / Import", "title": "Open your file", "text": "Use File → Open, or drag a PSD, PNG or JPG into the window."},
+        {"label": "03 / Save", "title": "Keep layers or export", "text": "Save as PSD to keep editing later; export PNG or JPG to share."}
+      ],
+      "compare": {
+        "columns": ["Tool", "Main focus", "Where it runs", "Pricing model", "Best for"],
+        "rows": [
+          ["Photopea", "Layer-based photo & PSD editing", "Browser", "Free with ads + Premium", "PSD work without installing anything"],
+          ["Adobe Photoshop", "Professional image editing ecosystem", "Mainly desktop apps", "Subscription", "Full Adobe Creative Cloud workflows"],
+          ["GIMP", "Free, open-source image editor", "Windows, macOS, Linux", "Free", "Offline editing with open-source software"],
+          ["Canva", "Template-based visual design", "Web and apps", "Free + paid plans", "Fast social posts and presentations"]
+        ],
+        "note": "Compares positioning only — not a hands-on ranking, and features are not equivalent. Check each official site for current pricing:"
+      },
+      "alternatives": {
+        "gimp": "Want a free editor that works fully offline? GIMP is open-source desktop software.",
+        "canva": "Making social posts or slides? Templates get you there faster than layers.",
+        "photoroom": "Only need to remove backgrounds or make product shots? A dedicated AI tool is quicker.",
+        "inkscape": "Working mainly with SVG and vector illustration? Inkscape is built for that.",
+        "squoosh": "Just compressing or resizing images? Squoosh does it in one step in the browser."
+      },
+      "faq": [
+        {"q": "Is Photopea free?", "a": "Yes. Photopea is free to use and is funded mainly by ads. Premium is an optional paid account; it includes a monthly allowance of AI credits. Check the official account page for the current price.", "source": "ads"},
+        {"q": "Can Photopea open and save PSD files?", "a": "Yes. PSD is Photopea's main format and you can save back to PSD with layers intact. For very complex files, check the result before relying on it.", "source": "opensave"},
+        {"q": "Do I need to install anything?", "a": "No. It runs in the browser. You can optionally install it as a browser app from the More menu, but it still runs inside your browser.", "source": "install"},
+        {"q": "Does Photopea upload my images?", "a": "Photopea states that files you open are processed on your device and are not sent to its servers. If you connect cloud storage such as Google Drive, files travel between that service and your browser.", "source": "privacy"},
+        {"q": "Does Photopea have AI tools?", "a": "Yes — Photopea documents AI features such as background removal and Magic Replace. Premium includes a monthly AI credit allowance.", "source": "ai"}
+      ],
+      "source_labels": {
+        "home": "Photopea homepage — formats and local processing",
+        "privacy": "Photopea privacy policy — files and accounts",
+        "opensave": "Official guide — opening and saving",
+        "learn": "Official documentation — feature chapters",
+        "ads": "Official tutorial — how ads are shown",
+        "ai": "Official tutorial — AI credits",
+        "install": "Official tutorial — installing Photopea",
+        "accounts": "Official account and Premium page"
+      },
+      "cta": {"title": "Ready to edit a PSD?", "text": "Go straight to Photopea — no sign-up form."}
+    },
+    "ja": {
+      "title": "Photopeaとは？無料のブラウザー版PSD編集ツールの使い方・料金・代替ツール | ToolFavor",
+      "description": "Photopeaはインストール不要で使える無料の画像編集ツール。PSDの編集・保存、対応形式、Premiumの内容、Photoshop・GIMP・Canvaとの違いをまとめました。",
+      "kicker": "デザイン · Webアプリ · ツールガイド",
+      "lead": "ブラウザーで動く、無料のPhotoshop風画像編集ツール。",
+      "sublead": "レイヤー付きのPSDを開いて編集・保存し、PNG・JPG・SVG・PDFで書き出せます。ソフトのインストールは不要で、ファイルは自分の端末内で処理されます。",
+      "tags": ["ブラウザーで使える", "PSDの編集・保存", "レイヤー・マスク対応"],
+      "pricing_label": "無料（広告あり）· Premium",
+      "snapshot": "Photopea公式資料をもとに編集部が整理 · 実機テストによる評価ではありません",
+      "media_alt": "レイヤーパネルとツールバーが表示されたPhotopeaの編集画面",
+      "media_caption": "photopea.com 公式スクリーンショット",
+      "mock_caption": "イメージ図です · 実際の画面は公式サイトでご確認ください",
+      "capabilities": [
+        {"icon": "▧", "title": "PSDを開いて保存", "text": "PSDはPhotopeaのメイン形式。開いたファイルはPSDとして扱われるので、レイヤーを保ったまま編集できます。", "source": "opensave"},
+        {"icon": "◈", "title": "レイヤーやマスクに対応", "text": "マスク、レイヤースタイル、スマートオブジェクト、ベクター、文字、アクションやスクリプトも公式ドキュメントで解説されています。", "source": "learn"},
+        {"icon": "⇩", "title": "よく使う形式で書き出し", "text": "「ファイル → 書き出し」からPNG・JPG・SVG・PDFへ。Web用に保存では形式と解像度を選べます。", "source": "opensave"}
+      ],
+      "facts": [
+        {"label": "動作環境", "value": "最新のWebブラウザー。ブラウザーアプリとしてインストールも可能", "source": "install"},
+        {"label": "開ける形式", "value": "PSD、PNG、JPG、GIF、WEBP、SVG、PDF、RAWほか約40形式", "source": "home"},
+        {"label": "書き出し", "value": "PSD、PNG、JPG、SVG、PDFなど", "source": "opensave"},
+        {"label": "料金", "value": "無料（広告あり）。有料のPremiumあり（最新価格は公式アカウントページで確認）", "source": "accounts"},
+        {"label": "アカウント", "value": "編集だけなら不要。ログインすると設定を同期できます", "source": "privacy"},
+        {"label": "ファイルの扱い", "value": "自分の端末内で処理され、Photopeaのサーバーには送信されません", "source": "privacy"}
+      ],
+      "fit": {
+        "good": ["Photoshopを持っていないけれどPSDを開きたい・少し直したい", "学校や会社のPCでソフトをインストールできない", "ワンタップ加工ではなく、レイヤーやマスクを使いたい", "画像を外部サーバーに送らずに編集したい"],
+        "consider": ["Photoshop専用のプラグインやAdobeの連携機能が必須", "チームでの共同編集や素材ライブラリが必要", "テンプレートでさっと画像を作りたいだけ", "無料版では画面の5〜15%ほどに広告が表示される"]
+      },
+      "steps": [
+        {"label": "01 / 開く", "title": "photopea.comにアクセス", "text": "ブラウザーでそのまま編集画面が開きます。登録フォームはありません。"},
+        {"label": "02 / 読み込む", "title": "ファイルを開く", "text": "「ファイル → 開く」を選ぶか、PSD・PNG・JPGを画面にドラッグします。"},
+        {"label": "03 / 保存", "title": "PSD保存か書き出し", "text": "後で編集を続けるならPSDで保存、共有するならPNGやJPGで書き出します。"}
+      ],
+      "compare": {
+        "columns": ["ツール", "主な用途", "使う場所", "料金体系", "向いている人"],
+        "rows": [
+          ["Photopea", "レイヤー編集・PSD編集", "ブラウザー", "無料（広告あり）+ Premium", "インストールせずにPSDを扱いたい"],
+          ["Adobe Photoshop", "プロ向け画像編集", "主にデスクトップアプリ", "サブスクリプション", "Adobe製品と連携して制作したい"],
+          ["GIMP", "無料のオープンソース画像編集", "Windows・macOS・Linux", "無料", "オフラインのソフトで編集したい"],
+          ["Canva", "テンプレート型デザイン", "Web・アプリ", "無料 + 有料プラン", "SNS画像や資料を手早く作りたい"]
+        ],
+        "note": "製品の位置づけを比べた表で、実機テストによるランキングではありません。機能も同等ではありません。最新の料金は各公式サイトでご確認ください："
+      },
+      "alternatives": {
+        "gimp": "完全にオフラインで使える無料ソフトがいいなら、オープンソースのGIMP。",
+        "canva": "SNS画像やスライド作りが目的なら、テンプレートの方が早く仕上がります。",
+        "photoroom": "背景を消したい・商品画像を作りたいだけなら、AI専用ツールが手軽です。",
+        "inkscape": "SVGやベクターイラストが中心なら、それに特化したInkscape。",
+        "squoosh": "画像の圧縮やリサイズだけなら、Squooshがブラウザーで一発です。"
+      },
+      "faq": [
+        {"q": "Photopeaは無料で使えますか？", "a": "はい。Photopeaは主に広告収入で運営されており、無料で使えます。有料のPremiumには毎月のAIクレジットが含まれます。最新価格は公式アカウントページをご確認ください。", "source": "ads"},
+        {"q": "PSDファイルを開いて保存できますか？", "a": "はい。PSDはPhotopeaのメイン形式で、レイヤーを保ったままPSDで保存できます。複雑なファイルは、仕上がりを確認してから使うのがおすすめです。", "source": "opensave"},
+        {"q": "インストールは必要ですか？", "a": "不要です。ブラウザーで動きます。「More」メニューからブラウザーアプリとしてインストールもできますが、動作はブラウザー内です。", "source": "install"},
+        {"q": "画像はアップロードされますか？安全ですか？", "a": "Photopeaは、開いたファイルは端末内で処理され、サーバーには送られないと説明しています。Google Driveなどのクラウドを連携した場合は、そのサービスとブラウザー間でファイルがやり取りされます。", "source": "privacy"},
+        {"q": "AI機能はありますか？", "a": "はい。背景削除やMagic ReplaceなどのAI機能が公式に紹介されています。Premiumには毎月のAIクレジットが含まれます。", "source": "ai"}
+      ],
+      "source_labels": {
+        "home": "Photopea公式トップ — 対応形式・端末内処理",
+        "privacy": "Photopeaプライバシーポリシー — ファイルとアカウント",
+        "opensave": "公式ガイド — ファイルを開く・保存",
+        "learn": "公式ドキュメント — 機能一覧",
+        "ads": "公式チュートリアル — 広告の表示",
+        "ai": "公式チュートリアル — AIクレジット",
+        "install": "公式チュートリアル — インストール方法",
+        "accounts": "公式アカウント・Premiumページ"
+      },
+      "cta": {"title": "今すぐPSDを編集するなら", "text": "登録なしで、そのままPhotopeaを開けます。"}
+    },
+    "zh-cn": {
+      "title": "Photopea 使用指南：免费在线 PSD 编辑器、支持格式、价格与替代工具 | ToolFavor",
+      "description": "Photopea 是可在浏览器中免费使用的 PSD 编辑器。了解它支持的文件格式、Premium 有什么区别、适合谁，以及与 Photoshop、GIMP、Canva 的比较。",
+      "kicker": "设计工具 · 网页应用 · 产品指南",
+      "lead": "免费的在线 PSD 编辑器，打开浏览器就能处理图层。",
+      "sublead": "支持打开、编辑及保存 PSD 文件，并可导出 PNG、JPG、SVG、PDF。无需下载桌面软件，文件在你自己的设备上处理。",
+      "tags": ["浏览器直接使用", "打开并保存 PSD", "图层、蒙版与智能对象"],
+      "pricing_label": "免费（含广告）+ Premium",
+      "snapshot": "根据 Photopea 官方公开资料整理 · 非实测评分",
+      "media_alt": "Photopea 编辑器界面，含图层面板和工具栏",
+      "media_caption": "photopea.com 官方截图",
+      "mock_caption": "视觉示意 · 具体界面请查看官网",
+      "capabilities": [
+        {"icon": "▧", "title": "打开并保存 PSD", "text": "PSD 是 Photopea 的主要格式。打开的文件会转换为 PSD 处理，图层可以继续编辑。", "source": "opensave"},
+        {"icon": "◈", "title": "图层、蒙版等专业功能", "text": "官方文档涵盖蒙版、图层样式、智能对象、矢量图形、文字、动作与脚本。", "source": "learn"},
+        {"icon": "⇩", "title": "导出常见格式", "text": "通过「文件 → 导出为」保存 PNG、JPG、SVG、PDF；「存储为 Web 格式」可选择格式和分辨率。", "source": "opensave"}
+      ],
+      "facts": [
+        {"label": "运行环境", "value": "主流现代浏览器；也可安装为浏览器应用", "source": "install"},
+        {"label": "可打开", "value": "PSD、PNG、JPG、GIF、WEBP、SVG、PDF、相机 RAW 等，另有约 40 种格式", "source": "home"},
+        {"label": "可导出", "value": "PSD、PNG、JPG、SVG、PDF 等", "source": "opensave"},
+        {"label": "价格", "value": "免费（含广告）；另有付费 Premium，最新价格以官方账户页为准", "source": "accounts"},
+        {"label": "账号", "value": "编辑无需注册；登录可同步偏好设置", "source": "privacy"},
+        {"label": "文件处理", "value": "在你的设备上处理，不会上传到 Photopea 服务器", "source": "privacy"}
+      ],
+      "fit": {
+        "good": ["临时打开或修改 PSD 文件，但没有 Photoshop", "在学校或公司电脑上无法安装软件", "需要图层和蒙版，而不只是一键滤镜", "希望图片留在自己的设备上处理"],
+        "consider": ["高度依赖 Photoshop 专有插件或完整的 Adobe 工作流", "需要团队协作和共享素材库", "只想用模板快速做图，模板工具更快", "免费版广告约占屏幕 5%–15%"]
+      },
+      "steps": [
+        {"label": "01 / 打开", "title": "进入 photopea.com", "text": "浏览器中直接加载编辑器，无需填写注册表单。"},
+        {"label": "02 / 导入", "title": "打开文件", "text": "使用「文件 → 打开」，或把 PSD、PNG、JPG 拖进窗口。"},
+        {"label": "03 / 保存", "title": "保留图层或导出", "text": "之后还要修改就保存为 PSD；用于分享则导出 PNG 或 JPG。"}
+      ],
+      "compare": {
+        "columns": ["工具", "主要定位", "使用方式", "价格模式", "更适合"],
+        "rows": [
+          ["Photopea", "图层式图片 / PSD 编辑", "浏览器", "免费（含广告）+ Premium", "无需安装，处理 PSD"],
+          ["Adobe Photoshop", "专业图像编辑生态", "主要为桌面软件", "订阅制", "完整的 Adobe 工作流"],
+          ["GIMP", "自由开源图像编辑", "Windows、macOS、Linux", "免费", "偏好本地开源编辑器"],
+          ["Canva", "模板化视觉设计", "网页及应用", "免费 + 付费方案", "快速制作社媒与演示素材"]
+        ],
+        "note": "此表只比较产品定位，不是实测排名，也不表示功能完全等价。其他产品的最新价格请查看各自官网："
+      },
+      "alternatives": {
+        "gimp": "想要完全离线、免费的编辑器？GIMP 是开源桌面软件。",
+        "canva": "做社媒图或演示文稿？用模板比一层层处理更快。",
+        "photoroom": "只需要抠图或做商品图？专门的 AI 工具更省事。",
+        "inkscape": "主要处理 SVG 和矢量插画？Inkscape 专门为此设计。",
+        "squoosh": "只是压缩或调整图片尺寸？Squoosh 在浏览器里一步完成。"
+      },
+      "faq": [
+        {"q": "Photopea 可以免费使用吗？", "a": "可以。Photopea 主要依靠广告收入，可以免费使用。付费的 Premium 账户包含每月 AI 额度，具体价格请以官方账户页为准。", "source": "ads"},
+        {"q": "Photopea 能打开并保存 PSD 文件吗？", "a": "可以。PSD 是 Photopea 的主要格式，可以保留图层另存为 PSD。非常复杂的设计文件建议先检查效果。", "source": "opensave"},
+        {"q": "Photopea 需要安装吗？", "a": "不需要，直接在浏览器中运行。也可以通过「More」菜单安装为浏览器应用，但它仍在浏览器内运行。", "source": "install"},
+        {"q": "Photopea 会把我的图片上传到服务器吗？", "a": "Photopea 官方说明，打开的文件在你的设备上处理，不会发送到其服务器。如果连接 Google Drive 等云存储，文件会在该服务与浏览器之间传输。", "source": "privacy"},
+        {"q": "Photopea 有 AI 功能吗？", "a": "有。官方介绍了背景移除、Magic Replace 等 AI 功能，Premium 账户包含每月 AI 额度。", "source": "ai"}
+      ],
+      "source_labels": {
+        "home": "Photopea 官网首页 — 支持格式与本地处理",
+        "privacy": "Photopea 隐私政策 — 文件与账户",
+        "opensave": "官方教程 — 打开与保存",
+        "learn": "官方文档 — 功能章节",
+        "ads": "官方教程 — 广告展示方式",
+        "ai": "官方教程 — AI 额度",
+        "install": "官方教程 — 安装 Photopea",
+        "accounts": "官方账户与 Premium 页面"
+      },
+      "cta": {"title": "想立即编辑 PSD？", "text": "直接进入 Photopea，无需经过注册表单。"}
+    }
+  }
+}
