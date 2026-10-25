@@ -1,0 +1,184 @@
+{
+  "favicon:adobe.com": {
+    "path": "/assets/logos/adobe-com-8262c4.png",
+    "source": "https://www.google.com/s2/favicons?domain=adobe.com&sz=256",
+    "width": 180,
+    "height": 180,
+    "fetched": "2026-10-25"
+  },
+  "favicon:android.com": {
+    "path": "/assets/logos/android-com-f4f062.ico",
+    "source": "https://www.gstatic.com/marketing-cms/assets/images/71/87/71f6317844debeb08966398ecefa/favicon.ico",
+    "width": 32,
+    "height": 32,
+    "fetched": "2026-10-25"
+  },
+  "favicon:apple.com": {
+    "path": "/assets/logos/apple-com-e51d86.png",
+    "source": "https://apple.com/apple-touch-icon.png",
+    "width": 152,
+    "height": 152,
+    "fetched": "2026-10-25"
+  },
+  "favicon:apps.apple.com": {
+    "path": "/assets/logos/apps-apple-com-889ab3.png",
+    "source": "https://apps.apple.com/assets/favicon/favicon-270.png",
+    "width": 270,
+    "height": 270,
+    "fetched": "2026-10-25"
+  },
+  "favicon:canva.com": {
+    "path": "/assets/logos/canva-com-897f8a.png",
+    "source": "https://www.google.com/s2/favicons?domain=canva.com&sz=256",
+    "width": 193,
+    "height": 192,
+    "fetched": "2026-10-25"
+  },
+  "favicon:files.google.com": {
+    "path": "/assets/logos/files-google-com-1068d7.ico",
+    "source": "https://files.google.com/static/images/favicon-f3418a443e7d841097c714d69ec4bcb8.ico",
+    "width": 32,
+    "height": 32,
+    "fetched": "2026-10-25"
+  },
+  "favicon:gimp.org": {
+    "path": "/assets/logos/gimp-org-d8f154.png",
+    "source": "https://www.gimp.org/images/wilber32.png",
+    "width": 32,
+    "height": 32,
+    "fetched": "2026-10-25"
+  },
+  "favicon:hourlyincomecalculator.com": {
+    "path": "/assets/logos/hourlyincomecalculator-com-0b9e08.svg",
+    "source": "https://hourlyincomecalculator.com/gold-coin.svg",
+    "width": 10000,
+    "height": 10000,
+    "fetched": "2026-10-25"
+  },
+  "favicon:inkscape.org": {
+    "path": "/assets/logos/inkscape-org-d59a0c.png",
+    "source": "https://media.inkscape.org/static/images/inkscape-favicon.png",
+    "width": 134,
+    "height": 133,
+    "fetched": "2026-10-25"
+  },
+  "favicon:play.google.com": {
+    "path": "/assets/logos/play-google-com-60ffd9.png",
+    "source": "https://www.google.com/s2/favicons?domain=play.google.com&sz=256",
+    "width": 32,
+    "height": 32,
+    "fetched": "2026-10-25"
+  },
+  "favicon:printgridpaper.com": {
+    "path": "/assets/logos/printgridpaper-com-fc557d.png",
+    "source": "https://printgridpaper.com/favicon-192.png",
+    "width": 192,
+    "height": 192,
+    "fetched": "2026-10-25"
+  },
+  "favicon:slidebox.co": {
+    "path": "/assets/logos/slidebox-co-09884c.ico",
+    "source": "https://slidebox.co/favicon.ico?v=4",
+    "width": 16,
+    "height": 16,
+    "fetched": "2026-10-25"
+  },
+  "favicon:squoosh.app": {
+    "path": "/assets/logos/squoosh-app-ef6ac1.png",
+    "source": "https://squoosh.app/c/icon-large-maskable-c2078ced.png",
+    "width": 1024,
+    "height": 1024,
+    "fetched": "2026-10-25"
+  },
+  "favicon:support.apple.com": {
+    "path": "/assets/logos/support-apple-com-8e3487.png",
+    "source": "https://support.apple.com/apple-touch-icon.png",
+    "width": 152,
+    "height": 152,
+    "fetched": "2026-10-25"
+  },
+  "favicon:support.google.com": {
+    "path": "/assets/logos/support-google-com-ae8d60.ico",
+    "source": "https://support.google.com/favicon.png",
+    "width": 20,
+    "height": 20,
+    "fetched": "2026-10-25"
+  },
+  "favicon:www.canva.com": {
+    "path": "/assets/logos/www-canva-com-2f11a5.png",
+    "source": "https://www.google.com/s2/favicons?domain=www.canva.com&sz=256",
+    "width": 193,
+    "height": 192,
+    "fetched": "2026-10-25"
+  },
+  "favicon:www.gimp.org": {
+    "path": "/assets/logos/www-gimp-org-cd9d08.png",
+    "source": "https://www.gimp.org/images/wilber32.png",
+    "width": 32,
+    "height": 32,
+    "fetched": "2026-10-25"
+  },
+  "favicon:www.photopea.com": {
+    "path": "/assets/logos/www-photopea-com-0c5e23.png",
+    "source": "https://www.photopea.com/promo/icon512.png",
+    "width": 512,
+    "height": 512,
+    "fetched": "2026-10-25"
+  },
+  "favicon:www.photoroom.com": {
+    "path": "/assets/logos/www-photoroom-com-668ea6.png",
+    "source": "https://www.photoroom.com/favicons/android-chrome-512x512.png",
+    "width": 512,
+    "height": 512,
+    "fetched": "2026-10-25"
+  },
+  "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b8/66/03/b8660368-9688-66a6-a186-5097bd092c58/Photos-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/512x512bb.jpg": {
+    "path": "/assets/logos/google-photos-81bb26.jpg",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b8/66/03/b8660368-9688-66a6-a186-5097bd092c58/Photos-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/512x512bb.jpg",
+    "width": 512,
+    "height": 512,
+    "fetched": "2026-10-25"
+  },
+  "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/72/6e/79/726e7943-4a7d-091d-3c55-1d46477cdf08/photosCalistoga-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg": {
+    "path": "/assets/logos/iphone-photos-3985a6.jpg",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/72/6e/79/726e7943-4a7d-091d-3c55-1d46477cdf08/photosCalistoga-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+    "width": 512,
+    "height": 512,
+    "fetched": "2026-10-25"
+  },
+  "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/95/71/1c/95711cc4-062e-2d20-23d9-846e8b6005d7/AppIcon-0-0-1x_U007emarketing-0-8-85-220.jpeg/512x512bb.jpg": {
+    "path": "/assets/logos/slidebox.jpg",
+    "source": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/95/71/1c/95711cc4-062e-2d20-23d9-846e8b6005d7/AppIcon-0-0-1x_U007emarketing-0-8-85-220.jpeg/512x512bb.jpg",
+    "width": 512,
+    "height": 512,
+    "fetched": "2026-10-25"
+  },
+  "https://printgridpaper.com/assets/previews/5mm-graph-paper.png": {
+    "path": "/assets/media/printgridpaper-36ec29.png",
+    "source": "https://printgridpaper.com/assets/previews/5mm-graph-paper.png",
+    "width": 1184,
+    "height": 1712,
+    "fetched": "2026-10-25"
+  },
+  "https://slidebox.co/img/demo.gif": {
+    "path": "/assets/media/slidebox-7ccea1.gif",
+    "source": "https://slidebox.co/img/demo.gif",
+    "width": 270,
+    "height": 480,
+    "fetched": "2026-10-25"
+  },
+  "https://www.photopea.com/promo/icon512.png": {
+    "path": "/assets/logos/photopea.png",
+    "source": "https://www.photopea.com/promo/icon512.png",
+    "width": 512,
+    "height": 512,
+    "fetched": "2026-10-25"
+  },
+  "https://www.photopea.com/promo/screens/scr5.png": {
+    "path": "/assets/media/photopea-8f2d6c.png",
+    "source": "https://www.photopea.com/promo/screens/scr5.png",
+    "width": 1280,
+    "height": 800,
+    "fetched": "2026-10-25"
+  }
+}

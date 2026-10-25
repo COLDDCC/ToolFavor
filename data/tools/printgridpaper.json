@@ -1,0 +1,217 @@
+{
+  "slug": "printgridpaper",
+  "name": "PrintGridPaper",
+  "tier": "basic",
+  "url": "https://printgridpaper.com/",
+  "domain": "printgridpaper.com",
+  "category": "Productivity",
+  "type": "web",
+  "pricing": "free",
+  "schema": {
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web browser"
+  },
+  "last_verified": "2026-10-24",
+  "mark": "#",
+  "related_by_founder": true,
+  "sources": {
+    "home": {
+      "url": "https://printgridpaper.com/",
+      "kind": "official"
+    },
+    "mm5": {
+      "url": "https://printgridpaper.com/5mm-graph-paper/",
+      "kind": "official"
+    }
+  },
+  "i18n": {
+    "en": {
+      "title": "PrintGridPaper — Free Printable Graph Paper (PDF, A4, Letter) | ToolFavor",
+      "description": "Make free printable graph paper: square, dot, isometric, hexagonal, polar and log grids. Set grid size, colour and margins, then download PDF, PNG or SVG.",
+      "kicker": "Productivity · Web tool",
+      "lead": "Printable graph paper, set up exactly how you need it.",
+      "sublead": "Pick a grid type and size, adjust line colour and margins, then print or download. Free, no sign-up, no watermark.",
+      "tags": [
+        "7 grid types",
+        "A4 · Letter · custom",
+        "PDF · PNG · SVG"
+      ],
+      "pricing_label": "Free",
+      "snapshot": "Summary based on the official website · ToolFavor's founder built this tool",
+      "capabilities": [
+        {
+          "icon": "grid",
+          "title": "Seven grid types",
+          "text": "Square, dot, coordinate, isometric, hexagonal, polar and logarithmic paper.",
+          "source": "mm5"
+        },
+        {
+          "icon": "sliders",
+          "title": "Fine-grained settings",
+          "text": "Grid size in mm or inches, line colour and weight, heavy lines, margins and binding margin.",
+          "source": "mm5"
+        },
+        {
+          "icon": "print",
+          "title": "Print or download",
+          "text": "Print directly, or download PDF, PNG (150/300 DPI) or SVG, and share your settings.",
+          "source": "mm5"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Paper sizes",
+          "value": "A4, Letter, A5, A3, Legal, Tabloid or custom; portrait or landscape",
+          "source": "mm5"
+        },
+        {
+          "label": "Output",
+          "value": "PDF, PNG, SVG, direct print",
+          "source": "mm5"
+        },
+        {
+          "label": "Pricing",
+          "value": "Free, no sign-up, no watermark",
+          "source": "mm5"
+        }
+      ],
+      "source_labels": {
+        "home": "PrintGridPaper official website",
+        "mm5": "Official page — 5 mm graph paper generator"
+      },
+      "cta": {
+        "title": "Need graph paper now?",
+        "text": "Set it up and print in under a minute."
+      },
+      "media_alt": "PrintGridPaper preview: a 5 mm graph paper sheet"
+    },
+    "ja": {
+      "title": "PrintGridPaper — 無料で印刷できる方眼紙（PDF・A4） | ToolFavor",
+      "description": "方眼紙・ドット方眼・等角・六角形・極座標・対数グラフ用紙を無料で作成。マスの大きさ、線の色、余白を設定して、PDF・PNG・SVGで保存できます。",
+      "kicker": "仕事効率化 · Webツール",
+      "lead": "必要な方眼紙を、そのまま印刷できる形で。",
+      "sublead": "用紙の種類とマスの大きさを選び、線の色や余白を調整して印刷・ダウンロード。無料・登録不要・透かしなし。",
+      "tags": [
+        "7種類の用紙",
+        "A4・レター・カスタム",
+        "PDF・PNG・SVG"
+      ],
+      "pricing_label": "無料",
+      "snapshot": "公式サイトの情報をもとに整理 · ToolFavor創設者が制作したツールです",
+      "capabilities": [
+        {
+          "icon": "grid",
+          "title": "7種類の方眼",
+          "text": "方眼、ドット、座標、等角（アイソメ）、六角形、極座標、対数グラフ用紙。",
+          "source": "mm5"
+        },
+        {
+          "icon": "sliders",
+          "title": "細かく設定できる",
+          "text": "マスの大きさ（mm・インチ）、線の色と太さ、太線の間隔、余白、とじしろ。",
+          "source": "mm5"
+        },
+        {
+          "icon": "print",
+          "title": "印刷・ダウンロード",
+          "text": "そのまま印刷、またはPDF・PNG（150/300 DPI）・SVGで保存。設定の共有も可能です。",
+          "source": "mm5"
+        }
+      ],
+      "facts": [
+        {
+          "label": "用紙サイズ",
+          "value": "A4、レター、A5、A3、リーガル、タブロイド、カスタム（縦・横）",
+          "source": "mm5"
+        },
+        {
+          "label": "出力形式",
+          "value": "PDF、PNG、SVG、直接印刷",
+          "source": "mm5"
+        },
+        {
+          "label": "料金",
+          "value": "無料・登録不要・透かしなし",
+          "source": "mm5"
+        }
+      ],
+      "source_labels": {
+        "home": "PrintGridPaper公式サイト",
+        "mm5": "公式ページ — 5mm方眼紙ジェネレーター"
+      },
+      "cta": {
+        "title": "今すぐ方眼紙が必要なら",
+        "text": "設定して1分以内に印刷できます。"
+      },
+      "media_alt": "PrintGridPaperのプレビュー：5mm方眼紙"
+    },
+    "zh-cn": {
+      "title": "PrintGridPaper — 免费可打印方格纸（PDF、A4） | ToolFavor",
+      "description": "免费生成可打印方格纸：方格、点阵、坐标、等距、六边形、极坐标和对数纸。可设置格子大小、线条颜色和页边距，导出 PDF、PNG 或 SVG。",
+      "kicker": "效率工具 · 在线工具",
+      "lead": "按你的需要生成可直接打印的方格纸。",
+      "sublead": "选择纸张类型和格子大小，调整线条颜色和页边距，然后打印或下载。免费、无需注册、无水印。",
+      "tags": [
+        "7 种纸张",
+        "A4 · Letter · 自定义",
+        "PDF · PNG · SVG"
+      ],
+      "pricing_label": "免费",
+      "snapshot": "根据官网信息整理 · 本工具由 ToolFavor 创始人开发",
+      "capabilities": [
+        {
+          "icon": "grid",
+          "title": "七种网格",
+          "text": "方格、点阵、坐标、等距、六边形、极坐标和对数纸。",
+          "source": "mm5"
+        },
+        {
+          "icon": "sliders",
+          "title": "细致的设置",
+          "text": "格子大小（毫米或英寸）、线条颜色与粗细、粗线间隔、页边距和装订边。",
+          "source": "mm5"
+        },
+        {
+          "icon": "print",
+          "title": "打印或下载",
+          "text": "直接打印，或下载 PDF、PNG（150/300 DPI）、SVG，还可以分享设置。",
+          "source": "mm5"
+        }
+      ],
+      "facts": [
+        {
+          "label": "纸张尺寸",
+          "value": "A4、Letter、A5、A3、Legal、Tabloid 或自定义；横向或纵向",
+          "source": "mm5"
+        },
+        {
+          "label": "输出格式",
+          "value": "PDF、PNG、SVG、直接打印",
+          "source": "mm5"
+        },
+        {
+          "label": "价格",
+          "value": "免费、无需注册、无水印",
+          "source": "mm5"
+        }
+      ],
+      "source_labels": {
+        "home": "PrintGridPaper 官方网站",
+        "mm5": "官方页面 — 5 毫米方格纸生成器"
+      },
+      "cta": {
+        "title": "现在就需要方格纸？",
+        "text": "设置好后一分钟内即可打印。"
+      },
+      "media_alt": "PrintGridPaper 预览：5 毫米方格纸"
+    }
+  },
+  "media": [
+    {
+      "src": "https://printgridpaper.com/assets/previews/5mm-graph-paper.png",
+      "origin": "official",
+      "frame": "paper"
+    }
+  ],
+  "logo": "/assets/logos/printgridpaper.svg"
+}

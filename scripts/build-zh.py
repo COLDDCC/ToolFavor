@@ -67,10 +67,6 @@ def build():
     assert len(catalog)==len(descriptions),(len(catalog),len(descriptions))
     ja.UI=UI
     for path in ja.PAGES:
-        # Photopea zh-CN has an independently edited, sourced product guide.
-        # Keep it when rebuilding translated catalog pages.
-        if path == 'tools/photopea.html' and (ROOT/'zh-cn'/path).exists():
-            continue
         h=(ROOT/path).read_text()
         h=re.sub(r'<style>(?:\.locale-switch|:is\().*?</style>','',h,flags=re.S)
         h=ja.translate_markup(h)
@@ -82,7 +78,7 @@ def build():
             h=h[:start]+json.dumps(data,ensure_ascii=False,separators=(',',':'))+h[start+length:]
             h=h.replace('const cats=','const labels='+json.dumps(CATS,ensure_ascii=False)+';const cats=').replace('b.textContent=c;','b.textContent=labels[c]||c;')
             h=h.replace('[x[0],x[1],x[2],x[3]]','[x[0],x[1],x[2],x[3],x[7],labels[x[3]]]')
-            h=h.replace("'/tools/'+detail+'.html'","'/zh-cn/tools/'+detail+'.html'")
+            h=h.replace("'/tools/'+detail","'/zh-cn/tools/'+detail")
             h=h.replace("[x[3],x[5]==='freemium'?'Freemium':x[5]==='free'?'Free':'Paid']","[labels[x[3]]||x[3],x[5]==='freemium'?'有免费方案':x[5]==='free'?'免费':'付费']")
             h=h.replace("detail?'Details →':'Visit ↗'","detail?'查看详情 →':'访问网站 ↗'")
             h=h.replace("detail?'View details for '+x[0]:'Visit '+x[0]+' (opens in new tab)'","detail?'查看'+x[0]+'详情':'访问'+x[0]+'（新标签页）'")
@@ -103,7 +99,7 @@ def build():
         h=re.sub(r'<title>.*?</title>','<title>'+title+'</title>',h)
         description='发现AI生图、AI视频、设计、开发与效率工具，按用途和价格筛选，快速找到需要的网站。' if path=='index.html' else '了解ToolFavor收录的实用工具与独立创作项目，查看功能介绍、官网链接和创作者信息。'
         h=re.sub(r'(<meta name="description" content=")[^"]*',lambda m:m[1]+description,h)
-        for target in ja.PAGES:
+        for target in ja.LINK_TARGETS:
             en=ja.english_url(target);h=h.replace('href="'+en+'"','href="/zh-cn'+en+'"')
         h=h.replace('href="/creators/colddcc.html"','href="/zh-cn/creators/1/"')
         h=h.replace('<html lang="en">','<html lang="zh-CN">')

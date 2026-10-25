@@ -1,0 +1,49 @@
+# Downloads every logo and product image used by the tool pages into the repo,
+# then rebuilds the pages so they load images from toolfavor.com itself.
+# Runs whenever tool data changes, and can be started by hand from the Actions tab.
+name: Fetch logos
+
+on:
+  push:
+    paths:
+      - 'data/tools/**'
+      - 'scripts/fetch-logos.py'
+      - 'scripts/build-tool-pages.py'
+  workflow_dispatch:
+    inputs:
+      refresh:
+        description: 'Re-download every image, even ones already stored'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-logos-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow
+      - name: Download images
+        run: python3 scripts/fetch-logos.py ${{ inputs.refresh && '--refresh' || '' }}
+      - name: Rebuild tool pages
+        run: python3 scripts/build-tool-pages.py
+      - name: Commit if anything changed
+        run: |
+          git add assets data tools ja/tools zh-cn/tools sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Nothing new."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: store logos and product images locally"
+          git push
