@@ -3,10 +3,11 @@
     python3 scripts/build-tool-pages.py           # validate, then write pages + sitemap
     python3 scripts/build-tool-pages.py --check   # validate only
 
-See docs/detail-page-standard.md for the content standard and tiers.
+See docs/detail-page-standard.md for the content standard, tiers and writing style.
 """
 from pathlib import Path
 from html import escape
+from urllib.parse import urlparse, quote
 import json, re, sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,89 +18,121 @@ LOCALES = {  # key: (folder prefix, html lang, hreflang, og locale)
     'ja': ('/ja', 'ja', 'ja', 'ja_JP'),
     'zh-cn': ('/zh-cn', 'zh-CN', 'zh-CN', 'zh_CN'),
 }
-LANG_LABEL = {'en': 'English', 'ja': '日本語', 'zh-cn': '简体中文'}
+LANG_LABEL = {'en': 'EN', 'ja': '日本語', 'zh-cn': '中文'}
 
 UI = {
  'en': {
-  'explore': 'Explore tools', 'developers': 'For developers', 'home': 'ToolFavor',
-  'visit': 'Visit {name} ↗', 'fit_jump': 'Is it right for me? ↓', 'more_tools': 'Browse more tools',
-  'cap_eyebrow': 'AT A GLANCE', 'cap_title': 'What can it do for you?', 'cap_note': 'Each point links to the official source',
-  'check': 'Check source ↗',
-  'facts_eyebrow': 'KEY FACTS', 'facts_title': 'The details that matter', 'verified': 'Last checked',
-  'fit_eyebrow': 'MAKE A DECISION', 'fit_title': 'Is {name} right for you?', 'good': 'Good fit if…', 'consider': 'Compare first if…',
-  'steps_eyebrow': 'START IN MINUTES', 'steps_title': 'Get started in three steps',
-  'compare_eyebrow': 'CHOOSE THE RIGHT TOOL', 'compare_title': 'How does it compare?', 'compare_sub': 'By positioning and typical use — not a hands-on ranking',
-  'alt_eyebrow': 'ALTERNATIVES', 'alt_title': 'When another tool fits better', 'alt_on_site': 'Details on ToolFavor →', 'alt_visit': 'Visit site ↗',
-  'faq_eyebrow': 'QUICK ANSWERS', 'faq_title': 'Frequently asked questions',
-  'src_eyebrow': 'TRANSPARENCY', 'src_title': 'Where this information comes from',
+  'explore': 'Explore tools', 'developers': 'For developers',
+  'visit': 'Get {name}', 'visit_web': 'Open {name}', 'fit_jump': 'Is it for me?', 'more_tools': 'Browse more tools',
+  'titles': {'features': 'What it does.', 'steps': 'How it works.', 'fit': 'Is it for you?', 'compare': 'How it compares.',
+             'alternatives': 'Other ways to do it.', 'faq': 'Questions, answered.', 'details': 'The fine print.', 'related': 'Keep exploring.'},
+  'subs': {'compare': 'By approach and typical use. Not a hands-on ranking.', 'details': 'Every fact links to where it came from.'},
+  'good': 'Made for you if', 'consider': 'Look elsewhere if',
+  'source': 'Source', 'verified': 'Last checked', 'sources': 'Sources',
+  'alt_on_site': 'See on ToolFavor', 'alt_visit': 'Learn more',
   'kind': {'official': 'Official', 'third_party': 'Third party', 'tested': 'Tested by ToolFavor'},
-  'policy': 'Editorial policy: this page is an independent summary. It is not sponsored, certified or a hands-on compatibility test. We publish no invented ratings, reviews or prices. Details change — the official site is always authoritative.',
-  'founder': 'Disclosure: this tool was built by ToolFavor\'s founder. It is described with the same sourcing rules as every other listing.',
-  'founder_link': 'See the creator\'s portfolio →',
-  'report': 'Spotted something out of date? Tell us →',
-  'related_eyebrow': 'KEEP EXPLORING', 'related_title': 'More tools on ToolFavor', 'related_more': 'Browse the full directory →',
+  'policy': 'Independent summary. Not sponsored, not certified, no invented ratings or prices. The official site always has the final word.',
+  'founder': 'Disclosure: built by ToolFavor\'s founder, described under the same sourcing rules as every listing.',
+  'founder_link': 'Creator portfolio', 'report': 'Something out of date? Tell us',
+  'related_more': 'Browse the full directory',
   'pricing': {'free': 'Free', 'freemium': 'Free plan', 'paid': 'Paid'},
   'type': {'web': 'Web app', 'mobile': 'Mobile app', 'desktop': 'Desktop app', 'extension': 'Browser extension'},
   'cat': {'Design': 'Design', 'Productivity': 'Productivity'},
   'category': 'Category', 'type_label': 'Type', 'website': 'Website',
-  'footer': '© ToolFavor · Discover, understand and compare useful tools.',
+  'footer': 'ToolFavor · Discover, understand and compare useful tools.',
  },
  'ja': {
-  'explore': 'ツールを探す', 'developers': '開発者の方へ', 'home': 'ToolFavor',
-  'visit': '{name}を開く ↗', 'fit_jump': '自分に合う？ ↓', 'more_tools': 'ほかのツールを探す',
-  'cap_eyebrow': 'AT A GLANCE', 'cap_title': '何ができる？', 'cap_note': '各項目から公式の説明を確認できます',
-  'check': '公式の説明 ↗',
-  'facts_eyebrow': 'KEY FACTS', 'facts_title': '基本情報', 'verified': '最終確認日',
-  'fit_eyebrow': 'MAKE A DECISION', 'fit_title': '{name}はあなたに合う？', 'good': 'こんな人におすすめ', 'consider': 'ほかのツールと比べたい人',
-  'steps_eyebrow': 'START IN MINUTES', 'steps_title': '3ステップで使い始める',
-  'compare_eyebrow': 'CHOOSE THE RIGHT TOOL', 'compare_title': 'ほかのツールとの違い', 'compare_sub': '位置づけと一般的な使い方で比較 · 実機テストのランキングではありません',
-  'alt_eyebrow': 'ALTERNATIVES', 'alt_title': '目的によってはこちらも', 'alt_on_site': 'ToolFavorで詳しく →', 'alt_visit': 'サイトを開く ↗',
-  'faq_eyebrow': 'QUICK ANSWERS', 'faq_title': 'よくある質問',
-  'src_eyebrow': 'TRANSPARENCY', 'src_title': '情報の出典',
+  'explore': 'ツールを探す', 'developers': '開発者の方へ',
+  'visit': '{name}を入手', 'visit_web': '{name}を開く', 'fit_jump': '自分に合う？', 'more_tools': 'ほかのツールを探す',
+  'titles': {'features': 'できること。', 'steps': '使い方。', 'fit': 'あなたに合う？', 'compare': 'ほかの方法と比べる。',
+             'alternatives': 'ほかの選択肢も。', 'faq': 'よくある質問。', 'details': '詳しい情報と出典。', 'related': 'ほかのツールも。'},
+  'subs': {'compare': '使い方と位置づけで比較。実機テストのランキングではありません。', 'details': 'すべての情報に出典があります。'},
+  'good': 'こんな人に', 'consider': 'こんな場合はほかの方法を',
+  'source': '出典', 'verified': '最終確認', 'sources': '出典',
+  'alt_on_site': 'ToolFavorで見る', 'alt_visit': '詳しく見る',
   'kind': {'official': '公式', 'third_party': '第三者', 'tested': 'ToolFavor検証'},
-  'policy': '編集方針：このページは独立した情報整理です。広告・提携・認証ではなく、実機での互換性テストでもありません。架空の評価・レビュー・価格は掲載しません。情報は変わる場合があるため、最新情報は公式サイトをご確認ください。',
-  'founder': '開示：このツールはToolFavorの創設者が制作したものです。ほかの掲載と同じ出典ルールで紹介しています。',
-  'founder_link': '制作者のポートフォリオ →',
-  'report': '情報が古い場合はお知らせください →',
-  'related_eyebrow': 'KEEP EXPLORING', 'related_title': 'ToolFavorのほかのツール', 'related_more': 'ツール一覧を見る →',
+  'policy': '独立した情報整理です。広告・提携・認証ではなく、架空の評価や価格は載せていません。最新情報は公式サイトが基準です。',
+  'founder': '開示：ToolFavor創設者が制作したツールです。ほかの掲載と同じ出典ルールで紹介しています。',
+  'founder_link': '制作者のポートフォリオ', 'report': '情報が古い場合はお知らせください',
+  'related_more': 'ツール一覧を見る',
   'pricing': {'free': '無料', 'freemium': '無料プランあり', 'paid': '有料'},
   'type': {'web': 'Webアプリ', 'mobile': 'モバイルアプリ', 'desktop': 'デスクトップアプリ', 'extension': 'ブラウザー拡張'},
   'cat': {'Design': 'デザイン', 'Productivity': '仕事効率化'},
   'category': 'カテゴリ', 'type_label': '種類', 'website': '公式サイト',
-  'footer': '© ToolFavor · 便利なツールを見つけて、比べて、選ぶ。',
+  'footer': 'ToolFavor · 便利なツールを見つけて、比べて、選ぶ。',
  },
  'zh-cn': {
-  'explore': '探索工具', 'developers': '开发者', 'home': 'ToolFavor',
-  'visit': '打开 {name} ↗', 'fit_jump': '适合我吗？ ↓', 'more_tools': '浏览更多工具',
-  'cap_eyebrow': 'AT A GLANCE', 'cap_title': '它能帮你做什么？', 'cap_note': '每一项都可点击核对官方说明',
-  'check': '查看官方说明 ↗',
-  'facts_eyebrow': 'KEY FACTS', 'facts_title': '关键信息', 'verified': '最后核对',
-  'fit_eyebrow': 'MAKE A DECISION', 'fit_title': '{name} 适合你吗？', 'good': '推荐这些场景', 'consider': '这些情况建议再比较',
-  'steps_eyebrow': 'START IN MINUTES', 'steps_title': '第一次用，只要三步',
-  'compare_eyebrow': 'CHOOSE THE RIGHT TOOL', 'compare_title': '它和其他工具有什么不同？', 'compare_sub': '按产品定位和典型用法整理，非实测排名',
-  'alt_eyebrow': 'ALTERNATIVES', 'alt_title': '这些情况，换个工具更合适', 'alt_on_site': '在 ToolFavor 查看 →', 'alt_visit': '访问官网 ↗',
-  'faq_eyebrow': 'QUICK ANSWERS', 'faq_title': '常见问题',
-  'src_eyebrow': 'TRANSPARENCY', 'src_title': '信息从哪里来？',
+  'explore': '探索工具', 'developers': '开发者',
+  'visit': '获取 {name}', 'visit_web': '打开 {name}', 'fit_jump': '适合我吗？', 'more_tools': '浏览更多工具',
+  'titles': {'features': '它能做什么。', 'steps': '怎么用。', 'fit': '适合你吗？', 'compare': '和其他方式比一比。',
+             'alternatives': '也可以试试这些。', 'faq': '常见问题。', 'details': '详细信息与来源。', 'related': '继续探索。'},
+  'subs': {'compare': '按使用方式和定位比较，非实测排名。', 'details': '每条信息都能追溯到出处。'},
+  'good': '适合你，如果', 'consider': '不妨换个方式，如果',
+  'source': '来源', 'verified': '最后核对', 'sources': '来源',
+  'alt_on_site': '在 ToolFavor 查看', 'alt_visit': '了解更多',
   'kind': {'official': '官方', 'third_party': '第三方', 'tested': 'ToolFavor 实测'},
-  'policy': '编辑原则：本页为独立资料整理，不代表官方合作、认证或亲自完成的兼容性测试。无虚构评分、评论或价格；信息可能变化，请以官方页面为准。',
+  'policy': '独立资料整理。无赞助、无认证、无虚构评分或价格。一切以官方页面为准。',
   'founder': '利益披露：本工具由 ToolFavor 创始人开发，介绍时遵循与其他收录相同的来源规则。',
-  'founder_link': '查看创作者作品集 →',
-  'report': '发现信息过时？告诉我们 →',
-  'related_eyebrow': 'KEEP EXPLORING', 'related_title': 'ToolFavor 上的更多工具', 'related_more': '浏览完整目录 →',
+  'founder_link': '创作者作品集', 'report': '发现信息过时？告诉我们',
+  'related_more': '浏览完整目录',
   'pricing': {'free': '免费', 'freemium': '有免费方案', 'paid': '付费'},
   'type': {'web': '网页应用', 'mobile': '手机应用', 'desktop': '桌面软件', 'extension': '浏览器扩展'},
   'cat': {'Design': '设计工具', 'Productivity': '效率工具'},
   'category': '分类', 'type_label': '类型', 'website': '官网',
-  'footer': '© ToolFavor · 发现、了解并比较值得使用的工具。',
+  'footer': 'ToolFavor · 发现、了解并比较值得使用的工具。',
  },
 }
 
 TIER_RULES = {
     'basic': {'capabilities': 3, 'facts': 2, 'sources': 1},
-    'complete': {'capabilities': 3, 'facts': 3, 'sources': 2, 'fit': 1, 'steps': 3, 'faq': 3},
-    'flagship': {'capabilities': 3, 'facts': 4, 'sources': 3, 'fit': 1, 'steps': 3, 'faq': 4,
+    'complete': {'capabilities': 3, 'facts': 3, 'sources': 2, 'fit': 1, 'steps': 3, 'faq': 3, 'highlights': 3},
+    'flagship': {'capabilities': 3, 'facts': 4, 'sources': 3, 'fit': 1, 'steps': 3, 'faq': 4, 'highlights': 3,
                  'compare': 3, 'alternatives': 3, 'media': 1},
 }
+
+# Simple line icons (24px, stroke = currentColor). Referenced by `icon` in capabilities.
+ICONS = {
+    'swipe': '<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M12 15V8m-3 3 3-3 3 3"/>',
+    'album': '<rect x="3" y="7" width="14" height="13" rx="2.5"/><path d="M7 4h11.5A2.5 2.5 0 0 1 21 6.5V16"/><path d="m6 17 3.5-4 3 3 1.5-1.5 2 2.5"/>',
+    'compare': '<rect x="2.5" y="5" width="8" height="14" rx="2"/><rect x="13.5" y="5" width="8" height="14" rx="2"/><path d="m15.5 12 1.5 1.5 3-3"/>',
+    'file': '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+    'layers': '<path d="m12 3 9 5-9 5-9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 16 9 5 9-5"/>',
+    'export': '<path d="M12 3v12m-4-4 4 4 4-4"/><path d="M4 15v3a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-3"/>',
+    'grid': '<rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>',
+    'sliders': '<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',
+    'print': '<path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/>',
+    'swap': '<path d="M7 4 3 8l4 4"/><path d="M3 8h14"/><path d="m17 20 4-4-4-4"/><path d="M21 16H7"/>',
+    'coins': '<circle cx="12" cy="12" r="9"/><path d="M14.5 9a2.5 2 0 0 0-2.5-1.5c-1.4 0-2.5.8-2.5 2s1.1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2a2.5 2 0 0 1-2.5-1.5M12 6v1.5m0 9V18"/>',
+    'repeat': '<path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/>',
+    'check': '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+    'arrow': '<path d="M5 12h14m-5-5 5 5-5 5"/>',
+    'ext': '<path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/>',
+    'star': '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+}
+
+
+def icon(name, cls='ico'):
+    body = ICONS.get(name)
+    if not body:
+        return f'<span class="{cls} glyph" aria-hidden="true">{escape(name)}</span>'
+    return (f'<svg class="{cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" '
+            f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{body}</svg>')
+
+
+def domain_of(url):
+    return urlparse(url if '://' in url else 'https://' + url).netloc
+
+
+def logo(domain, name, cls='logo', src=None, eager=False):
+    """Brand logo from the site's own icon (via Google's favicon service); falls back to an initial."""
+    src = src or f'https://www.google.com/s2/favicons?domain={quote(domain)}&sz=128'
+    initial = escape((name.strip() or '?')[0].upper())
+    return (f'<span class="{cls}" data-l="{initial}"><img src="{escape(src)}" alt="" loading="{'eager' if eager else 'lazy'}" decoding="async" '
+            f'referrerpolicy="no-referrer" onerror="this.parentNode.classList.add(\'nl\');this.remove()"></span>')
+
+
+def tool_logo(t, cls='logo', eager=False):
+    return logo(t.get('logo_domain') or t['domain'], t['name'], cls, t.get('logo'), eager)
 
 
 def load_tools():
@@ -142,14 +175,14 @@ def validate(t):
             errs.append(f'{where} title is long ({len(c["title"])} chars)')
         if not 50 <= len(c.get('description', '')) <= 170:
             errs.append(f'{where} description length {len(c.get("description", ""))} (want 50–170)')
-        for key in ('capabilities', 'facts', 'steps', 'faq'):
+        for key in ('capabilities', 'facts', 'steps', 'faq', 'highlights'):
             if len(c.get(key, [])) < rules.get(key, 0):
                 errs.append(f'{where} needs {rules[key]}+ {key}')
         if rules.get('fit') and not (c.get('fit', {}).get('good') and c.get('fit', {}).get('consider')):
             errs.append(f'{where} needs fit.good and fit.consider')
         if rules.get('compare') and len(c.get('compare', {}).get('rows', [])) < rules['compare']:
             errs.append(f'{where} needs {rules["compare"]}+ compare rows')
-        for item in c.get('capabilities', []) + c.get('facts', []) + c.get('faq', []):
+        for item in c.get('capabilities', []) + c.get('facts', []) + c.get('faq', []) + c.get('highlights', []):
             if item.get('source') not in t['sources']:
                 errs.append(f'{where} unknown source {item.get("source")!r} in {item}')
         for k in t['sources']:
@@ -181,50 +214,210 @@ def ext(url, text, cls=''):
     return f'<a{c} href="{escape(url)}" target="_blank" rel="noopener">{text}</a>'
 
 
-CSS = """:root{--ink:#25263c;--muted:#6d7185;--line:#e8e7ef;--purple:#7958ed;--lime:#b8f36b;--bg:#fafafc}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--bg);font:15px/1.65 Inter,system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic","Microsoft YaHei",sans-serif}a{color:inherit;text-decoration:none}a:hover{color:#6340dc}a:focus-visible,summary:focus-visible{outline:3px solid #7958ed;outline-offset:3px}.wrap{max-width:1150px;padding:0 24px;margin:auto}.locale-switch{display:flex;justify-content:center;gap:20px;padding:8px;background:#f5f3fc;font-size:12px;color:#6d647e}.locale-switch [aria-current]{font-weight:800;color:#6440dc}header{background:#fff;border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;min-height:66px;gap:16px}.brand{font-weight:850;font-size:21px;letter-spacing:-.04em;display:flex;align-items:center;gap:8px}.brand img{width:28px;height:28px}.brand span{color:var(--purple)}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:13px}.navlinks a{white-space:nowrap}.compare-table th[scope=row]{white-space:nowrap}.crumb{font-size:12px;color:var(--muted);padding-top:25px}.crumb span{margin:0 7px}.hero{background:radial-gradient(ellipse at 76% 0%,#e9f5db 0%,transparent 42%),radial-gradient(ellipse at 13% 10%,#eee8ff 0%,transparent 44%);padding-bottom:50px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-top:34px}.kicker{color:#704edc;font-size:12px;font-weight:850;letter-spacing:.11em;text-transform:uppercase}.identity{display:flex;align-items:center;gap:17px;margin:16px 0}.appmark{flex:none;width:64px;height:64px;border-radius:18px;background:#181825;color:#fff;font-size:33px;font-weight:750;display:grid;place-items:center;box-shadow:0 14px 30px #25253a21}.identity h1{font-size:clamp(40px,6vw,68px);line-height:1.05;letter-spacing:-.06em;margin:0;overflow-wrap:anywhere}.lead{font-size:clamp(19px,2.2vw,25px);font-weight:700;line-height:1.4;letter-spacing:-.03em;margin:18px 0}.sublead{font-size:14px;max-width:500px;margin:0;color:var(--muted)}.tags{display:flex;gap:7px;flex-wrap:wrap;margin:22px 0}.tag{font-size:12px;border:1px solid #e6e1f8;background:#fff;border-radius:100px;padding:6px 11px;color:#6049a3}.tag.price{background:#eaf8df;border-color:#d4efbf;color:#3f7d27;font-weight:700}.buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;background:var(--purple);padding:12px 20px;border-radius:12px;color:#fff;font-weight:750;font-size:14px;transition:transform .18s,box-shadow .18s}.btn:hover{color:#fff;transform:translateY(-2px);box-shadow:0 12px 22px #7958ed33}.btn.secondary{background:#fff;border-color:#e1ddec;color:#5f43ba}.btn.secondary:hover{color:#5f43ba}.snapshot{margin-top:16px;font-size:12px;color:var(--muted)}.media{margin:0}.shot{position:relative;background:#20202b;border-radius:19px;padding:9px;box-shadow:0 30px 60px #25243c24;overflow:hidden}.shot img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;border-radius:12px;background:#2b2b38}.shot.portrait{background:linear-gradient(145deg,#f5eaff,#ebf5ff);border:1px solid #e4def0;box-shadow:none;display:flex;justify-content:center;padding:16px}.shot.portrait img{width:min(100%,300px);aspect-ratio:auto;max-height:560px;object-fit:contain;background:none}.media figcaption{font-size:11px;color:#7e7c90;margin-top:9px}.media .mock,.media .mock-cap{display:none}.media.failed .shot,.media.failed .real-cap{display:none}.media.failed .mock{display:block}.media.failed .mock-cap{display:block}.mock{background:#20202b;border-radius:19px;padding:9px;box-shadow:0 30px 60px #25243c24;overflow:hidden}.browser-top{display:flex;align-items:center;gap:7px;background:#292936;padding:10px;border-radius:12px 12px 0 0}.dot{height:8px;width:8px;border-radius:50%;background:#77738a}.address{margin:auto;border-radius:5px;background:#3b3b48;color:#c4c1d0;min-width:54%;text-align:center;font-size:10px;padding:3px}.workspace{display:grid;grid-template-columns:39px 1fr 114px;min-height:260px;background:#393946;color:#c8c7d1;font-size:10px}.tools{background:#292934;padding:13px 10px;display:grid;gap:13px}.canvas{padding:17px;display:grid;place-items:center;background:repeating-conic-gradient(#464651 0 25%,#3d3d49 0 50%) 50%/22px 22px}.artwork{width:81%;aspect-ratio:1.25;background:linear-gradient(145deg,#dad9f0 0 38%,#9895c5 39% 45%,#8c9fc8 46% 62%,#d7d3ec 63%);box-shadow:0 12px 28px #0004}.layer{background:#2d2d38;padding:10px 7px}.layer div{padding:10px 4px;border-bottom:1px solid #42424d}.layer .active{background:#555271}.mock.plain{background:none;box-shadow:none;padding:0;border-radius:0}.glance{background:#fff;border:1px solid var(--line);border-radius:19px;padding:26px;box-shadow:0 24px 50px #25243c12}.glance dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:12px 20px;font-size:14px}.glance dt{color:var(--muted)}.glance dd{margin:0;font-weight:700;overflow-wrap:anywhere}.section{padding-top:52px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}.eyebrow{color:var(--purple);font-size:12px;font-weight:800;letter-spacing:.07em}h2{font-size:clamp(24px,3vw,32px);line-height:1.2;letter-spacing:-.04em;margin:6px 0}h3{font-size:17px;margin:0 0 6px}.small{font-size:12px;color:var(--muted)}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:23px}.card p{margin:7px 0 0;color:var(--muted);font-size:13px}.card .src{display:inline-block;margin-top:12px;font-size:12px;color:#5f43ba;font-weight:650}.iconbox{display:grid;place-items:center;background:#f0ecff;color:#704ddd;width:42px;height:42px;border-radius:12px;font-size:20px;margin-bottom:18px}.facts{background:#fff;border:1px solid var(--line);border-radius:17px;overflow:hidden}.fact{display:grid;grid-template-columns:180px 1fr auto;gap:16px;padding:15px 22px;border-bottom:1px solid var(--line);font-size:14px;align-items:baseline}.fact:last-child{border-bottom:0}.fact dt{color:var(--muted)}.fact dd{margin:0;font-weight:650}.fact a{font-size:12px;color:#5f43ba;white-space:nowrap}.decision{display:grid;grid-template-columns:1fr 1fr;gap:14px}.decision ul{padding-left:0;list-style:none;margin:12px 0 0;color:#5b6174;font-size:14px}.decision li{margin:10px 0;padding-left:26px;position:relative}.decision li:before{position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:6px;display:grid;place-items:center;font-size:11px;font-weight:900}.decision .yes li:before{content:"✓";background:#eaf8df;color:#43872a}.decision .maybe li:before{content:"↗";background:#fff3e2;color:#b26a12}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.stepno{font-size:12px;color:#7454e1;font-weight:900;margin-bottom:12px}.compare-wrap{background:#fff;border:1px solid var(--line);border-radius:17px;overflow-x:auto}.compare-table{width:100%;border-collapse:collapse;text-align:left;font-size:13px;min-width:640px}.compare-table th,.compare-table td{padding:14px 15px;border-bottom:1px solid var(--line);vertical-align:top}.compare-table thead th{color:#4c456e;background:#f7f5fd;font-size:12px}.compare-table tbody tr:last-child td,.compare-table tbody tr:last-child th{border-bottom:0}.compare-table .self{background:#fbfaff}.compare-table .self th{color:#5b40b7}.alts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.alt{display:flex;flex-direction:column}.alt-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.alt-top h3{min-width:0}.chip{flex:none}.chip{font-size:11px;font-weight:750;color:#5b40b7;background:#f0ecff;border-radius:100px;padding:3px 9px;white-space:nowrap}.alt p{flex:1}.alt .go{margin-top:14px;font-size:13px;font-weight:700;color:#5f43ba}.accordion{background:#fff;border:1px solid var(--line);border-radius:13px;margin-bottom:9px}.accordion summary{list-style:none;cursor:pointer;padding:17px 20px;font-weight:650;display:flex;justify-content:space-between;gap:12px}.accordion summary::-webkit-details-marker{display:none}.accordion summary:after{content:"+";font-size:20px;color:#7958ed;line-height:1}.accordion[open] summary:after{content:"−"}.accordion .answer{padding:0 20px 18px;color:var(--muted);font-size:14px}.accordion .answer p{margin:0 0 8px}.accordion .answer a{font-size:12px;color:#5f43ba;font-weight:650}.references{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.ref{display:block;background:#fff;padding:16px;border:1px solid var(--line);border-radius:13px;font-size:13px}.ref:hover{border-color:#b6a5f9}.ref .meta{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:11px;margin-top:7px;overflow-wrap:anywhere}.ref .kind{flex:none;white-space:nowrap;color:#3f7d27;background:#eaf8df;border-radius:5px;padding:1px 6px;font-weight:700}.policy{margin-top:16px;font-size:12px;color:var(--muted);max-width:820px}.policy p{margin:6px 0}.policy a{color:#5f43ba;font-weight:650}.related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.related .card{display:block}.related .card:hover{border-color:#b6a5f9}.bottom{margin:54px 0;background:#25243b;border-radius:20px;color:#fff;padding:35px;display:flex;justify-content:space-between;gap:20px;align-items:center}.bottom h2{font-size:24px;margin:0}.bottom p{margin:6px 0 0;color:#c7c5d5;font-size:13px}.bottom .btn{background:var(--lime);color:#242c20;flex:none}.bottom .btn:hover{color:#242c20}footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-size:12px}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}@media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:30px}.grid3,.steps,.references,.related{grid-template-columns:1fr 1fr}.fact{grid-template-columns:140px 1fr}.fact a{grid-column:2}}@media(max-width:620px){.wrap{padding:0 16px}.navlinks{gap:12px;font-size:12px}.brand{font-size:18px}.hero{padding-bottom:34px}.hero-grid{padding-top:22px}.identity h1{font-size:40px}.appmark{width:52px;height:52px;font-size:27px}.workspace{min-height:200px;grid-template-columns:30px 1fr 75px}.layer{font-size:8px}.grid3,.steps,.references,.decision,.related{grid-template-columns:1fr}.fact{grid-template-columns:1fr;gap:2px;padding:13px 18px}.fact a{grid-column:1}.section{padding-top:40px}.card{padding:19px}.bottom{display:block;padding:25px}.bottom .btn{margin-top:18px}.section-head{align-items:start;flex-direction:column}.glance dl{grid-template-columns:1fr;gap:2px}.glance dd{margin-bottom:10px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}"""
+CSS = """
+:root{--bg:#fbfbfd;--ink:#1d1d1f;--muted:#6e6e73;--soft:#86868b;--line:rgba(0,0,0,.08);--card:rgba(255,255,255,.72);--accent:#7958ed;--accent-ink:#5b3fd0;--lime:#b8f36b;--lilac:#d9ceff;--mint:#c9f2dc;--sky:#cfe2ff;--peach:#ffe0cc;--r:28px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Helvetica Neue","Hiragino Sans","Hiragino Kaku Gothic ProN","PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+img{max-width:100%}h1,h2,h3,.lead,.sublead{text-wrap:balance;word-break:auto-phrase}
+.wrap{max-width:1080px;margin:auto;padding:0 24px}
+.ico{width:24px;height:24px;flex:none}
+/* nav */
+.top{position:sticky;top:0;z-index:20;background:rgba(251,251,253,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:18px;letter-spacing:-.02em}.brand img{width:24px;height:24px}.brand span{color:var(--accent)}
+.navr{display:flex;align-items:center;gap:22px;font-size:13px;color:var(--muted)}.navr a{white-space:nowrap}.navr a:hover{color:var(--ink)}
+.langs{display:flex;gap:2px;background:rgba(0,0,0,.04);border-radius:99px;padding:3px}.langs a{padding:3px 10px;border-radius:99px;font-size:12px}.langs [aria-current]{background:#fff;color:var(--ink);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+/* ambient light */
+.sky{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.75;animation:drift 18s ease-in-out infinite alternate}
+.orb.a{width:520px;height:520px;background:var(--lilac);left:-120px;top:-80px}.orb.b{width:440px;height:440px;background:var(--mint);right:-100px;top:60px;animation-delay:-6s}.orb.c{width:380px;height:380px;background:var(--sky);left:35%;top:420px;animation-delay:-12s}.orb.d{width:300px;height:300px;background:var(--peach);right:12%;top:640px;opacity:.55;animation-delay:-3s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.08)}100%{transform:translate(-30px,25px) scale(.96)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+/* hero */
+.hero{position:relative;isolation:isolate;text-align:center;padding:28px 0 40px}
+.crumb{font-size:12px;color:var(--soft);margin-bottom:34px}.crumb a:hover{color:var(--ink)}.crumb i{font-style:normal;margin:0 6px;opacity:.6}
+.appicon{width:104px;height:104px;margin:0 auto 22px;border-radius:24px;box-shadow:0 22px 50px rgba(60,40,140,.18),0 2px 6px rgba(0,0,0,.06);animation:float 6s ease-in-out infinite}
+.eyebrow{font-size:14px;font-weight:600;color:var(--accent-ink);letter-spacing:.01em;margin:0}
+h1{font-size:clamp(48px,8vw,88px);line-height:1.02;letter-spacing:-.045em;font-weight:700;margin:6px 0 0}
+.lead{font-size:clamp(24px,3.6vw,40px);line-height:1.15;letter-spacing:-.03em;font-weight:600;margin:14px auto 0;max-width:820px;background:linear-gradient(92deg,#1d1d1f 10%,#5b3fd0 55%,#3c9a5f 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sublead{font-size:clamp(17px,1.9vw,21px);color:var(--muted);max-width:640px;margin:16px auto 0;line-height:1.5}
+.cta-row{display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap;margin-top:30px}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;border-radius:99px;padding:13px 26px;font-size:17px;font-weight:500;transition:transform .25s,box-shadow .25s,background .25s}
+.pill:hover{background:#6a45ea;transform:translateY(-2px);box-shadow:0 14px 30px rgba(121,88,237,.32)}
+.link{display:inline-flex;align-items:center;gap:4px;color:var(--accent-ink);font-size:17px}.link:hover{text-decoration:underline}.link .ico{width:16px;height:16px}
+.meta{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:26px}
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:99px;padding:6px 13px 6px 7px;font-size:13px;color:#424245}
+.badge.price{padding-left:13px;background:#effbe6;border-color:#d8f2c4;color:#2f6b1c;font-weight:600}
+.logo{position:relative;display:inline-grid;place-items:center;flex:none;width:22px;height:22px;border-radius:6px;overflow:hidden;background:#fff}
+.logo img{width:100%;height:100%;object-fit:contain;display:block}
+.logo.nl,.appicon.logo.nl{background:linear-gradient(140deg,#8b6cf3,#5b3fd0)}.logo.nl:after{content:attr(data-l);color:#fff;font-weight:700;font-size:.55em;line-height:1}
+.appicon.logo{width:104px;height:104px;border-radius:24px;font-size:96px;background:#fff}.appicon.logo img{width:100%;height:100%}
+.snap{font-size:12px;color:var(--soft);margin-top:18px}
+/* hero stage */
+.stage{position:relative;margin:54px auto 0;display:flex;justify-content:center}
+.phone{position:relative;width:min(300px,74vw);aspect-ratio:9/19.3;border-radius:46px;background:#111;padding:11px;box-shadow:0 50px 100px -20px rgba(50,30,120,.35),0 0 0 1px rgba(0,0,0,.2),inset 0 0 0 2px #2b2b2b;animation:float 7s ease-in-out infinite}
+.phone:before{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:20px;background:#000;z-index:2}
+.screen{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:linear-gradient(160deg,#f3eeff,#e7f6ee)}
+.screen img{width:100%;height:100%;object-fit:cover;display:block}
+.screen .fallback{position:absolute;inset:0;display:none;place-items:center}.screen.failed .fallback{display:grid}.screen.failed img{display:none}
+.screen .fallback .logo{width:96px;height:96px;border-radius:22px;font-size:80px;box-shadow:0 16px 40px rgba(60,40,140,.2)}
+.browser{width:min(920px,100%);border-radius:18px;background:rgba(255,255,255,.8);border:1px solid var(--line);box-shadow:0 50px 100px -30px rgba(50,30,120,.3);overflow:hidden;animation:float 8s ease-in-out infinite}
+.browser .bar{display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line)}.browser .bar i{width:11px;height:11px;border-radius:50%;background:#e2e2e7}.browser .bar i:nth-child(1){background:#ff5f57}.browser .bar i:nth-child(2){background:#febc2e}.browser .bar i:nth-child(3){background:#28c840}
+.browser .addr{margin:0 auto;font-size:12px;color:var(--muted);background:rgba(0,0,0,.04);border-radius:8px;padding:4px 40px}
+.browser .view img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left}
+.browser .view .mock{display:none}.browser.failed .view img{display:none}.browser.failed .view .mock{display:grid}
+.mock{grid-template-columns:44px 1fr 150px;aspect-ratio:16/10;background:#2c2c35;color:#bdbdc7;font-size:11px;text-align:left}
+.mock .tl{background:#23232b;display:grid;align-content:start;gap:16px;padding:16px 0;justify-items:center}.mock .tl b{width:16px;height:16px;border-radius:4px;background:#45454f}
+.mock .cv{display:grid;place-items:center;background:repeating-conic-gradient(#3a3a44 0 25%,#33333c 0 50%) 50%/24px 24px}.mock .cv div{width:70%;aspect-ratio:1.3;border-radius:6px;background:linear-gradient(135deg,var(--lilac),var(--sky) 55%,var(--mint));box-shadow:0 20px 40px rgba(0,0,0,.35)}
+.mock .ly{background:#23232b;padding:12px}.mock .ly p{margin:0 0 8px;padding:8px;border-radius:6px;background:#2e2e37}.mock .ly p:first-child{background:#4b4370;color:#fff}
+.chipfloat{position:absolute;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);box-shadow:0 18px 40px rgba(40,30,90,.14);border-radius:18px;padding:11px 16px;font-size:15px;font-weight:600;white-space:nowrap;animation:float 6s ease-in-out infinite}
+.chipfloat .ico{width:20px;height:20px;color:var(--accent)}
+.chipfloat.c0{right:calc(50% + 175px);top:22%}.chipfloat.c1{left:calc(50% + 175px);top:44%;animation-delay:-2s}.chipfloat.c2{right:calc(50% + 175px);top:70%;animation-delay:-4s}
+.glass-card{background:var(--card);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.9);box-shadow:0 30px 70px -30px rgba(50,30,120,.25);border-radius:var(--r)}
+.stage .glass-card{padding:30px 34px;min-width:min(420px,100%);text-align:left;animation:float 8s ease-in-out infinite}
+.stage dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:12px 26px;font-size:15px}.stage dt{color:var(--muted)}.stage dd{margin:0;font-weight:600}
+/* sections */
+section.block{padding:96px 0 0}
+.head{text-align:center;max-width:760px;margin:0 auto 44px}
+h2{font-size:clamp(34px,5vw,56px);line-height:1.06;letter-spacing:-.035em;font-weight:700;margin:0}
+.head p{color:var(--muted);font-size:19px;margin:12px 0 0}
+/* highlights */
+.hl{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:70px}
+.hl .tile{padding:24px 22px;text-align:left;display:flex;flex-direction:column;gap:6px;min-height:150px;transition:transform .3s}
+.hl .tile:hover{transform:translateY(-4px)}
+.hl .logos{display:flex;gap:6px;min-height:26px}.hl .logos .logo{width:26px;height:26px;border-radius:7px;font-size:24px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.hl .v{font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-top:auto}.hl .v.long{font-size:22px}
+.hl .l{font-size:13px;color:var(--muted);line-height:1.4}
+/* features */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{padding:34px 30px;position:relative;overflow:hidden}
+.feature .badge-ico{display:grid;place-items:center;width:56px;height:56px;border-radius:18px;color:var(--accent-ink);background:linear-gradient(140deg,#efe9ff,#e3f6ea);margin-bottom:26px}
+.feature .badge-ico .ico{width:28px;height:28px}
+.feature h3{font-size:24px;letter-spacing:-.02em;line-height:1.2;margin:0 0 10px}
+.feature p{margin:0;color:var(--muted);font-size:16px}
+.src{display:inline-flex;align-items:center;gap:4px;margin-top:16px;font-size:13px;color:var(--soft)}.src:hover{color:var(--accent-ink)}.src .ico{width:13px;height:13px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s;position:relative}
+.step{padding:30px}
+.step .n{font-size:64px;font-weight:700;letter-spacing:-.05em;line-height:1;background:linear-gradient(140deg,var(--accent),#57c77f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h3{font-size:21px;margin:18px 0 8px;letter-spacing:-.02em}.step p{margin:0;color:var(--muted);font-size:15px}
+/* fit */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fit .glass-card{padding:34px}
+.fit h3{font-size:22px;margin:0 0 18px;letter-spacing:-.02em}
+.fit ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.fit li{display:flex;gap:12px;font-size:16px;line-height:1.45}
+.fit li .ico{width:22px;height:22px;padding:3px;border-radius:50%;color:#2f8a4b;background:#e3f6ea}
+.fit .no li .ico{color:#b36a14;background:#fff1e0}
+/* compare */
+.table{overflow-x:auto;padding:6px}
+.table table{width:100%;border-collapse:collapse;font-size:15px;min-width:720px}
+.table th,.table td{text-align:left;padding:18px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
+.table thead th{font-size:12px;font-weight:600;color:var(--soft);text-transform:uppercase;letter-spacing:.04em}
+.table tbody tr:last-child th,.table tbody tr:last-child td{border-bottom:0}
+.table .name{display:flex;align-items:center;gap:12px;font-weight:600;white-space:nowrap}
+.table .name .logo{width:34px;height:34px;border-radius:9px;font-size:30px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.table .self{background:linear-gradient(90deg,rgba(121,88,237,.07),rgba(121,88,237,0))}
+.table td{color:#424245}
+.note{text-align:center;font-size:13px;color:var(--soft);margin-top:16px}
+/* alternatives & related */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.alt{padding:28px;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.alt:hover{transform:translateY(-4px);box-shadow:0 40px 80px -30px rgba(50,30,120,.3)}
+.alt .top-row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:18px}
+.alt .logo{width:52px;height:52px;border-radius:14px;font-size:44px;box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.tag{font-size:12px;font-weight:600;color:var(--accent-ink);background:#f1edff;border-radius:99px;padding:4px 10px;white-space:nowrap}
+.alt h3{font-size:19px;margin:0 0 8px;letter-spacing:-.015em}
+.alt p{margin:0;color:var(--muted);font-size:15px;flex:1}
+.alt .go{margin-top:18px;font-size:15px;color:var(--accent-ink);display:inline-flex;align-items:center;gap:4px}.alt .go .ico{width:15px;height:15px}
+/* faq */
+.faq{max-width:820px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 0;font-size:19px;font-weight:600;display:flex;justify-content:space-between;gap:20px;letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"";flex:none;width:12px;height:12px;margin-top:8px;border-right:2px solid var(--soft);border-bottom:2px solid var(--soft);transform:rotate(45deg);transition:transform .3s}
+.faq details[open] summary:after{transform:rotate(225deg)}
+.faq .a{padding:0 0 24px;color:var(--muted);font-size:16px}.faq .a p{margin:0}
+/* fine print */
+.fine{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
+.fine .glass-card{padding:30px}
+.specs{margin:0;display:grid;gap:0}
+.specs div{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.specs div:last-child{border-bottom:0}.specs dt{color:var(--soft)}.specs dd{margin:0}
+.specs dd a{color:var(--accent-ink)}
+.srcs{display:grid;gap:10px}
+.srcs a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;font-size:14px;transition:background .2s}
+.srcs a:hover{background:rgba(121,88,237,.06)}
+.srcs .logo{width:28px;height:28px;border-radius:8px;font-size:24px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.srcs .t{flex:1;min-width:0}.srcs .k{font-size:11px;color:var(--soft)}
+.fine h3{font-size:15px;color:var(--soft);font-weight:600;margin:0 0 10px;text-transform:uppercase;letter-spacing:.05em}
+.policy{font-size:13px;color:var(--soft);margin-top:22px;line-height:1.6}.policy p{margin:4px 0}.policy a{color:var(--accent-ink)}
+/* related */
+.rel{padding:24px;display:flex;align-items:center;gap:16px;transition:transform .3s}
+.rel:hover{transform:translateY(-3px)}
+.rel .logo{width:48px;height:48px;border-radius:13px;font-size:40px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.rel h3{margin:0;font-size:17px}.rel p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+.more{text-align:center;margin-top:22px}
+/* closing */
+.closing{position:relative;isolation:isolate;overflow:hidden;text-align:center;margin:110px 0 0;padding:90px 24px;border-radius:40px;background:linear-gradient(135deg,#f1ecff,#e9f8ef 55%,#e8f1ff)}
+.closing .logo{width:72px;height:72px;border-radius:18px;font-size:64px;margin:0 auto 22px;box-shadow:0 16px 40px rgba(60,40,140,.18);animation:float 6s ease-in-out infinite}
+.closing h2{font-size:clamp(32px,5vw,52px)}.closing p{color:var(--muted);font-size:19px;margin:12px 0 28px}
+footer{margin-top:80px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:12px;color:var(--soft)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}footer a:hover{color:var(--ink)}
+/* motion */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.chipfloat{display:none}.features,.steps{grid-template-columns:1fr}.fit,.fine{grid-template-columns:1fr}section.block{padding-top:76px}}
+@media(max-width:620px){body{font-size:16px}.wrap{padding:0 16px}.navr .dev{display:none}.navr{gap:10px}.brand{font-size:16px}.appicon,.appicon.logo{width:84px;height:84px;border-radius:20px}.hero{padding-top:20px}.crumb{margin-bottom:24px}.cta-row{gap:16px}.pill{padding:12px 22px;font-size:16px}.hl{grid-template-columns:1fr 1fr;margin-top:50px}.hl .tile{min-height:130px;padding:20px 18px}.hl .v{font-size:24px}.hl .v.long{font-size:18px}.feature,.step,.fit .glass-card,.fine .glass-card,.alt{padding:24px}.head{margin-bottom:30px}.head p{font-size:17px}.faq summary{font-size:17px}.specs div{grid-template-columns:1fr;gap:2px}.closing{padding:60px 20px;border-radius:28px;margin-top:80px}.orb.a{width:340px;height:340px}.orb.b{width:300px;height:300px}.orb.c,.orb.d{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+"""
 
-EDITOR_MOCK = ('<div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="address">{domain}</span></div>'
-               '<div class="workspace" aria-hidden="true"><div class="tools"><span>✥</span><span>▧</span><span>◯</span><span>⌗</span><span>✎</span></div>'
-               '<div class="canvas"><div class="artwork"></div></div><div class="layer"><div class="active">▣ Layer 3</div><div>▣ Layer 2</div><div>▧ Background</div></div></div>')
+REVEAL_JS = ("(function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}"
+             "var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});"
+             "els.forEach(function(e){io.observe(e)})})();")
 
 
-def render_media(t, c, u):
-    media = t.get('media') or []
-    if not media:
-        return None
-    m = media[0]
-    fallback = m.get('fallback')
-    cls = 'media'
-    portrait = ' portrait' if m.get('portrait') else ''
-    img = (f'<img src="{escape(m["src"])}" alt="{escape(c["media_alt"])}" loading="eager" decoding="async" '
-           f'fetchpriority="high" referrerpolicy="no-referrer" onerror="this.closest(\'figure\').classList.add(\'failed\')">')
-    out = f'<figure class="{cls}"><div class="shot{portrait}">{img}</div>'
-    out += f'<figcaption class="real-cap">{escape(c.get("media_caption", ""))}</figcaption>'
-    if fallback == 'editor-mock':
-        out += f'<div class="mock" aria-hidden="true">{EDITOR_MOCK.format(domain=escape(t["domain"]))}</div>'
-        out += f'<figcaption class="mock-cap">{escape(c.get("mock_caption", ""))}</figcaption>'
-    else:  # if the image cannot load, show the key-facts card instead
-        out += f'<div class="mock plain">{render_glance(t, c, u)}</div>'
-    return out + '</figure>'
+def onfail(cls='failed'):
+    return f'onerror="this.closest(\'.js-media\').classList.add(\'{cls}\')"'
 
 
-def render_glance(t, c, u):
-    rows = [(u['category'], u['cat'].get(t['category'], t['category'])),
-            (u['type_label'], u['type'][t['type']]),
-            (c['facts'][0]['label'], c['facts'][0]['value']) if c.get('facts') else None,
-            (u['website'], ext(t['url'], escape(t['domain']) + ' ↗')),
-            (u['verified'], t['last_verified'])]
-    body = ''.join(f'<dt>{escape(k)}</dt><dd>{v if k == u["website"] else escape(v)}</dd>' for k, v in filter(None, rows))
-    return f'<div class="glance"><dl>{body}</dl></div>'
+def render_stage(t, c, u):
+    media = (t.get('media') or [None])[0]
+    if media and media.get('portrait'):
+        img = (f'<img src="{escape(media["src"])}" alt="{escape(c["media_alt"])}" decoding="async" fetchpriority="high" '
+               f'referrerpolicy="no-referrer" {onfail()}>')
+        chips = ''.join(f'<span class="chipfloat c{i}">{icon(ch.get("icon", "check"))}{escape(ch["text"])}</span>'
+                        for i, ch in enumerate(c.get('hero_chips', [])[:3]))
+        return (f'<div class="stage reveal">{chips}<div class="phone"><div class="screen js-media">{img}'
+                f'<div class="fallback">{tool_logo(t, eager=True)}</div></div></div></div>')
+    if media:
+        img = (f'<img src="{escape(media["src"])}" alt="{escape(c["media_alt"])}" decoding="async" fetchpriority="high" '
+               f'referrerpolicy="no-referrer" {onfail()}>')
+        mock = ('<div class="mock" aria-hidden="true"><div class="tl"><b></b><b></b><b></b><b></b><b></b></div>'
+                '<div class="cv"><div></div></div><div class="ly"><p>▣ Layer 3</p><p>▣ Layer 2</p><p>▧ Background</p></div></div>')
+        return (f'<div class="stage reveal"><div class="browser js-media"><div class="bar"><i></i><i></i><i></i>'
+                f'<span class="addr">{escape(t["domain"])}</span></div><div class="view">{img}{mock}</div></div></div>')
+    rows = [(u['category'], u['cat'].get(t['category'], t['category'])), (u['type_label'], u['type'][t['type']])]
+    rows += [(f['label'], f['value']) for f in c.get('facts', [])[:2]]
+    dl = ''.join(f'<dt>{escape(k)}</dt><dd>{escape(v)}</dd>' for k, v in rows)
+    return f'<div class="stage reveal"><div class="glass-card"><dl>{dl}</dl></div></div>'
 
 
-def section(id_, eyebrow, title, inner, sub=''):
-    s = f'<p class="small">{escape(sub)}</p>' if sub else ''
-    return (f'<section class="section" id="{id_}" aria-labelledby="{id_}-h"><div class="section-head"><div>'
-            f'<div class="eyebrow">{escape(eyebrow)}</div><h2 id="{id_}-h">{escape(title)}</h2></div>{s}</div>{inner}</section>')
+def head_block(title, sub=''):
+    s = f'<p>{escape(sub)}</p>' if sub else ''
+    return f'<div class="head reveal"><h2>{escape(title)}</h2>{s}</div>'
 
 
-def json_ld(t, c, code, tools_by_slug):
+def block(id_, title, inner, sub=''):
+    return f'<section class="block" id="{id_}"><div class="wrap">{head_block(title, sub)}{inner}</div></section>'
+
+
+def src_link(url, u):
+    return ext(url, f'{escape(u["source"])} {icon("ext")}', 'src')
+
+
+def json_ld(t, c, code):
     url = SITE + page_url(t['slug'], code)
     app = {'@type': 'SoftwareApplication', 'name': t['name'], 'url': t['url'],
            'description': c['description'], 'applicationCategory': t['schema']['applicationCategory'],
@@ -251,9 +444,10 @@ def json_ld(t, c, code, tools_by_slug):
 def render(t, code, tools_by_slug):
     c, u = t['i18n'][code], UI[code]
     prefix, lang, _, og_locale = LOCALES[code]
-    slug, name = t['slug'], t['name']
-    src = t['sources']
+    slug, name, src = t['slug'], t['name'], t['sources']
+    titles = dict(u['titles'], **c.get('titles', {}))
     canonical = SITE + page_url(slug, code)
+    visit_label = (u['visit_web'] if t['type'] == 'web' else u['visit']).format(name=name)
 
     alternates = ''.join(f'<link rel="alternate" hreflang="{LOCALES[k][2]}" href="{SITE + page_url(slug, k)}">' for k in LOCALES)
     alternates += f'<link rel="alternate" hreflang="x-default" href="{SITE + page_url(slug, "en")}">'
@@ -261,111 +455,129 @@ def render(t, code, tools_by_slug):
     if t.get('media'):
         og_image = f'<meta property="og:image" content="{escape(t["media"][0]["src"])}"><meta name="twitter:card" content="summary_large_image">'
     head = (f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-            f'<meta name="theme-color" content="#fafafc"><title>{escape(c["title"])}</title>'
+            f'<meta name="theme-color" content="#fbfbfd"><title>{escape(c["title"])}</title>'
             f'<meta name="description" content="{escape(c["description"])}"><link rel="canonical" href="{canonical}">{alternates}'
             f'<meta property="og:type" content="website"><meta property="og:site_name" content="ToolFavor"><meta property="og:locale" content="{og_locale}">'
             f'<meta property="og:title" content="{escape(c["title"])}"><meta property="og:description" content="{escape(c["description"])}">'
             f'<meta property="og:url" content="{canonical}">{og_image}'
             f'<link rel="icon" href="/favicon-96x96.png" sizes="96x96"><link rel="icon" href="/assets/toolfavor-mark.svg" type="image/svg+xml">'
-            f'<style>{CSS}</style><script type="application/ld+json">{json_ld(t, c, code, tools_by_slug)}</script></head>')
+            f'<script>document.documentElement.classList.add("js")</script>'
+            f'<style>{CSS.strip()}</style><script type="application/ld+json">{json_ld(t, c, code)}</script></head>')
 
-    langs = ''.join(f'<a href="{page_url(slug, k)}" lang="{LOCALES[k][1]}"' + (' aria-current="page"' if k == code else '') + f'>{LANG_LABEL[k]}</a>' for k in LOCALES)
-    header = (f'<nav aria-label="Language" class="locale-switch">{langs}</nav>'
-              f'<header><div class="wrap nav"><a class="brand" href="{home_url(code)}"><img src="/assets/toolfavor-mark.svg" alt="" width="28" height="28">ToolFavor<span>.</span></a>'
-              f'<nav class="navlinks" aria-label="Main"><a href="{home_url(code)}">{escape(u["explore"])}</a><a href="{prefix}/developers">{escape(u["developers"])}</a></nav></div></header>')
+    langs = ''.join(f'<a href="{page_url(slug, k)}" lang="{LOCALES[k][1]}" hreflang="{LOCALES[k][2]}"'
+                    + (' aria-current="page"' if k == code else '') + f'>{LANG_LABEL[k]}</a>' for k in LOCALES)
+    nav = (f'<header class="top"><div class="wrap"><a class="brand" href="{home_url(code)}"><img src="/assets/toolfavor-mark.svg" alt="" width="24" height="24">ToolFavor<span>.</span></a>'
+           f'<nav class="navr" aria-label="Main"><a href="{home_url(code)}">{escape(u["explore"])}</a><a class="dev" href="{prefix}/developers">{escape(u["developers"])}</a>'
+           f'<span class="langs" role="group" aria-label="Language">{langs}</span></nav></div></header>')
 
     cat = u['cat'].get(t['category'], t['category'])
-    crumb = (f'<nav class="crumb" aria-label="Breadcrumb"><a href="{home_url(code)}">{escape(u["explore"])}</a><span>/</span>'
-             f'{escape(cat)}<span>/</span><span aria-current="page" style="margin:0">{escape(name)}</span></nav>')
-    tags = ''.join(f'<span class="tag">{escape(x)}</span>' for x in c.get('tags', []))
-    tags += f'<span class="tag price">{escape(c["pricing_label"])}</span>'
-    fit_btn = f'<a class="btn secondary" href="#fit">{escape(u["fit_jump"])}</a>' if c.get('fit') else f'<a class="btn secondary" href="{home_url(code)}">{escape(u["more_tools"])}</a>'
-    visual = render_media(t, c, u) or render_glance(t, c, u)
-    hero = (f'<section class="hero"><div class="wrap">{crumb}<div class="hero-grid"><div>'
-            f'<div class="kicker">{escape(c["kicker"])}</div>'
-            f'<div class="identity"><div class="appmark" aria-hidden="true">{escape(t["mark"])}</div><h1>{escape(name)}</h1></div>'
+    crumb = (f'<nav class="crumb" aria-label="Breadcrumb"><a href="{home_url(code)}">{escape(u["explore"])}</a><i>/</i>'
+             f'{escape(cat)}<i>/</i><span aria-current="page">{escape(name)}</span></nav>')
+    badges = ''.join(f'<span class="badge">{logo(p["domain"], p["label"])}{escape(p["label"])}</span>' for p in t.get('platforms', []))
+    badges += f'<span class="badge price">{escape(c["pricing_label"])}</span>'
+    second = (f'<a class="link" href="#fit">{escape(u["fit_jump"])} {icon("arrow")}</a>' if c.get('fit')
+              else f'<a class="link" href="{home_url(code)}">{escape(u["more_tools"])} {icon("arrow")}</a>')
+    hero = (f'<section class="hero"><div class="sky" aria-hidden="true"><i class="orb a"></i><i class="orb b"></i><i class="orb c"></i><i class="orb d"></i></div>'
+            f'<div class="wrap">{crumb}{tool_logo(t, "appicon logo", eager=True)}'
+            f'<p class="eyebrow">{escape(c["kicker"])}</p><h1>{escape(name)}</h1>'
             f'<p class="lead">{escape(c["lead"])}</p><p class="sublead">{escape(c["sublead"])}</p>'
-            f'<div class="tags">{tags}</div>'
-            f'<div class="buttons">{ext(t["url"], escape(u["visit"].format(name=name)), "btn")}{fit_btn}</div>'
-            f'<p class="snapshot">{escape(c["snapshot"])} · {escape(u["verified"])} {t["last_verified"]}</p>'
-            f'</div>{visual}</div></div></section>')
+            f'<div class="cta-row">{ext(t["url"], escape(visit_label) + " " + icon("ext"), "pill")}{second}</div>'
+            f'<div class="meta">{badges}</div>'
+            f'<p class="snap">{escape(c["snapshot"])} · {escape(u["verified"])} {t["last_verified"]}</p>'
+            f'{render_stage(t, c, u)}')
+    if c.get('highlights'):
+        tiles = ''
+        for h in c['highlights']:
+            logos = ''.join(logo(d, d) for d in h.get('domains', []))
+            if not logos and h.get('icon'):
+                logos = f'<span style="color:var(--accent-ink)">{icon(h["icon"])}</span>'
+            tiles += (f'<a class="tile glass-card" href="{escape(src[h["source"]]["url"])}" target="_blank" rel="noopener">'
+                      f'<span class="logos">{logos}</span><span class="v{" long" if sum(2 if ord(ch) > 0x2e80 else 1 for ch in h["value"]) > 7 else ""}">{escape(h["value"])}</span><span class="l">{escape(h["label"])}</span></a>')
+        hero += f'<div class="hl reveal">{tiles}</div>'
+    hero += '</div></section>'
 
     body = []
-    cards = ''.join(f'<article class="card"><div class="iconbox" aria-hidden="true">{escape(x["icon"])}</div><h3>{escape(x["title"])}</h3>'
-                    f'<p>{escape(x["text"])}</p>{ext(src[x["source"]]["url"], escape(u["check"]), "src")}</article>' for x in c['capabilities'])
-    body.append(section('features', u['cap_eyebrow'], u['cap_title'], f'<div class="grid3">{cards}</div>', u['cap_note']))
-
-    facts = [(u['category'], escape(cat), None), (u['type_label'], escape(u['type'][t['type']]), None)]
-    facts += [(f['label'], escape(f['value']), f['source']) for f in c['facts']]
-    facts += [(u['website'], ext(t['url'], escape(t['domain']) + ' ↗'), None), (u['verified'], t['last_verified'], None)]
-    rows = ''.join(f'<div class="fact"><dt>{escape(k)}</dt><dd>{v}</dd>' + (ext(src[s]['url'], escape(u['check'])) if s else '<span></span>') + '</div>' for k, v, s in facts)
-    body.append(section('facts', u['facts_eyebrow'], u['facts_title'], f'<dl class="facts">{rows}</dl>'))
-
-    if c.get('fit'):
-        good = ''.join(f'<li>{escape(x)}</li>' for x in c['fit']['good'])
-        maybe = ''.join(f'<li>{escape(x)}</li>' for x in c['fit']['consider'])
-        body.append(section('fit', u['fit_eyebrow'], u['fit_title'].format(name=name),
-                            f'<div class="decision"><div class="card yes"><h3>{escape(u["good"])}</h3><ul>{good}</ul></div>'
-                            f'<div class="card maybe"><h3>{escape(u["consider"])}</h3><ul>{maybe}</ul></div></div>'))
+    cards = ''.join(f'<article class="feature glass-card reveal"><div class="badge-ico">{icon(x["icon"])}</div>'
+                    f'<h3>{escape(x["title"])}</h3><p>{escape(x["text"])}</p>{src_link(src[x["source"]]["url"], u)}</article>'
+                    for x in c['capabilities'])
+    body.append(block('features', titles['features'], f'<div class="features">{cards}</div>', c.get('features_sub', '')))
 
     if c.get('steps'):
-        steps = ''.join(f'<article class="card"><div class="stepno">{escape(s["label"])}</div><h3>{escape(s["title"])}</h3><p>{escape(s["text"])}</p></article>' for s in c['steps'])
-        body.append(section('start', u['steps_eyebrow'], c.get('steps_title', u['steps_title']), f'<div class="steps">{steps}</div>'))
+        steps = ''.join(f'<article class="step glass-card reveal"><div class="n">{i:02d}</div><h3>{escape(s["title"])}</h3><p>{escape(s["text"])}</p></article>'
+                        for i, s in enumerate(c['steps'], 1))
+        body.append(block('start', c.get('steps_title') or titles['steps'], f'<div class="steps">{steps}</div>'))
+
+    if c.get('fit'):
+        good = ''.join(f'<li>{icon("check")}<span>{escape(x)}</span></li>' for x in c['fit']['good'])
+        maybe = ''.join(f'<li>{icon("arrow")}<span>{escape(x)}</span></li>' for x in c['fit']['consider'])
+        body.append(block('fit', titles['fit'].format(name=name),
+                          f'<div class="fit"><div class="glass-card reveal"><h3>{escape(u["good"])}</h3><ul>{good}</ul></div>'
+                          f'<div class="glass-card no reveal"><h3>{escape(u["consider"])}</h3><ul>{maybe}</ul></div></div>'))
 
     if c.get('compare'):
-        cmp = c['compare']
-        links = t.get('compare_links', {})
-        head_row = ''.join(f'<th scope="col">{escape(h)}</th>' for h in cmp['columns'])
+        cmp, links = c['compare'], t.get('compare_links', {})
+        thead = ''.join(f'<th scope="col">{escape(h)}</th>' for h in cmp['columns'])
         trs = ''
         for r in cmp['rows']:
             is_self = r[0] == name
-            first = escape(r[0]) if is_self or r[0] not in links else ext(links[r[0]], escape(r[0]) + ' ↗')
-            trs += f'<tr{" class=self" if is_self else ""}><th scope="row">{first}</th>' + ''.join(f'<td>{escape(x)}</td>' for x in r[1:]) + '</tr>'
-        note_links = ' · '.join(ext(url, escape(n) + ' ↗') for n, url in links.items())
-        inner = (f'<div class="compare-wrap"><table class="compare-table"><thead><tr>{head_row}</tr></thead><tbody>{trs}</tbody></table></div>'
-                 f'<p class="small">{escape(cmp["note"])} {note_links}</p>')
-        body.append(section('compare', u['compare_eyebrow'], u['compare_title'], inner, u['compare_sub']))
+            mark = tool_logo(t) if is_self else logo(t.get('compare_logos', {}).get(r[0]) or domain_of(links.get(r[0], '')) or r[0], r[0])
+            label = escape(r[0]) if is_self or r[0] not in links else ext(links[r[0]], escape(r[0]))
+            trs += (f'<tr{" class=self" if is_self else ""}><th scope="row"><span class="name">{mark}{label}</span></th>'
+                    + ''.join(f'<td>{escape(x)}</td>' for x in r[1:]) + '</tr>')
+        inner = (f'<div class="table glass-card reveal"><table><thead><tr>{thead}</tr></thead><tbody>{trs}</tbody></table></div>'
+                 f'<p class="note">{escape(cmp["note"])}</p>')
+        body.append(block('compare', titles['compare'], inner, u['subs']['compare']))
 
     if t.get('alternatives'):
         cards = ''
         for a in t['alternatives']:
             on_site = a['key'] in tools_by_slug
-            link = (f'<a class="go" href="{page_url(a["key"], code)}">{escape(u["alt_on_site"])}</a>' if on_site
-                    else ext(a['url'], escape(u['alt_visit']), 'go'))
-            cards += (f'<article class="card alt"><div class="alt-top"><h3>{escape(a["name"])}</h3>'
-                      f'<span class="chip">{escape(u["pricing"][a["pricing"]])}</span></div>'
-                      f'<p>{escape(c["alternatives"][a["key"]])}</p>{link}</article>')
-        body.append(section('alternatives', u['alt_eyebrow'], u['alt_title'], f'<div class="alts">{cards}</div>'))
+            if on_site:
+                go = f'<a class="go" href="{page_url(a["key"], code)}">{escape(u["alt_on_site"])} {icon("arrow")}</a>'
+            else:
+                go = ext(a['url'], f'{escape(u["alt_visit"])} {icon("ext")}', 'go')
+            mark = logo(a.get('domain') or domain_of(a['url']), a['name'])
+            cards += (f'<article class="alt glass-card reveal"><div class="top-row">{mark}<span class="tag">{escape(u["pricing"][a["pricing"]])}</span></div>'
+                      f'<h3>{escape(a["name"])}</h3><p>{escape(c["alternatives"][a["key"]])}</p>{go}</article>')
+        body.append(block('alternatives', titles['alternatives'], f'<div class="cards">{cards}</div>'))
 
     if c.get('faq'):
-        items = ''.join(f'<details class="accordion"{" open" if i == 0 else ""}><summary>{escape(f["q"])}</summary>'
-                        f'<div class="answer"><p>{escape(f["a"])}</p>{ext(src[f["source"]]["url"], escape(u["check"]))}</div></details>'
+        items = ''.join(f'<details{" open" if i == 0 else ""}><summary>{escape(f["q"])}</summary>'
+                        f'<div class="a"><p>{escape(f["a"])}</p>{src_link(src[f["source"]]["url"], u)}</div></details>'
                         for i, f in enumerate(c['faq']))
-        body.append(section('faq', u['faq_eyebrow'], u['faq_title'], items))
+        body.append(block('faq', titles['faq'], f'<div class="faq reveal">{items}</div>'))
 
-    refs = ''.join(f'<a class="ref" href="{escape(s["url"])}" target="_blank" rel="noopener">{escape(c["source_labels"][k])} ↗'
-                   f'<span class="meta"><span class="kind">{escape(u["kind"][s["kind"]])}</span>{escape(re.sub(r"^https?://", "", s["url"]).rstrip("/"))}</span></a>'
+    facts = [(u['category'], escape(cat)), (u['type_label'], escape(u['type'][t['type']]))]
+    facts += [(f['label'], escape(f['value']) + ' ' + ext(src[f['source']]['url'], icon('ext'), 'src')) for f in c['facts']]
+    facts += [(u['website'], ext(t['url'], escape(t['domain']))), (u['verified'], t['last_verified'])]
+    specs = ''.join(f'<div><dt>{escape(k)}</dt><dd>{v}</dd></div>' for k, v in facts)
+    srcs = ''.join(f'<a href="{escape(s["url"])}" target="_blank" rel="noopener">{logo(domain_of(s["url"]), c["source_labels"][k])}'
+                   f'<span class="t">{escape(c["source_labels"][k])}<br><span class="k">{escape(u["kind"][s["kind"]])} · {escape(domain_of(s["url"]))}</span></span></a>'
                    for k, s in src.items())
     policy = f'<p>{escape(u["policy"])}</p>'
     if t.get('related_by_founder'):
-        policy += f'<p>{escape(u["founder"])} <a href="{prefix}/creators/1/">{escape(u["founder_link"])}</a></p>'
-    policy += f'<p><a href="{prefix}/contact">{escape(u["report"])}</a></p>'
-    body.append(section('sources', u['src_eyebrow'], u['src_title'], f'<div class="references">{refs}</div><div class="policy">{policy}</div>'))
+        policy += f'<p>{escape(u["founder"])} <a href="{prefix}/creators/1/">{escape(u["founder_link"])} →</a></p>'
+    policy += f'<p><a href="{prefix}/contact">{escape(u["report"])} →</a></p>'
+    fine = (f'<div class="fine"><div class="glass-card reveal"><dl class="specs">{specs}</dl></div>'
+            f'<div class="glass-card reveal"><h3>{escape(u["sources"])}</h3><div class="srcs">{srcs}</div><div class="policy">{policy}</div></div></div>')
+    body.append(block('details', titles['details'], fine, u['subs']['details']))
 
-    others = [o for o in tools_by_slug.values() if o['slug'] != slug and o['slug'] not in {a['key'] for a in t.get('alternatives', [])}]
-    others.sort(key=lambda o: (o['category'] != t['category'], o['name']))
+    skip = {a['key'] for a in t.get('alternatives', [])} | {slug}
+    others = sorted((o for o in tools_by_slug.values() if o['slug'] not in skip), key=lambda o: (o['category'] != t['category'], o['name']))
     if others:
-        cards = ''.join(f'<a class="card" href="{page_url(o["slug"], code)}"><div class="alt-top"><h3>{escape(o["name"])}</h3>'
-                        f'<span class="chip">{escape(UI[code]["pricing"][o["pricing"]])}</span></div><p>{escape(o["i18n"][code]["lead"])}</p></a>'
-                        for o in others[:3])
-        body.append(section('related', u['related_eyebrow'], u['related_title'],
-                            f'<div class="related">{cards}</div><p class="small"><a href="{home_url(code)}">{escape(u["related_more"])}</a></p>'))
+        cards = ''.join(f'<a class="rel glass-card reveal" href="{page_url(o["slug"], code)}">{tool_logo(o)}'
+                        f'<span><h3>{escape(o["name"])}</h3><p>{escape(o["i18n"][code]["lead"])}</p></span></a>' for o in others[:3])
+        body.append(block('related', titles['related'],
+                          f'<div class="cards">{cards}</div><p class="more"><a class="link" href="{home_url(code)}">{escape(u["related_more"])} {icon("arrow")}</a></p>'))
 
     cta = c['cta']
-    bottom = (f'<div class="bottom"><div><h2>{escape(cta["title"])}</h2><p>{escape(cta["text"])}</p></div>'
-              f'{ext(t["url"], escape(u["visit"].format(name=name)), "btn")}</div>')
-    footer = f'<footer><div class="wrap"><span>{escape(u["footer"])}</span><a href="{home_url(code)}">{escape(u["more_tools"])} →</a></div></footer>'
-    return head + '<body>' + header + '<main>' + hero + '<div class="wrap">' + ''.join(body) + bottom + '</div></main>' + footer + '</body></html>\n'
+    closing = (f'<div class="wrap"><section class="closing reveal"><div class="sky" aria-hidden="true"><i class="orb a"></i><i class="orb b"></i></div>'
+               f'{tool_logo(t)}<h2>{escape(cta["title"])}</h2><p>{escape(cta["text"])}</p>'
+               f'{ext(t["url"], escape(visit_label) + " " + icon("ext"), "pill")}</section></div>')
+    footer = (f'<footer><div class="wrap"><span>© {escape(u["footer"])}</span>'
+              f'<a href="{home_url(code)}">{escape(u["more_tools"])} →</a></div></footer>')
+    return (head + '<body>' + nav + '<main>' + hero + ''.join(body) + closing + '</main>' + footer
+            + f'<script>{REVEAL_JS}</script></body></html>\n')
 
 
 def update_sitemap(tools):

@@ -65,54 +65,56 @@
       "key": "iphone-photos",
       "name": "iPhone Photos — Duplicates",
       "url": "https://support.apple.com/en-us/102260",
-      "pricing": "free"
+      "pricing": "free",
+      "domain": "apple.com"
     },
     {
       "key": "google-photos",
       "name": "Google Photos — Free up space",
       "url": "https://support.google.com/photos/answer/6128843",
-      "pricing": "freemium"
+      "pricing": "freemium",
+      "domain": "photos.google.com"
     },
     {
       "key": "files-by-google",
       "name": "Files by Google",
       "url": "https://support.google.com/files/answer/9764075",
-      "pricing": "free"
+      "pricing": "free",
+      "domain": "files.google.com"
     }
   ],
   "i18n": {
     "en": {
       "title": "Slidebox Guide: Swipe to Clean Up Your Camera Roll — Pricing & Alternatives | ToolFavor",
       "description": "How Slidebox works: swipe photos to trash, favorites or albums, compare duplicates, and what the subscription costs. Plus when free built-in tools are enough.",
-      "kicker": "Productivity · Mobile app · Product guide",
-      "lead": "Clean up your camera roll one swipe at a time.",
-      "sublead": "Slidebox shows one photo at a time: swipe up to trash it, pull down to favorite it, tap an album to file it. It works on your phone's own photo library — nothing is copied elsewhere.",
+      "kicker": "Photo organizer for iPhone & Android",
+      "lead": "Your camera roll. One swipe at a time.",
+      "sublead": "Swipe up to trash. Pull down to favorite. Tap an album to file. Your photos stay in your phone's own library.",
       "tags": [
         "iPhone, iPad & Android",
         "Swipe to trash or favorite",
         "Compare similar shots"
       ],
-      "pricing_label": "Free download · in-app purchases",
-      "snapshot": "Editorial guide based on Slidebox's official FAQ and store listings · not a hands-on rating",
+      "pricing_label": "Free · in-app purchases",
+      "snapshot": "Based on Slidebox's official FAQ and store listings. Not a hands-on rating.",
       "media_alt": "Slidebox app demo: swiping through photos and filing them into albums",
-      "media_caption": "Official demo from slidebox.co",
       "capabilities": [
         {
-          "icon": "↑",
-          "title": "Swipe away clutter",
-          "text": "Swipe up to mark a photo as trash. Nothing is removed until you empty Slidebox's trash, so you can change your mind.",
+          "icon": "swipe",
+          "title": "Swipe up to clear.",
+          "text": "Photos go to Slidebox's trash first. Nothing is deleted until you empty it.",
           "source": "faq_ios"
         },
         {
-          "icon": "▤",
-          "title": "File into real albums",
-          "text": "Albums you create in Slidebox are normal albums in your iPhone or Android gallery, so the order you build stays outside the app.",
+          "icon": "album",
+          "title": "Albums that stay.",
+          "text": "Albums you make are real albums in Photos or your Gallery.",
           "source": "faq_ios"
         },
         {
-          "icon": "◫",
-          "title": "Compare similar shots",
-          "text": "Similar and duplicate photos are shown side by side so you can keep only the best one.",
+          "icon": "compare",
+          "title": "Keep the best shot.",
+          "text": "Similar photos, side by side. Pick one.",
           "source": "appstore"
         }
       ],
@@ -155,40 +157,36 @@
       ],
       "fit": {
         "good": [
-          "Thousands of unsorted photos and you never know where to start",
-          "You want photos sorted into albums, not just deleted",
-          "You decide faster looking at one photo at a time",
-          "You use iPhone and Android and want the same method on both"
+          "Thousands of photos and no idea where to start",
+          "You want albums, not just deleting",
+          "You decide fastest one photo at a time",
+          "You use both iPhone and Android"
         ],
         "consider": [
-          "You only want to remove exact duplicates — iPhone Photos does that for free",
-          "You need a backup: Slidebox no longer offers one",
-          "You'd rather avoid ads and subscriptions",
-          "On Android, emptying the trash deletes permanently with no recovery"
+          "You only need to remove duplicates",
+          "You need a backup — Slidebox no longer has one",
+          "You'd rather skip ads and subscriptions",
+          "On Android, an emptied trash is gone for good"
         ]
       },
-      "steps_title": "Your first clean-up in three steps",
       "steps": [
         {
-          "label": "01 / Install",
-          "title": "Get the app and allow access",
-          "text": "Install from the App Store or Google Play and give Slidebox access to your photos."
+          "title": "Install.",
+          "text": "App Store or Google Play. Allow photo access."
         },
         {
-          "label": "02 / Swipe",
-          "title": "Sort one photo at a time",
-          "text": "Swipe up for trash, pull down for favorites, tap an album to file. Mistakes can be undone."
+          "title": "Swipe.",
+          "text": "Trash, favorite or file. Undo anytime."
         },
         {
-          "label": "03 / Empty",
-          "title": "Empty the trash to free space",
-          "text": "Storage is only freed when you delete Slidebox's trash. On iPhone, items then sit in Recently Deleted for 30 days."
+          "title": "Empty the trash.",
+          "text": "That's when space is freed. iPhone keeps deleted photos for 30 days."
         }
       ],
       "compare": {
         "columns": [
           "Tool",
-          "How you clean up",
+          "How it works",
           "Platforms",
           "Price",
           "Best for"
@@ -196,39 +194,39 @@
         "rows": [
           [
             "Slidebox",
-            "Swipe through every photo; trash, favorite or file into albums",
+            "Swipe through every photo",
             "iOS, Android",
-            "Free + subscription or lifetime unlock",
-            "Sorting a messy library by hand, fast"
+            "Free + Pro",
+            "Sorting by hand, fast"
           ],
           [
             "iPhone Photos",
-            "Built-in Duplicates album finds and merges copies",
-            "iOS 16 and later",
+            "Finds and merges duplicates",
+            "iOS 16+",
             "Free, built in",
-            "Removing exact duplicates only"
+            "Duplicates only"
           ],
           [
             "Google Photos",
-            "Free up space removes device copies after backup",
+            "Backs up, then frees device space",
             "Android, iOS",
-            "Free storage limit, paid plans",
-            "Keeping everything in the cloud"
+            "Free tier + paid",
+            "Keeping it all in the cloud"
           ],
           [
             "Files by Google",
-            "Clean tab suggests duplicate and junk files",
+            "Suggests duplicate and junk files",
             "Android",
             "Free",
-            "Quick storage cleanup on Android"
+            "A quick Android cleanup"
           ]
         ],
-        "note": "Compares approach only — not a hands-on ranking. Check each official page for current details:"
+        "note": "Check each official page for current details."
       },
       "alternatives": {
-        "iphone-photos": "Only want to remove exact copies? iOS 16+ finds them for you in Photos → Collections → Utilities → Duplicates, at no cost.",
-        "google-photos": "Want the space back but keep every photo? Back up to Google Photos and remove the device copies.",
-        "files-by-google": "On Android and just need storage fast? Its Clean tab groups duplicate files and junk."
+        "iphone-photos": "Just duplicates? Photos → Collections → Utilities → Duplicates. Free on iOS 16 and later.",
+        "google-photos": "Want the space back but keep every photo? Back up, then free up space.",
+        "files-by-google": "On Android and in a hurry? Its Clean tab finds duplicates and junk."
       },
       "faq": [
         {
@@ -268,42 +266,93 @@
         "files_dup": "Files by Google Help — duplicate files"
       },
       "cta": {
-        "title": "Ready to clear your camera roll?",
-        "text": "Get Slidebox from the official site — and back up first."
-      }
+        "title": "A lighter camera roll.",
+        "text": "Back up first. Then start swiping."
+      },
+      "titles": {
+        "features": "Three gestures. Zero clutter."
+      },
+      "hero_chips": [
+        {
+          "icon": "swipe",
+          "text": "Swipe up · Trash"
+        },
+        {
+          "icon": "star",
+          "text": "Pull down · Favorite"
+        },
+        {
+          "icon": "album",
+          "text": "Tap · Album"
+        }
+      ],
+      "highlights": [
+        {
+          "value": "4.8",
+          "label": "App Store rating · ~17K ratings (US)",
+          "icon": "star",
+          "source": "appstore"
+        },
+        {
+          "value": "iOS + Android",
+          "label": "Also on iPad and Apple silicon Mac",
+          "domains": [
+            "apple.com",
+            "android.com"
+          ],
+          "source": "appstore"
+        },
+        {
+          "value": "Free",
+          "label": "to download. Pro from $4.99/mo, or buy once",
+          "icon": "coins",
+          "source": "appstore"
+        },
+        {
+          "value": "15",
+          "label": "languages, including 日本語 and 中文",
+          "icon": "repeat",
+          "source": "appstore"
+        },
+        {
+          "value": "No backup",
+          "label": "Backup service ended Feb 2026",
+          "icon": "export",
+          "source": "appstore"
+        }
+      ]
     },
     "ja": {
       "title": "Slideboxの使い方・料金：スワイプで写真整理できるアプリ（iPhone・Android） | ToolFavor",
       "description": "Slideboxはスワイプで写真を削除・お気に入り・アルバム分けできる整理アプリ。使い方、料金、削除の仕組み、無料の標準機能で足りるケースをまとめました。",
-      "kicker": "仕事効率化 · モバイルアプリ · ツールガイド",
-      "lead": "カメラロールの整理を、スワイプひとつで。",
-      "sublead": "写真を1枚ずつ表示し、上にスワイプでゴミ箱、下に引くとお気に入り、アルバムをタップで振り分け。端末の写真ライブラリをそのまま整理し、ほかの場所にコピーはしません。",
+      "kicker": "iPhone・Android対応の写真整理アプリ",
+      "lead": "カメラロールを、スワイプひとつで。",
+      "sublead": "上にスワイプでゴミ箱へ。下に引いてお気に入り。タップでアルバムへ。写真は端末のライブラリのままです。",
       "tags": [
         "iPhone・iPad・Android",
         "スワイプで削除・お気に入り",
         "似た写真を比較"
       ],
-      "pricing_label": "無料ダウンロード · アプリ内課金",
-      "snapshot": "Slidebox公式FAQとアプリストア情報をもとに編集部が整理 · 実機テストによる評価ではありません",
+      "pricing_label": "無料 · アプリ内課金",
+      "snapshot": "Slidebox公式FAQとストア情報をもとに整理。実機テストによる評価ではありません。",
       "media_alt": "写真をスワイプしてアルバムに振り分けるSlideboxのデモ",
-      "media_caption": "slidebox.co 公式デモ",
       "capabilities": [
         {
-          "icon": "↑",
-          "title": "スワイプで不要な写真を整理",
-          "text": "上にスワイプするとゴミ箱へ。Slideboxのゴミ箱を空にするまでは消えないので、あとから戻せます。",
+          "icon": "swipe",
+          "title": "上にスワイプで片づけ。",
+          "text": "まずはSlideboxのゴミ箱へ。空にするまで消えません。",
           "source": "faq_ios"
         },
         {
-          "icon": "▤",
-          "title": "本物のアルバムに振り分け",
-          "text": "Slideboxで作ったアルバムは、iPhoneの写真アプリやAndroidのギャラリーのアルバムとして作られます。",
+          "icon": "album",
+          "title": "アルバムは、そのまま残る。",
+          "text": "作ったアルバムは、写真アプリやギャラリーの本物のアルバムです。",
           "source": "faq_ios"
         },
         {
-          "icon": "◫",
-          "title": "似た写真を比較",
-          "text": "似た写真や重複した写真を並べて表示。いちばん良い1枚だけを残せます。",
+          "icon": "compare",
+          "title": "ベストな1枚だけ。",
+          "text": "似た写真を並べて比較。1枚を選ぶだけ。",
           "source": "appstore"
         }
       ],
@@ -346,80 +395,76 @@
       ],
       "fit": {
         "good": [
-          "未整理の写真が何千枚もあって、どこから手をつければいいかわからない",
-          "削除だけでなく、アルバムに分けて整理したい",
-          "1枚ずつ見ながら決める方が早い",
-          "iPhoneとAndroidの両方で同じ方法を使いたい"
+          "写真が多すぎて、どこから手をつければいいかわからない",
+          "削除だけでなく、アルバムに分けたい",
+          "1枚ずつ見て決める方が早い",
+          "iPhoneとAndroidの両方を使っている"
         ],
         "consider": [
-          "重複写真を消したいだけなら、iPhoneの写真アプリで無料でできる",
-          "バックアップが必要（Slideboxは提供を終了）",
-          "広告やサブスクリプションは避けたい",
-          "Androidではゴミ箱を空にすると完全に削除され、復元できない"
+          "重複写真を消したいだけ",
+          "バックアップが必要（Slideboxは提供終了）",
+          "広告やサブスクは避けたい",
+          "Androidでは空にしたゴミ箱は戻せない"
         ]
       },
-      "steps_title": "3ステップで写真整理を始める",
       "steps": [
         {
-          "label": "01 / インストール",
-          "title": "アプリを入れて写真へのアクセスを許可",
-          "text": "App StoreまたはGoogle Playからインストールし、写真へのアクセスを許可します。"
+          "title": "インストール。",
+          "text": "App StoreかGoogle Playから。写真へのアクセスを許可します。"
         },
         {
-          "label": "02 / スワイプ",
-          "title": "1枚ずつ振り分ける",
-          "text": "上でゴミ箱、下でお気に入り、アルバムをタップで分類。間違えても取り消せます。"
+          "title": "スワイプ。",
+          "text": "ゴミ箱、お気に入り、アルバム。取り消しもできます。"
         },
         {
-          "label": "03 / 空にする",
-          "title": "ゴミ箱を空にして容量を空ける",
-          "text": "容量が空くのはSlideboxのゴミ箱を削除したとき。iPhoneでは「最近削除した項目」に30日間残ります。"
+          "title": "ゴミ箱を空に。",
+          "text": "ここで容量が空きます。iPhoneでは30日間は復元できます。"
         }
       ],
       "compare": {
         "columns": [
           "ツール",
-          "整理のしかた",
-          "対応端末",
+          "しくみ",
+          "対応",
           "料金",
-          "向いている人"
+          "向いている用途"
         ],
         "rows": [
           [
             "Slidebox",
-            "全写真をスワイプで確認し、削除・お気に入り・アルバム分け",
+            "全写真をスワイプで確認",
             "iOS・Android",
-            "無料 + サブスクまたは買い切り",
-            "散らかったライブラリを手早く手作業で整理"
+            "無料＋有料版",
+            "手作業で手早く整理"
           ],
           [
             "iPhone Photos",
-            "標準の「重複項目」アルバムで重複を検出・結合",
+            "重複を見つけて結合",
             "iOS 16以降",
-            "無料（標準機能）",
-            "重複写真だけを消したい"
+            "無料・標準機能",
+            "重複だけ消したい"
           ],
           [
             "Google Photos",
-            "バックアップ後に端末内のコピーを削除して容量を確保",
+            "バックアップ後に端末の容量を空ける",
             "Android・iOS",
-            "無料容量あり、有料プランあり",
-            "写真はすべてクラウドに残したい"
+            "無料枠＋有料",
+            "全部クラウドに残したい"
           ],
           [
             "Files by Google",
-            "「削除」タブで重複ファイルや不要ファイルを提案",
+            "重複・不要ファイルを提案",
             "Android",
             "無料",
-            "Androidの容量をすぐ空けたい"
+            "Androidをすぐ軽くしたい"
           ]
         ],
-        "note": "整理方法の違いを比べた表で、実機テストによるランキングではありません。最新情報は各公式ページでご確認ください："
+        "note": "最新情報は各公式ページでご確認ください。"
       },
       "alternatives": {
-        "iphone-photos": "重複写真を消したいだけなら、iOS 16以降の写真アプリ（コレクション → ユーティリティ → 重複項目）で無料でできます。",
-        "google-photos": "写真は全部残しつつ容量を空けたいなら、Googleフォトにバックアップして端末のコピーを削除。",
-        "files-by-google": "Androidで容量だけすぐ空けたいなら、「削除」タブが重複ファイルや不要ファイルをまとめて表示します。"
+        "iphone-photos": "重複だけなら、写真アプリの「コレクション → ユーティリティ → 重複項目」で無料。iOS 16以降。",
+        "google-photos": "写真は全部残して容量だけ空けたいなら、バックアップしてから空き容量を確保。",
+        "files-by-google": "Androidをすぐ軽くしたいなら、「削除」タブが重複と不要ファイルを見つけます。"
       },
       "faq": [
         {
@@ -459,42 +504,93 @@
         "files_dup": "Files by Google ヘルプ — 重複ファイル"
       },
       "cta": {
-        "title": "カメラロールをすっきりさせるなら",
-        "text": "公式サイトからSlideboxを入手できます。削除前のバックアップもお忘れなく。"
-      }
+        "title": "カメラロールを、もっと軽く。",
+        "text": "まずバックアップ。それからスワイプ。"
+      },
+      "titles": {
+        "features": "3つのジェスチャーで、すっきり。"
+      },
+      "hero_chips": [
+        {
+          "icon": "swipe",
+          "text": "上スワイプ · ゴミ箱"
+        },
+        {
+          "icon": "star",
+          "text": "下に引く · お気に入り"
+        },
+        {
+          "icon": "album",
+          "text": "タップ · アルバム"
+        }
+      ],
+      "highlights": [
+        {
+          "value": "4.8",
+          "label": "App Store評価・約1.7万件（米国）",
+          "icon": "star",
+          "source": "appstore"
+        },
+        {
+          "value": "iOS + Android",
+          "label": "iPadとAppleシリコン搭載Macにも",
+          "domains": [
+            "apple.com",
+            "android.com"
+          ],
+          "source": "appstore"
+        },
+        {
+          "value": "無料",
+          "label": "でダウンロード。有料版は月4.99ドル〜か買い切り",
+          "icon": "coins",
+          "source": "appstore"
+        },
+        {
+          "value": "15",
+          "label": "言語に対応（日本語を含む）",
+          "icon": "repeat",
+          "source": "appstore"
+        },
+        {
+          "value": "バックアップ",
+          "label": "機能は2026年2月に終了",
+          "icon": "export",
+          "source": "appstore"
+        }
+      ]
     },
     "zh-cn": {
       "title": "Slidebox 怎么用？滑动整理手机相册的应用：价格、删除机制与替代方案 | ToolFavor",
       "description": "Slidebox 用滑动手势整理相册：删除、收藏、分类到相册、比较相似照片。了解怎么用、订阅价格、删除机制，以及什么时候用系统自带功能就够了。",
-      "kicker": "效率工具 · 手机应用 · 产品指南",
-      "lead": "像刷照片一样，一张张清理相册。",
-      "sublead": "Slidebox 一次显示一张照片：上滑放入回收站，下拉加入收藏，点击相册完成分类。它直接整理手机自带的相册，不会把照片复制到别处。",
+      "kicker": "iPhone 与 Android 相册整理应用",
+      "lead": "滑一滑，相册就清爽了。",
+      "sublead": "上滑，放进回收站。下拉，加入收藏。轻点，归入相册。照片始终留在手机自己的相册里。",
       "tags": [
         "iPhone、iPad 与 Android",
         "滑动删除或收藏",
         "比较相似照片"
       ],
-      "pricing_label": "免费下载 · 应用内购买",
-      "snapshot": "根据 Slidebox 官方 FAQ 与应用商店信息整理 · 非实测评分",
+      "pricing_label": "免费 · 应用内购买",
+      "snapshot": "根据 Slidebox 官方 FAQ 与应用商店信息整理，非实测评分。",
       "media_alt": "Slidebox 应用演示：滑动照片并分类到相册",
-      "media_caption": "slidebox.co 官方演示",
       "capabilities": [
         {
-          "icon": "↑",
-          "title": "上滑清理照片",
-          "text": "上滑只是把照片放进 Slidebox 的回收站。清空回收站之前不会真正删除，随时可以反悔。",
+          "icon": "swipe",
+          "title": "上滑，先放一边。",
+          "text": "先进入 Slidebox 回收站，清空之前都不会删除。",
           "source": "faq_ios"
         },
         {
-          "icon": "▤",
-          "title": "分类到真正的相册",
-          "text": "在 Slidebox 创建的相册，就是 iPhone「照片」或 Android 图库里的普通相册，离开应用也保留。",
+          "icon": "album",
+          "title": "相册，真的留得住。",
+          "text": "建好的相册，就是「照片」或图库里的普通相册。",
           "source": "faq_ios"
         },
         {
-          "icon": "◫",
-          "title": "比较相似照片",
-          "text": "相似或重复的照片并排显示，只保留最好的一张。",
+          "icon": "compare",
+          "title": "只留最好的一张。",
+          "text": "相似照片并排比较，挑一张就好。",
           "source": "appstore"
         }
       ],
@@ -537,80 +633,76 @@
       ],
       "fit": {
         "good": [
-          "相册里有几千张没整理的照片，不知道从哪里下手",
-          "不只想删照片，还想分类到相册",
-          "一张张看着做决定，反而更快",
-          "同时用 iPhone 和 Android，想用同一种方法"
+          "照片太多，不知从何下手",
+          "不只想删，还想分好相册",
+          "一张张看着决定，反而更快",
+          "同时在用 iPhone 和 Android"
         ],
         "consider": [
-          "只想删除重复照片——iPhone「照片」自带功能就能免费做到",
-          "需要备份：Slidebox 已停止提供备份",
+          "只想删除重复照片",
+          "需要备份（Slidebox 已停止提供）",
           "不想看广告、不想订阅",
-          "Android 上清空回收站会永久删除，无法恢复"
+          "Android 上清空回收站后无法恢复"
         ]
       },
-      "steps_title": "第一次整理，只要三步",
       "steps": [
         {
-          "label": "01 / 安装",
-          "title": "安装并允许访问照片",
-          "text": "从 App Store 或 Google Play 安装，并允许 Slidebox 访问照片。"
+          "title": "安装。",
+          "text": "从 App Store 或 Google Play 下载，允许访问照片。"
         },
         {
-          "label": "02 / 滑动",
-          "title": "一张张分类",
-          "text": "上滑放入回收站，下拉加入收藏，点击相册完成分类。操作失误可以撤销。"
+          "title": "滑动。",
+          "text": "删除、收藏或分类，随时可以撤销。"
         },
         {
-          "label": "03 / 清空",
-          "title": "清空回收站才会释放空间",
-          "text": "只有删除 Slidebox 回收站里的照片才会腾出空间。iPhone 上照片还会在「最近删除」保留 30 天。"
+          "title": "清空回收站。",
+          "text": "这时才真正腾出空间。iPhone 上 30 天内还能恢复。"
         }
       ],
       "compare": {
         "columns": [
           "工具",
           "整理方式",
-          "支持平台",
+          "平台",
           "价格",
           "更适合"
         ],
         "rows": [
           [
             "Slidebox",
-            "逐张滑动浏览，删除、收藏或分类到相册",
+            "逐张滑动浏览",
             "iOS、Android",
-            "免费 + 订阅或买断",
-            "快速手动整理杂乱相册"
+            "免费 + 付费版",
+            "快速手动整理"
           ],
           [
             "iPhone Photos",
-            "系统自带「重复项」相簿，查找并合并重复照片",
-            "iOS 16 及以上",
-            "免费（系统自带）",
-            "只想删除重复照片"
+            "查找并合并重复项",
+            "iOS 16+",
+            "免费，系统自带",
+            "只删重复照片"
           ],
           [
             "Google Photos",
-            "备份后用「释放空间」删除设备上的副本",
+            "备份后释放设备空间",
             "Android、iOS",
-            "有免费额度，另有付费方案",
-            "照片全部保存在云端"
+            "免费额度 + 付费",
+            "全部存到云端"
           ],
           [
             "Files by Google",
-            "「清理」页推荐重复文件和垃圾文件",
+            "推荐重复和垃圾文件",
             "Android",
             "免费",
-            "快速释放 Android 存储空间"
+            "快速清理 Android"
           ]
         ],
-        "note": "此表只比较整理方式，不是实测排名。最新信息请查看各官方页面："
+        "note": "最新信息请以各官方页面为准。"
       },
       "alternatives": {
-        "iphone-photos": "只想删掉重复照片？iOS 16 及以上在「照片 → 精选集 → 实用工具 → 重复项」里就能免费处理。",
-        "google-photos": "想腾出空间又不想丢照片？先备份到 Google 相册，再删除设备上的副本。",
-        "files-by-google": "用 Android、只想尽快腾出空间？它的「清理」页会把重复文件和垃圾文件集中列出。"
+        "iphone-photos": "只删重复？「照片 → 精选集 → 实用工具 → 重复项」，iOS 16 起免费可用。",
+        "google-photos": "想腾空间又不丢照片？先备份，再释放空间。",
+        "files-by-google": "用 Android 又赶时间？「清理」页帮你找出重复和垃圾文件。"
       },
       "faq": [
         {
@@ -650,9 +742,76 @@
         "files_dup": "Files by Google 帮助 — 重复文件"
       },
       "cta": {
-        "title": "想让相册清爽起来？",
-        "text": "从官网获取 Slidebox——删除之前记得先备份。"
-      }
+        "title": "让相册轻一点。",
+        "text": "先备份，再开始滑。"
+      },
+      "titles": {
+        "features": "三个手势，告别杂乱。"
+      },
+      "hero_chips": [
+        {
+          "icon": "swipe",
+          "text": "上滑 · 回收站"
+        },
+        {
+          "icon": "star",
+          "text": "下拉 · 收藏"
+        },
+        {
+          "icon": "album",
+          "text": "轻点 · 相册"
+        }
+      ],
+      "highlights": [
+        {
+          "value": "4.8",
+          "label": "App Store 评分 · 约 1.7 万个评分（美国区）",
+          "icon": "star",
+          "source": "appstore"
+        },
+        {
+          "value": "iOS + Android",
+          "label": "也支持 iPad 和 Apple 芯片 Mac",
+          "domains": [
+            "apple.com",
+            "android.com"
+          ],
+          "source": "appstore"
+        },
+        {
+          "value": "免费",
+          "label": "下载。付费版 4.99 美元/月起，或一次买断",
+          "icon": "coins",
+          "source": "appstore"
+        },
+        {
+          "value": "15",
+          "label": "种语言，含简体中文",
+          "icon": "repeat",
+          "source": "appstore"
+        },
+        {
+          "value": "无备份",
+          "label": "备份服务已于 2026 年 2 月停止",
+          "icon": "export",
+          "source": "appstore"
+        }
+      ]
     }
+  },
+  "platforms": [
+    {
+      "label": "iPhone",
+      "domain": "apple.com"
+    },
+    {
+      "label": "Android",
+      "domain": "android.com"
+    }
+  ],
+  "compare_logos": {
+    "iPhone Photos": "apple.com",
+    "Google Photos": "photos.google.com",
+    "Files by Google": "files.google.com"
   }
 }

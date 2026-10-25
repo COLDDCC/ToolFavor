@@ -27,6 +27,23 @@ python3 scripts/build-tool-pages.py --check  # 只做校验，不写文件（提
 
 Photopea 是网页工具类的样板，Slidebox 是手机应用类的样板。
 
+## 视觉与文案风格
+
+**感觉**：轻盈、通透、会呼吸。大量留白，柔和的彩色光晕，磨砂玻璃卡片，元素缓慢漂浮，滚动时淡入出现。动效全部遵守系统的「减少动态效果」设置。
+
+**文案（参考 Apple 官网）**
+- 首屏标题（`lead`）一句话：英文 8 个词以内，中文、日文 15 个字以内，可以用句号断开（"Your camera roll. One swipe at a time." /「滑一滑，相册就清爽了。」）
+- 副标题（`sublead`）由 2–3 个短句组成，只写用户能做什么
+- 功能卡片：标题是一个短句，正文只写一行
+- 区块标题用短句加句号（"How it works." /「怎么用。」），工具可以用 `titles` 覆盖成更有个性的标题（"Three gestures. Zero clutter."）
+- 长信息（价格细节、隐私、版本）放进页面底部的「详细信息与来源」，不挤占首屏
+
+**Logo 优先**：凡是提到某个产品的地方都放它的 logo，包括首屏图标、平台徽章、对比表每一行、替代工具卡片、来源列表和相关工具。
+- logo 默认取自该网站自己的图标（通过 Google favicon 服务按域名获取）；加载失败时自动显示首字母图标，不会出现破图
+- 可以用 `logo`（图片地址）、`logo_domain`、`platforms[].domain`、`compare_logos`、`alternatives[].domain` 指定
+
+**数字亮点（`highlights`）**：首屏下方的 3–5 个数字卡片，每张都必须注明出处。`complete` 和 `flagship` 档位必填。
+
 ## 2. 三档页面
 
 | 档位 | `tier` 值 | 必须具备 | 适用 |
