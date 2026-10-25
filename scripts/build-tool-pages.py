@@ -292,7 +292,7 @@ h1.long{font-size:clamp(40px,5.6vw,68px)!important}h1{font-size:clamp(48px,8vw,8
 .phone{position:relative;width:min(300px,74vw);aspect-ratio:9/19.3;border-radius:46px;background:#111;padding:11px;box-shadow:0 50px 100px -20px rgba(50,30,120,.35),0 0 0 1px rgba(0,0,0,.2),inset 0 0 0 2px #2b2b2b;animation:float 7s ease-in-out infinite}
 .phone:before{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:20px;background:#000;z-index:2}
 .screen{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:linear-gradient(160deg,#f3eeff,#e7f6ee)}
-.screen img{width:100%;height:100%;object-fit:cover;display:block}
+.screen img{width:100%;height:100%;object-fit:contain;display:block;background:#000}
 .screen .fallback{position:absolute;inset:0;display:none;place-items:center}.screen.failed .fallback{display:grid}.screen.failed img{display:none}
 .screen .fallback .logo{width:96px;height:96px;border-radius:22px;font-size:80px;box-shadow:0 16px 40px rgba(60,40,140,.2)}
 .browser{width:min(920px,100%);border-radius:18px;background:rgba(255,255,255,.8);border:1px solid var(--line);box-shadow:0 50px 100px -30px rgba(50,30,120,.3);overflow:hidden;animation:float 8s ease-in-out infinite}
