@@ -123,14 +123,45 @@ def domain_of(url):
     return urlparse(url if '://' in url else 'https://' + url).netloc
 
 
+# Images are self-hosted: scripts/fetch-logos.py (run by GitHub Actions) downloads every
+# remote logo/media file into /assets and records it in data/assets.json. Until a file has
+# been fetched, the page falls back to the remote URL so nothing is ever broken.
+ASSET_MANIFEST_PATH = ROOT / 'data' / 'assets.json'
+ASSETS = json.loads(ASSET_MANIFEST_PATH.read_text()) if ASSET_MANIFEST_PATH.exists() else {}
+REQUESTED = {}  # key -> {"url": remote URL, "kind": "logo" | "favicon" | "media", "name": file name hint}
+
+
+def asset(key, url, kind, name):
+    """Return the local copy of a remote image if we have one, else the remote URL."""
+    if url.startswith('/'):
+        return url  # already a local file in the repo
+    REQUESTED.setdefault(key, {'url': url, 'kind': kind, 'name': name})
+    return ASSETS.get(key, {}).get('path') or url
+
+
+def slugify(text):
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-') or 'logo'
+
+
 def logo(domain, name, cls='logo', src=None, eager=False):
-    """Brand logo from the site's own icon (via Google's favicon service); falls back to an initial."""
+    """Brand logo: explicit image if given, otherwise the site's icon; falls back to an initial."""
     if not src and domain.startswith('https://'):
         src = domain  # an explicit image URL was given instead of a domain
-    src = src or f'https://www.google.com/s2/favicons?domain={quote(domain)}&sz=128'
+    if src:
+        url = asset(src, src, 'logo', slugify(name))
+    else:
+        url = asset('favicon:' + domain, f'https://www.google.com/s2/favicons?domain={quote(domain)}&sz=256', 'favicon', slugify(domain))
     initial = escape((name.strip() or '?')[0].upper())
-    return (f'<span class="{cls}" data-l="{initial}"><img src="{escape(src)}" alt="" loading="{'eager' if eager else 'lazy'}" decoding="async" '
+    return (f'<span class="{cls}" data-l="{initial}"><img src="{escape(url)}" alt="" loading="{'eager' if eager else 'lazy'}" decoding="async" '
             f'referrerpolicy="no-referrer" onerror="this.parentNode.classList.add(\'nl\');this.remove()"></span>')
+
+
+def media_src(t, m):
+    return asset(m['src'], m['src'], 'media', t['slug'])
+
+
+def absolute(url):
+    return SITE + url if url.startswith('/') else url
 
 
 def tool_logo(t, cls='logo', eager=False):
@@ -387,19 +418,19 @@ def onfail(cls='failed'):
 def render_stage(t, c, u):
     media = (t.get('media') or [None])[0]
     if media and media.get('portrait'):
-        img = (f'<img src="{escape(media["src"])}" alt="{escape(c["media_alt"])}" decoding="async" fetchpriority="high" '
+        img = (f'<img src="{escape(media_src(t, media))}" alt="{escape(c["media_alt"])}" decoding="async" fetchpriority="high" '
                f'referrerpolicy="no-referrer" {onfail()}>')
         chips = ''.join(f'<span class="chipfloat c{i}">{icon(ch.get("icon", "check"))}{escape(ch["text"])}</span>'
                         for i, ch in enumerate(c.get('hero_chips', [])[:3]))
         return (f'<div class="stage reveal"><div class="phone-wrap">{chips}<div class="phone"><div class="screen js-media">{img}'
                 f'<div class="fallback">{tool_logo(t, eager=True)}</div></div></div></div></div>')
     if media and media.get('frame') == 'paper':
-        img = (f'<img src="{escape(media["src"])}" alt="{escape(c["media_alt"])}" decoding="async" fetchpriority="high" '
+        img = (f'<img src="{escape(media_src(t, media))}" alt="{escape(c["media_alt"])}" decoding="async" fetchpriority="high" '
                f'referrerpolicy="no-referrer" {onfail()}>')
         return (f'<div class="stage reveal"><div class="paper js-media">{img}'
                 f'<div class="fallback">{tool_logo(t, eager=True)}</div></div></div>')
     if media:
-        img = (f'<img src="{escape(media["src"])}" alt="{escape(c["media_alt"])}" decoding="async" fetchpriority="high" '
+        img = (f'<img src="{escape(media_src(t, media))}" alt="{escape(c["media_alt"])}" decoding="async" fetchpriority="high" '
                f'referrerpolicy="no-referrer" {onfail()}>')
         mock = ('<div class="mock" aria-hidden="true"><div class="tl"><b></b><b></b><b></b><b></b><b></b></div>'
                 '<div class="cv"><div></div></div><div class="ly"><p>▣ Layer 3</p><p>▣ Layer 2</p><p>▧ Background</p></div></div>')
@@ -432,7 +463,7 @@ def json_ld(t, c, code):
     if t['pricing'] in ('free', 'freemium'):
         app['offers'] = {'@type': 'Offer', 'price': '0', 'priceCurrency': 'USD'}
     if t.get('media') and not t['media'][0].get('portrait'):
-        app['screenshot'] = t['media'][0]['src']
+        app['screenshot'] = absolute(media_src(t, t['media'][0]))
     graph = [
         {'@type': 'WebPage', '@id': url, 'url': url, 'name': c['title'], 'inLanguage': LOCALES[code][1],
          'dateModified': t['last_verified'], 'about': {'@id': url + '#app'},
@@ -460,7 +491,7 @@ def render(t, code, tools_by_slug):
     alternates += f'<link rel="alternate" hreflang="x-default" href="{SITE + page_url(slug, "en")}">'
     og_image = ''
     if t.get('media'):
-        og_image = f'<meta property="og:image" content="{escape(t["media"][0]["src"])}"><meta name="twitter:card" content="summary_large_image">'
+        og_image = f'<meta property="og:image" content="{escape(absolute(media_src(t, t["media"][0])))}"><meta name="twitter:card" content="summary_large_image">'
     head = (f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             f'<meta name="theme-color" content="#fbfbfd"><title>{escape(c["title"])}</title>'
             f'<meta name="description" content="{escape(c["description"])}"><link rel="canonical" href="{canonical}">{alternates}'

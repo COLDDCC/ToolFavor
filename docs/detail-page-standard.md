@@ -46,6 +46,16 @@ Photopea 是网页工具类的样板，Slidebox 是手机应用类的样板。
   - 网站：用官方的大尺寸图标（例如 Photopea 的 `/promo/icon512.png`）
 - 小尺寸位置（徽章、来源列表）可以用网站 favicon（通过 Google favicon 服务按域名获取）；但 favicon 通常只有 16–32px，放大后会糊成马赛克，所以不能用于首屏
 - 任何 logo 加载失败时都会自动显示首字母图标，不会出现破图
+
+**图片全部存进仓库（自动）**
+- 新增或修改 `data/tools/*.json` 并推送后，GitHub Actions（`.github/workflows/fetch-logos.yml`）会运行 `scripts/fetch-logos.py`：
+  1. 下载页面用到的所有 logo 和产品图到 `assets/logos/`、`assets/media/`
+  2. 在 `data/assets.json` 记录每张图的原始地址、本地路径和尺寸
+  3. 重新生成页面，让页面改用 toolfavor.com 自己的图片，再自动提交
+- 手机应用只需在 JSON 里写 `app_store_id`，脚本会自动取 App Store 的 512px 官方图标
+- 网站会依次尝试首页声明的 apple-touch-icon、manifest 图标和 Google favicon，取最大的那张；首屏 logo 小于 256px 时会在日志里警告
+- 下载失败不会影响页面：页面继续使用原始地址，下次运行时再重试
+- 也可以在 GitHub 的 Actions 页面手动运行，勾选 refresh 会重新下载全部图片
 - 可以用 `logo`（图片地址）、`logo_domain`、`platforms[].domain`、`compare_logos`、`alternatives[].domain` 指定
 
 **数字亮点（`highlights`）**：首屏下方的 3–5 个数字卡片，每张都必须注明出处。`complete` 和 `flagship` 档位必填。

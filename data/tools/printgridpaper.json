@@ -212,5 +212,6 @@
       "origin": "official",
       "frame": "paper"
     }
-  ]
+  ],
+  "logo": "/assets/logos/printgridpaper.svg"
 }
