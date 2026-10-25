@@ -82,7 +82,8 @@
       "cta": {
         "title": "Need graph paper now?",
         "text": "Set it up and print in under a minute."
-      }
+      },
+      "media_alt": "PrintGridPaper preview: a 5 mm graph paper sheet"
     },
     "ja": {
       "title": "PrintGridPaper — 無料で印刷できる方眼紙（PDF・A4） | ToolFavor",
@@ -141,7 +142,8 @@
       "cta": {
         "title": "今すぐ方眼紙が必要なら",
         "text": "設定して1分以内に印刷できます。"
-      }
+      },
+      "media_alt": "PrintGridPaperのプレビュー：5mm方眼紙"
     },
     "zh-cn": {
       "title": "PrintGridPaper — 免费可打印方格纸（PDF、A4） | ToolFavor",
@@ -200,7 +202,15 @@
       "cta": {
         "title": "现在就需要方格纸？",
         "text": "设置好后一分钟内即可打印。"
-      }
+      },
+      "media_alt": "PrintGridPaper 预览：5 毫米方格纸"
     }
-  }
+  },
+  "media": [
+    {
+      "src": "https://printgridpaper.com/assets/previews/5mm-graph-paper.png",
+      "origin": "official",
+      "frame": "paper"
+    }
+  ]
 }

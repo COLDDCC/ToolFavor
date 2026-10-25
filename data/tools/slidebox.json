@@ -66,14 +66,16 @@
       "name": "iPhone Photos — Duplicates",
       "url": "https://support.apple.com/en-us/102260",
       "pricing": "free",
-      "domain": "apple.com"
+      "domain": "apple.com",
+      "logo": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/72/6e/79/726e7943-4a7d-091d-3c55-1d46477cdf08/photosCalistoga-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg"
     },
     {
       "key": "google-photos",
       "name": "Google Photos — Free up space",
       "url": "https://support.google.com/photos/answer/6128843",
       "pricing": "freemium",
-      "domain": "photos.google.com"
+      "domain": "photos.google.com",
+      "logo": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b8/66/03/b8660368-9688-66a6-a186-5097bd092c58/Photos-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/512x512bb.jpg"
     },
     {
       "key": "files-by-google",
@@ -810,8 +812,9 @@
     }
   ],
   "compare_logos": {
-    "iPhone Photos": "apple.com",
-    "Google Photos": "photos.google.com",
+    "iPhone Photos": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/72/6e/79/726e7943-4a7d-091d-3c55-1d46477cdf08/photosCalistoga-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+    "Google Photos": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b8/66/03/b8660368-9688-66a6-a186-5097bd092c58/Photos-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/512x512bb.jpg",
     "Files by Google": "files.google.com"
-  }
+  },
+  "logo": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/95/71/1c/95711cc4-062e-2d20-23d9-846e8b6005d7/AppIcon-0-0-1x_U007emarketing-0-8-85-220.jpeg/512x512bb.jpg"
 }
