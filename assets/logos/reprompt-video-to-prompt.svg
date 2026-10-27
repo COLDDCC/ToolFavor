@@ -1,0 +1,49 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="192" height="192" rx="24" fill="url(#mainGradient)"/>
+  
+  <!-- Main logo container -->
+  <g transform="translate(32, 32)">
+    <!-- Central "R" for Reprompt -->
+    <path d="M20 20h36c12 0 21 6 21 18s-9 18-21 18h-12l18 24h-15l-15-21H30V98h-12V20z M32 32v21h24c6 0 9-3 9-10.5S62 32 56 32H32z" 
+          fill="white" filter="url(#glow)"/>
+    
+    <!-- AI prompt symbols -->
+    <rect x="80" y="25" width="32" height="4" rx="2" fill="url(#accentGradient)" opacity="0.9"/>
+    <rect x="80" y="35" width="24" height="4" rx="2" fill="url(#accentGradient)" opacity="0.7"/>
+    <rect x="80" y="45" width="28" height="4" rx="2" fill="url(#accentGradient)" opacity="0.8"/>
+    
+    <!-- Image frame icon -->
+    <rect x="85" y="65" width="24" height="18" rx="3" fill="none" stroke="white" stroke-width="2" opacity="0.8"/>
+    <circle cx="90" cy="72" r="2" fill="white" opacity="0.6"/>
+    <path d="M88 78l3-3 3 2 4-3v6H88z" fill="white" opacity="0.6"/>
+    
+    <!-- Sparkles and accents -->
+    <circle cx="115" cy="30" r="3" fill="white" opacity="0.9"/>
+    <circle cx="25" cy="85" r="2" fill="white" opacity="0.7"/>
+    <circle cx="110" cy="85" r="2.5" fill="white" opacity="0.8"/>
+    <circle cx="45" cy="110" r="1.5" fill="white" opacity="0.6"/>
+    
+    <!-- Tech accent lines -->
+    <path d="M10 110h20M10 115h15M10 120h18" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  </g>
+</svg> 

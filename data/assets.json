@@ -76,6 +76,13 @@
     "height": 192,
     "fetched": "2026-10-25"
   },
+  "favicon:promptvv.com": {
+    "path": "/assets/logos/promptvv.svg",
+    "source": "https://promptvv.com/icon.svg?f5105c4050f1617d",
+    "width": 10000,
+    "height": 10000,
+    "fetched": "2026-10-27"
+  },
   "favicon:slidebox.co": {
     "path": "/assets/logos/slidebox-co-09884c.ico",
     "source": "https://slidebox.co/favicon.ico?v=4",
@@ -104,6 +111,20 @@
     "height": 20,
     "fetched": "2026-10-25"
   },
+  "favicon:videoinprompt.com": {
+    "path": "/assets/logos/videoinprompt.png",
+    "source": "https://pub-00e2e6c2181b48c0a954a0b61926fc27.r2.dev/branding/favicon-8aea67c224d3-192.png",
+    "width": 192,
+    "height": 192,
+    "fetched": "2026-10-27"
+  },
+  "favicon:videotoprompt.com": {
+    "path": "/assets/logos/videotoprompt.svg",
+    "source": "https://videotoprompt.com/favicon.svg",
+    "width": 10000,
+    "height": 10000,
+    "fetched": "2026-10-27"
+  },
   "favicon:www.canva.com": {
     "path": "/assets/logos/www-canva-com-2f11a5.png",
     "source": "https://www.google.com/s2/favicons?domain=www.canva.com&sz=256",
@@ -131,6 +152,20 @@
     "width": 512,
     "height": 512,
     "fetched": "2026-10-25"
+  },
+  "favicon:www.reprompt.org": {
+    "path": "/assets/logos/reprompt-video-to-prompt.svg",
+    "source": "https://www.reprompt.org/icon-192.svg",
+    "width": 10000,
+    "height": 10000,
+    "fetched": "2026-10-27"
+  },
+  "favicon:www.videotoprompt.app": {
+    "path": "/assets/logos/videotoprompt-app.ico",
+    "source": "https://www.videotoprompt.app/favicon.ico",
+    "width": 48,
+    "height": 48,
+    "fetched": "2026-10-27"
   },
   "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b8/66/03/b8660368-9688-66a6-a186-5097bd092c58/Photos-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-0-85-220.png/512x512bb.jpg": {
     "path": "/assets/logos/google-photos-81bb26.jpg",
