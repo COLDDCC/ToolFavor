@@ -1,0 +1,541 @@
+{
+  "slug": "promptvv",
+  "name": "PromptVV",
+  "tier": "complete",
+  "url": "https://promptvv.com/",
+  "domain": "promptvv.com",
+  "category": "AI Video",
+  "type": "web",
+  "pricing": "freemium",
+  "schema": {
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web browser"
+  },
+  "last_verified": "2026-10-27",
+  "sources": {
+    "home": {
+      "url": "https://promptvv.com/",
+      "kind": "official"
+    },
+    "details": {
+      "url": "https://promptvv.com/pricing",
+      "kind": "official"
+    },
+    "alt_videotoprompt": {
+      "url": "https://videotoprompt.com/",
+      "kind": "third_party"
+    },
+    "alt_videoinprompt": {
+      "url": "https://videoinprompt.com/",
+      "kind": "third_party"
+    },
+    "alt_reprompt-video-to-prompt": {
+      "url": "https://www.reprompt.org/video-to-prompt",
+      "kind": "third_party"
+    },
+    "alt_videotoprompt-app": {
+      "url": "https://www.videotoprompt.app/",
+      "kind": "third_party"
+    }
+  },
+  "i18n": {
+    "en": {
+      "title": "PromptVV Review: Video to Prompt, Pricing & Limits | ToolFavor",
+      "description": "PromptVV turns video references into AI prompts. See supported inputs, pricing, limitations and official sources before choosing a video-to-prompt tool.",
+      "kicker": "AI Video · Web tool",
+      "lead": "Turn a video into a prompt.",
+      "sublead": "Understand the input, output and limits. Choose a tool that fits your workflow.",
+      "tags": [
+        "Upload or Douyin, Xiaohongshu and Bilibili links",
+        "Shots, dialogue and Seedance formats"
+      ],
+      "pricing_label": "Free access / paid options",
+      "snapshot": "Based on official information · Not hands-on tested",
+      "capabilities": [
+        {
+          "icon": "file",
+          "title": "Choose your reference",
+          "text": "Upload or Douyin, Xiaohongshu and Bilibili links",
+          "source": "home"
+        },
+        {
+          "icon": "layers",
+          "title": "Get a usable prompt",
+          "text": "Shots, dialogue and Seedance formats",
+          "source": "home"
+        },
+        {
+          "icon": "check",
+          "title": "Check before sharing",
+          "text": "Registration includes trial time; paid packs charge by video duration. YouTube and TikTok links are not directly supported.",
+          "source": "details"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Input",
+          "value": "Upload or Douyin, Xiaohongshu and Bilibili links",
+          "source": "home"
+        },
+        {
+          "label": "Output",
+          "value": "Shots, dialogue and Seedance formats",
+          "source": "home"
+        },
+        {
+          "label": "Pricing",
+          "value": "Registration includes trial time; paid packs charge by video duration. YouTube and TikTok links are not directly supported.",
+          "source": "details"
+        }
+      ],
+      "highlights": [
+        {
+          "value": "Upload or Douyin, Xiaohongshu and Bilibili links",
+          "label": "Input",
+          "icon": "file",
+          "source": "home"
+        },
+        {
+          "value": "Shots, dialogue and Seedance formats",
+          "label": "Output",
+          "icon": "layers",
+          "source": "home"
+        },
+        {
+          "value": "Free access / paid options",
+          "label": "Pricing",
+          "icon": "coins",
+          "source": "home"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Choose a reference",
+          "text": "Use a clip or supported input from the official tool."
+        },
+        {
+          "title": "Generate a prompt",
+          "text": "Review the available settings and submit your reference."
+        },
+        {
+          "title": "Refine the result",
+          "text": "Check motion, camera and lighting before using a video model."
+        }
+      ],
+      "fit": {
+        "good": [
+          "Chinese videos and shot-by-shot workflows"
+        ],
+        "consider": [
+          "Direct YouTube or TikTok links are needed",
+          "You need an exact copy of the original prompt"
+        ]
+      },
+      "faq": [
+        {
+          "q": "Is it free?",
+          "a": "Free trial requires registration; see pricing for current credit terms.",
+          "source": "details"
+        },
+        {
+          "q": "Can it recover the original prompt?",
+          "a": "No. The tool estimates a new prompt from visible content; it cannot guarantee the creator’s original wording.",
+          "source": "home"
+        },
+        {
+          "q": "What about privacy?",
+          "a": "Review the official privacy policy and avoid submitting confidential footage without checking how it is processed.",
+          "source": "details"
+        }
+      ],
+      "source_labels": {
+        "home": "PromptVV · official site",
+        "details": "PromptVV · official details",
+        "alt_videotoprompt": "VideoToPrompt · official site",
+        "alt_videoinprompt": "VideoInPrompt · official site",
+        "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · official site",
+        "alt_videotoprompt-app": "VideoToPrompt.app · official site"
+      },
+      "cta": {
+        "title": "Ready to try?",
+        "text": "Open the official website and review its current terms."
+      },
+      "alternatives": {
+        "videotoprompt": "Video and image uploads",
+        "videoinprompt": "Upload or supported social links; JSON",
+        "reprompt-video-to-prompt": "Four locally extracted frames"
+      },
+      "compare": {
+        "columns": [
+          "Tool",
+          "Main approach"
+        ],
+        "rows": [
+          [
+            "VideoToPrompt",
+            "Video and image uploads"
+          ],
+          [
+            "VideoInPrompt",
+            "Upload or supported social links; JSON"
+          ],
+          [
+            "PromptVV",
+            "Chinese platform links and shot breakdowns"
+          ],
+          [
+            "Reprompt Video to Prompt",
+            "Four locally extracted frames"
+          ],
+          [
+            "VideoToPrompt.app",
+            "Upload or YouTube link; multi-scene option"
+          ]
+        ],
+        "note": "Based on each official website, checked 27 October 2026. Features and pricing can change; no hands-on ranking."
+      }
+    },
+    "ja": {
+      "title": "PromptVV の使い方・料金と動画からプロンプトを作る方法 | ToolFavor",
+      "description": "PromptVV で動画からAIプロンプトを作る方法を紹介。対応する入力、料金、利用上の制限、向いている用途を公式情報をもとにまとめます。",
+      "kicker": "AI動画 · Webツール",
+      "lead": "動画からプロンプトへ。",
+      "sublead": "入力方法、出力、制限を確認。自分の制作に合うか選べます。",
+      "tags": [
+        "動画か抖音・小紅書・Bilibiliリンク",
+        "ショット・台詞・Seedance形式"
+      ],
+      "pricing_label": "無料枠・有料プラン",
+      "snapshot": "公式情報をもとに整理 · アップロード実測は未実施",
+      "capabilities": [
+        {
+          "icon": "file",
+          "title": "参考素材を選ぶ",
+          "text": "動画か抖音・小紅書・Bilibiliリンク",
+          "source": "home"
+        },
+        {
+          "icon": "layers",
+          "title": "プロンプトを作成",
+          "text": "ショット・台詞・Seedance形式",
+          "source": "home"
+        },
+        {
+          "icon": "check",
+          "title": "利用前に確認",
+          "text": "登録で試用枠があり、以降は動画の長さに応じた有料パック。YouTube・TikTokリンクは直接解析できません。",
+          "source": "details"
+        }
+      ],
+      "facts": [
+        {
+          "label": "入力",
+          "value": "動画か抖音・小紅書・Bilibiliリンク",
+          "source": "home"
+        },
+        {
+          "label": "出力",
+          "value": "ショット・台詞・Seedance形式",
+          "source": "home"
+        },
+        {
+          "label": "料金",
+          "value": "登録で試用枠があり、以降は動画の長さに応じた有料パック。YouTube・TikTokリンクは直接解析できません。",
+          "source": "details"
+        }
+      ],
+      "highlights": [
+        {
+          "value": "動画か抖音・小紅書・Bilibiliリンク",
+          "label": "入力",
+          "icon": "file",
+          "source": "home"
+        },
+        {
+          "value": "ショット・台詞・Seedance形式",
+          "label": "出力",
+          "icon": "layers",
+          "source": "home"
+        },
+        {
+          "value": "無料枠・有料プラン",
+          "label": "料金",
+          "icon": "coins",
+          "source": "home"
+        }
+      ],
+      "steps": [
+        {
+          "title": "素材を選ぶ",
+          "text": "公式サイトで動画または対応する入力を用意。"
+        },
+        {
+          "title": "生成する",
+          "text": "設定を確認し、参考素材を送信。"
+        },
+        {
+          "title": "内容を調整",
+          "text": "動き・カメラ・光を確認して動画モデルで使います。"
+        }
+      ],
+      "fit": {
+        "good": [
+          "中国語動画やショット単位の分析"
+        ],
+        "consider": [
+          "YouTube・TikTokのリンクを直接使いたい",
+          "元のプロンプトを正確に復元したい"
+        ]
+      },
+      "faq": [
+        {
+          "q": "無料で使えますか？",
+          "a": "無料試用には登録が必要です。",
+          "source": "details"
+        },
+        {
+          "q": "元のプロンプトを復元できますか？",
+          "a": "保証できません。映像から新しいプロンプトを推測するため、元の作者の文章と同一とは限りません。",
+          "source": "home"
+        },
+        {
+          "q": "プライバシーは？",
+          "a": "送信前に公式のプライバシーポリシーと素材の処理方法を確認してください。",
+          "source": "details"
+        }
+      ],
+      "source_labels": {
+        "home": "PromptVV · 公式サイト",
+        "details": "PromptVV · 公式情報",
+        "alt_videotoprompt": "VideoToPrompt · 公式サイト",
+        "alt_videoinprompt": "VideoInPrompt · 公式サイト",
+        "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · 公式サイト",
+        "alt_videotoprompt-app": "VideoToPrompt.app · 公式サイト"
+      },
+      "cta": {
+        "title": "試してみる？",
+        "text": "公式サイトで最新の利用条件を確認。"
+      },
+      "alternatives": {
+        "videotoprompt": "動画・画像のアップロード",
+        "videoinprompt": "動画・対応SNSリンク、JSON",
+        "reprompt-video-to-prompt": "ブラウザで抽出した4フレーム"
+      },
+      "compare": {
+        "columns": [
+          "ツール",
+          "主な特徴"
+        ],
+        "rows": [
+          [
+            "VideoToPrompt",
+            "動画・画像のアップロード"
+          ],
+          [
+            "VideoInPrompt",
+            "動画・対応SNSリンク、JSON"
+          ],
+          [
+            "PromptVV",
+            "中国の動画リンクとショット分解"
+          ],
+          [
+            "Reprompt Video to Prompt",
+            "ブラウザで抽出した4フレーム"
+          ],
+          [
+            "VideoToPrompt.app",
+            "動画・YouTubeリンク、複数シーン"
+          ]
+        ],
+        "note": "各公式サイトの情報（2026年10月27日確認）。機能・料金は変わる場合があります。実測ランキングではありません。"
+      }
+    },
+    "zh-cn": {
+      "title": "PromptVV 是什么？视频反推提示词、价格与限制 | ToolFavor",
+      "description": "了解 PromptVV 如何把视频转换为 AI 提示词：支持哪些素材、如何收费、适合谁及有哪些限制。附官方来源与使用前需要注意的事项。",
+      "kicker": "AI 视频 · 在线工具",
+      "lead": "视频转提示词。",
+      "sublead": "先了解输入方式、输出内容与限制，再决定是否适合你的创作流程。",
+      "tags": [
+        "上传或粘贴抖音、小红书、B站链接",
+        "分镜、台词与 Seedance 格式"
+      ],
+      "pricing_label": "免费试用 / 付费方案",
+      "snapshot": "根据官方资料整理 · 尚未实际上传测试",
+      "capabilities": [
+        {
+          "icon": "file",
+          "title": "选择参考素材",
+          "text": "上传或粘贴抖音、小红书、B站链接",
+          "source": "home"
+        },
+        {
+          "icon": "layers",
+          "title": "生成提示词",
+          "text": "分镜、台词与 Seedance 格式",
+          "source": "home"
+        },
+        {
+          "icon": "check",
+          "title": "使用前先确认",
+          "text": "注册有试用额度，付费按视频时长计费；暂不直接解析 YouTube 和 TikTok 链接。",
+          "source": "details"
+        }
+      ],
+      "facts": [
+        {
+          "label": "输入方式",
+          "value": "上传或粘贴抖音、小红书、B站链接",
+          "source": "home"
+        },
+        {
+          "label": "输出内容",
+          "value": "分镜、台词与 Seedance 格式",
+          "source": "home"
+        },
+        {
+          "label": "价格",
+          "value": "注册有试用额度，付费按视频时长计费；暂不直接解析 YouTube 和 TikTok 链接。",
+          "source": "details"
+        }
+      ],
+      "highlights": [
+        {
+          "value": "上传或粘贴抖音、小红书、B站链接",
+          "label": "输入方式",
+          "icon": "file",
+          "source": "home"
+        },
+        {
+          "value": "分镜、台词与 Seedance 格式",
+          "label": "输出内容",
+          "icon": "layers",
+          "source": "home"
+        },
+        {
+          "value": "免费试用 / 付费方案",
+          "label": "价格",
+          "icon": "coins",
+          "source": "home"
+        }
+      ],
+      "steps": [
+        {
+          "title": "选择素材",
+          "text": "在官网上传视频或使用支持的输入方式。"
+        },
+        {
+          "title": "生成提示词",
+          "text": "查看可选设置并提交参考素材。"
+        },
+        {
+          "title": "检查并修改",
+          "text": "核对动作、镜头与光线，再用于视频模型。"
+        }
+      ],
+      "fit": {
+        "good": [
+          "中文短视频与逐镜拆解"
+        ],
+        "consider": [
+          "需要直接解析 YouTube 或 TikTok 链接",
+          "需要精确还原原始提示词"
+        ]
+      },
+      "faq": [
+        {
+          "q": "免费吗？",
+          "a": "免费试用需要注册；额度以定价页为准。",
+          "source": "details"
+        },
+        {
+          "q": "能还原原作者的提示词吗？",
+          "a": "不能保证。工具根据画面推测并生成新的提示词，无法保证与原作者使用的文字一致。",
+          "source": "home"
+        },
+        {
+          "q": "隐私要注意什么？",
+          "a": "上传前阅读官网隐私政策；确认处理方式后再决定是否提交敏感素材。",
+          "source": "details"
+        }
+      ],
+      "source_labels": {
+        "home": "PromptVV · 官网",
+        "details": "PromptVV · 官方资料",
+        "alt_videotoprompt": "VideoToPrompt · 官网",
+        "alt_videoinprompt": "VideoInPrompt · 官网",
+        "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · 官网",
+        "alt_videotoprompt-app": "VideoToPrompt.app · 官网"
+      },
+      "cta": {
+        "title": "准备试试？",
+        "text": "打开官网，并确认最新使用条件。"
+      },
+      "alternatives": {
+        "videotoprompt": "视频与图片上传",
+        "videoinprompt": "上传或支持的社交链接；JSON",
+        "reprompt-video-to-prompt": "浏览器提取四张画面"
+      },
+      "compare": {
+        "columns": [
+          "工具",
+          "主要特点"
+        ],
+        "rows": [
+          [
+            "VideoToPrompt",
+            "视频与图片上传"
+          ],
+          [
+            "VideoInPrompt",
+            "上传或支持的社交链接；JSON"
+          ],
+          [
+            "PromptVV",
+            "中文平台链接与分镜拆解"
+          ],
+          [
+            "Reprompt Video to Prompt",
+            "浏览器提取四张画面"
+          ],
+          [
+            "VideoToPrompt.app",
+            "上传或 YouTube 链接；多镜头模式"
+          ]
+        ],
+        "note": "根据各官网资料整理，核对于 2026 年 10 月 27 日。功能与价格可能变化；并非实测排名。"
+      }
+    }
+  },
+  "alternatives": [
+    {
+      "key": "videotoprompt",
+      "name": "VideoToPrompt",
+      "domain": "videotoprompt.com",
+      "url": "https://videotoprompt.com/",
+      "pricing": "freemium"
+    },
+    {
+      "key": "videoinprompt",
+      "name": "VideoInPrompt",
+      "domain": "videoinprompt.com",
+      "url": "https://videoinprompt.com/",
+      "pricing": "freemium"
+    },
+    {
+      "key": "reprompt-video-to-prompt",
+      "name": "Reprompt Video to Prompt",
+      "domain": "www.reprompt.org",
+      "url": "https://www.reprompt.org/video-to-prompt",
+      "pricing": "free"
+    }
+  ],
+  "compare_links": {
+    "VideoToPrompt": "https://videotoprompt.com/",
+    "VideoInPrompt": "https://videoinprompt.com/",
+    "PromptVV": "https://promptvv.com/",
+    "Reprompt Video to Prompt": "https://www.reprompt.org/video-to-prompt",
+    "VideoToPrompt.app": "https://www.videotoprompt.app/"
+  }
+}
