@@ -215,5 +215,40 @@
     "width": 1280,
     "height": 800,
     "fetched": "2026-10-25"
+  },
+  "https://videotoprompt.com/favicon.svg": {
+    "path": "/assets/logos/videotoprompt-official.svg",
+    "source": "https://videotoprompt.com/favicon.svg",
+    "width": 0,
+    "height": 0,
+    "fetched": "2026-10-28"
+  },
+  "https://promptvv.com/icon.svg?f5105c4050f1617d": {
+    "path": "/assets/logos/promptvv-official.svg",
+    "source": "https://promptvv.com/icon.svg?f5105c4050f1617d",
+    "width": 0,
+    "height": 0,
+    "fetched": "2026-10-28"
+  },
+  "https://www.reprompt.org/favicon.svg": {
+    "path": "/assets/logos/reprompt-video-to-prompt-official.svg",
+    "source": "https://www.reprompt.org/favicon.svg",
+    "width": 0,
+    "height": 0,
+    "fetched": "2026-10-28"
+  },
+  "https://www.videotoprompt.app/logo.png": {
+    "path": "/assets/logos/videotoprompt-app-official.png",
+    "source": "https://www.videotoprompt.app/logo.png",
+    "width": 512,
+    "height": 512,
+    "fetched": "2026-10-28"
+  },
+  "https://pub-00e2e6c2181b48c0a954a0b61926fc27.r2.dev/branding/favicon-8aea67c224d3-192.png": {
+    "path": "/assets/logos/videoinprompt-official.png",
+    "source": "https://pub-00e2e6c2181b48c0a954a0b61926fc27.r2.dev/branding/favicon-8aea67c224d3-192.png",
+    "width": 192,
+    "height": 192,
+    "fetched": "2026-10-28"
   }
 }

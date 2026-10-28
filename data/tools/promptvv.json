@@ -11,14 +11,10 @@
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Web browser"
   },
-  "last_verified": "2026-10-27",
+  "last_verified": "2026-10-28",
   "sources": {
     "home": {
       "url": "https://promptvv.com/",
-      "kind": "official"
-    },
-    "details": {
-      "url": "https://promptvv.com/pricing",
       "kind": "official"
     },
     "alt_videotoprompt": {
@@ -36,6 +32,18 @@
     "alt_videotoprompt-app": {
       "url": "https://www.videotoprompt.app/",
       "kind": "third_party"
+    },
+    "pricing": {
+      "url": "https://promptvv.com/pricing",
+      "kind": "official"
+    },
+    "faq": {
+      "url": "https://promptvv.com/faq",
+      "kind": "official"
+    },
+    "privacy": {
+      "url": "https://promptvv.com/legal/privacy",
+      "kind": "official"
     }
   },
   "i18n": {
@@ -43,469 +51,580 @@
       "title": "PromptVV Review: Video to Prompt, Pricing & Limits | ToolFavor",
       "description": "PromptVV turns video references into AI prompts. See supported inputs, pricing, limitations and official sources before choosing a video-to-prompt tool.",
       "kicker": "AI Video · Web tool",
-      "lead": "Turn a video into a prompt.",
-      "sublead": "Understand the input, output and limits. Choose a tool that fits your workflow.",
+      "lead": "Chinese clips. Shot-by-shot prompts.",
+      "sublead": "Start with a file or Douyin, Xiaohongshu or Bilibili link. Break down dialogue and shots for Jimeng and Seedance workflows.",
       "tags": [
-        "Upload or Douyin, Xiaohongshu and Bilibili links",
-        "Shots, dialogue and Seedance formats"
+        "500 MB",
+        "10 min"
       ],
       "pricing_label": "Free access / paid options",
-      "snapshot": "Based on official information · Not hands-on tested",
+      "snapshot": "Official sources and interface checked · Generation quality not tested",
       "capabilities": [
         {
           "icon": "file",
-          "title": "Choose your reference",
-          "text": "Upload or Douyin, Xiaohongshu and Bilibili links",
+          "title": "Read Chinese platform clips",
+          "text": "Use local video or supported public Douyin, Xiaohongshu and Bilibili links.",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "Get a usable prompt",
-          "text": "Shots, dialogue and Seedance formats",
+          "title": "Choose the output workflow",
+          "text": "All-in-one reference, first frame, or first frame plus references.",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "Check before sharing",
-          "text": "Registration includes trial time; paid packs charge by video duration. YouTube and TikTok links are not directly supported.",
-          "source": "details"
+          "icon": "sliders",
+          "title": "Continue the adaptation",
+          "text": "Use follow-up dialogue to change characters, products or scene pacing.",
+          "source": "home"
         }
       ],
       "facts": [
         {
           "label": "Input",
-          "value": "Upload or Douyin, Xiaohongshu and Bilibili links",
-          "source": "home"
+          "value": "Local files; Douyin, Xiaohongshu, Bilibili public links",
+          "source": "faq"
         },
         {
-          "label": "Output",
-          "value": "Shots, dialogue and Seedance formats",
-          "source": "home"
+          "label": "Upload limit",
+          "value": "500 MB · up to 10 minutes",
+          "source": "faq"
         },
         {
-          "label": "Pricing",
-          "value": "Registration includes trial time; paid packs charge by video duration. YouTube and TikTok links are not directly supported.",
-          "source": "details"
+          "label": "Formats",
+          "value": "MP4, MOV, WebM, M4V",
+          "source": "faq"
+        },
+        {
+          "label": "Account",
+          "value": "Registration required; trial time included",
+          "source": "faq"
+        },
+        {
+          "label": "Billing",
+          "value": "Prepaid video time; successful analyses are charged",
+          "source": "pricing"
         }
       ],
       "highlights": [
         {
-          "value": "Upload or Douyin, Xiaohongshu and Bilibili links",
-          "label": "Input",
-          "icon": "file",
-          "source": "home"
+          "value": "500 MB",
+          "label": "Maximum file size",
+          "source": "faq",
+          "icon": "file"
         },
         {
-          "value": "Shots, dialogue and Seedance formats",
-          "label": "Output",
-          "icon": "layers",
-          "source": "home"
+          "value": "10 min",
+          "label": "Maximum clip length",
+          "source": "faq",
+          "icon": "layers"
         },
         {
-          "value": "Free access / paid options",
-          "label": "Pricing",
-          "icon": "coins",
-          "source": "home"
+          "value": "3 formats",
+          "label": "Reference / first frame / both",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "Choose a reference",
-          "text": "Use a clip or supported input from the official tool."
+          "title": "Add a clip or link.",
+          "text": "MP4, MOV, WebM or M4V; no more than 500 MB and 10 minutes."
         },
         {
-          "title": "Generate a prompt",
-          "text": "Review the available settings and submit your reference."
+          "title": "Pick type and format.",
+          "text": "Choose a video type, output workflow and target duration limit."
         },
         {
-          "title": "Refine the result",
-          "text": "Check motion, camera and lighting before using a video model."
+          "title": "Adapt the shot breakdown.",
+          "text": "Review dialogue and shots, then request changes for your own project."
         }
       ],
       "fit": {
         "good": [
-          "Chinese videos and shot-by-shot workflows"
+          "You work with Chinese dialogue and Chinese video platforms.",
+          "You want first-frame or reference-image prompts alongside video prompts."
         ],
         "consider": [
-          "Direct YouTube or TikTok links are needed",
-          "You need an exact copy of the original prompt"
+          "You need direct YouTube or TikTok URL analysis; upload a file instead.",
+          "You need anonymous use: registration is required."
         ]
       },
       "faq": [
         {
-          "q": "Is it free?",
-          "a": "Free trial requires registration; see pricing for current credit terms.",
-          "source": "details"
+          "q": "Is PromptVV free?",
+          "a": "Registration includes trial time. After that, prepaid packs are billed by the video’s duration; the official pricing page says failed analyses do not consume time.",
+          "source": "pricing"
         },
         {
-          "q": "Can it recover the original prompt?",
-          "a": "No. The tool estimates a new prompt from visible content; it cannot guarantee the creator’s original wording.",
+          "q": "What are the upload limits?",
+          "a": "The FAQ lists MP4, MOV, WebM and M4V, a maximum of 500 MB per file and clips up to 10 minutes.",
+          "source": "faq"
+        },
+        {
+          "q": "Can I paste a YouTube or TikTok link?",
+          "a": "The FAQ says these are not directly supported. Download an authorized copy and use the local upload instead.",
+          "source": "faq"
+        },
+        {
+          "q": "How does it handle uploaded video?",
+          "a": "According to the FAQ, the video is removed after analysis, while the text result remains in account history. This is an official policy statement, not a privacy audit.",
+          "source": "faq"
+        },
+        {
+          "q": "What is the difference between the output formats?",
+          "a": "All-in-one reference produces asset references plus video prompts; first-frame focuses on the opening image; the combined option includes both. Choose the workflow your target model accepts.",
           "source": "home"
-        },
-        {
-          "q": "What about privacy?",
-          "a": "Review the official privacy policy and avoid submitting confidential footage without checking how it is processed.",
-          "source": "details"
         }
       ],
       "source_labels": {
         "home": "PromptVV · official site",
-        "details": "PromptVV · official details",
         "alt_videotoprompt": "VideoToPrompt · official site",
         "alt_videoinprompt": "VideoInPrompt · official site",
         "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · official site",
-        "alt_videotoprompt-app": "VideoToPrompt.app · official site"
+        "alt_videotoprompt-app": "VideoToPrompt.app · official site",
+        "pricing": "PromptVV · Pricing",
+        "faq": "PromptVV · FAQ",
+        "privacy": "PromptVV · Privacy policy"
       },
       "cta": {
-        "title": "Ready to try?",
-        "text": "Open the official website and review its current terms."
+        "title": "Try PromptVV.",
+        "text": "Check the current allowance, then start with a short reference."
       },
       "alternatives": {
-        "videotoprompt": "Video and image uploads",
-        "videoinprompt": "Upload or supported social links; JSON",
-        "reprompt-video-to-prompt": "Four locally extracted frames"
+        "videotoprompt": "Choose it when you already have a local video or still and want to set the output language.",
+        "videoinprompt": "Choose it for model presets or structured JSON that can feed another workflow.",
+        "reprompt-video-to-prompt": "Choose it for a short single shot without signing up; only sampled frames are sent, according to its site."
       },
       "compare": {
         "columns": [
           "Tool",
-          "Main approach"
+          "Input",
+          "Output / workflow",
+          "Main limit"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "Video and image uploads"
+            "Local video / image",
+            "Text; output language",
+            "50 MB video; free terms unclear"
           ],
           [
             "VideoInPrompt",
-            "Upload or supported social links; JSON"
+            "Upload / supported links",
+            "Text + JSON; model presets",
+            "Free credits; verify current plan"
           ],
           [
             "PromptVV",
-            "Chinese platform links and shot breakdowns"
+            "Upload / Chinese platform links",
+            "Dialogue, shots, reference formats",
+            "500 MB / 10 min; registration"
           ],
           [
             "Reprompt Video to Prompt",
-            "Four locally extracted frames"
+            "Clip / screenshots",
+            "Four-frame text or JSON prompt",
+            "No account; daily limits; one short shot"
           ],
           [
             "VideoToPrompt.app",
-            "Upload or YouTube link; multi-scene option"
+            "Upload / YouTube",
+            "Single-scene / multi-scene",
+            "FAQ: 20 MB; free quota varies"
           ]
         ],
-        "note": "Based on each official website, checked 27 October 2026. Features and pricing can change; no hands-on ranking."
-      }
+        "note": "Official product descriptions checked 28 October 2026. Compare workflows, not measured generation quality."
+      },
+      "media_alt": "PromptVV · official website interface captured by ToolFavor",
+      "media_caption": "Official website screenshot · 28 Oct 2026 · Open full size"
     },
     "ja": {
       "title": "PromptVV の使い方・料金と動画からプロンプトを作る方法 | ToolFavor",
-      "description": "PromptVV で動画からAIプロンプトを作る方法を紹介。対応する入力、料金、利用上の制限、向いている用途を公式情報をもとにまとめます。",
+      "description": "PromptVVの使い方・料金。動画か抖音・小紅書・Bilibiliのリンクから、台詞とショットを整理。JimengやSeedance向けの制作素材に。 対応入力と制限を公式情報で確認できます。",
       "kicker": "AI動画 · Webツール",
-      "lead": "動画からプロンプトへ。",
-      "sublead": "入力方法、出力、制限を確認。自分の制作に合うか選べます。",
+      "lead": "中国語動画を、ショットごとに。",
+      "sublead": "動画か抖音・小紅書・Bilibiliのリンクから、台詞とショットを整理。JimengやSeedance向けの制作素材に。",
       "tags": [
-        "動画か抖音・小紅書・Bilibiliリンク",
-        "ショット・台詞・Seedance形式"
+        "500 MB",
+        "10分"
       ],
       "pricing_label": "無料枠・有料プラン",
-      "snapshot": "公式情報をもとに整理 · アップロード実測は未実施",
+      "snapshot": "公式情報・画面を確認 · 生成品質は未検証",
       "capabilities": [
         {
           "icon": "file",
-          "title": "参考素材を選ぶ",
-          "text": "動画か抖音・小紅書・Bilibiliリンク",
+          "title": "中国の動画リンクに対応",
+          "text": "ローカル動画と抖音・小紅書・Bilibiliの公開リンク。",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "プロンプトを作成",
-          "text": "ショット・台詞・Seedance形式",
+          "title": "制作方法に合わせて出力",
+          "text": "全体の参考、最初のフレーム、両方の3形式。",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "利用前に確認",
-          "text": "登録で試用枠があり、以降は動画の長さに応じた有料パック。YouTube・TikTokリンクは直接解析できません。",
-          "source": "details"
+          "icon": "sliders",
+          "title": "対話でアレンジ",
+          "text": "人物や商品、シーンのテンポを続けて変更。",
+          "source": "home"
         }
       ],
       "facts": [
         {
           "label": "入力",
-          "value": "動画か抖音・小紅書・Bilibiliリンク",
-          "source": "home"
+          "value": "動画・抖音・小紅書・Bilibiliの公開リンク",
+          "source": "faq"
         },
         {
-          "label": "出力",
-          "value": "ショット・台詞・Seedance形式",
-          "source": "home"
+          "label": "上限",
+          "value": "500 MB・10分以内",
+          "source": "faq"
         },
         {
-          "label": "料金",
-          "value": "登録で試用枠があり、以降は動画の長さに応じた有料パック。YouTube・TikTokリンクは直接解析できません。",
-          "source": "details"
+          "label": "形式",
+          "value": "MP4・MOV・WebM・M4V",
+          "source": "faq"
+        },
+        {
+          "label": "登録",
+          "value": "必須。試用時間あり",
+          "source": "faq"
+        },
+        {
+          "label": "課金",
+          "value": "動画時間パック。分析成功時に消費",
+          "source": "pricing"
         }
       ],
       "highlights": [
         {
-          "value": "動画か抖音・小紅書・Bilibiliリンク",
-          "label": "入力",
-          "icon": "file",
-          "source": "home"
+          "value": "500 MB",
+          "label": "ファイルサイズ上限",
+          "source": "faq",
+          "icon": "file"
         },
         {
-          "value": "ショット・台詞・Seedance形式",
-          "label": "出力",
-          "icon": "layers",
-          "source": "home"
+          "value": "10分",
+          "label": "動画の長さの上限",
+          "source": "faq",
+          "icon": "layers"
         },
         {
-          "value": "無料枠・有料プラン",
-          "label": "料金",
-          "icon": "coins",
-          "source": "home"
+          "value": "3形式",
+          "label": "参考・冒頭フレーム・併用",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "素材を選ぶ",
-          "text": "公式サイトで動画または対応する入力を用意。"
+          "title": "動画かリンクを指定。",
+          "text": "MP4・MOV・WebM・M4V、最大500 MB・10分。"
         },
         {
-          "title": "生成する",
-          "text": "設定を確認し、参考素材を送信。"
+          "title": "種類と形式を選ぶ。",
+          "text": "動画タイプ、出力形式、対象モデルの長さを指定。"
         },
         {
-          "title": "内容を調整",
-          "text": "動き・カメラ・光を確認して動画モデルで使います。"
+          "title": "ショットを確認して改編。",
+          "text": "台詞やカメラを見直し、自分の制作向けに調整。"
         }
       ],
       "fit": {
         "good": [
-          "中国語動画やショット単位の分析"
+          "中国語の台詞や中国の動画サービスを扱う。",
+          "動画だけでなく最初のフレームや参考画像も必要。"
         ],
         "consider": [
-          "YouTube・TikTokのリンクを直接使いたい",
-          "元のプロンプトを正確に復元したい"
+          "YouTube・TikTokのリンクを直接使いたい。現状は動画のアップロードを。",
+          "登録せずに利用したい。アカウントが必要です。"
         ]
       },
       "faq": [
         {
-          "q": "無料で使えますか？",
-          "a": "無料試用には登録が必要です。",
-          "source": "details"
+          "q": "無料ですか？",
+          "a": "登録時に試用時間が付与され、その後は動画時間のプリペイド制。公式料金ページでは分析失敗時は消費しないと案内しています。",
+          "source": "pricing"
         },
         {
-          "q": "元のプロンプトを復元できますか？",
-          "a": "保証できません。映像から新しいプロンプトを推測するため、元の作者の文章と同一とは限りません。",
+          "q": "ファイルの上限は？",
+          "a": "FAQではMP4・MOV・WebM・M4V、1ファイル最大500 MB、動画は10分以内と案内。",
+          "source": "faq"
+        },
+        {
+          "q": "YouTube・TikTokのURLは使えますか？",
+          "a": "FAQでは直接対応していません。利用権限のある動画を保存してローカルから入力します。",
+          "source": "faq"
+        },
+        {
+          "q": "送った動画は保存されますか？",
+          "a": "公式FAQによると分析後に動画を削除し、文章だけ履歴に残します。これは公式の説明であり、独立した監査結果ではありません。",
+          "source": "faq"
+        },
+        {
+          "q": "3つの形式はどう選ぶ？",
+          "a": "全体参考は素材画像と動画プロンプト、最初のフレームは冒頭画像、併用形式は両方を作成。使うモデルの制作方法に合わせます。",
           "source": "home"
-        },
-        {
-          "q": "プライバシーは？",
-          "a": "送信前に公式のプライバシーポリシーと素材の処理方法を確認してください。",
-          "source": "details"
         }
       ],
       "source_labels": {
         "home": "PromptVV · 公式サイト",
-        "details": "PromptVV · 公式情報",
         "alt_videotoprompt": "VideoToPrompt · 公式サイト",
         "alt_videoinprompt": "VideoInPrompt · 公式サイト",
         "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · 公式サイト",
-        "alt_videotoprompt-app": "VideoToPrompt.app · 公式サイト"
+        "alt_videotoprompt-app": "VideoToPrompt.app · 公式サイト",
+        "pricing": "PromptVV · 料金",
+        "faq": "PromptVV · よくある質問",
+        "privacy": "PromptVV · プライバシー"
       },
       "cta": {
-        "title": "試してみる？",
-        "text": "公式サイトで最新の利用条件を確認。"
+        "title": "PromptVVを試す。",
+        "text": "利用枠を確認して、短い参考動画から。"
       },
       "alternatives": {
-        "videotoprompt": "動画・画像のアップロード",
-        "videoinprompt": "動画・対応SNSリンク、JSON",
-        "reprompt-video-to-prompt": "ブラウザで抽出した4フレーム"
+        "videotoprompt": "ローカル動画や画像から、出力言語を指定して作りたい場合に。",
+        "videoinprompt": "モデル別設定や、次の処理につなぐJSONが欲しい場合に。",
+        "reprompt-video-to-prompt": "登録なしで短い1ショットを分析したい場合に。公式は抽出画像のみ送信と案内。"
       },
       "compare": {
         "columns": [
           "ツール",
-          "主な特徴"
+          "入力",
+          "出力・用途",
+          "主な制限"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "動画・画像のアップロード"
+            "動画・画像ファイル",
+            "文章・出力言語を選択",
+            "動画50 MB。無料条件は不明確"
           ],
           [
             "VideoInPrompt",
-            "動画・対応SNSリンク、JSON"
+            "動画・対応リンク",
+            "文章・JSON・モデル設定",
+            "無料クレジット。現行条件を確認"
           ],
           [
             "PromptVV",
-            "中国の動画リンクとショット分解"
+            "動画・中国の対応リンク",
+            "台詞・ショット・参考画像",
+            "500 MB・10分、登録必須"
           ],
           [
             "Reprompt Video to Prompt",
-            "ブラウザで抽出した4フレーム"
+            "動画・スクリーンショット",
+            "4フレームから文章・JSON",
+            "登録不要、日次上限。短い1ショット向け"
           ],
           [
             "VideoToPrompt.app",
-            "動画・YouTubeリンク、複数シーン"
+            "動画・YouTube",
+            "単一・複数シーン",
+            "FAQは20 MB。無料回数の案内に差"
           ]
         ],
-        "note": "各公式サイトの情報（2026年10月27日確認）。機能・料金は変わる場合があります。実測ランキングではありません。"
-      }
+        "note": "2026年10月28日の公式情報で制作方法を比較。生成品質の実測順位ではありません。"
+      },
+      "media_alt": "PromptVV · ToolFavorが撮影した公式サイトの画面",
+      "media_caption": "公式サイトの画面 · 2026年10月28日 · 拡大する"
     },
     "zh-cn": {
       "title": "PromptVV 是什么？视频反推提示词、价格与限制 | ToolFavor",
-      "description": "了解 PromptVV 如何把视频转换为 AI 提示词：支持哪些素材、如何收费、适合谁及有哪些限制。附官方来源与使用前需要注意的事项。",
+      "description": "PromptVV 视频反推提示词工具介绍：上传素材或粘贴抖音、小红书、B站链接。把台词、分镜和参考图提示词整理成即梦、Seedance 创作底稿。 了解输入方式、费用与限制，并查看真实界面、使用步骤和同类工具对比。",
       "kicker": "AI 视频 · 在线工具",
-      "lead": "视频转提示词。",
-      "sublead": "先了解输入方式、输出内容与限制，再决定是否适合你的创作流程。",
+      "lead": "中文视频，逐镜拆开。",
+      "sublead": "上传素材或粘贴抖音、小红书、B站链接。把台词、分镜和参考图提示词整理成即梦、Seedance 创作底稿。",
       "tags": [
-        "上传或粘贴抖音、小红书、B站链接",
-        "分镜、台词与 Seedance 格式"
+        "500 MB",
+        "10 分钟"
       ],
       "pricing_label": "免费试用 / 付费方案",
-      "snapshot": "根据官方资料整理 · 尚未实际上传测试",
+      "snapshot": "已核对官方资料与界面 · 未测试生成质量",
       "capabilities": [
         {
           "icon": "file",
-          "title": "选择参考素材",
-          "text": "上传或粘贴抖音、小红书、B站链接",
+          "title": "从中文平台取素材",
+          "text": "支持本地上传，以及抖音、小红书、B站公开链接。",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "生成提示词",
-          "text": "分镜、台词与 Seedance 格式",
+          "title": "按工作流选格式",
+          "text": "全能参考、首帧或首帧＋参考三种输出。",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "使用前先确认",
-          "text": "注册有试用额度，付费按视频时长计费；暂不直接解析 YouTube 和 TikTok 链接。",
-          "source": "details"
+          "icon": "sliders",
+          "title": "接着对话改编",
+          "text": "继续替换角色、商品，或调整镜头节奏。",
+          "source": "home"
         }
       ],
       "facts": [
         {
-          "label": "输入方式",
-          "value": "上传或粘贴抖音、小红书、B站链接",
-          "source": "home"
+          "label": "输入",
+          "value": "本地视频；抖音、小红书、B站公开链接",
+          "source": "faq"
         },
         {
-          "label": "输出内容",
-          "value": "分镜、台词与 Seedance 格式",
-          "source": "home"
+          "label": "上限",
+          "value": "500 MB；最长 10 分钟",
+          "source": "faq"
         },
         {
-          "label": "价格",
-          "value": "注册有试用额度，付费按视频时长计费；暂不直接解析 YouTube 和 TikTok 链接。",
-          "source": "details"
+          "label": "格式",
+          "value": "MP4、MOV、WebM、M4V",
+          "source": "faq"
+        },
+        {
+          "label": "账号",
+          "value": "需要注册，提供试用时长",
+          "source": "faq"
+        },
+        {
+          "label": "计费",
+          "value": "充值时长包；分析成功后扣额度",
+          "source": "pricing"
         }
       ],
       "highlights": [
         {
-          "value": "上传或粘贴抖音、小红书、B站链接",
-          "label": "输入方式",
-          "icon": "file",
-          "source": "home"
+          "value": "500 MB",
+          "label": "单文件大小上限",
+          "source": "faq",
+          "icon": "file"
         },
         {
-          "value": "分镜、台词与 Seedance 格式",
-          "label": "输出内容",
-          "icon": "layers",
-          "source": "home"
+          "value": "10 分钟",
+          "label": "单视频时长上限",
+          "source": "faq",
+          "icon": "layers"
         },
         {
-          "value": "免费试用 / 付费方案",
-          "label": "价格",
-          "icon": "coins",
-          "source": "home"
+          "value": "3 种格式",
+          "label": "参考、首帧、两者结合",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "选择素材",
-          "text": "在官网上传视频或使用支持的输入方式。"
+          "title": "上传或粘贴链接。",
+          "text": "支持 MP4、MOV、WebM、M4V；不超过 500 MB、10 分钟。"
         },
         {
-          "title": "生成提示词",
-          "text": "查看可选设置并提交参考素材。"
+          "title": "选择类型与格式。",
+          "text": "按素材选择视频类型、输出格式和目标模型时长。"
         },
         {
-          "title": "检查并修改",
-          "text": "核对动作、镜头与光线，再用于视频模型。"
+          "title": "检查分镜再改编。",
+          "text": "核对台词和镜头后，继续对话修改自己的创作版本。"
         }
       ],
       "fit": {
         "good": [
-          "中文短视频与逐镜拆解"
+          "主要处理中文对白和中文平台素材。",
+          "同时需要首帧、参考图与视频提示词。"
         ],
         "consider": [
-          "需要直接解析 YouTube 或 TikTok 链接",
-          "需要精确还原原始提示词"
+          "想直接解析 YouTube 或 TikTok：目前应改用本地上传。",
+          "想匿名使用：该工具需要注册。"
         ]
       },
       "faq": [
         {
-          "q": "免费吗？",
-          "a": "免费试用需要注册；额度以定价页为准。",
-          "source": "details"
+          "q": "PromptVV 免费吗？",
+          "a": "注册可获得试用时长，之后购买时长包。官网定价页称按实际视频时长计费，分析失败不扣额度。",
+          "source": "pricing"
         },
         {
-          "q": "能还原原作者的提示词吗？",
-          "a": "不能保证。工具根据画面推测并生成新的提示词，无法保证与原作者使用的文字一致。",
+          "q": "文件大小和时长限制是多少？",
+          "a": "FAQ 列出 MP4、MOV、WebM、M4V；单文件最大 500 MB，视频最长 10 分钟。",
+          "source": "faq"
+        },
+        {
+          "q": "能直接粘贴 YouTube 或 TikTok 吗？",
+          "a": "FAQ 说明暂不直接支持。可在有权使用素材的前提下下载后本地上传。",
+          "source": "faq"
+        },
+        {
+          "q": "上传的视频会保留吗？",
+          "a": "官网 FAQ 称分析结束后删除视频，只把文字结果保存在账号历史中。这是官方声明，并非我们的隐私审计结论。",
+          "source": "faq"
+        },
+        {
+          "q": "三种输出格式怎么选？",
+          "a": "全能参考包含素材参考图与视频提示词；首帧格式侧重开场图；首帧＋参考同时提供两者。按目标模型接受的工作流选择。",
           "source": "home"
-        },
-        {
-          "q": "隐私要注意什么？",
-          "a": "上传前阅读官网隐私政策；确认处理方式后再决定是否提交敏感素材。",
-          "source": "details"
         }
       ],
       "source_labels": {
         "home": "PromptVV · 官网",
-        "details": "PromptVV · 官方资料",
         "alt_videotoprompt": "VideoToPrompt · 官网",
         "alt_videoinprompt": "VideoInPrompt · 官网",
         "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · 官网",
-        "alt_videotoprompt-app": "VideoToPrompt.app · 官网"
+        "alt_videotoprompt-app": "VideoToPrompt.app · 官网",
+        "pricing": "PromptVV · 定价",
+        "faq": "PromptVV · 常见问题",
+        "privacy": "PromptVV · 隐私政策"
       },
       "cta": {
-        "title": "准备试试？",
-        "text": "打开官网，并确认最新使用条件。"
+        "title": "试试 PromptVV。",
+        "text": "先确认当前额度，再从一段短素材开始。"
       },
       "alternatives": {
-        "videotoprompt": "视频与图片上传",
-        "videoinprompt": "上传或支持的社交链接；JSON",
-        "reprompt-video-to-prompt": "浏览器提取四张画面"
+        "videotoprompt": "已有本地视频或图片，想指定输出语言时可以比较它。",
+        "videoinprompt": "需要模型预设、JSON，或把结果接入后续流程时可以比较它。",
+        "reprompt-video-to-prompt": "想不注册先分析单镜头短片；官网称只发送取样截图。"
       },
       "compare": {
         "columns": [
           "工具",
-          "主要特点"
+          "输入",
+          "输出与工作流",
+          "主要限制"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "视频与图片上传"
+            "本地视频、图片",
+            "文字，可选输出语言",
+            "视频 50 MB；免费规则不明确"
           ],
           [
             "VideoInPrompt",
-            "上传或支持的社交链接；JSON"
+            "上传、支持的平台链接",
+            "文字、JSON、模型预设",
+            "免费额度有限，以当前方案为准"
           ],
           [
             "PromptVV",
-            "中文平台链接与分镜拆解"
+            "上传、中文平台链接",
+            "台词、分镜、参考图格式",
+            "500 MB、10 分钟；需注册"
           ],
           [
             "Reprompt Video to Prompt",
-            "浏览器提取四张画面"
+            "片段、截图",
+            "四帧分析，文字或 JSON",
+            "无需账号，有每日限制；适合单镜头"
           ],
           [
             "VideoToPrompt.app",
-            "上传或 YouTube 链接；多镜头模式"
+            "上传、YouTube",
+            "单镜头、多镜头分析",
+            "FAQ 写 20 MB；免费次数说明不一致"
           ]
         ],
-        "note": "根据各官网资料整理，核对于 2026 年 10 月 27 日。功能与价格可能变化；并非实测排名。"
-      }
+        "note": "按 2026 年 10 月 28 日核对的官方资料比较使用方式，并非生成质量的实测排名。"
+      },
+      "media_alt": "PromptVV · ToolFavor 截取的官网界面",
+      "media_caption": "官网界面截图 · 2026-10-28 · 点击看大图"
     }
   },
   "alternatives": [
@@ -537,5 +656,18 @@
     "PromptVV": "https://promptvv.com/",
     "Reprompt Video to Prompt": "https://www.reprompt.org/video-to-prompt",
     "VideoToPrompt.app": "https://www.videotoprompt.app/"
-  }
+  },
+  "logo": "/assets/logos/promptvv-official.svg",
+  "media": [
+    {
+      "src": "/assets/media/promptvv-interface.webp",
+      "origin": "screenshot",
+      "source_url": "https://promptvv.com/",
+      "captured_on": "2026-10-28",
+      "frame": "browser",
+      "width": 1280,
+      "height": 879
+    }
+  ],
+  "related_same_category": true
 }

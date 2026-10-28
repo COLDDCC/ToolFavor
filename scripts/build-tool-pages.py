@@ -37,7 +37,7 @@ UI = {
   'related_more': 'Browse the full directory',
   'pricing': {'free': 'Free', 'freemium': 'Free plan', 'paid': 'Paid'},
   'type': {'web': 'Web app', 'mobile': 'Mobile app', 'desktop': 'Desktop app', 'extension': 'Browser extension'},
-  'cat': {'Design': 'Design', 'Productivity': 'Productivity'},
+  'cat': {'Design': 'Design', 'Productivity': 'Productivity', 'AI Video': 'AI Video'},
   'category': 'Category', 'type_label': 'Type', 'website': 'Website',
   'footer': 'ToolFavor · Discover, understand and compare useful tools.',
  },
@@ -57,7 +57,7 @@ UI = {
   'related_more': 'ツール一覧を見る',
   'pricing': {'free': '無料', 'freemium': '無料プランあり', 'paid': '有料'},
   'type': {'web': 'Webアプリ', 'mobile': 'モバイルアプリ', 'desktop': 'デスクトップアプリ', 'extension': 'ブラウザー拡張'},
-  'cat': {'Design': 'デザイン', 'Productivity': '仕事効率化'},
+  'cat': {'Design': 'デザイン', 'Productivity': '仕事効率化', 'AI Video': 'AI動画'},
   'category': 'カテゴリ', 'type_label': '種類', 'website': '公式サイト',
   'footer': 'ToolFavor · 便利なツールを見つけて、比べて、選ぶ。',
  },
@@ -77,7 +77,7 @@ UI = {
   'related_more': '浏览完整目录',
   'pricing': {'free': '免费', 'freemium': '有免费方案', 'paid': '付费'},
   'type': {'web': '网页应用', 'mobile': '手机应用', 'desktop': '桌面软件', 'extension': '浏览器扩展'},
-  'cat': {'Design': '设计工具', 'Productivity': '效率工具'},
+  'cat': {'Design': '设计工具', 'Productivity': '效率工具', 'AI Video': 'AI 视频'},
   'category': '分类', 'type_label': '类型', 'website': '官网',
   'footer': 'ToolFavor · 发现、了解并比较值得使用的工具。',
  },
@@ -152,7 +152,7 @@ def logo(domain, name, cls='logo', src=None, eager=False):
     else:
         url = asset('favicon:' + domain, f'https://www.google.com/s2/favicons?domain={quote(domain)}&sz=256', 'favicon', slugify(domain))
     initial = escape((name.strip() or '?')[0].upper())
-    return (f'<span class="{cls}" data-l="{initial}"><img src="{escape(url)}" alt="" loading="{'eager' if eager else 'lazy'}" decoding="async" '
+    return (f'<span class="{cls}" data-l="{initial}"><img src="{escape(url)}" alt="" width="104" height="104" loading="{'eager' if eager else 'lazy'}" decoding="async" '
             f'referrerpolicy="no-referrer" onerror="this.parentNode.classList.add(\'nl\');this.remove()"></span>')
 
 
@@ -300,6 +300,11 @@ h1.long{font-size:clamp(40px,5.6vw,68px)!important}h1{font-size:clamp(48px,8vw,8
 .browser .addr{margin:0 auto;font-size:12px;color:var(--muted);background:rgba(0,0,0,.04);border-radius:8px;padding:4px 40px}
 .browser .view img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left}
 .browser .view .mock{display:none}.browser.failed .view img{display:none}.browser.failed .view .mock{display:grid}
+.hero-grid>*{min-width:0}h1{overflow-wrap:anywhere}.stage{min-width:0}
+.product-preview{margin:0;width:100%}.product-preview .view img{aspect-ratio:auto;object-fit:contain}
+.product-preview .addr{max-width:70%;padding-inline:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.preview-caption{display:block;padding:12px 16px;font-size:12px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);text-align:center}
+.product-preview .fallback{display:none;padding:40px;justify-content:center}.product-preview.failed .fallback{display:flex}
 .mock{grid-template-columns:44px 1fr 150px;aspect-ratio:16/10;background:#2c2c35;color:#bdbdc7;font-size:11px;text-align:left}
 .mock .tl{background:#23232b;display:grid;align-content:start;gap:16px;padding:16px 0;justify-items:center}.mock .tl b{width:16px;height:16px;border-radius:4px;background:#45454f}
 .mock .cv{display:grid;place-items:center;background:repeating-conic-gradient(#3a3a44 0 25%,#33333c 0 50%) 50%/24px 24px}.mock .cv div{width:70%;aspect-ratio:1.3;border-radius:6px;background:linear-gradient(135deg,var(--lilac),var(--sky) 55%,var(--mint));box-shadow:0 20px 40px rgba(0,0,0,.35)}
@@ -417,6 +422,16 @@ def onfail(cls='failed'):
 
 def render_stage(t, c, u):
     media = (t.get('media') or [None])[0]
+    if media and media.get('origin') == 'screenshot':
+        src = media_src(t, media)
+        img = (f'<img src="{escape(src)}" alt="{escape(c["media_alt"])}" '
+               f'width="{media["width"]}" height="{media["height"]}" decoding="async" fetchpriority="high" {onfail()}>')
+        return (f'<div class="stage reveal"><figure class="browser product-preview js-media">'
+                f'<div class="bar"><i></i><i></i><i></i><span class="addr">{escape(t["domain"])}</span></div>'
+                f'<div class="view"><a href="{escape(src)}" target="_blank" rel="noopener">{img}</a>'
+                f'<div class="fallback">{tool_logo(t)}</div></div>'
+                f'<figcaption><a class="preview-caption" href="{escape(src)}" target="_blank" rel="noopener">'
+                f'{escape(c["media_caption"])}</a></figcaption></figure></div>')
     if media and media.get('portrait'):
         img = (f'<img src="{escape(media_src(t, media))}" alt="{escape(c["media_alt"])}" decoding="async" fetchpriority="high" '
                f'referrerpolicy="no-referrer" {onfail()}>')
@@ -601,7 +616,10 @@ def render(t, code, tools_by_slug):
     body.append(block('details', titles['details'], fine, u['subs']['details']))
 
     skip = {a['key'] for a in t.get('alternatives', [])} | {slug}
-    others = sorted((o for o in tools_by_slug.values() if o['slug'] not in skip), key=lambda o: (o['category'] != t['category'], o['name']))
+    candidates = [o for o in tools_by_slug.values() if o['slug'] not in skip]
+    if t.get('related_same_category'):
+        candidates = [o for o in candidates if o['category'] == t['category']]
+    others = sorted(candidates, key=lambda o: (o['category'] != t['category'], o['name']))
     if others:
         cards = ''.join(f'<a class="rel glass-card reveal" href="{page_url(o["slug"], code)}">{tool_logo(o)}'
                         f'<span><h3>{escape(o["name"])}</h3><p>{escape(o["i18n"][code]["lead"])}</p></span></a>' for o in others[:3])
@@ -665,3 +683,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

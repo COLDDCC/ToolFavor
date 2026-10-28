@@ -11,14 +11,10 @@
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Web browser"
   },
-  "last_verified": "2026-10-27",
+  "last_verified": "2026-10-28",
   "sources": {
     "home": {
       "url": "https://www.videotoprompt.app/",
-      "kind": "official"
-    },
-    "details": {
-      "url": "https://www.videotoprompt.app/privacy-policy",
       "kind": "official"
     },
     "alt_videotoprompt": {
@@ -36,6 +32,14 @@
     "alt_reprompt-video-to-prompt": {
       "url": "https://www.reprompt.org/video-to-prompt",
       "kind": "third_party"
+    },
+    "privacy": {
+      "url": "https://www.videotoprompt.app/privacy-policy",
+      "kind": "official"
+    },
+    "other_com": {
+      "url": "https://videotoprompt.com/",
+      "kind": "third_party"
     }
   },
   "i18n": {
@@ -43,469 +47,577 @@
       "title": "VideoToPrompt.app Review: Video to Prompt, Pricing & Limits | ToolFavor",
       "description": "VideoToPrompt.app turns video references into AI prompts. See supported inputs, pricing, limitations and official sources before choosing a video-to-prompt tool.",
       "kicker": "AI Video · Web tool",
-      "lead": "Turn a video into a prompt.",
-      "sublead": "Understand the input, output and limits. Choose a tool that fits your workflow.",
+      "lead": "Choose a shot. Or break down scenes.",
+      "sublead": "Analyze a local video or YouTube link. This separate .app product offers single-scene and multi-scene workflows.",
       "tags": [
-        "Upload video or a YouTube link",
-        "Single-scene and multi-scene modes"
+        "2 modes",
+        "YouTube"
       ],
       "pricing_label": "Free access / paid options",
-      "snapshot": "Based on official information · Not hands-on tested",
+      "snapshot": "Official sources and interface checked · Generation quality not tested",
       "capabilities": [
         {
           "icon": "file",
-          "title": "Choose your reference",
-          "text": "Upload video or a YouTube link",
+          "title": "Use YouTube or a file",
+          "text": "The public interface includes a YouTube URL field and an upload tab.",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "Get a usable prompt",
-          "text": "Single-scene and multi-scene modes",
+          "title": "Choose scene analysis",
+          "text": "Single-scene and multi-scene modes serve different clips.",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "Check before sharing",
-          "text": "The site lists free single-scene analysis and limited free multi-scene parses, with paid options.",
+          "icon": "sliders",
+          "title": "Guide the description",
+          "text": "The official FAQ describes extra instructions for mood, light or style.",
           "source": "home"
         }
       ],
       "facts": [
         {
           "label": "Input",
-          "value": "Upload video or a YouTube link",
+          "value": "Local video or YouTube URL",
           "source": "home"
         },
         {
-          "label": "Output",
-          "value": "Single-scene and multi-scene modes",
+          "label": "Modes",
+          "value": "Single-scene or multi-scene analysis",
           "source": "home"
         },
         {
-          "label": "Pricing",
-          "value": "The site lists free single-scene analysis and limited free multi-scene parses, with paid options.",
+          "label": "Upload size",
+          "value": "Homepage FAQ lists 20 MB",
           "source": "home"
+        },
+        {
+          "label": "Free access",
+          "value": "Single-scene advertised as free; multi-scene quota varies",
+          "source": "home"
+        },
+        {
+          "label": "Data processing",
+          "value": "See official privacy policy; not a local-only claim",
+          "source": "privacy"
         }
       ],
       "highlights": [
         {
-          "value": "Upload video or a YouTube link",
-          "label": "Input",
-          "icon": "file",
-          "source": "home"
+          "value": "2 modes",
+          "label": "Single or multi-scene",
+          "source": "home",
+          "icon": "file"
         },
         {
-          "value": "Single-scene and multi-scene modes",
-          "label": "Output",
-          "icon": "layers",
-          "source": "home"
+          "value": "YouTube",
+          "label": "URL input available",
+          "source": "home",
+          "icon": "layers"
         },
         {
-          "value": "Free access / paid options",
-          "label": "Pricing",
-          "icon": "coins",
-          "source": "home"
+          "value": "20 MB",
+          "label": "Homepage FAQ limit",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "Choose a reference",
-          "text": "Use a clip or supported input from the official tool."
+          "title": "Choose your input.",
+          "text": "Paste an accessible YouTube URL or select the upload tab."
         },
         {
-          "title": "Generate a prompt",
-          "text": "Review the available settings and submit your reference."
+          "title": "Decide how many scenes.",
+          "text": "Use single-scene for one shot, multi-scene for a clip with cuts."
         },
         {
-          "title": "Refine the result",
-          "text": "Check motion, camera and lighting before using a video model."
+          "title": "Check the current allowance.",
+          "text": "Review login requirements and credits in the live interface before analysis."
         }
       ],
       "fit": {
         "good": [
-          "YouTube links and single-scene analysis"
+          "You have a YouTube link or want to compare scene modes.",
+          "Your reference contains distinct shots to break down."
         ],
         "consider": [
-          "Unlimited multi-scene analysis without payment",
-          "You need an exact copy of the original prompt"
+          "You need a clearly fixed free multi-scene quota; official pages differ.",
+          "You are looking for videotoprompt.com, which is a separate product."
         ]
       },
       "faq": [
         {
-          "q": "Is it free?",
-          "a": "Free single-scene analysis; multi-scene use has limits and paid plans.",
+          "q": "Which parts are free?",
+          "a": "The site advertises free single-scene analysis and limited multi-scene access. Quotas differ between the public pricing copy and the live interface; verify the allowance shown before submitting.",
           "source": "home"
         },
         {
-          "q": "Can it recover the original prompt?",
-          "a": "No. The tool estimates a new prompt from visible content; it cannot guarantee the creator’s original wording.",
+          "q": "What is the upload size limit?",
+          "a": "The homepage FAQ lists 20 MB and recommends compression or trimming for larger clips. Confirm the current upload form before preparing a file.",
           "source": "home"
         },
         {
-          "q": "What about privacy?",
-          "a": "Review the official privacy policy and avoid submitting confidential footage without checking how it is processed.",
-          "source": "details"
+          "q": "Can I analyze a YouTube link?",
+          "a": "Yes, the public interface provides a YouTube link tab. We checked the interface, not the extraction quality or availability for every URL.",
+          "source": "home"
+        },
+        {
+          "q": "Is this VideoToPrompt.com?",
+          "a": "No. The .app domain is a separate website with its own plans, upload interface and scene modes.",
+          "source": "other_com"
+        },
+        {
+          "q": "What does the privacy policy say?",
+          "a": "The FAQ points to the privacy policy for collection, processing and retention. Read that policy before sending private footage; do not assume uploads are entirely local.",
+          "source": "privacy"
         }
       ],
       "source_labels": {
         "home": "VideoToPrompt.app · official site",
-        "details": "VideoToPrompt.app · official details",
         "alt_videotoprompt": "VideoToPrompt · official site",
         "alt_videoinprompt": "VideoInPrompt · official site",
         "alt_promptvv": "PromptVV · official site",
-        "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · official site"
+        "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · official site",
+        "privacy": "VideoToPrompt.app · Privacy policy",
+        "other_com": "VideoToPrompt.app · Other .com product"
       },
       "cta": {
-        "title": "Ready to try?",
-        "text": "Open the official website and review its current terms."
+        "title": "Try VideoToPrompt.app.",
+        "text": "Check the current allowance, then start with a short reference."
       },
       "alternatives": {
-        "videotoprompt": "Video and image uploads",
-        "videoinprompt": "Upload or supported social links; JSON",
-        "promptvv": "Chinese platform links and shot breakdowns"
+        "videotoprompt": "Choose it when you already have a local video or still and want to set the output language.",
+        "videoinprompt": "Choose it for model presets or structured JSON that can feed another workflow.",
+        "promptvv": "Choose it for Chinese platform links, dialogue and first-frame/reference workflows."
       },
       "compare": {
         "columns": [
           "Tool",
-          "Main approach"
+          "Input",
+          "Output / workflow",
+          "Main limit"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "Video and image uploads"
+            "Local video / image",
+            "Text; output language",
+            "50 MB video; free terms unclear"
           ],
           [
             "VideoInPrompt",
-            "Upload or supported social links; JSON"
+            "Upload / supported links",
+            "Text + JSON; model presets",
+            "Free credits; verify current plan"
           ],
           [
             "PromptVV",
-            "Chinese platform links and shot breakdowns"
+            "Upload / Chinese platform links",
+            "Dialogue, shots, reference formats",
+            "500 MB / 10 min; registration"
           ],
           [
             "Reprompt Video to Prompt",
-            "Four locally extracted frames"
+            "Clip / screenshots",
+            "Four-frame text or JSON prompt",
+            "No account; daily limits; one short shot"
           ],
           [
             "VideoToPrompt.app",
-            "Upload or YouTube link; multi-scene option"
+            "Upload / YouTube",
+            "Single-scene / multi-scene",
+            "FAQ: 20 MB; free quota varies"
           ]
         ],
-        "note": "Based on each official website, checked 27 October 2026. Features and pricing can change; no hands-on ranking."
-      }
+        "note": "Official product descriptions checked 28 October 2026. Compare workflows, not measured generation quality."
+      },
+      "media_alt": "VideoToPrompt.app · official website interface captured by ToolFavor",
+      "media_caption": "Official website screenshot · 28 Oct 2026 · Open full size"
     },
     "ja": {
       "title": "VideoToPrompt.app の使い方・料金と動画からプロンプトを作る方法 | ToolFavor",
-      "description": "VideoToPrompt.app で動画からAIプロンプトを作る方法を紹介。対応する入力、料金、利用上の制限、向いている用途を公式情報をもとにまとめます。",
+      "description": "VideoToPrompt.appの使い方・料金。動画かYouTubeリンクを入力。独立した.appサイトで、単一・複数シーンの分析を選べます。 対応入力と制限を公式情報で確認できます。",
       "kicker": "AI動画 · Webツール",
-      "lead": "動画からプロンプトへ。",
-      "sublead": "入力方法、出力、制限を確認。自分の制作に合うか選べます。",
+      "lead": "1ショットも、複数シーンも。",
+      "sublead": "動画かYouTubeリンクを入力。独立した.appサイトで、単一・複数シーンの分析を選べます。",
       "tags": [
-        "動画アップロード・YouTubeリンク",
-        "単一シーンと複数シーンのモード"
+        "2モード",
+        "YouTube"
       ],
       "pricing_label": "無料枠・有料プラン",
-      "snapshot": "公式情報をもとに整理 · アップロード実測は未実施",
+      "snapshot": "公式情報・画面を確認 · 生成品質は未検証",
       "capabilities": [
         {
           "icon": "file",
-          "title": "参考素材を選ぶ",
-          "text": "動画アップロード・YouTubeリンク",
+          "title": "YouTubeかファイル",
+          "text": "公開画面にはリンク欄とアップロードタブ。",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "プロンプトを作成",
-          "text": "単一シーンと複数シーンのモード",
+          "title": "シーン数で選ぶ",
+          "text": "1ショットと複数シーンを使い分け。",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "利用前に確認",
-          "text": "公式は単一シーンの無料分析と回数制限付きの複数シーン分析、有料プランを案内しています。",
+          "icon": "sliders",
+          "title": "分析の観点を補足",
+          "text": "公式FAQは光・雰囲気・スタイルの追加指示を案内。",
           "source": "home"
         }
       ],
       "facts": [
         {
           "label": "入力",
-          "value": "動画アップロード・YouTubeリンク",
+          "value": "動画ファイル・YouTube URL",
           "source": "home"
         },
         {
-          "label": "出力",
-          "value": "単一シーンと複数シーンのモード",
+          "label": "モード",
+          "value": "単一シーン・複数シーン",
           "source": "home"
         },
         {
-          "label": "料金",
-          "value": "公式は単一シーンの無料分析と回数制限付きの複数シーン分析、有料プランを案内しています。",
+          "label": "サイズ",
+          "value": "トップのFAQは20 MBと記載",
           "source": "home"
+        },
+        {
+          "label": "無料枠",
+          "value": "単一シーン無料と案内。複数シーンの説明に差",
+          "source": "home"
+        },
+        {
+          "label": "データ処理",
+          "value": "公式ポリシーを参照。端末内限定ではない",
+          "source": "privacy"
         }
       ],
       "highlights": [
         {
-          "value": "動画アップロード・YouTubeリンク",
-          "label": "入力",
-          "icon": "file",
-          "source": "home"
+          "value": "2モード",
+          "label": "単一・複数シーン",
+          "source": "home",
+          "icon": "file"
         },
         {
-          "value": "単一シーンと複数シーンのモード",
-          "label": "出力",
-          "icon": "layers",
-          "source": "home"
+          "value": "YouTube",
+          "label": "リンク入力あり",
+          "source": "home",
+          "icon": "layers"
         },
         {
-          "value": "無料枠・有料プラン",
-          "label": "料金",
-          "icon": "coins",
-          "source": "home"
+          "value": "20 MB",
+          "label": "トップFAQ記載の上限",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "素材を選ぶ",
-          "text": "公式サイトで動画または対応する入力を用意。"
+          "title": "入力方法を選ぶ。",
+          "text": "アクセス可能なYouTubeリンクか動画ファイルを指定。"
         },
         {
-          "title": "生成する",
-          "text": "設定を確認し、参考素材を送信。"
+          "title": "シーン数を選ぶ。",
+          "text": "1ショットか、カットを含む複数シーンか判断。"
         },
         {
-          "title": "内容を調整",
-          "text": "動き・カメラ・光を確認して動画モデルで使います。"
+          "title": "利用枠を確認する。",
+          "text": "送信前に画面上の登録要件と残り回数を確認。"
         }
       ],
       "fit": {
         "good": [
-          "YouTubeリンクと単一シーンの分析"
+          "YouTubeリンクやシーン別の分析を使いたい。",
+          "複数のショットを分けて整理したい。"
         ],
         "consider": [
-          "複数シーンを無制限に無料で分析",
-          "元のプロンプトを正確に復元したい"
+          "無料の複数シーン回数を明確に知りたい。公式の説明に差があります。",
+          "videotoprompt.comを探している。別サービスです。"
         ]
       },
       "faq": [
         {
-          "q": "無料で使えますか？",
-          "a": "単一シーンは無料。複数シーンには制限と有料プランがあります。",
+          "q": "どこまで無料ですか？",
+          "a": "公式は単一シーンを無料、複数シーンを回数限定と案内。ただし料金文と操作画面の回数が異なるため、送信前の表示を確認してください。",
           "source": "home"
         },
         {
-          "q": "元のプロンプトを復元できますか？",
-          "a": "保証できません。映像から新しいプロンプトを推測するため、元の作者の文章と同一とは限りません。",
+          "q": "アップロード上限は？",
+          "a": "トップのFAQは20 MBと記載。大きい動画は圧縮やトリミングを推奨しています。現行の入力欄でも確認してください。",
           "source": "home"
         },
         {
-          "q": "プライバシーは？",
-          "a": "送信前に公式のプライバシーポリシーと素材の処理方法を確認してください。",
-          "source": "details"
+          "q": "YouTubeリンクは使えますか？",
+          "a": "公開画面にYouTube Linkタブがあります。入口を確認したもので、全URLでの抽出や生成品質は検証していません。",
+          "source": "home"
+        },
+        {
+          "q": "VideoToPrompt.comと同じ？",
+          "a": "別サイトです。.appには独自の料金と入力画面、単一・複数シーンのモードがあります。",
+          "source": "other_com"
+        },
+        {
+          "q": "動画のデータはどう扱われますか？",
+          "a": "公式FAQは収集・処理・保管についてプライバシーポリシーを案内しています。端末内だけの処理とは限りません。",
+          "source": "privacy"
         }
       ],
       "source_labels": {
         "home": "VideoToPrompt.app · 公式サイト",
-        "details": "VideoToPrompt.app · 公式情報",
         "alt_videotoprompt": "VideoToPrompt · 公式サイト",
         "alt_videoinprompt": "VideoInPrompt · 公式サイト",
         "alt_promptvv": "PromptVV · 公式サイト",
-        "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · 公式サイト"
+        "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · 公式サイト",
+        "privacy": "VideoToPrompt.app · プライバシー",
+        "other_com": "VideoToPrompt.app · 別の.com製品"
       },
       "cta": {
-        "title": "試してみる？",
-        "text": "公式サイトで最新の利用条件を確認。"
+        "title": "VideoToPrompt.appを試す。",
+        "text": "利用枠を確認して、短い参考動画から。"
       },
       "alternatives": {
-        "videotoprompt": "動画・画像のアップロード",
-        "videoinprompt": "動画・対応SNSリンク、JSON",
-        "promptvv": "中国の動画リンクとショット分解"
+        "videotoprompt": "ローカル動画や画像から、出力言語を指定して作りたい場合に。",
+        "videoinprompt": "モデル別設定や、次の処理につなぐJSONが欲しい場合に。",
+        "promptvv": "中国の動画リンク、台詞、最初のフレームや参考画像を使う制作に。"
       },
       "compare": {
         "columns": [
           "ツール",
-          "主な特徴"
+          "入力",
+          "出力・用途",
+          "主な制限"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "動画・画像のアップロード"
+            "動画・画像ファイル",
+            "文章・出力言語を選択",
+            "動画50 MB。無料条件は不明確"
           ],
           [
             "VideoInPrompt",
-            "動画・対応SNSリンク、JSON"
+            "動画・対応リンク",
+            "文章・JSON・モデル設定",
+            "無料クレジット。現行条件を確認"
           ],
           [
             "PromptVV",
-            "中国の動画リンクとショット分解"
+            "動画・中国の対応リンク",
+            "台詞・ショット・参考画像",
+            "500 MB・10分、登録必須"
           ],
           [
             "Reprompt Video to Prompt",
-            "ブラウザで抽出した4フレーム"
+            "動画・スクリーンショット",
+            "4フレームから文章・JSON",
+            "登録不要、日次上限。短い1ショット向け"
           ],
           [
             "VideoToPrompt.app",
-            "動画・YouTubeリンク、複数シーン"
+            "動画・YouTube",
+            "単一・複数シーン",
+            "FAQは20 MB。無料回数の案内に差"
           ]
         ],
-        "note": "各公式サイトの情報（2026年10月27日確認）。機能・料金は変わる場合があります。実測ランキングではありません。"
-      }
+        "note": "2026年10月28日の公式情報で制作方法を比較。生成品質の実測順位ではありません。"
+      },
+      "media_alt": "VideoToPrompt.app · ToolFavorが撮影した公式サイトの画面",
+      "media_caption": "公式サイトの画面 · 2026年10月28日 · 拡大する"
     },
     "zh-cn": {
       "title": "VideoToPrompt.app 是什么？视频反推提示词、价格与限制 | ToolFavor",
-      "description": "了解 VideoToPrompt.app 如何把视频转换为 AI 提示词：支持哪些素材、如何收费、适合谁及有哪些限制。附官方来源与使用前需要注意的事项。",
+      "description": "VideoToPrompt.app 视频反推提示词工具介绍：支持本地视频和 YouTube 链接。这个独立的 .app 产品提供单镜头与多镜头两种分析路径。 了解输入方式、费用与限制，并查看真实界面、使用步骤和同类工具对比。",
       "kicker": "AI 视频 · 在线工具",
-      "lead": "视频转提示词。",
-      "sublead": "先了解输入方式、输出内容与限制，再决定是否适合你的创作流程。",
+      "lead": "分析单镜头，或拆开多场景。",
+      "sublead": "支持本地视频和 YouTube 链接。这个独立的 .app 产品提供单镜头与多镜头两种分析路径。",
       "tags": [
-        "上传视频或输入 YouTube 链接",
-        "单镜头与多镜头模式"
+        "2 种模式",
+        "YouTube"
       ],
       "pricing_label": "免费试用 / 付费方案",
-      "snapshot": "根据官方资料整理 · 尚未实际上传测试",
+      "snapshot": "已核对官方资料与界面 · 未测试生成质量",
       "capabilities": [
         {
           "icon": "file",
-          "title": "选择参考素材",
-          "text": "上传视频或输入 YouTube 链接",
+          "title": "YouTube 或文件",
+          "text": "公开界面提供 YouTube 链接与视频上传标签。",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "生成提示词",
-          "text": "单镜头与多镜头模式",
+          "title": "按镜头数量选择",
+          "text": "单镜头和多镜头模式用于不同的参考片段。",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "使用前先确认",
-          "text": "官网列有免费的单镜头分析及有限次数的多镜头分析，也提供付费方案。",
+          "icon": "sliders",
+          "title": "补充分析重点",
+          "text": "官方 FAQ 介绍了光线、情绪或风格的额外指令。",
           "source": "home"
         }
       ],
       "facts": [
         {
-          "label": "输入方式",
-          "value": "上传视频或输入 YouTube 链接",
+          "label": "输入",
+          "value": "本地视频或 YouTube 链接",
           "source": "home"
         },
         {
-          "label": "输出内容",
-          "value": "单镜头与多镜头模式",
+          "label": "模式",
+          "value": "单镜头与多镜头分析",
           "source": "home"
         },
         {
-          "label": "价格",
-          "value": "官网列有免费的单镜头分析及有限次数的多镜头分析，也提供付费方案。",
+          "label": "文件大小",
+          "value": "首页 FAQ 列出 20 MB",
           "source": "home"
+        },
+        {
+          "label": "免费范围",
+          "value": "宣传单镜头免费；多镜头额度说明不一致",
+          "source": "home"
+        },
+        {
+          "label": "数据处理",
+          "value": "参考官方隐私政策；并非仅本地分析",
+          "source": "privacy"
         }
       ],
       "highlights": [
         {
-          "value": "上传视频或输入 YouTube 链接",
-          "label": "输入方式",
-          "icon": "file",
-          "source": "home"
+          "value": "2 种模式",
+          "label": "单镜头、多镜头",
+          "source": "home",
+          "icon": "file"
         },
         {
-          "value": "单镜头与多镜头模式",
-          "label": "输出内容",
-          "icon": "layers",
-          "source": "home"
+          "value": "YouTube",
+          "label": "提供链接入口",
+          "source": "home",
+          "icon": "layers"
         },
         {
-          "value": "免费试用 / 付费方案",
-          "label": "价格",
-          "icon": "coins",
-          "source": "home"
+          "value": "20 MB",
+          "label": "首页 FAQ 所列上限",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "选择素材",
-          "text": "在官网上传视频或使用支持的输入方式。"
+          "title": "选择输入入口。",
+          "text": "粘贴可访问的 YouTube 链接，或切到上传标签。"
         },
         {
-          "title": "生成提示词",
-          "text": "查看可选设置并提交参考素材。"
+          "title": "判断是否需要分镜。",
+          "text": "单个画面用单镜头；包含切镜的片段再考虑多镜头。"
         },
         {
-          "title": "检查并修改",
-          "text": "核对动作、镜头与光线，再用于视频模型。"
+          "title": "先看当前额度。",
+          "text": "提交前确认操作界面显示的登录要求和可用次数。"
         }
       ],
       "fit": {
         "good": [
-          "YouTube 链接和单镜头分析"
+          "有 YouTube 链接，或想比较两种分析模式。",
+          "参考片段里包含需要拆开的多个镜头。"
         ],
         "consider": [
-          "需要无限量免费使用多镜头分析",
-          "需要精确还原原始提示词"
+          "需要固定的免费多镜头次数：官网不同位置的说明不一致。",
+          "你找的是 videotoprompt.com，那是另一个产品。"
         ]
       },
       "faq": [
         {
-          "q": "免费吗？",
-          "a": "单镜头分析免费；多镜头有额度限制和付费方案。",
+          "q": "哪些功能免费？",
+          "a": "官网宣传单镜头分析免费、多镜头有试用额度。但公开定价文字与当前操作界面的次数不同，提交前以实时显示为准。",
           "source": "home"
         },
         {
-          "q": "能还原原作者的提示词吗？",
-          "a": "不能保证。工具根据画面推测并生成新的提示词，无法保证与原作者使用的文字一致。",
+          "q": "视频大小上限是多少？",
+          "a": "首页 FAQ 写的是 20 MB，并建议较大文件先压缩或裁剪。准备素材前仍应核对当前上传区。",
           "source": "home"
         },
         {
-          "q": "隐私要注意什么？",
-          "a": "上传前阅读官网隐私政策；确认处理方式后再决定是否提交敏感素材。",
-          "source": "details"
+          "q": "能分析 YouTube 链接吗？",
+          "a": "公开界面有 YouTube Link 标签。我们确认了操作入口，没有验证每个链接都能解析或生成质量。",
+          "source": "home"
+        },
+        {
+          "q": "和 VideoToPrompt.com 是同一个吗？",
+          "a": "不是。.app 是另一套网站，有自己的收费方案、上传界面和镜头模式。",
+          "source": "other_com"
+        },
+        {
+          "q": "视频会怎么处理？",
+          "a": "官网 FAQ 指向隐私政策，说明收集、处理与保留规则。提交私密素材前应阅读，不能把它当成完全本地处理。",
+          "source": "privacy"
         }
       ],
       "source_labels": {
         "home": "VideoToPrompt.app · 官网",
-        "details": "VideoToPrompt.app · 官方资料",
         "alt_videotoprompt": "VideoToPrompt · 官网",
         "alt_videoinprompt": "VideoInPrompt · 官网",
         "alt_promptvv": "PromptVV · 官网",
-        "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · 官网"
+        "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · 官网",
+        "privacy": "VideoToPrompt.app · 隐私政策",
+        "other_com": "VideoToPrompt.app · 独立的 .com 产品"
       },
       "cta": {
-        "title": "准备试试？",
-        "text": "打开官网，并确认最新使用条件。"
+        "title": "试试 VideoToPrompt.app。",
+        "text": "先确认当前额度，再从一段短素材开始。"
       },
       "alternatives": {
-        "videotoprompt": "视频与图片上传",
-        "videoinprompt": "上传或支持的社交链接；JSON",
-        "promptvv": "中文平台链接与分镜拆解"
+        "videotoprompt": "已有本地视频或图片，想指定输出语言时可以比较它。",
+        "videoinprompt": "需要模型预设、JSON，或把结果接入后续流程时可以比较它。",
+        "promptvv": "处理中文平台素材、台词，或首帧与参考图工作流时更值得比较。"
       },
       "compare": {
         "columns": [
           "工具",
-          "主要特点"
+          "输入",
+          "输出与工作流",
+          "主要限制"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "视频与图片上传"
+            "本地视频、图片",
+            "文字，可选输出语言",
+            "视频 50 MB；免费规则不明确"
           ],
           [
             "VideoInPrompt",
-            "上传或支持的社交链接；JSON"
+            "上传、支持的平台链接",
+            "文字、JSON、模型预设",
+            "免费额度有限，以当前方案为准"
           ],
           [
             "PromptVV",
-            "中文平台链接与分镜拆解"
+            "上传、中文平台链接",
+            "台词、分镜、参考图格式",
+            "500 MB、10 分钟；需注册"
           ],
           [
             "Reprompt Video to Prompt",
-            "浏览器提取四张画面"
+            "片段、截图",
+            "四帧分析，文字或 JSON",
+            "无需账号，有每日限制；适合单镜头"
           ],
           [
             "VideoToPrompt.app",
-            "上传或 YouTube 链接；多镜头模式"
+            "上传、YouTube",
+            "单镜头、多镜头分析",
+            "FAQ 写 20 MB；免费次数说明不一致"
           ]
         ],
-        "note": "根据各官网资料整理，核对于 2026 年 10 月 27 日。功能与价格可能变化；并非实测排名。"
-      }
+        "note": "按 2026 年 10 月 28 日核对的官方资料比较使用方式，并非生成质量的实测排名。"
+      },
+      "media_alt": "VideoToPrompt.app · ToolFavor 截取的官网界面",
+      "media_caption": "官网界面截图 · 2026-10-28 · 点击看大图"
     }
   },
   "alternatives": [
@@ -537,5 +649,18 @@
     "PromptVV": "https://promptvv.com/",
     "Reprompt Video to Prompt": "https://www.reprompt.org/video-to-prompt",
     "VideoToPrompt.app": "https://www.videotoprompt.app/"
-  }
+  },
+  "logo": "/assets/logos/videotoprompt-app-official.png",
+  "media": [
+    {
+      "src": "/assets/media/videotoprompt-app-interface.webp",
+      "origin": "screenshot",
+      "source_url": "https://www.videotoprompt.app/",
+      "captured_on": "2026-10-28",
+      "frame": "browser",
+      "width": 1280,
+      "height": 432
+    }
+  ],
+  "related_same_category": true
 }

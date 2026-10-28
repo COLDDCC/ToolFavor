@@ -11,14 +11,10 @@
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Web browser"
   },
-  "last_verified": "2026-10-27",
+  "last_verified": "2026-10-28",
   "sources": {
     "home": {
       "url": "https://videotoprompt.com/",
-      "kind": "official"
-    },
-    "details": {
-      "url": "https://videotoprompt.com/pricing",
       "kind": "official"
     },
     "alt_videoinprompt": {
@@ -36,6 +32,18 @@
     "alt_videotoprompt-app": {
       "url": "https://www.videotoprompt.app/",
       "kind": "third_party"
+    },
+    "pricing": {
+      "url": "https://videotoprompt.com/pricing",
+      "kind": "official"
+    },
+    "privacy": {
+      "url": "https://videotoprompt.com/privacy-policy",
+      "kind": "official"
+    },
+    "other_app": {
+      "url": "https://www.videotoprompt.app/",
+      "kind": "third_party"
     }
   },
   "i18n": {
@@ -43,469 +51,580 @@
       "title": "VideoToPrompt Review: Video to Prompt, Pricing & Limits | ToolFavor",
       "description": "VideoToPrompt turns video references into AI prompts. See supported inputs, pricing, limitations and official sources before choosing a video-to-prompt tool.",
       "kicker": "AI Video · Web tool",
-      "lead": "Turn a video into a prompt.",
-      "sublead": "Understand the input, output and limits. Choose a tool that fits your workflow.",
+      "lead": "One reference. A new video prompt.",
+      "sublead": "Upload a clip or still image. Get a prompt describing its look, motion and lighting for Veo, Kling or Seedance.",
       "tags": [
-        "Video and image uploads",
-        "MP4, WebM or MOV up to 50 MB"
+        "50 MB",
+        "2 modes"
       ],
       "pricing_label": "Free access / paid options",
-      "snapshot": "Based on official information · Not hands-on tested",
+      "snapshot": "Official sources and interface checked · Generation quality not tested",
       "capabilities": [
         {
           "icon": "file",
-          "title": "Choose your reference",
-          "text": "Video and image uploads",
+          "title": "Video or image",
+          "text": "Switch between a moving reference and a still image.",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "Get a usable prompt",
-          "text": "MP4, WebM or MOV up to 50 MB",
+          "title": "Choose the language",
+          "text": "Set the output language before generating your prompt.",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "Check before sharing",
-          "text": "The homepage advertises free access; the pricing page also lists paid plans. Check the current offer before use.",
-          "source": "details"
+          "icon": "sliders",
+          "title": "Describe the visual style",
+          "text": "Extract subjects, composition, lighting and motion.",
+          "source": "home"
         }
       ],
       "facts": [
         {
           "label": "Input",
-          "value": "Video and image uploads",
+          "value": "Local video or image",
+          "source": "home"
+        },
+        {
+          "label": "Video upload",
+          "value": "MP4, WebM, MOV · up to 50 MB",
           "source": "home"
         },
         {
           "label": "Output",
-          "value": "MP4, WebM or MOV up to 50 MB",
+          "value": "Text prompt; selectable output language",
           "source": "home"
         },
         {
-          "label": "Pricing",
-          "value": "The homepage advertises free access; the pricing page also lists paid plans. Check the current offer before use.",
-          "source": "details"
+          "label": "Account",
+          "value": "Homepage says no signup; access not tested",
+          "source": "home"
+        },
+        {
+          "label": "Pricing caveat",
+          "value": "Homepage says free; pricing page lists paid plans",
+          "source": "pricing"
         }
       ],
       "highlights": [
         {
-          "value": "Video and image uploads",
-          "label": "Input",
-          "icon": "file",
-          "source": "home"
+          "value": "50 MB",
+          "label": "Video upload limit",
+          "source": "home",
+          "icon": "file"
         },
         {
-          "value": "MP4, WebM or MOV up to 50 MB",
-          "label": "Output",
-          "icon": "layers",
-          "source": "home"
+          "value": "2 modes",
+          "label": "Video or image reference",
+          "source": "home",
+          "icon": "layers"
         },
         {
-          "value": "Free access / paid options",
-          "label": "Pricing",
-          "icon": "coins",
-          "source": "home"
+          "value": "Language",
+          "label": "Selectable output",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "Choose a reference",
-          "text": "Use a clip or supported input from the official tool."
+          "title": "Pick Video or Image.",
+          "text": "Use the matching tab; video uploads support MP4, WebM and MOV."
         },
         {
-          "title": "Generate a prompt",
-          "text": "Review the available settings and submit your reference."
+          "title": "Set the output language.",
+          "text": "Choose the language and upload a video up to 50 MB."
         },
         {
-          "title": "Refine the result",
-          "text": "Check motion, camera and lighting before using a video model."
+          "title": "Adapt the prompt.",
+          "text": "Copy the result and adjust it for your chosen video model."
         }
       ],
       "fit": {
         "good": [
-          "Quick video or image references"
+          "You have a local clip or image rather than a social link.",
+          "You want to choose the output language."
         ],
         "consider": [
-          "Pricing terms may differ between pages",
-          "You need an exact copy of the original prompt"
+          "You need predictable free quotas: the homepage and pricing page conflict.",
+          "You need a detailed shot-by-shot dialogue workflow."
         ]
       },
       "faq": [
         {
-          "q": "Is it free?",
-          "a": "No signup is advertised on the homepage.",
-          "source": "details"
+          "q": "Is VideoToPrompt.com completely free?",
+          "a": "The homepage advertises free access without signup, but its pricing page lists paid plans. The free quota is unclear; check the current interface before committing.",
+          "source": "pricing"
         },
         {
-          "q": "Can it recover the original prompt?",
-          "a": "No. The tool estimates a new prompt from visible content; it cannot guarantee the creator’s original wording.",
+          "q": "Which video files can I upload?",
+          "a": "The visible upload form lists MP4, WebM and MOV, up to 50 MB. Other formats mentioned elsewhere are not confirmed by that form.",
           "source": "home"
         },
         {
-          "q": "What about privacy?",
-          "a": "Review the official privacy policy and avoid submitting confidential footage without checking how it is processed.",
-          "source": "details"
+          "q": "Can I use an image instead of a video?",
+          "a": "Yes. There is a separate Image tab; the site lists an image limit of 10 MB.",
+          "source": "home"
+        },
+        {
+          "q": "Is this the same as VideoToPrompt.app?",
+          "a": "No. This listing covers videotoprompt.com. The .app domain has its own interface, plans and single-scene/multi-scene modes.",
+          "source": "other_app"
+        },
+        {
+          "q": "Does it recover the exact original prompt?",
+          "a": "It creates a new description from the reference. Treat the result as a starting point for a similar shot, not proof of the original prompt.",
+          "source": "home"
         }
       ],
       "source_labels": {
         "home": "VideoToPrompt · official site",
-        "details": "VideoToPrompt · official details",
         "alt_videoinprompt": "VideoInPrompt · official site",
         "alt_promptvv": "PromptVV · official site",
         "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · official site",
-        "alt_videotoprompt-app": "VideoToPrompt.app · official site"
+        "alt_videotoprompt-app": "VideoToPrompt.app · official site",
+        "pricing": "VideoToPrompt · Pricing",
+        "privacy": "VideoToPrompt · Privacy policy",
+        "other_app": "VideoToPrompt · Other .app product"
       },
       "cta": {
-        "title": "Ready to try?",
-        "text": "Open the official website and review its current terms."
+        "title": "Try VideoToPrompt.",
+        "text": "Check the current allowance, then start with a short reference."
       },
       "alternatives": {
-        "videoinprompt": "Upload or supported social links; JSON",
-        "promptvv": "Chinese platform links and shot breakdowns",
-        "reprompt-video-to-prompt": "Four locally extracted frames"
+        "videoinprompt": "Choose it for model presets or structured JSON that can feed another workflow.",
+        "promptvv": "Choose it for Chinese platform links, dialogue and first-frame/reference workflows.",
+        "reprompt-video-to-prompt": "Choose it for a short single shot without signing up; only sampled frames are sent, according to its site."
       },
       "compare": {
         "columns": [
           "Tool",
-          "Main approach"
+          "Input",
+          "Output / workflow",
+          "Main limit"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "Video and image uploads"
+            "Local video / image",
+            "Text; output language",
+            "50 MB video; free terms unclear"
           ],
           [
             "VideoInPrompt",
-            "Upload or supported social links; JSON"
+            "Upload / supported links",
+            "Text + JSON; model presets",
+            "Free credits; verify current plan"
           ],
           [
             "PromptVV",
-            "Chinese platform links and shot breakdowns"
+            "Upload / Chinese platform links",
+            "Dialogue, shots, reference formats",
+            "500 MB / 10 min; registration"
           ],
           [
             "Reprompt Video to Prompt",
-            "Four locally extracted frames"
+            "Clip / screenshots",
+            "Four-frame text or JSON prompt",
+            "No account; daily limits; one short shot"
           ],
           [
             "VideoToPrompt.app",
-            "Upload or YouTube link; multi-scene option"
+            "Upload / YouTube",
+            "Single-scene / multi-scene",
+            "FAQ: 20 MB; free quota varies"
           ]
         ],
-        "note": "Based on each official website, checked 27 October 2026. Features and pricing can change; no hands-on ranking."
-      }
+        "note": "Official product descriptions checked 28 October 2026. Compare workflows, not measured generation quality."
+      },
+      "media_alt": "VideoToPrompt · official website interface captured by ToolFavor",
+      "media_caption": "Official website screenshot · 28 Oct 2026 · Open full size"
     },
     "ja": {
       "title": "VideoToPrompt の使い方・料金と動画からプロンプトを作る方法 | ToolFavor",
-      "description": "VideoToPrompt で動画からAIプロンプトを作る方法を紹介。対応する入力、料金、利用上の制限、向いている用途を公式情報をもとにまとめます。",
+      "description": "VideoToPromptの使い方・料金。動画や画像から、見た目・動き・光を言葉に。Veo、Kling、Seedanceなどで使う出発点を作れます。 対応入力と制限を公式情報で確認できます。",
       "kicker": "AI動画 · Webツール",
-      "lead": "動画からプロンプトへ。",
-      "sublead": "入力方法、出力、制限を確認。自分の制作に合うか選べます。",
+      "lead": "参考動画を、新しいプロンプトに。",
+      "sublead": "動画や画像から、見た目・動き・光を言葉に。Veo、Kling、Seedanceなどで使う出発点を作れます。",
       "tags": [
-        "動画と画像のアップロード",
-        "MP4・WebM・MOV、最大50 MB"
+        "50 MB",
+        "2種類"
       ],
       "pricing_label": "無料枠・有料プラン",
-      "snapshot": "公式情報をもとに整理 · アップロード実測は未実施",
+      "snapshot": "公式情報・画面を確認 · 生成品質は未検証",
       "capabilities": [
         {
           "icon": "file",
-          "title": "参考素材を選ぶ",
-          "text": "動画と画像のアップロード",
+          "title": "動画も画像も",
+          "text": "素材に合わせてVideoかImageを選択。",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "プロンプトを作成",
-          "text": "MP4・WebM・MOV、最大50 MB",
+          "title": "出力言語を指定",
+          "text": "生成前にプロンプトの言語を選べます。",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "利用前に確認",
-          "text": "トップページは無料を案内する一方、料金ページには有料プランもあります。利用前に確認してください。",
-          "source": "details"
+          "icon": "sliders",
+          "title": "映像の特徴を整理",
+          "text": "被写体、構図、光、動きを文章に。",
+          "source": "home"
         }
       ],
       "facts": [
         {
           "label": "入力",
-          "value": "動画と画像のアップロード",
+          "value": "ローカル動画・画像",
           "source": "home"
         },
         {
-          "label": "出力",
+          "label": "動画ファイル",
           "value": "MP4・WebM・MOV、最大50 MB",
           "source": "home"
         },
         {
-          "label": "料金",
-          "value": "トップページは無料を案内する一方、料金ページには有料プランもあります。利用前に確認してください。",
-          "source": "details"
+          "label": "出力",
+          "value": "言語を選べるテキストプロンプト",
+          "source": "home"
+        },
+        {
+          "label": "アカウント",
+          "value": "トップは登録不要と案内。生成操作は未検証",
+          "source": "home"
+        },
+        {
+          "label": "料金の注意",
+          "value": "無料の案内と有料プランが併記",
+          "source": "pricing"
         }
       ],
       "highlights": [
         {
-          "value": "動画と画像のアップロード",
-          "label": "入力",
-          "icon": "file",
-          "source": "home"
+          "value": "50 MB",
+          "label": "動画ファイル上限",
+          "source": "home",
+          "icon": "file"
         },
         {
-          "value": "MP4・WebM・MOV、最大50 MB",
-          "label": "出力",
-          "icon": "layers",
-          "source": "home"
+          "value": "2種類",
+          "label": "動画・画像を選択",
+          "source": "home",
+          "icon": "layers"
         },
         {
-          "value": "無料枠・有料プラン",
-          "label": "料金",
-          "icon": "coins",
-          "source": "home"
+          "value": "言語選択",
+          "label": "生成前に設定",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "素材を選ぶ",
-          "text": "公式サイトで動画または対応する入力を用意。"
+          "title": "素材の種類を選ぶ。",
+          "text": "VideoまたはImage。動画欄はMP4・WebM・MOVに対応。"
         },
         {
-          "title": "生成する",
-          "text": "設定を確認し、参考素材を送信。"
+          "title": "言語を選んで送信。",
+          "text": "出力言語を設定し、50 MB以下の動画を指定。"
         },
         {
-          "title": "内容を調整",
-          "text": "動き・カメラ・光を確認して動画モデルで使います。"
+          "title": "モデルに合わせて調整。",
+          "text": "結果をコピーし、使う動画モデル向けに書き直します。"
         }
       ],
       "fit": {
         "good": [
-          "動画や画像の参考素材を手早く分析"
+          "ローカルの動画や画像を使いたい。",
+          "出力するプロンプトの言語を指定したい。"
         ],
         "consider": [
-          "ページごとに料金案内が異なる場合",
-          "元のプロンプトを正確に復元したい"
+          "無料枠を確実に知りたい。トップと料金ページの案内が異なります。",
+          "台詞や複数ショットを詳しく分解したい。"
         ]
       },
       "faq": [
         {
-          "q": "無料で使えますか？",
-          "a": "トップページでは登録不要と案内。",
-          "source": "details"
+          "q": "完全無料ですか？",
+          "a": "トップは無料・登録不要と案内する一方、料金ページには有料プランがあります。無料枠は不明確なため、利用画面で確認してください。",
+          "source": "pricing"
         },
         {
-          "q": "元のプロンプトを復元できますか？",
-          "a": "保証できません。映像から新しいプロンプトを推測するため、元の作者の文章と同一とは限りません。",
+          "q": "対応する動画形式は？",
+          "a": "アップロード欄はMP4・WebM・MOV、最大50 MBと表示。ほかの形式はこの欄では確認できません。",
           "source": "home"
         },
         {
-          "q": "プライバシーは？",
-          "a": "送信前に公式のプライバシーポリシーと素材の処理方法を確認してください。",
-          "source": "details"
+          "q": "画像からも作れますか？",
+          "a": "Imageタブに切り替えられます。公式は画像の上限を10 MBと案内しています。",
+          "source": "home"
+        },
+        {
+          "q": "VideoToPrompt.appと同じですか？",
+          "a": "別サイトです。このページはvideotoprompt.comを紹介しています。.appには独自の画面や料金、単一・複数シーンのモードがあります。",
+          "source": "other_app"
+        },
+        {
+          "q": "元のプロンプトを復元できますか？",
+          "a": "参考映像から新しい文章を作る仕組みです。似た映像を作る出発点であり、元の文章の証拠にはなりません。",
+          "source": "home"
         }
       ],
       "source_labels": {
         "home": "VideoToPrompt · 公式サイト",
-        "details": "VideoToPrompt · 公式情報",
         "alt_videoinprompt": "VideoInPrompt · 公式サイト",
         "alt_promptvv": "PromptVV · 公式サイト",
         "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · 公式サイト",
-        "alt_videotoprompt-app": "VideoToPrompt.app · 公式サイト"
+        "alt_videotoprompt-app": "VideoToPrompt.app · 公式サイト",
+        "pricing": "VideoToPrompt · 料金",
+        "privacy": "VideoToPrompt · プライバシー",
+        "other_app": "VideoToPrompt · 別の.app製品"
       },
       "cta": {
-        "title": "試してみる？",
-        "text": "公式サイトで最新の利用条件を確認。"
+        "title": "VideoToPromptを試す。",
+        "text": "利用枠を確認して、短い参考動画から。"
       },
       "alternatives": {
-        "videoinprompt": "動画・対応SNSリンク、JSON",
-        "promptvv": "中国の動画リンクとショット分解",
-        "reprompt-video-to-prompt": "ブラウザで抽出した4フレーム"
+        "videoinprompt": "モデル別設定や、次の処理につなぐJSONが欲しい場合に。",
+        "promptvv": "中国の動画リンク、台詞、最初のフレームや参考画像を使う制作に。",
+        "reprompt-video-to-prompt": "登録なしで短い1ショットを分析したい場合に。公式は抽出画像のみ送信と案内。"
       },
       "compare": {
         "columns": [
           "ツール",
-          "主な特徴"
+          "入力",
+          "出力・用途",
+          "主な制限"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "動画・画像のアップロード"
+            "動画・画像ファイル",
+            "文章・出力言語を選択",
+            "動画50 MB。無料条件は不明確"
           ],
           [
             "VideoInPrompt",
-            "動画・対応SNSリンク、JSON"
+            "動画・対応リンク",
+            "文章・JSON・モデル設定",
+            "無料クレジット。現行条件を確認"
           ],
           [
             "PromptVV",
-            "中国の動画リンクとショット分解"
+            "動画・中国の対応リンク",
+            "台詞・ショット・参考画像",
+            "500 MB・10分、登録必須"
           ],
           [
             "Reprompt Video to Prompt",
-            "ブラウザで抽出した4フレーム"
+            "動画・スクリーンショット",
+            "4フレームから文章・JSON",
+            "登録不要、日次上限。短い1ショット向け"
           ],
           [
             "VideoToPrompt.app",
-            "動画・YouTubeリンク、複数シーン"
+            "動画・YouTube",
+            "単一・複数シーン",
+            "FAQは20 MB。無料回数の案内に差"
           ]
         ],
-        "note": "各公式サイトの情報（2026年10月27日確認）。機能・料金は変わる場合があります。実測ランキングではありません。"
-      }
+        "note": "2026年10月28日の公式情報で制作方法を比較。生成品質の実測順位ではありません。"
+      },
+      "media_alt": "VideoToPrompt · ToolFavorが撮影した公式サイトの画面",
+      "media_caption": "公式サイトの画面 · 2026年10月28日 · 拡大する"
     },
     "zh-cn": {
       "title": "VideoToPrompt 是什么？视频反推提示词、价格与限制 | ToolFavor",
-      "description": "了解 VideoToPrompt 如何把视频转换为 AI 提示词：支持哪些素材、如何收费、适合谁及有哪些限制。附官方来源与使用前需要注意的事项。",
+      "description": "VideoToPrompt 视频反推提示词工具介绍：上传视频或图片，提取画面、运镜与光线描述。再把结果用于 Veo、可灵或 Seedance。 了解输入方式、费用与限制，并查看真实界面、使用步骤和同类工具对比。",
       "kicker": "AI 视频 · 在线工具",
-      "lead": "视频转提示词。",
-      "sublead": "先了解输入方式、输出内容与限制，再决定是否适合你的创作流程。",
+      "lead": "一段参考，生成新的提示词。",
+      "sublead": "上传视频或图片，提取画面、运镜与光线描述。再把结果用于 Veo、可灵或 Seedance。",
       "tags": [
-        "视频与图片上传",
-        "MP4、WebM、MOV，最大 50 MB"
+        "50 MB",
+        "2 种"
       ],
       "pricing_label": "免费试用 / 付费方案",
-      "snapshot": "根据官方资料整理 · 尚未实际上传测试",
+      "snapshot": "已核对官方资料与界面 · 未测试生成质量",
       "capabilities": [
         {
           "icon": "file",
-          "title": "选择参考素材",
-          "text": "视频与图片上传",
+          "title": "视频、图片都能用",
+          "text": "按参考素材切换 Video 或 Image。",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "生成提示词",
-          "text": "MP4、WebM、MOV，最大 50 MB",
+          "title": "选择输出语言",
+          "text": "生成前先设置提示词的语言。",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "使用前先确认",
-          "text": "首页宣传免费使用，但定价页也列有付费方案；使用前请核对当前价格。",
-          "source": "details"
+          "icon": "sliders",
+          "title": "拆解画面风格",
+          "text": "整理主体、构图、光线与运动描述。",
+          "source": "home"
         }
       ],
       "facts": [
         {
           "label": "输入方式",
-          "value": "视频与图片上传",
+          "value": "本地视频或图片",
           "source": "home"
         },
         {
-          "label": "输出内容",
-          "value": "MP4、WebM、MOV，最大 50 MB",
+          "label": "视频上传",
+          "value": "MP4、WebM、MOV；最大 50 MB",
           "source": "home"
         },
         {
-          "label": "价格",
-          "value": "首页宣传免费使用，但定价页也列有付费方案；使用前请核对当前价格。",
-          "source": "details"
+          "label": "输出",
+          "value": "文字提示词，可选择输出语言",
+          "source": "home"
+        },
+        {
+          "label": "账号",
+          "value": "首页称无需注册；未测试实际生成访问",
+          "source": "home"
+        },
+        {
+          "label": "价格疑点",
+          "value": "首页称免费，定价页列有付费方案",
+          "source": "pricing"
         }
       ],
       "highlights": [
         {
-          "value": "视频与图片上传",
-          "label": "输入方式",
-          "icon": "file",
-          "source": "home"
+          "value": "50 MB",
+          "label": "视频文件上限",
+          "source": "home",
+          "icon": "file"
         },
         {
-          "value": "MP4、WebM、MOV，最大 50 MB",
-          "label": "输出内容",
-          "icon": "layers",
-          "source": "home"
+          "value": "2 种",
+          "label": "视频、图片输入",
+          "source": "home",
+          "icon": "layers"
         },
         {
-          "value": "免费试用 / 付费方案",
-          "label": "价格",
-          "icon": "coins",
-          "source": "home"
+          "value": "可选语言",
+          "label": "生成前设置",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "选择素材",
-          "text": "在官网上传视频或使用支持的输入方式。"
+          "title": "先选视频或图片。",
+          "text": "切换对应标签；视频上传区列有 MP4、WebM、MOV。"
         },
         {
-          "title": "生成提示词",
-          "text": "查看可选设置并提交参考素材。"
+          "title": "设置语言并上传。",
+          "text": "先选输出语言，再提交不超过 50 MB 的视频。"
         },
         {
-          "title": "检查并修改",
-          "text": "核对动作、镜头与光线，再用于视频模型。"
+          "title": "按目标模型修改。",
+          "text": "复制结果，调整成适合你的视频模型的描述。"
         }
       ],
       "fit": {
         "good": [
-          "快速处理视频或图片参考素材"
+          "手头已有本地视频或图片。",
+          "想先指定提示词的输出语言。"
         ],
         "consider": [
-          "不同页面的价格说明并不一致",
-          "需要精确还原原始提示词"
+          "需要确定的免费额度：官网首页与定价页说法不一致。",
+          "需要详细拆解中文台词和逐镜任务。"
         ]
       },
       "faq": [
         {
-          "q": "免费吗？",
-          "a": "首页称无需注册。",
-          "source": "details"
+          "q": "VideoToPrompt.com 完全免费吗？",
+          "a": "首页称免费且无需注册，但定价页列有付费方案，免费额度并不明确。使用前请以当前操作界面为准。",
+          "source": "pricing"
         },
         {
-          "q": "能还原原作者的提示词吗？",
-          "a": "不能保证。工具根据画面推测并生成新的提示词，无法保证与原作者使用的文字一致。",
+          "q": "支持哪些视频文件？",
+          "a": "当前上传区明确列出 MP4、WebM、MOV，最大 50 MB。其他页面提到的格式不能视为已经验证支持。",
           "source": "home"
         },
         {
-          "q": "隐私要注意什么？",
-          "a": "上传前阅读官网隐私政策；确认处理方式后再决定是否提交敏感素材。",
-          "source": "details"
+          "q": "能用图片反推吗？",
+          "a": "可以切换到 Image 标签；官网列出的图片上限是 10 MB。",
+          "source": "home"
+        },
+        {
+          "q": "它和 VideoToPrompt.app 是同一个吗？",
+          "a": "不是。这里介绍的是 videotoprompt.com；.app 域名有独立界面、价格和单镜头、多镜头模式。",
+          "source": "other_app"
+        },
+        {
+          "q": "能还原原作者的提示词吗？",
+          "a": "它根据参考画面生成新的描述。结果适合作为相似镜头的创作起点，不能用来证明原始提示词是什么。",
+          "source": "home"
         }
       ],
       "source_labels": {
         "home": "VideoToPrompt · 官网",
-        "details": "VideoToPrompt · 官方资料",
         "alt_videoinprompt": "VideoInPrompt · 官网",
         "alt_promptvv": "PromptVV · 官网",
         "alt_reprompt-video-to-prompt": "Reprompt Video to Prompt · 官网",
-        "alt_videotoprompt-app": "VideoToPrompt.app · 官网"
+        "alt_videotoprompt-app": "VideoToPrompt.app · 官网",
+        "pricing": "VideoToPrompt · 定价",
+        "privacy": "VideoToPrompt · 隐私政策",
+        "other_app": "VideoToPrompt · 独立的 .app 产品"
       },
       "cta": {
-        "title": "准备试试？",
-        "text": "打开官网，并确认最新使用条件。"
+        "title": "试试 VideoToPrompt。",
+        "text": "先确认当前额度，再从一段短素材开始。"
       },
       "alternatives": {
-        "videoinprompt": "上传或支持的社交链接；JSON",
-        "promptvv": "中文平台链接与分镜拆解",
-        "reprompt-video-to-prompt": "浏览器提取四张画面"
+        "videoinprompt": "需要模型预设、JSON，或把结果接入后续流程时可以比较它。",
+        "promptvv": "处理中文平台素材、台词，或首帧与参考图工作流时更值得比较。",
+        "reprompt-video-to-prompt": "想不注册先分析单镜头短片；官网称只发送取样截图。"
       },
       "compare": {
         "columns": [
           "工具",
-          "主要特点"
+          "输入",
+          "输出与工作流",
+          "主要限制"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "视频与图片上传"
+            "本地视频、图片",
+            "文字，可选输出语言",
+            "视频 50 MB；免费规则不明确"
           ],
           [
             "VideoInPrompt",
-            "上传或支持的社交链接；JSON"
+            "上传、支持的平台链接",
+            "文字、JSON、模型预设",
+            "免费额度有限，以当前方案为准"
           ],
           [
             "PromptVV",
-            "中文平台链接与分镜拆解"
+            "上传、中文平台链接",
+            "台词、分镜、参考图格式",
+            "500 MB、10 分钟；需注册"
           ],
           [
             "Reprompt Video to Prompt",
-            "浏览器提取四张画面"
+            "片段、截图",
+            "四帧分析，文字或 JSON",
+            "无需账号，有每日限制；适合单镜头"
           ],
           [
             "VideoToPrompt.app",
-            "上传或 YouTube 链接；多镜头模式"
+            "上传、YouTube",
+            "单镜头、多镜头分析",
+            "FAQ 写 20 MB；免费次数说明不一致"
           ]
         ],
-        "note": "根据各官网资料整理，核对于 2026 年 10 月 27 日。功能与价格可能变化；并非实测排名。"
-      }
+        "note": "按 2026 年 10 月 28 日核对的官方资料比较使用方式，并非生成质量的实测排名。"
+      },
+      "media_alt": "VideoToPrompt · ToolFavor 截取的官网界面",
+      "media_caption": "官网界面截图 · 2026-10-28 · 点击看大图"
     }
   },
   "alternatives": [
@@ -537,5 +656,18 @@
     "PromptVV": "https://promptvv.com/",
     "Reprompt Video to Prompt": "https://www.reprompt.org/video-to-prompt",
     "VideoToPrompt.app": "https://www.videotoprompt.app/"
-  }
+  },
+  "logo": "/assets/logos/videotoprompt-official.svg",
+  "media": [
+    {
+      "src": "/assets/media/videotoprompt-interface.webp",
+      "origin": "screenshot",
+      "source_url": "https://videotoprompt.com/",
+      "captured_on": "2026-10-28",
+      "frame": "browser",
+      "width": 1280,
+      "height": 879
+    }
+  ],
+  "related_same_category": true
 }

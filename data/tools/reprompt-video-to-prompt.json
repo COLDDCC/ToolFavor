@@ -11,14 +11,10 @@
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Web browser"
   },
-  "last_verified": "2026-10-27",
+  "last_verified": "2026-10-28",
   "sources": {
     "home": {
       "url": "https://www.reprompt.org/video-to-prompt",
-      "kind": "official"
-    },
-    "details": {
-      "url": "https://www.reprompt.org/privacy-policy",
       "kind": "official"
     },
     "alt_videotoprompt": {
@@ -36,6 +32,10 @@
     "alt_videotoprompt-app": {
       "url": "https://www.videotoprompt.app/",
       "kind": "third_party"
+    },
+    "privacy": {
+      "url": "https://www.reprompt.org/privacy-policy",
+      "kind": "official"
     }
   },
   "i18n": {
@@ -43,469 +43,574 @@
       "title": "Reprompt Video to Prompt Review: Video to Prompt, Pricing & Limits | ToolFavor",
       "description": "Reprompt Video to Prompt turns video references into AI prompts. See supported inputs, pricing, limitations and official sources before choosing a video-to-prompt tool.",
       "kicker": "AI Video · Web tool",
-      "lead": "Turn a video into a prompt.",
-      "sublead": "Understand the input, output and limits. Choose a tool that fits your workflow.",
+      "lead": "Four frames. One reusable video prompt.",
+      "sublead": "The browser samples a short clip. Only the still frames are sent for analysis, according to Reprompt; no account is needed.",
       "tags": [
-        "Four frames extracted in your browser",
-        "Only the still frames are sent, the site says"
+        "4 frames",
+        "No signup"
       ],
       "pricing_label": "Free",
-      "snapshot": "Based on official information · Not hands-on tested",
+      "snapshot": "Official sources and interface checked · Generation quality not tested",
       "capabilities": [
         {
           "icon": "file",
-          "title": "Choose your reference",
-          "text": "Four frames extracted in your browser",
+          "title": "Sample on your device",
+          "text": "The browser extracts four frames from the reference clip.",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "Get a usable prompt",
-          "text": "Only the still frames are sent, the site says",
+          "title": "Use screenshots instead",
+          "text": "Supply two to four screenshots if the clip will not open.",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "Check before sharing",
-          "text": "Free without an account, subject to daily and pace limits. Four frames can miss action between shots.",
+          "icon": "sliders",
+          "title": "Choose the destination model",
+          "text": "Select Veo, Sora, Kling, Runway or a generic prompt.",
           "source": "home"
         }
       ],
       "facts": [
         {
           "label": "Input",
-          "value": "Four frames extracted in your browser",
+          "value": "Browser-playable MP4, WebM, MOV or screenshots",
+          "source": "home"
+        },
+        {
+          "label": "Analysis",
+          "value": "Four frames extracted by the browser",
+          "source": "home"
+        },
+        {
+          "label": "Best clip",
+          "value": "One shot, roughly 3–20 seconds (official recommendation)",
+          "source": "home"
+        },
+        {
+          "label": "Account and limits",
+          "value": "No account; daily and pace limits",
           "source": "home"
         },
         {
           "label": "Output",
-          "value": "Only the still frames are sent, the site says",
-          "source": "home"
-        },
-        {
-          "label": "Pricing",
-          "value": "Free without an account, subject to daily and pace limits. Four frames can miss action between shots.",
+          "value": "Text or JSON prompt for a selected video model",
           "source": "home"
         }
       ],
       "highlights": [
         {
-          "value": "Four frames extracted in your browser",
-          "label": "Input",
-          "icon": "file",
-          "source": "home"
+          "value": "4 frames",
+          "label": "Sampled in the browser",
+          "source": "home",
+          "icon": "file"
         },
         {
-          "value": "Only the still frames are sent, the site says",
-          "label": "Output",
-          "icon": "layers",
-          "source": "home"
+          "value": "No signup",
+          "label": "Daily limits apply",
+          "source": "home",
+          "icon": "layers"
         },
         {
-          "value": "Free",
-          "label": "Pricing",
-          "icon": "coins",
-          "source": "home"
+          "value": "3–20 sec",
+          "label": "Recommended clip length",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "Choose a reference",
-          "text": "Use a clip or supported input from the official tool."
+          "title": "Trim to one shot.",
+          "text": "The site recommends a short clip of roughly 3–20 seconds."
         },
         {
-          "title": "Generate a prompt",
-          "text": "Review the available settings and submit your reference."
+          "title": "Review the four frames.",
+          "text": "If playback fails, use two to four screenshots instead."
         },
         {
-          "title": "Refine the result",
-          "text": "Check motion, camera and lighting before using a video model."
+          "title": "Add context and copy.",
+          "text": "Choose a model; add motion or sound details the stills cannot show."
         }
       ],
       "fit": {
         "good": [
-          "A short single-shot clip and no account"
+          "You want to start without an account.",
+          "You prefer sending selected frames rather than the full video file."
         ],
         "consider": [
-          "Detailed analysis of long or multi-shot video",
-          "You need an exact copy of the original prompt"
+          "You need precise timing across many cuts.",
+          "You expect four images to capture every motion or sound."
         ]
       },
       "faq": [
         {
-          "q": "Is it free?",
-          "a": "Free, with a daily cap and rate limit.",
+          "q": "Is it free and unlimited?",
+          "a": "It is free without an account or card, but daily and pace limits apply. The tool page does not publish a fixed daily number.",
           "source": "home"
         },
         {
-          "q": "Can it recover the original prompt?",
-          "a": "No. The tool estimates a new prompt from visible content; it cannot guarantee the creator’s original wording.",
+          "q": "Does the whole video leave my device?",
+          "a": "The tool page says only four JPEG frames are sent; the video remains on your device. This is the service’s statement, not a network audit by ToolFavor.",
           "source": "home"
         },
         {
-          "q": "What about privacy?",
-          "a": "Review the official privacy policy and avoid submitting confidential footage without checking how it is processed.",
-          "source": "details"
+          "q": "How long should the clip be?",
+          "a": "The site recommends one shot of roughly 3–20 seconds. Several cuts can mix unrelated scenes into the four frames.",
+          "source": "home"
+        },
+        {
+          "q": "What if MOV does not open?",
+          "a": "Compatibility depends on browser playback. Try a compatible MP4/WebM or use two to four screenshots.",
+          "source": "home"
+        },
+        {
+          "q": "Does it generate a finished video?",
+          "a": "No. This tool writes a prompt; paste it into a separate video model. It cannot guarantee the original creator’s wording.",
+          "source": "home"
         }
       ],
       "source_labels": {
         "home": "Reprompt Video to Prompt · official site",
-        "details": "Reprompt Video to Prompt · official details",
         "alt_videotoprompt": "VideoToPrompt · official site",
         "alt_videoinprompt": "VideoInPrompt · official site",
         "alt_promptvv": "PromptVV · official site",
-        "alt_videotoprompt-app": "VideoToPrompt.app · official site"
+        "alt_videotoprompt-app": "VideoToPrompt.app · official site",
+        "privacy": "Reprompt Video to Prompt · Privacy policy"
       },
       "cta": {
-        "title": "Ready to try?",
-        "text": "Open the official website and review its current terms."
+        "title": "Try Reprompt Video to Prompt.",
+        "text": "Check the current allowance, then start with a short reference."
       },
       "alternatives": {
-        "videotoprompt": "Video and image uploads",
-        "videoinprompt": "Upload or supported social links; JSON",
-        "promptvv": "Chinese platform links and shot breakdowns"
+        "videotoprompt": "Choose it when you already have a local video or still and want to set the output language.",
+        "videoinprompt": "Choose it for model presets or structured JSON that can feed another workflow.",
+        "promptvv": "Choose it for Chinese platform links, dialogue and first-frame/reference workflows."
       },
       "compare": {
         "columns": [
           "Tool",
-          "Main approach"
+          "Input",
+          "Output / workflow",
+          "Main limit"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "Video and image uploads"
+            "Local video / image",
+            "Text; output language",
+            "50 MB video; free terms unclear"
           ],
           [
             "VideoInPrompt",
-            "Upload or supported social links; JSON"
+            "Upload / supported links",
+            "Text + JSON; model presets",
+            "Free credits; verify current plan"
           ],
           [
             "PromptVV",
-            "Chinese platform links and shot breakdowns"
+            "Upload / Chinese platform links",
+            "Dialogue, shots, reference formats",
+            "500 MB / 10 min; registration"
           ],
           [
             "Reprompt Video to Prompt",
-            "Four locally extracted frames"
+            "Clip / screenshots",
+            "Four-frame text or JSON prompt",
+            "No account; daily limits; one short shot"
           ],
           [
             "VideoToPrompt.app",
-            "Upload or YouTube link; multi-scene option"
+            "Upload / YouTube",
+            "Single-scene / multi-scene",
+            "FAQ: 20 MB; free quota varies"
           ]
         ],
-        "note": "Based on each official website, checked 27 October 2026. Features and pricing can change; no hands-on ranking."
-      }
+        "note": "Official product descriptions checked 28 October 2026. Compare workflows, not measured generation quality."
+      },
+      "media_alt": "Reprompt Video to Prompt · official website interface captured by ToolFavor",
+      "media_caption": "Official website screenshot · 28 Oct 2026 · Open full size"
     },
     "ja": {
       "title": "Reprompt Video to Prompt の使い方・料金と動画からプロンプトを作る方法 | ToolFavor",
-      "description": "Reprompt Video to Prompt で動画からAIプロンプトを作る方法を紹介。対応する入力、料金、利用上の制限、向いている用途を公式情報をもとにまとめます。",
+      "description": "Reprompt Video to Promptの使い方・料金。短い動画をブラウザで抽出。公式によると送るのは静止画だけで、動画本体は端末に残ります。登録不要。 対応入力と制限を公式情報で確認できます。",
       "kicker": "AI動画 · Webツール",
-      "lead": "動画からプロンプトへ。",
-      "sublead": "入力方法、出力、制限を確認。自分の制作に合うか選べます。",
+      "lead": "4フレームから動画プロンプトへ。",
+      "sublead": "短い動画をブラウザで抽出。公式によると送るのは静止画だけで、動画本体は端末に残ります。登録不要。",
       "tags": [
-        "ブラウザで4枚のフレームを抽出",
-        "公式によると送信するのは静止画のみ"
+        "4フレーム",
+        "登録不要"
       ],
       "pricing_label": "無料",
-      "snapshot": "公式情報をもとに整理 · アップロード実測は未実施",
+      "snapshot": "公式情報・画面を確認 · 生成品質は未検証",
       "capabilities": [
         {
           "icon": "file",
-          "title": "参考素材を選ぶ",
-          "text": "ブラウザで4枚のフレームを抽出",
+          "title": "端末上でフレーム抽出",
+          "text": "ブラウザが動画から4枚の静止画を取得。",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "プロンプトを作成",
-          "text": "公式によると送信するのは静止画のみ",
+          "title": "スクリーンショットでも",
+          "text": "再生できない場合は2〜4枚の画像を入力。",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "利用前に確認",
-          "text": "登録不要で無料。ただし回数・頻度の上限があり、4枚では途中の動きを見落とすことがあります。",
+          "icon": "sliders",
+          "title": "モデルを選んで出力",
+          "text": "Veo、Sora、Kling、Runwayや汎用形式を選択。",
           "source": "home"
         }
       ],
       "facts": [
         {
           "label": "入力",
-          "value": "ブラウザで4枚のフレームを抽出",
+          "value": "ブラウザ対応のMP4・WebM・MOV、画像",
+          "source": "home"
+        },
+        {
+          "label": "分析",
+          "value": "ブラウザで4フレームを抽出",
+          "source": "home"
+        },
+        {
+          "label": "推奨",
+          "value": "約3〜20秒の1ショット（公式の目安）",
+          "source": "home"
+        },
+        {
+          "label": "登録・上限",
+          "value": "登録不要。日次・頻度の制限あり",
           "source": "home"
         },
         {
           "label": "出力",
-          "value": "公式によると送信するのは静止画のみ",
-          "source": "home"
-        },
-        {
-          "label": "料金",
-          "value": "登録不要で無料。ただし回数・頻度の上限があり、4枚では途中の動きを見落とすことがあります。",
+          "value": "選択モデル向けの文章やJSONプロンプト",
           "source": "home"
         }
       ],
       "highlights": [
         {
-          "value": "ブラウザで4枚のフレームを抽出",
-          "label": "入力",
-          "icon": "file",
-          "source": "home"
+          "value": "4フレーム",
+          "label": "ブラウザで抽出",
+          "source": "home",
+          "icon": "file"
         },
         {
-          "value": "公式によると送信するのは静止画のみ",
-          "label": "出力",
-          "icon": "layers",
-          "source": "home"
+          "value": "登録不要",
+          "label": "利用回数の上限あり",
+          "source": "home",
+          "icon": "layers"
         },
         {
-          "value": "無料",
-          "label": "料金",
-          "icon": "coins",
-          "source": "home"
+          "value": "3〜20秒",
+          "label": "公式の推奨時間",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "素材を選ぶ",
-          "text": "公式サイトで動画または対応する入力を用意。"
+          "title": "1ショットに絞る。",
+          "text": "公式の目安は約3〜20秒の短い動画。"
         },
         {
-          "title": "生成する",
-          "text": "設定を確認し、参考素材を送信。"
+          "title": "4フレームを確認。",
+          "text": "再生できなければ2〜4枚の画像を用意。"
         },
         {
-          "title": "内容を調整",
-          "text": "動き・カメラ・光を確認して動画モデルで使います。"
+          "title": "補足してコピー。",
+          "text": "モデルを選び、画像で伝わらない動きや音を追記。"
         }
       ],
       "fit": {
         "good": [
-          "登録せず短いワンショットを分析"
+          "登録せずに試したい。",
+          "動画全体ではなく静止画だけを送りたい。"
         ],
         "consider": [
-          "長い動画や複数ショットの詳しい分析",
-          "元のプロンプトを正確に復元したい"
+          "複数カットの厳密な時系列が必要。",
+          "4枚の画像で全ての動きや音を読めると期待している。"
         ]
       },
       "faq": [
         {
-          "q": "無料で使えますか？",
-          "a": "無料ですが、利用回数と頻度に上限があります。",
+          "q": "無料で無制限ですか？",
+          "a": "無料・登録不要ですが、日次上限と頻度制限があります。固定の回数はツールページに記載されていません。",
           "source": "home"
         },
         {
-          "q": "元のプロンプトを復元できますか？",
-          "a": "保証できません。映像から新しいプロンプトを推測するため、元の作者の文章と同一とは限りません。",
+          "q": "動画本体は送信されますか？",
+          "a": "公式は4枚のJPEGのみ送信し、動画は端末に残ると説明しています。ToolFavorによる通信監査ではありません。",
           "source": "home"
         },
         {
-          "q": "プライバシーは？",
-          "a": "送信前に公式のプライバシーポリシーと素材の処理方法を確認してください。",
-          "source": "details"
+          "q": "動画の長さの目安は？",
+          "a": "公式の推奨は1ショット、約3〜20秒。カットが多いと別々の場面が混ざる場合があります。",
+          "source": "home"
+        },
+        {
+          "q": "MOVが再生できない場合は？",
+          "a": "ブラウザの再生対応に依存します。対応するMP4・WebMか2〜4枚の画像で試せます。",
+          "source": "home"
+        },
+        {
+          "q": "動画も生成しますか？",
+          "a": "生成するのはプロンプトです。別の動画モデルで使用し、元の文章の完全復元は期待しないでください。",
+          "source": "home"
         }
       ],
       "source_labels": {
         "home": "Reprompt Video to Prompt · 公式サイト",
-        "details": "Reprompt Video to Prompt · 公式情報",
         "alt_videotoprompt": "VideoToPrompt · 公式サイト",
         "alt_videoinprompt": "VideoInPrompt · 公式サイト",
         "alt_promptvv": "PromptVV · 公式サイト",
-        "alt_videotoprompt-app": "VideoToPrompt.app · 公式サイト"
+        "alt_videotoprompt-app": "VideoToPrompt.app · 公式サイト",
+        "privacy": "Reprompt Video to Prompt · プライバシー"
       },
       "cta": {
-        "title": "試してみる？",
-        "text": "公式サイトで最新の利用条件を確認。"
+        "title": "Reprompt Video to Promptを試す。",
+        "text": "利用枠を確認して、短い参考動画から。"
       },
       "alternatives": {
-        "videotoprompt": "動画・画像のアップロード",
-        "videoinprompt": "動画・対応SNSリンク、JSON",
-        "promptvv": "中国の動画リンクとショット分解"
+        "videotoprompt": "ローカル動画や画像から、出力言語を指定して作りたい場合に。",
+        "videoinprompt": "モデル別設定や、次の処理につなぐJSONが欲しい場合に。",
+        "promptvv": "中国の動画リンク、台詞、最初のフレームや参考画像を使う制作に。"
       },
       "compare": {
         "columns": [
           "ツール",
-          "主な特徴"
+          "入力",
+          "出力・用途",
+          "主な制限"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "動画・画像のアップロード"
+            "動画・画像ファイル",
+            "文章・出力言語を選択",
+            "動画50 MB。無料条件は不明確"
           ],
           [
             "VideoInPrompt",
-            "動画・対応SNSリンク、JSON"
+            "動画・対応リンク",
+            "文章・JSON・モデル設定",
+            "無料クレジット。現行条件を確認"
           ],
           [
             "PromptVV",
-            "中国の動画リンクとショット分解"
+            "動画・中国の対応リンク",
+            "台詞・ショット・参考画像",
+            "500 MB・10分、登録必須"
           ],
           [
             "Reprompt Video to Prompt",
-            "ブラウザで抽出した4フレーム"
+            "動画・スクリーンショット",
+            "4フレームから文章・JSON",
+            "登録不要、日次上限。短い1ショット向け"
           ],
           [
             "VideoToPrompt.app",
-            "動画・YouTubeリンク、複数シーン"
+            "動画・YouTube",
+            "単一・複数シーン",
+            "FAQは20 MB。無料回数の案内に差"
           ]
         ],
-        "note": "各公式サイトの情報（2026年10月27日確認）。機能・料金は変わる場合があります。実測ランキングではありません。"
-      }
+        "note": "2026年10月28日の公式情報で制作方法を比較。生成品質の実測順位ではありません。"
+      },
+      "media_alt": "Reprompt Video to Prompt · ToolFavorが撮影した公式サイトの画面",
+      "media_caption": "公式サイトの画面 · 2026年10月28日 · 拡大する"
     },
     "zh-cn": {
       "title": "Reprompt Video to Prompt 是什么？视频反推提示词、价格与限制 | ToolFavor",
-      "description": "了解 Reprompt Video to Prompt 如何把视频转换为 AI 提示词：支持哪些素材、如何收费、适合谁及有哪些限制。附官方来源与使用前需要注意的事项。",
+      "description": "Reprompt Video to Prompt 视频反推提示词工具介绍：浏览器从短片取样，官网称只发送截图、不发送原视频。无需注册，适合先试一个单镜头片段。 了解输入方式、费用与限制，并查看真实界面、使用步骤和同类工具对比。",
       "kicker": "AI 视频 · 在线工具",
-      "lead": "视频转提示词。",
-      "sublead": "先了解输入方式、输出内容与限制，再决定是否适合你的创作流程。",
+      "lead": "四张画面，写成视频提示词。",
+      "sublead": "浏览器从短片取样，官网称只发送截图、不发送原视频。无需注册，适合先试一个单镜头片段。",
       "tags": [
-        "浏览器提取四张画面",
-        "官网称只发送截图，不发送原视频"
+        "4 张画面",
+        "无需注册"
       ],
       "pricing_label": "免费",
-      "snapshot": "根据官方资料整理 · 尚未实际上传测试",
+      "snapshot": "已核对官方资料与界面 · 未测试生成质量",
       "capabilities": [
         {
           "icon": "file",
-          "title": "选择参考素材",
-          "text": "浏览器提取四张画面",
+          "title": "在设备上提取画面",
+          "text": "浏览器从片段中选取四张关键画面。",
           "source": "home"
         },
         {
           "icon": "layers",
-          "title": "生成提示词",
-          "text": "官网称只发送截图，不发送原视频",
+          "title": "也能直接用截图",
+          "text": "视频打不开时，可提交两到四张截图。",
           "source": "home"
         },
         {
-          "icon": "check",
-          "title": "使用前先确认",
-          "text": "无需注册免费使用，但有频率和每日上限。四张画面可能漏掉镜头之间的动作。",
+          "icon": "sliders",
+          "title": "按目标模型输出",
+          "text": "可选择 Veo、Sora、可灵、Runway 或通用提示词。",
           "source": "home"
         }
       ],
       "facts": [
         {
-          "label": "输入方式",
+          "label": "输入",
+          "value": "浏览器可播放的 MP4、WebM、MOV 或截图",
+          "source": "home"
+        },
+        {
+          "label": "分析方式",
           "value": "浏览器提取四张画面",
           "source": "home"
         },
         {
-          "label": "输出内容",
-          "value": "官网称只发送截图，不发送原视频",
+          "label": "建议片段",
+          "value": "单镜头约 3–20 秒（官网建议）",
           "source": "home"
         },
         {
-          "label": "价格",
-          "value": "无需注册免费使用，但有频率和每日上限。四张画面可能漏掉镜头之间的动作。",
+          "label": "账号与限制",
+          "value": "无需账号；有每日与频率限制",
+          "source": "home"
+        },
+        {
+          "label": "输出",
+          "value": "针对所选视频模型的文字或 JSON 提示词",
           "source": "home"
         }
       ],
       "highlights": [
         {
-          "value": "浏览器提取四张画面",
-          "label": "输入方式",
-          "icon": "file",
-          "source": "home"
+          "value": "4 张画面",
+          "label": "由浏览器提取",
+          "source": "home",
+          "icon": "file"
         },
         {
-          "value": "官网称只发送截图，不发送原视频",
-          "label": "输出内容",
-          "icon": "layers",
-          "source": "home"
+          "value": "无需注册",
+          "label": "有每日使用上限",
+          "source": "home",
+          "icon": "layers"
         },
         {
-          "value": "免费",
-          "label": "价格",
-          "icon": "coins",
-          "source": "home"
+          "value": "3–20 秒",
+          "label": "建议的片段长度",
+          "source": "home",
+          "icon": "sliders"
         }
       ],
       "steps": [
         {
-          "title": "选择素材",
-          "text": "在官网上传视频或使用支持的输入方式。"
+          "title": "先裁成单镜头。",
+          "text": "官网建议使用约 3–20 秒的短片。"
         },
         {
-          "title": "生成提示词",
-          "text": "查看可选设置并提交参考素材。"
+          "title": "查看提取的四帧。",
+          "text": "如果浏览器无法播放，改用两到四张截图。"
         },
         {
-          "title": "检查并修改",
-          "text": "核对动作、镜头与光线，再用于视频模型。"
+          "title": "补充信息并复制。",
+          "text": "选择模型，写明截图无法表达的动作或声音细节。"
         }
       ],
       "fit": {
         "good": [
-          "无需注册地分析单镜头短片"
+          "想不注册账号就先体验。",
+          "倾向只发送画面，不上传整个视频文件。"
         ],
         "consider": [
-          "需要详细拆解长视频或多个镜头",
-          "需要精确还原原始提示词"
+          "需要精确还原多次切镜的时序。",
+          "希望四张图识别完整动作或真实声音。"
         ]
       },
       "faq": [
         {
-          "q": "免费吗？",
-          "a": "免费，受每日次数和频率限制。",
+          "q": "免费且无限使用吗？",
+          "a": "免费、无需账号或银行卡，但有每日次数和调用频率限制。工具页未给出固定每日次数。",
           "source": "home"
         },
         {
-          "q": "能还原原作者的提示词吗？",
-          "a": "不能保证。工具根据画面推测并生成新的提示词，无法保证与原作者使用的文字一致。",
+          "q": "原视频会离开设备吗？",
+          "a": "工具页称只发送四张 JPEG，原视频留在设备上。这是服务方的说明，并非 ToolFavor 的网络审计结论。",
           "source": "home"
         },
         {
-          "q": "隐私要注意什么？",
-          "a": "上传前阅读官网隐私政策；确认处理方式后再决定是否提交敏感素材。",
-          "source": "details"
+          "q": "用多长的视频更合适？",
+          "a": "官网建议约 3–20 秒、单镜头。多次切镜会让四张截图来自不同场景，影响理解。",
+          "source": "home"
+        },
+        {
+          "q": "MOV 打不开怎么办？",
+          "a": "支持程度取决于浏览器能否播放。可换兼容的 MP4、WebM，或直接用两到四张截图。",
+          "source": "home"
+        },
+        {
+          "q": "它会直接生成视频吗？",
+          "a": "不会，这里生成的是提示词，需要再交给独立的视频模型，也不能保证还原原作者的文字。",
+          "source": "home"
         }
       ],
       "source_labels": {
         "home": "Reprompt Video to Prompt · 官网",
-        "details": "Reprompt Video to Prompt · 官方资料",
         "alt_videotoprompt": "VideoToPrompt · 官网",
         "alt_videoinprompt": "VideoInPrompt · 官网",
         "alt_promptvv": "PromptVV · 官网",
-        "alt_videotoprompt-app": "VideoToPrompt.app · 官网"
+        "alt_videotoprompt-app": "VideoToPrompt.app · 官网",
+        "privacy": "Reprompt Video to Prompt · 隐私政策"
       },
       "cta": {
-        "title": "准备试试？",
-        "text": "打开官网，并确认最新使用条件。"
+        "title": "试试 Reprompt Video to Prompt。",
+        "text": "先确认当前额度，再从一段短素材开始。"
       },
       "alternatives": {
-        "videotoprompt": "视频与图片上传",
-        "videoinprompt": "上传或支持的社交链接；JSON",
-        "promptvv": "中文平台链接与分镜拆解"
+        "videotoprompt": "已有本地视频或图片，想指定输出语言时可以比较它。",
+        "videoinprompt": "需要模型预设、JSON，或把结果接入后续流程时可以比较它。",
+        "promptvv": "处理中文平台素材、台词，或首帧与参考图工作流时更值得比较。"
       },
       "compare": {
         "columns": [
           "工具",
-          "主要特点"
+          "输入",
+          "输出与工作流",
+          "主要限制"
         ],
         "rows": [
           [
             "VideoToPrompt",
-            "视频与图片上传"
+            "本地视频、图片",
+            "文字，可选输出语言",
+            "视频 50 MB；免费规则不明确"
           ],
           [
             "VideoInPrompt",
-            "上传或支持的社交链接；JSON"
+            "上传、支持的平台链接",
+            "文字、JSON、模型预设",
+            "免费额度有限，以当前方案为准"
           ],
           [
             "PromptVV",
-            "中文平台链接与分镜拆解"
+            "上传、中文平台链接",
+            "台词、分镜、参考图格式",
+            "500 MB、10 分钟；需注册"
           ],
           [
             "Reprompt Video to Prompt",
-            "浏览器提取四张画面"
+            "片段、截图",
+            "四帧分析，文字或 JSON",
+            "无需账号，有每日限制；适合单镜头"
           ],
           [
             "VideoToPrompt.app",
-            "上传或 YouTube 链接；多镜头模式"
+            "上传、YouTube",
+            "单镜头、多镜头分析",
+            "FAQ 写 20 MB；免费次数说明不一致"
           ]
         ],
-        "note": "根据各官网资料整理，核对于 2026 年 10 月 27 日。功能与价格可能变化；并非实测排名。"
-      }
+        "note": "按 2026 年 10 月 28 日核对的官方资料比较使用方式，并非生成质量的实测排名。"
+      },
+      "media_alt": "Reprompt Video to Prompt · ToolFavor 截取的官网界面",
+      "media_caption": "官网界面截图 · 2026-10-28 · 点击看大图"
     }
   },
   "alternatives": [
@@ -537,5 +642,18 @@
     "PromptVV": "https://promptvv.com/",
     "Reprompt Video to Prompt": "https://www.reprompt.org/video-to-prompt",
     "VideoToPrompt.app": "https://www.videotoprompt.app/"
-  }
+  },
+  "logo": "/assets/logos/reprompt-video-to-prompt-official.svg",
+  "media": [
+    {
+      "src": "/assets/media/reprompt-video-to-prompt-interface.webp",
+      "origin": "screenshot",
+      "source_url": "https://www.reprompt.org/video-to-prompt",
+      "captured_on": "2026-10-28",
+      "frame": "browser",
+      "width": 1280,
+      "height": 879
+    }
+  ],
+  "related_same_category": true
 }
