@@ -10,7 +10,7 @@ TOOL_PAGES = sorted('tools/'+p.stem+'.html' for p in (ROOT/'data'/'tools').glob(
 LINK_TARGETS = PAGES + TOOL_PAGES
 UI = {
  'Explore':'ツールを探す','For Developers':'開発者の方へ','For developers':'開発者の方へ',
- 'Contact / Feedback':'お問い合わせ','Creator portfolio · EN / 中文 / 日本語':'制作者のポートフォリオ',
+ 'Contact / Feedback':'お問い合わせ','Creator portfolio':'制作者のポートフォリオ',
  'About':'掲載について','+ Submit a site':'＋ サイトを掲載する',
  'A curated corner of the internet':'使ってみたいWebサイトを、ここから', 'Independent picks':'独自のセレクト',
  'Discover The Best':'仕事と創作に役立つ','Websites & Tools':'Webサイト・ツールを探す',
@@ -140,7 +140,7 @@ def build():
             h=h[:begin]+json.dumps(translated,ensure_ascii=False,separators=(',',':'))+h[begin+length:]
             h=h.replace("b.textContent=c;","b.textContent=labels[c]||c;")
             h=h.replace("const cats=","const labels="+json.dumps(CATS,ensure_ascii=False)+";const cats=")
-            h=h.replace("[x[0],x[1],x[2],x[3]]","[x[0],x[1],x[2],x[3],x[7],labels[x[3]]]")
+            h=h.replace("[x[0],x[1],x[2],x[3],","[x[0],x[1],x[2],x[3],x[7],labels[x[3]],")
             h=h.replace("'/tools/'+detail","'/ja/tools/'+detail")
             h=h.replace("[x[3],x[5]==='freemium'?'Freemium':x[5]==='free'?'Free':'Paid']","[labels[x[3]]||x[3],x[5]==='freemium'?'無料プランあり':x[5]==='free'?'無料':'有料']")
             h=h.replace("detail?'Details →':'Visit ↗'","detail?'詳細 →':'サイトへ ↗'")
@@ -193,3 +193,5 @@ if __name__=='__main__':
     if (ROOT/'zh-cn/index.html').exists():
         import runpy
         runpy.run_path(str(Path(__file__).with_name('build-zh.py')))['refresh_navigation']()
+    import runpy
+    runpy.run_path(str(Path(__file__).with_name('prerender-home.py')))['main']()

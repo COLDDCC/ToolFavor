@@ -7,6 +7,16 @@ python scripts/build-ja.py
 python scripts/build-zh.py
 ```
 
+Both builders finish by running `scripts/prerender-home.py`, which writes the
+homepage's first page of cards, the category chips, the result count and the
+footer year into the static HTML of all three homepages, so crawlers and no-JS
+visitors see real content. The in-page `render()` then replaces it with
+identical markup. Run it alone after editing `index.html` without a rebuild:
+
+```sh
+python3 scripts/prerender-home.py
+```
+
 Descriptions are matched to catalog order. Each build rejects a description count
 that differs from the English catalog, so newly added entries must be translated.
 The Chinese builder updates language navigation and alternate links across all

@@ -7,7 +7,7 @@ ja=importlib.util.module_from_spec(spec);spec.loader.exec_module(ja)
 ROOT=ja.ROOT
 UI={
 'Explore':'发现工具','For Developers':'开发者','For developers':'开发者','Contact / Feedback':'联系与反馈',
-'Creator portfolio · EN / 中文 / 日本語':'创作者作品集','About':'关于收录','+ Submit a site':'＋ 提交网站',
+'Creator portfolio':'创作者作品集','About':'关于收录','+ Submit a site':'＋ 提交网站',
 'A curated corner of the internet':'发现值得收藏的网站','Independent picks':'独立精选','Discover The Best':'发现好用的','Websites & Tools':'网站与工具',
 'Useful tools, remarkable websites, and creative inspiration. Find what you need without the endless scrolling.':'从AI、设计、开发到日常效率工具，按用途和价格筛选，快速找到需要的网站。',
 'Search →':'搜索 →','Explore the collection':'浏览精选网站','All pricing':'全部价格','Free':'免费','Freemium':'有免费方案','Paid':'付费',
@@ -77,7 +77,7 @@ def build():
             data=[[*x[:2],d,*x[3:],x[2]] for x,d in zip(old,descriptions)]
             h=h[:start]+json.dumps(data,ensure_ascii=False,separators=(',',':'))+h[start+length:]
             h=h.replace('const cats=','const labels='+json.dumps(CATS,ensure_ascii=False)+';const cats=').replace('b.textContent=c;','b.textContent=labels[c]||c;')
-            h=h.replace('[x[0],x[1],x[2],x[3]]','[x[0],x[1],x[2],x[3],x[7],labels[x[3]]]')
+            h=h.replace('[x[0],x[1],x[2],x[3],','[x[0],x[1],x[2],x[3],x[7],labels[x[3]],')
             h=h.replace("'/tools/'+detail","'/zh-cn/tools/'+detail")
             h=h.replace("[x[3],x[5]==='freemium'?'Freemium':x[5]==='free'?'Free':'Paid']","[labels[x[3]]||x[3],x[5]==='freemium'?'有免费方案':x[5]==='free'?'免费':'付费']")
             h=h.replace("detail?'Details →':'Visit ↗'","detail?'查看详情 →':'访问网站 ↗'")
@@ -115,4 +115,7 @@ def build():
     sitemap.write_text(s)
     print(f'Generated {len(ja.PAGES)} Simplified Chinese pages and {len(catalog)} catalog descriptions.')
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+    build()
+    import runpy
+    runpy.run_path(str(Path(__file__).with_name('prerender-home.py')))['main']()
