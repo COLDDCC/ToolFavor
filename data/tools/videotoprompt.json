@@ -174,7 +174,7 @@
         {
           "q": "Does it recover the exact original prompt?",
           "a": "It creates a new description from the reference. Treat the result as a starting point for a similar shot, not proof of the original prompt.",
-          "source": "home"
+          "source": "alt_reprompt-video-to-prompt"
         }
       ],
       "source_labels": {
@@ -367,7 +367,7 @@
         {
           "q": "元のプロンプトを復元できますか？",
           "a": "参考映像から新しい文章を作る仕組みです。似た映像を作る出発点であり、元の文章の証拠にはなりません。",
-          "source": "home"
+          "source": "alt_reprompt-video-to-prompt"
         }
       ],
       "source_labels": {
@@ -560,7 +560,7 @@
         {
           "q": "能还原原作者的提示词吗？",
           "a": "它根据参考画面生成新的描述。结果适合作为相似镜头的创作起点，不能用来证明原始提示词是什么。",
-          "source": "home"
+          "source": "alt_reprompt-video-to-prompt"
         }
       ],
       "source_labels": {
@@ -669,5 +669,6 @@
       "height": 879
     }
   ],
-  "related_same_category": true
+  "related_same_category": true,
+  "pricing_verified": false
 }

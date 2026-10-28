@@ -475,7 +475,7 @@ def json_ld(t, c, code):
     app = {'@type': 'SoftwareApplication', 'name': t['name'], 'url': t['url'],
            'description': c['description'], 'applicationCategory': t['schema']['applicationCategory'],
            'operatingSystem': t['schema']['operatingSystem']}
-    if t['pricing'] in ('free', 'freemium'):
+    if t['pricing'] in ('free', 'freemium') and t.get('pricing_verified', True):
         app['offers'] = {'@type': 'Offer', 'price': '0', 'priceCurrency': 'USD'}
     if t.get('media') and not t['media'][0].get('portrait'):
         app['screenshot'] = absolute(media_src(t, t['media'][0]))
