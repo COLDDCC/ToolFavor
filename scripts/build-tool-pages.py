@@ -301,7 +301,7 @@ h1.long{font-size:clamp(40px,5.6vw,68px)!important}h1{font-size:clamp(48px,8vw,8
 .browser .view img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left}
 .browser .view .mock{display:none}.browser.failed .view img{display:none}.browser.failed .view .mock{display:grid}
 .hero-grid>*{min-width:0}h1{overflow-wrap:anywhere}.stage{min-width:0}
-.product-preview{margin:0;width:100%}.product-preview .view img{aspect-ratio:auto;object-fit:contain}
+.product-preview{margin:0;width:100%}.product-preview .view img{height:auto;aspect-ratio:auto;object-fit:contain}
 .product-preview .addr{max-width:70%;padding-inline:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .preview-caption{display:block;padding:12px 16px;font-size:12px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);text-align:center}
 .product-preview .fallback{display:none;padding:40px;justify-content:center}.product-preview.failed .fallback{display:flex}
