@@ -1,0 +1,157 @@
+{
+  "slug": "video-to-prompt",
+  "last_verified": "2026-10-28",
+  "tools": ["reprompt-video-to-prompt", "videotoprompt", "videotoprompt-app", "videoinprompt", "promptvv"],
+  "i18n": {
+    "en": {
+      "title": "Video to Prompt: 5 Free & Paid Tools Compared (2026) | ToolFavor",
+      "description": "Turn a video into an AI prompt for Veo, Kling or Seedance. Compare 5 video-to-prompt tools by input, upload limit, JSON output, signup and pricing.",
+      "kicker": "AI Video · Comparison guide",
+      "h1": "Video to prompt tools, compared.",
+      "lead": "Five ways to turn a reference clip into a prompt you can reuse.",
+      "sublead": "Each one reads a video and writes down the subject, camera movement, lighting and style, so you can recreate a similar shot in Veo, Kling, Seedance or Runway. They differ in what they accept, what they send to the server and what they charge.",
+      "snapshot": "Facts from official pages · Prompt quality not ranked",
+      "picks_title": "Quick picks.",
+      "picks_sub": "Start with what you already have and where the prompt is going.",
+      "picks": [
+        {"tool": "reprompt-video-to-prompt", "for": "No account, frames only", "why": "Free with daily limits. The browser samples four frames and, per Reprompt, only those stills are sent."},
+        {"tool": "videotoprompt", "for": "A local clip or a still image", "why": "Upload a video up to 50 MB or an image, and choose the language of the prompt."},
+        {"tool": "videotoprompt-app", "for": "A YouTube link, several scenes", "why": "Paste a YouTube URL and pick single-scene or multi-scene analysis."},
+        {"tool": "videoinprompt", "for": "Structured JSON for a model", "why": "Scene text plus JSON, with presets for Seedance, Veo, Kling, Runway and more."},
+        {"tool": "promptvv", "for": "Douyin, Xiaohongshu, Bilibili", "why": "Breaks Chinese clips into dialogue and shots for Jimeng and Seedance workflows."}
+      ],
+      "table_title": "Side by side.",
+      "table_sub": "From each product's official pages. Not a hands-on quality ranking.",
+      "columns": ["Tool", "Input", "Limit", "Output", "Account", "Price"],
+      "rows": {
+        "reprompt-video-to-prompt": ["MP4, WebM, MOV or screenshots", "One shot, about 3–20 s recommended", "Text or JSON for a chosen model", "Not required", "Free, daily limits"],
+        "videotoprompt": ["Local video or image", "50 MB · MP4, WebM, MOV", "Text prompt, choose language", "Homepage says no signup", "Homepage says free; pricing page lists paid plans"],
+        "videotoprompt-app": ["Local video or YouTube URL", "20 MB upload (FAQ)", "Single- or multi-scene analysis", "See official site", "Single-scene free; multi-scene quota varies"],
+        "videoinprompt": ["Local files or supported public links", "MP4, MOV, WebM", "Scene text and structured JSON", "See official site", "Free starting credits, paid plans"],
+        "promptvv": ["Files; Douyin, Xiaohongshu, Bilibili links", "500 MB · up to 10 min", "Dialogue and shot-by-shot prompts", "Required, trial time included", "Prepaid video time"]
+      },
+      "table_note": "Free allowances and limits change often, and some official pages contradict each other. Check the official site before you rely on a quota.",
+      "choose_title": "How to choose.",
+      "choose": [
+        {"title": "Start from your source", "text": "A file on your computer works everywhere. For a YouTube link use VideoToPrompt.app; for Douyin, Xiaohongshu or Bilibili use PromptVV. Only analyze footage you have the right to use."},
+        {"title": "Count the cuts", "text": "One continuous shot gives the cleanest prompt. If the clip has many cuts, trim it first or use a multi-scene or shot-by-shot tool."},
+        {"title": "Match the output to the model", "text": "A paragraph is fine for most generators. If you are scripting or batching, JSON from VideoInPrompt or Reprompt is easier to edit field by field."},
+        {"title": "Decide what you will upload", "text": "Some tools receive the whole video; Reprompt says it sends only four frames. Read the privacy policy before uploading client or personal footage."}
+      ],
+      "names_title": "VideoToPrompt or VideoToPrompt.app?",
+      "names_text": "They are two separate products. videotoprompt.com takes a clip or an image and lets you choose the output language; videotoprompt.app adds YouTube links and a multi-scene mode. Each has its own pricing and account.",
+      "faq_title": "Questions, answered.",
+      "faq": [
+        {"q": "What is a video to prompt tool?", "a": "It analyzes a reference video and writes a text prompt describing the subject, action, camera movement, lighting and style. You paste that prompt into an AI video generator such as Veo, Kling, Seedance or Runway to make a similar shot."},
+        {"q": "Is there a free video to prompt tool?", "a": "Reprompt Video to Prompt is free and needs no account, with daily and pace limits. VideoToPrompt, VideoToPrompt.app and VideoInPrompt offer free access or starting credits alongside paid plans; PromptVV includes trial time after registration."},
+        {"q": "Can I paste a YouTube or TikTok link?", "a": "VideoToPrompt.app accepts YouTube URLs, VideoInPrompt supports some public links, and PromptVV supports Douyin, Xiaohongshu and Bilibili. For other sites, upload a file you have the right to use."},
+        {"q": "Will the prompt recreate the video exactly?", "a": "No. The prompt is a starting point. Exact timing, sound, faces and fine motion are rarely captured, so expect to edit the prompt and generate a few times."},
+        {"q": "Which option uploads the least data?", "a": "According to Reprompt, its tool extracts four frames in your browser and sends only those images, not the video file. The other tools receive the uploaded video; check each privacy policy."}
+      ],
+      "reviews_title": "Read the full reviews.",
+      "review_cta": "Full review",
+      "visit": "Official site",
+      "policy": "Independent summary. Not sponsored, no invented ratings or prices. The official site always has the final word."
+    },
+    "ja": {
+      "title": "動画からプロンプトを作るツール5選を比較（2026）無料・登録不要・JSON | ToolFavor",
+      "description": "動画をVeo、Kling、Seedance向けのプロンプトに変換。5つのツールを対応入力、アップロード上限、JSON出力、登録の有無、料金で比較します。",
+      "kicker": "AI動画 · 比較ガイド",
+      "h1": "動画からプロンプトを作るツールを比較。",
+      "lead": "参考動画を、再利用できるプロンプトに変える5つの方法。",
+      "sublead": "どのツールも動画を読み取り、被写体、カメラの動き、光、スタイルを言葉にします。Veo、Kling、Seedance、Runwayで似たショットを作るための出発点です。違いは、対応する入力、サーバーに送るデータ、そして料金です。",
+      "snapshot": "公式ページの情報 · 出力品質のランキングではありません",
+      "picks_title": "目的別のおすすめ。",
+      "picks_sub": "手元にある素材と、プロンプトを使うモデルから選びましょう。",
+      "picks": [
+        {"tool": "reprompt-video-to-prompt", "for": "登録不要・静止画だけ送信", "why": "無料（1日の上限あり）。ブラウザーで4枚のフレームを取り出し、公式によると送るのはその静止画だけです。"},
+        {"tool": "videotoprompt", "for": "手元の動画や静止画", "why": "50 MBまでの動画か画像をアップロードし、出力言語を選べます。"},
+        {"tool": "videotoprompt-app", "for": "YouTubeリンク・複数シーン", "why": "YouTubeのURLを貼り、単一シーンか複数シーンの分析を選べます。"},
+        {"tool": "videoinprompt", "for": "モデル向けのJSON", "why": "シーン説明とJSONを出力。Seedance、Veo、Kling、Runwayなどのプリセットがあります。"},
+        {"tool": "promptvv", "for": "抖音・小紅書・Bilibili", "why": "中国語の動画を台詞とショットに分解し、JimengやSeedanceの制作に使えます。"}
+      ],
+      "table_title": "一覧で比べる。",
+      "table_sub": "各製品の公式ページをもとに整理。実機での品質ランキングではありません。",
+      "columns": ["ツール", "入力", "上限", "出力", "アカウント", "料金"],
+      "rows": {
+        "reprompt-video-to-prompt": ["MP4、WebM、MOV、スクリーンショット", "1ショット・約3〜20秒を推奨", "選んだモデル向けのテキストかJSON", "不要", "無料（1日の上限あり）"],
+        "videotoprompt": ["手元の動画か画像", "50 MB · MP4、WebM、MOV", "テキスト、出力言語を選択", "トップページでは登録不要と記載", "トップは無料と記載、料金ページに有料プラン"],
+        "videotoprompt-app": ["手元の動画かYouTubeのURL", "アップロード20 MB（FAQ）", "単一・複数シーンの分析", "公式サイトで確認", "単一シーンは無料、複数シーンは枠が変動"],
+        "videoinprompt": ["ファイルか対応する公開リンク", "MP4、MOV、WebM", "シーン説明とJSON", "公式サイトで確認", "無料の初期クレジットと有料プラン"],
+        "promptvv": ["ファイル、抖音・小紅書・Bilibiliのリンク", "500 MB · 最長10分", "台詞とショットごとのプロンプト", "必要（お試し時間つき）", "動画時間のプリペイド"]
+      },
+      "table_note": "無料枠や上限はよく変わり、公式ページ同士で記載が食い違うこともあります。使う前に公式サイトで確認してください。",
+      "choose_title": "選び方。",
+      "choose": [
+        {"title": "素材の入手元から考える", "text": "手元のファイルならどのツールでも使えます。YouTubeリンクならVideoToPrompt.app、抖音・小紅書・BilibiliならPromptVV。使用する権利のある映像だけを分析しましょう。"},
+        {"title": "カットの数を確認する", "text": "1つの連続したショットがいちばんきれいなプロンプトになります。カットが多い場合は先に切り出すか、複数シーン対応のツールを選びましょう。"},
+        {"title": "出力形式をモデルに合わせる", "text": "多くの生成ツールでは文章で十分です。スクリプトや一括処理で使うなら、VideoInPromptやRepromptのJSONが項目ごとに編集しやすいです。"},
+        {"title": "アップロードする内容を決める", "text": "動画そのものを受け取るツールもあれば、Repromptのように4枚のフレームだけを送るとしているものもあります。仕事や個人の映像はプライバシーポリシーを読んでから。"}
+      ],
+      "names_title": "VideoToPromptとVideoToPrompt.appは同じ？",
+      "names_text": "別々の製品です。videotoprompt.comは動画か画像から出力言語を選んで作成、videotoprompt.appはYouTubeリンクと複数シーン分析に対応しています。料金とアカウントもそれぞれ別です。",
+      "faq_title": "よくある質問。",
+      "faq": [
+        {"q": "動画からプロンプトを作るツールとは？", "a": "参考動画を分析し、被写体、動き、カメラワーク、光、スタイルを説明するテキストプロンプトを作るツールです。そのプロンプトをVeo、Kling、Seedance、RunwayなどのAI動画生成ツールに貼り付けて、似たショットを作ります。"},
+        {"q": "無料で使えるツールはありますか？", "a": "Reprompt Video to Promptは無料・登録不要で、1日の回数やペースに上限があります。VideoToPrompt、VideoToPrompt.app、VideoInPromptは無料枠や初期クレジットと有料プランがあり、PromptVVは登録後にお試し時間がつきます。"},
+        {"q": "YouTubeやTikTokのリンクは使えますか？", "a": "VideoToPrompt.appはYouTubeのURLに、VideoInPromptは一部の公開リンクに、PromptVVは抖音・小紅書・Bilibiliに対応しています。ほかのサイトの動画は、使用する権利のあるファイルをアップロードしてください。"},
+        {"q": "元の動画をそのまま再現できますか？", "a": "できません。プロンプトはあくまで出発点です。正確なタイミング、音、顔、細かな動きは再現されにくいので、編集と再生成を前提にしましょう。"},
+        {"q": "送るデータがいちばん少ないのは？", "a": "Repromptによると、ブラウザーで4枚のフレームを取り出し、動画ファイルではなくその画像だけを送ります。ほかのツールはアップロードした動画を受け取るため、それぞれのプライバシーポリシーを確認してください。"}
+      ],
+      "reviews_title": "各ツールの詳しい紹介。",
+      "review_cta": "詳しく見る",
+      "visit": "公式サイト",
+      "policy": "独立した情報整理です。広告・提携ではなく、架空の評価や価格は載せていません。最新情報は公式サイトが基準です。"
+    },
+    "zh-cn": {
+      "title": "视频反推提示词工具对比（2026）：5 款 Video to Prompt 怎么选 | ToolFavor",
+      "description": "把视频反推成 Veo、可灵、Seedance、即梦可用的提示词。按输入方式、上传上限、JSON 输出、是否注册和价格，对比 5 款视频转提示词工具。",
+      "kicker": "AI 视频 · 对比指南",
+      "h1": "视频反推提示词工具，一页看懂。",
+      "lead": "把参考视频变成可复用提示词的 5 种方式。",
+      "sublead": "它们都会读取视频，写出主体、运镜、光线和风格，方便你在 Veo、可灵、Seedance 或 Runway 里做出相似的镜头。区别在于支持什么输入、把什么数据发到服务器，以及怎么收费。",
+      "snapshot": "信息来自官方页面 · 非生成质量排名",
+      "picks_title": "按需求选。",
+      "picks_sub": "先看手上有什么素材，再看提示词要用在哪个模型。",
+      "picks": [
+        {"tool": "reprompt-video-to-prompt", "for": "免注册，只发截图", "why": "免费（有每日上限）。浏览器取 4 帧画面，官网称只发送这些截图。"},
+        {"tool": "videotoprompt", "for": "本地视频或图片", "why": "上传 50 MB 以内的视频或一张图片，并可选择提示词语言。"},
+        {"tool": "videotoprompt-app", "for": "YouTube 链接、多镜头", "why": "粘贴 YouTube 链接，选择单镜头或多镜头分析。"},
+        {"tool": "videoinprompt", "for": "给模型用的 JSON", "why": "输出场景描述和结构化 JSON，内置 Seedance、Veo、可灵、Runway 等预设。"},
+        {"tool": "promptvv", "for": "抖音、小红书、B 站", "why": "把中文视频拆成台词和分镜，适合即梦、Seedance 创作流程。"}
+      ],
+      "table_title": "横向对比。",
+      "table_sub": "依据各产品官方页面整理，非实测质量排名。",
+      "columns": ["工具", "输入", "上限", "输出", "账号", "价格"],
+      "rows": {
+        "reprompt-video-to-prompt": ["MP4、WebM、MOV 或截图", "单镜头，建议约 3–20 秒", "按所选模型输出文本或 JSON", "无需注册", "免费，有每日上限"],
+        "videotoprompt": ["本地视频或图片", "50 MB · MP4、WebM、MOV", "文本提示词，可选语言", "首页称无需注册", "首页称免费，价格页列有付费方案"],
+        "videotoprompt-app": ["本地视频或 YouTube 链接", "上传 20 MB（FAQ）", "单镜头或多镜头分析", "以官网为准", "单镜头免费，多镜头额度不定"],
+        "videoinprompt": ["本地文件或支持的公开链接", "MP4、MOV、WebM", "场景描述和结构化 JSON", "以官网为准", "免费初始积分，另有付费方案"],
+        "promptvv": ["文件；抖音、小红书、B 站链接", "500 MB · 最长 10 分钟", "台词和分镜提示词", "需注册，含试用时长", "预付视频时长"]
+      },
+      "table_note": "免费额度和限制经常变化，部分官方页面之间说法也不一致。依赖某个额度前，请先到官网核对。",
+      "choose_title": "怎么选。",
+      "choose": [
+        {"title": "先看素材从哪来", "text": "本地文件所有工具都能用。YouTube 链接选 VideoToPrompt.app，抖音、小红书、B 站选 PromptVV。只分析你有权使用的视频。"},
+        {"title": "数一数有几个镜头", "text": "一个连续镜头得到的提示词最干净。剪辑点很多的视频，先裁出一段，或换用支持多镜头、分镜拆解的工具。"},
+        {"title": "输出格式要配合模型", "text": "大多数生成工具用一段文字就够了。如果要写脚本或批量处理，VideoInPrompt 和 Reprompt 的 JSON 更方便逐项修改。"},
+        {"title": "想清楚要上传什么", "text": "有的工具会收到整段视频；Reprompt 称只发送 4 帧画面。上传客户或私人素材前，先读一下隐私政策。"}
+      ],
+      "names_title": "VideoToPrompt 和 VideoToPrompt.app 是同一个吗？",
+      "names_text": "不是，它们是两个独立的产品。videotoprompt.com 支持视频或图片、可选输出语言；videotoprompt.app 支持 YouTube 链接和多镜头模式。价格和账号也各自独立。",
+      "faq_title": "常见问题。",
+      "faq": [
+        {"q": "视频反推提示词工具是什么？", "a": "它会分析一段参考视频，写出描述主体、动作、运镜、光线和风格的文字提示词。把提示词粘贴到 Veo、可灵、Seedance、Runway 等 AI 视频工具里，就能生成相似的镜头。"},
+        {"q": "有免费的视频转提示词工具吗？", "a": "Reprompt Video to Prompt 免费、无需注册，有每日次数和频率限制。VideoToPrompt、VideoToPrompt.app、VideoInPrompt 提供免费额度或初始积分，也有付费方案；PromptVV 注册后附带试用时长。"},
+        {"q": "能直接粘贴 YouTube 或抖音链接吗？", "a": "VideoToPrompt.app 支持 YouTube 链接，VideoInPrompt 支持部分公开链接，PromptVV 支持抖音、小红书和 B 站。其他网站的视频，请上传你有权使用的文件。"},
+        {"q": "提示词能完全复刻原视频吗？", "a": "不能。提示词只是起点，准确的节奏、声音、人脸和细微动作通常还原不了，需要自己修改并多生成几次。"},
+        {"q": "哪个工具上传的数据最少？", "a": "据 Reprompt 官网说明，它在浏览器里提取 4 帧画面，只发送这些图片，不发送视频文件。其他工具会收到你上传的视频，请分别查看隐私政策。"}
+      ],
+      "reviews_title": "查看每款工具的详细介绍。",
+      "review_cta": "详细介绍",
+      "visit": "官网",
+      "policy": "独立资料整理。无赞助、无虚构评分或价格。一切以官方页面为准。"
+    }
+  }
+}

@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://toolfavor.com/</loc></url>
 <url><loc>https://toolfavor.com/developers</loc></url>
+<url><loc>https://toolfavor.com/contact</loc></url>
 <url><loc>https://toolfavor.com/creators/1/</loc></url>
 <url><loc>https://toolfavor.com/free-ai-video-generator/</loc></url>
 <url><loc>https://toolfavor.com/compare/deepswapper-vs-deepswapface/</loc></url>
@@ -58,4 +59,8 @@
 <url><loc>https://toolfavor.com/tools/videotoprompt</loc><lastmod>2026-10-28</lastmod></url>
 <url><loc>https://toolfavor.com/ja/tools/videotoprompt</loc><lastmod>2026-10-28</lastmod></url>
 <url><loc>https://toolfavor.com/zh-cn/tools/videotoprompt</loc><lastmod>2026-10-28</lastmod></url>
+<url><loc>https://toolfavor.com/video-to-prompt/</loc><lastmod>2026-10-28</lastmod></url>
+<url><loc>https://toolfavor.com/ja/video-to-prompt/</loc><lastmod>2026-10-28</lastmod></url>
+<url><loc>https://toolfavor.com/zh-cn/video-to-prompt/</loc><lastmod>2026-10-28</lastmod></url>
+<url><loc>https://toolfavor.com/tools/excalidraw/</loc></url>
 </urlset>

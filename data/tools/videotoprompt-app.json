@@ -5,6 +5,19 @@
   "url": "https://www.videotoprompt.app/",
   "domain": "www.videotoprompt.app",
   "category": "AI Video",
+  "guide": {
+    "slug": "video-to-prompt",
+    "label": {
+      "en": "Video to prompt",
+      "ja": "動画からプロンプト",
+      "zh-cn": "视频反推提示词"
+    },
+    "link": {
+      "en": "See all 5 video-to-prompt tools compared",
+      "ja": "動画からプロンプトを作るツール5つを比較する",
+      "zh-cn": "查看 5 款视频反推提示词工具横向对比"
+    }
+  },
   "type": "web",
   "pricing": "freemium",
   "schema": {
@@ -44,8 +57,8 @@
   },
   "i18n": {
     "en": {
-      "title": "VideoToPrompt.app Review: Video to Prompt, Pricing & Limits | ToolFavor",
-      "description": "VideoToPrompt.app turns video references into AI prompts. See supported inputs, pricing, limitations and official sources before choosing a video-to-prompt tool.",
+      "title": "VideoToPrompt.app Review: YouTube Link to Prompt, Multi-Scene | ToolFavor",
+      "description": "VideoToPrompt.app analyzes a local video or YouTube link as one shot or several scenes. Upload limit, free vs paid quotas, and how it differs from videotoprompt.com.",
       "kicker": "AI Video · Web tool",
       "lead": "Choose a shot. Or break down scenes.",
       "sublead": "Analyze a local video or YouTube link. This separate .app product offers single-scene and multi-scene workflows.",

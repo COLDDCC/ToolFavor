@@ -35,6 +35,7 @@ UI = {
   'founder': 'Disclosure: built by ToolFavor\'s founder, described under the same sourcing rules as every listing.',
   'founder_link': 'Creator portfolio', 'report': 'Something out of date? Tell us',
   'related_more': 'Browse the full directory',
+  'guide_link': 'Compare all {category} tools side by side',
   'pricing': {'free': 'Free', 'freemium': 'Free plan', 'paid': 'Paid'},
   'type': {'web': 'Web app', 'mobile': 'Mobile app', 'desktop': 'Desktop app', 'extension': 'Browser extension'},
   'cat': {'Design': 'Design', 'Productivity': 'Productivity', 'AI Video': 'AI Video'},
@@ -55,6 +56,7 @@ UI = {
   'founder': '開示：ToolFavor創設者が制作したツールです。ほかの掲載と同じ出典ルールで紹介しています。',
   'founder_link': '制作者のポートフォリオ', 'report': '情報が古い場合はお知らせください',
   'related_more': 'ツール一覧を見る',
+  'guide_link': '{category}ツールをまとめて比較する',
   'pricing': {'free': '無料', 'freemium': '無料プランあり', 'paid': '有料'},
   'type': {'web': 'Webアプリ', 'mobile': 'モバイルアプリ', 'desktop': 'デスクトップアプリ', 'extension': 'ブラウザー拡張'},
   'cat': {'Design': 'デザイン', 'Productivity': '仕事効率化', 'AI Video': 'AI動画'},
@@ -75,6 +77,7 @@ UI = {
   'founder': '利益披露：本工具由 ToolFavor 创始人开发，介绍时遵循与其他收录相同的来源规则。',
   'founder_link': '创作者作品集', 'report': '发现信息过时？告诉我们',
   'related_more': '浏览完整目录',
+  'guide_link': '查看全部{category}工具横向对比',
   'pricing': {'free': '免费', 'freemium': '有免费方案', 'paid': '付费'},
   'type': {'web': '网页应用', 'mobile': '手机应用', 'desktop': '桌面软件', 'extension': '浏览器扩展'},
   'cat': {'Design': '设计工具', 'Productivity': '效率工具', 'AI Video': 'AI 视频'},
@@ -236,6 +239,10 @@ def page_url(slug, code):
 
 def page_file(slug, code):
     return f"{LOCALES[code][0]}/tools/{slug}.html".lstrip('/')
+
+
+def guide_url(slug, code):
+    return f"{LOCALES[code][0]}/{slug}/"
 
 
 def home_url(code):
@@ -489,6 +496,11 @@ def json_ld(t, c, code):
             {'@type': 'ListItem', 'position': 1, 'name': UI[code]['explore'], 'item': SITE + home_url(code)},
             {'@type': 'ListItem', 'position': 2, 'name': t['name'], 'item': url}]},
     ]
+    if t.get('guide'):
+        g = t['guide']
+        graph[-1]['itemListElement'] = [graph[-1]['itemListElement'][0],
+            {'@type': 'ListItem', 'position': 2, 'name': g['label'][code], 'item': SITE + guide_url(g['slug'], code)},
+            {'@type': 'ListItem', 'position': 3, 'name': t['name'], 'item': url}]
     if c.get('faq'):
         graph.append({'@type': 'FAQPage', 'mainEntity': [
             {'@type': 'Question', 'name': f['q'], 'acceptedAnswer': {'@type': 'Answer', 'text': f['a']}} for f in c['faq']]})
@@ -525,8 +537,12 @@ def render(t, code, tools_by_slug):
            f'<span class="langs" role="group" aria-label="Language">{langs}</span></nav></div></header>')
 
     cat = u['cat'].get(t['category'], t['category'])
+    guide = t.get('guide')  # optional hub page that compares every tool in this group
+    guide_href = guide_url(guide['slug'], code) if guide else ''
+    guide_name = guide['label'][code] if guide else ''
+    cat_crumb = f'<a href="{guide_href}">{escape(guide_name)}</a>' if guide else escape(cat)
     crumb = (f'<nav class="crumb" aria-label="Breadcrumb"><a href="{home_url(code)}">{escape(u["explore"])}</a><i>/</i>'
-             f'{escape(cat)}<i>/</i><span aria-current="page">{escape(name)}</span></nav>')
+             f'{cat_crumb}<i>/</i><span aria-current="page">{escape(name)}</span></nav>')
     badges = ''.join(f'<span class="badge">{logo(p["domain"], p["label"])}{escape(p["label"])}</span>' for p in t.get('platforms', []))
     badges += f'<span class="badge price">{escape(c["pricing_label"])}</span>'
     second = (f'<a class="link" href="#fit">{escape(u["fit_jump"])} {icon("arrow")}</a>' if c.get('fit')
@@ -580,6 +596,9 @@ def render(t, code, tools_by_slug):
                     + ''.join(f'<td>{escape(x)}</td>' for x in r[1:]) + '</tr>')
         inner = (f'<div class="table glass-card reveal"><table><thead><tr>{thead}</tr></thead><tbody>{trs}</tbody></table></div>'
                  f'<p class="note">{escape(cmp["note"])}</p>')
+        if guide:
+            inner += (f'<p class="more"><a class="link" href="{guide_href}">'
+                      f'{escape(guide.get("link", {}).get(code) or u["guide_link"].format(category=guide_name))} {icon("arrow")}</a></p>')
         body.append(block('compare', titles['compare'], inner, u['subs']['compare']))
 
     if t.get('alternatives'):

@@ -5,6 +5,19 @@
   "url": "https://www.reprompt.org/video-to-prompt",
   "domain": "www.reprompt.org",
   "category": "AI Video",
+  "guide": {
+    "slug": "video-to-prompt",
+    "label": {
+      "en": "Video to prompt",
+      "ja": "動画からプロンプト",
+      "zh-cn": "视频反推提示词"
+    },
+    "link": {
+      "en": "See all 5 video-to-prompt tools compared",
+      "ja": "動画からプロンプトを作るツール5つを比較する",
+      "zh-cn": "查看 5 款视频反推提示词工具横向对比"
+    }
+  },
   "type": "web",
   "pricing": "free",
   "schema": {
@@ -40,8 +53,8 @@
   },
   "i18n": {
     "en": {
-      "title": "Reprompt Video to Prompt Review: Video to Prompt, Pricing & Limits | ToolFavor",
-      "description": "Reprompt Video to Prompt turns video references into AI prompts. See supported inputs, pricing, limitations and official sources before choosing a video-to-prompt tool.",
+      "title": "Reprompt Video to Prompt Review: Free, No Signup, Frames Only | ToolFavor",
+      "description": "Reprompt's free video-to-prompt tool samples four frames in your browser and, per Reprompt, sends only those stills. No account, daily limits, best for one short shot.",
       "kicker": "AI Video · Web tool",
       "lead": "Four frames. One reusable video prompt.",
       "sublead": "The browser samples a short clip. Only the still frames are sent for analysis, according to Reprompt; no account is needed.",
