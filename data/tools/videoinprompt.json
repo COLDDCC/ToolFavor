@@ -5,6 +5,19 @@
   "url": "https://videoinprompt.com/",
   "domain": "videoinprompt.com",
   "category": "AI Video",
+  "guide": {
+    "slug": "video-to-prompt",
+    "label": {
+      "en": "Video to prompt",
+      "ja": "動画からプロンプト",
+      "zh-cn": "视频反推提示词"
+    },
+    "link": {
+      "en": "See all 5 video-to-prompt tools compared",
+      "ja": "動画からプロンプトを作るツール5つを比較する",
+      "zh-cn": "查看 5 款视频反推提示词工具横向对比"
+    }
+  },
   "type": "web",
   "pricing": "freemium",
   "schema": {
@@ -44,8 +57,8 @@
   },
   "i18n": {
     "en": {
-      "title": "VideoInPrompt Review: Video to Prompt, Pricing & Limits | ToolFavor",
-      "description": "VideoInPrompt turns video references into AI prompts. See supported inputs, pricing, limitations and official sources before choosing a video-to-prompt tool.",
+      "title": "VideoInPrompt Review: Video to JSON Prompts for Seedance, Veo, Kling | ToolFavor",
+      "description": "VideoInPrompt turns a clip or supported link into scene text and structured JSON, with presets for Seedance, Veo, Kling and Runway. Credits, limits and sources.",
       "kicker": "AI Video · Web tool",
       "lead": "From video to structured prompts.",
       "sublead": "Upload a clip or paste a supported link. Organize the result as scene descriptions and JSON for your next AI video workflow.",

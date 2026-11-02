@@ -36,3 +36,18 @@ python3 scripts/build-tool-pages.py           # write pages and update sitemap l
 
 The content standard, tiers and the 100-point checklist are in
 `docs/detail-page-standard.md`. Edit the JSON, never the generated HTML.
+
+## Comparison guides (hub pages)
+
+A guide such as `/video-to-prompt/` compares several tools that already have detail
+pages. It is generated for all three languages from `data/guides/<slug>.json`;
+tool names, logos and review links come from `data/tools/*.json`.
+
+```sh
+python3 scripts/build-guides.py --check   # validate
+python3 scripts/build-guides.py           # write /<slug>/, /ja/<slug>/, /zh-cn/<slug>/ and the sitemap
+```
+
+Every tool in a guide needs a `"guide"` field (`slug`, `label`, optional `link`) in its
+JSON. The detail page then links to the hub from its breadcrumb and below its
+comparison table. Run `build-tool-pages.py` before `build-guides.py`.

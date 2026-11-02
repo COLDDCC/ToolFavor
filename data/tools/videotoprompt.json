@@ -5,6 +5,19 @@
   "url": "https://videotoprompt.com/",
   "domain": "videotoprompt.com",
   "category": "AI Video",
+  "guide": {
+    "slug": "video-to-prompt",
+    "label": {
+      "en": "Video to prompt",
+      "ja": "動画からプロンプト",
+      "zh-cn": "视频反推提示词"
+    },
+    "link": {
+      "en": "See all 5 video-to-prompt tools compared",
+      "ja": "動画からプロンプトを作るツール5つを比較する",
+      "zh-cn": "查看 5 款视频反推提示词工具横向对比"
+    }
+  },
   "type": "web",
   "pricing": "freemium",
   "schema": {
@@ -48,8 +61,8 @@
   },
   "i18n": {
     "en": {
-      "title": "VideoToPrompt Review: Video to Prompt, Pricing & Limits | ToolFavor",
-      "description": "VideoToPrompt turns video references into AI prompts. See supported inputs, pricing, limitations and official sources before choosing a video-to-prompt tool.",
+      "title": "VideoToPrompt Review: Clip or Image to a Veo, Kling Prompt | ToolFavor",
+      "description": "VideoToPrompt (videotoprompt.com) writes a prompt from a clip up to 50 MB or a still image, in the language you pick. Free vs paid terms, limits and alternatives.",
       "kicker": "AI Video · Web tool",
       "lead": "One reference. A new video prompt.",
       "sublead": "Upload a clip or still image. Get a prompt describing its look, motion and lighting for Veo, Kling or Seedance.",
